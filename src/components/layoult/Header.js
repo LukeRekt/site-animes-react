@@ -1,22 +1,33 @@
 import {Link} from 'react-router-dom';
 import styles from './Header.module.css'
 
-import logo from '../../assets/img/zenitsu.png';
-import avatar from './zenitsu.png';
+import logo from '../../assets/img/logo.png';
+import avatar from './avatar.png';
+
+import { FaHouseUser, FaBell, FaNewspaper, FaStar, FaCalendarAlt } from 'react-icons/fa';
+
 
 function Header() {
 return (
     <div className={styles.header}>
         <Link to="/"><img className={styles.logo} src={logo} alt="Logo" /></Link>
         <div id='navegacao'>
-                <li className={styles.item}><Link to="/">INICIO</Link></li>
-                <li className={styles.item}><Link to="/">LISTA</Link></li>
-                <li className={styles.item}><Link to="/">FAVORITOS</Link></li>
-                <li className={styles.item}><Link to="/">CALENDARIO</Link></li>
+                <li className={styles.item}> <Link to="/"><FaHouseUser/> INICIO</Link></li>
+                <li className={styles.item}><Link to="/"><FaNewspaper/> LISTA</Link></li>
+                <li className={styles.item}><Link to="/"><FaStar/> FAVORITOS</Link></li>
+                <li className={styles.item}><Link to="/"><FaCalendarAlt/>CALENDARIO</Link></li>
         </div>
 
         <div className={styles.usuario}>
-        <Link to="/perfil"><img className={styles.avatar} src={avatar} alt="Avatar do usuário" /></Link>
+
+            <div className={styles.perfil}>
+            <Link to="/perfil"><img className={styles.avatar} src={avatar} alt="Avatar do usuário" /></Link>
+            <FaBell/>
+            <div className={styles.notificacoes_contador}>
+                <p> 11</p>
+            </div>
+            </div>
+       
         </div>
         </div>
     )
