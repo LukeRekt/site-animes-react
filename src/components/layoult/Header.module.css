@@ -1,0 +1,39 @@
+.header{
+    background-color: #0e0e0e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    
+}
+
+#navegacao{
+    float: left;
+}
+
+.logo{
+    max-width: 100px;
+}
+
+.item{
+    list-style: none;
+    display: inline;
+    margin-right: 10px;
+    font-size: 20px;
+    
+}
+
+.item a {
+    color: #fff;
+    text-decoration: none;
+}
+.item a:hover {
+    color: #700B97;
+}
+
+
+.avatar{
+    margin-right: 10px;
+    max-width: 80px;
+    border-radius: 50%;
+}
