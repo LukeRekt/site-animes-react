@@ -1,0 +1,16 @@
+.animes{
+    display: inline-block;
+    width: 100%;
+    background-color: black;
+    
+}
+.anime_box{
+    margin: 11px;
+    background-color: rgb(18, 142, 250);
+    width: 193px;
+    border-radius: 5px;
+}
+.anime_box img{
+    max-height: 240px;
+    border-radius: 5px;
+}
