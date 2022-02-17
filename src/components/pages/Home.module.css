@@ -5,9 +5,12 @@
     margin-top: 100px;
     width: 80%;
     float: left;
+    margin-left: 9%;
+
 }
 .container h1{ 
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 text-align: center;
-color: #530472;;
+color: #ffffff;;
+margin: auto;
 }
