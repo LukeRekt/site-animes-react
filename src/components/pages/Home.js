@@ -4,6 +4,7 @@ import axios from 'axios'
 import Anime from '../layoult/Animes'
 import Carousel from 'react-elastic-carousel'
 import TopAnimes from '../layoult/TopAnimes'
+import Footer from '../layoult/Footer'
 
 const breakPoints = [
     {width: 1, itemsToShow: 1 },
@@ -27,15 +28,31 @@ function Home(){
 return(
     <div>
         <div className={styles.container}>
-            <h1>LANÇAMENTOS</h1>
+        <div className={styles.carousel_animes}>
+            <h1>TESTE 1</h1>
         <Carousel breakPoints={breakPoints}>
         {posts.map(post =>
             <Anime nome={post.nome} imagem={post.imagem}/>
              )} 
+             
         </Carousel>
-       
+        </div>
+        <div className={styles.carousel_animes}>
+        <h1>TESTE 2</h1>
+     
+        <Carousel breakPoints={breakPoints}>
+        {posts.map(post =>
+            <Anime nome={post.nome} imagem={post.imagem}/>
+             )} 
+             
+        </Carousel>
+        </div>
+        
+        <Footer/>
            </div>
            {/* <TopAnimes/> */}
+
+           
         </div>
        
     
