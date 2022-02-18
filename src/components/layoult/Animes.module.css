@@ -28,17 +28,26 @@
     height: 92%;
     border-radius: 10px;
 }
-.anime_over p:first-child{
-   margin-top: 100%;
-   float: left;
-   margin-left: 5px;
-   transition: 0.3s;
-}
-.anime_over p:first-child:hover{
-    margin-top: 85%;
+.anime_box:hover .anime_infos {
+    top: 40%;
     margin-bottom: 1px;
-    
- }
+}
 .anime_botao{
+    margin-top: 0px;
+    padding: 5px;
+    border-radius: 10px;
+    color: green;
+    background-color: black;
+    width: 33%;
+
+}
+
+.anime_infos{
+    margin-left: 5px;
+    z-index: 4;
+    position: absolute;
+    height: 80%;
+    top: 65%;
+    transition: 0.3s;
 
 }
