@@ -32,7 +32,7 @@ return(
             <h1>TESTE 1</h1>
         <Carousel breakPoints={breakPoints}>
         {posts.map(post =>
-            <Anime nome={post.nome} imagem={post.imagem} episodeos={post.episodeos}/>
+            <Anime nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodeos}/>
              )} 
              
         </Carousel>
@@ -42,7 +42,7 @@ return(
      
         <Carousel breakPoints={breakPoints}>
         {posts.map(post =>
-            <Anime nome={post.nome} imagem={post.imagem} episodeos={post.episodeos}/>
+            <Anime nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodeos}/>
              )} 
              
         </Carousel>

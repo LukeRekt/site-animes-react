@@ -1,8 +1,11 @@
+import {Link} from 'react-router-dom';
 import styles from './Animes.module.css'
 function Anime(props) {
     return(
             <div className={styles.animes}>
+        <Link to={`/anime/${props.id}`}>
             <div className={styles.anime_box}>
+            
             <img src={props.imagem} alt="" />
             <div className={styles.anime_over}>       
                 <div className={styles.anime_infos}>
@@ -12,6 +15,7 @@ function Anime(props) {
                 </div>       
             </div>
             </div>
+            </Link>
         </div>
         
     )

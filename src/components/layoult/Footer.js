@@ -6,7 +6,6 @@ function Footer () {
     return(
         <div>
             <div className={styles.footer_infos}>
-                <h1>Footer</h1>
                 <div className={styles.footer_redes}>
                     <a href=""><FaFacebookF/></a>
                 <a href=""><FaTwitter/></a>
