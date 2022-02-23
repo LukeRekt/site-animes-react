@@ -47,7 +47,6 @@ return(
              
         </Carousel>
         </div>
-        
         <Footer/>
            </div>
            {/* <TopAnimes/> */}

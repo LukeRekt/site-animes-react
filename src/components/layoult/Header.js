@@ -13,9 +13,9 @@ return (
         <Link to="/"><img className={styles.logo} src={logo} alt="Logo" /></Link>
         <div id='navegacao'>
                 <li className={styles.item}> <Link to="/"><FaHouseUser/> INICIO</Link></li>
-                <li className={styles.item}><Link to="/"><FaNewspaper/> LISTA</Link></li>
-                <li className={styles.item}><Link to="/"><FaStar/> FAVORITOS</Link></li>
-                <li className={styles.item}><Link to="/"><FaCalendarAlt/>CALENDARIO</Link></li>
+                <li className={styles.item}><Link to="/lista"><FaNewspaper/> LISTA</Link></li>
+                <li className={styles.item}><Link to="/favoritos"><FaStar/> FAVORITOS</Link></li>
+                <li className={styles.item}><Link to="/calendario"><FaCalendarAlt/>CALENDARIO</Link></li>
         </div>
 
         <div className={styles.usuario}>

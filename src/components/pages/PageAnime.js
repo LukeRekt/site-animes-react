@@ -6,11 +6,6 @@ import styles from './PageAnime.module.css'
 
 function PageAnime(){
 
-    function erro(){
-        return (<div>
-            <h1>aaa</h1>
-        </div>)
-    }
 
     const {id} = useParams();
 
@@ -25,6 +20,14 @@ function PageAnime(){
             return navigate("/");
         })
     }, [])
+    function lancamento () {
+        if(posts.lancamento == true){
+            return "EM LANÇAMENTO"
+        }else{
+            return "Completo"
+        }
+    }
+    let lanc = lancamento();
 
     return (
         <div className={styles.container}>
@@ -33,12 +36,24 @@ function PageAnime(){
             </div>
 
             <div className={styles.fotoAnime}>
-            {/* aqui vai a imagem com a div sobre o anime */}
+            <img src={posts.imagem} alt="" />
+            <div className={styles.sobreAnime}>
+                <p>{lanc}</p>
+                
+            </div>
+            <div className={styles.episodeosAnime}></div>
+                <div className={styles.especiaisAnime}></div>
+                <div className={styles.filmesAnime}></div>
+                <div className={styles.ProdAnime}></div>
+                <div className={styles.ProdAnime}></div>
+                <div className={styles.ProdAnime}></div>
+                <div className={styles.ProdAnime}></div>
             </div>
             <div className={styles.sinopseAnime}>
                 {/* padrao de sinopse simples */}
             </div>
             <div className={styles.episodeosAnime}>
+
                 {/* eps aqui listados vindo direto de um novo server json buscando de acordo com o id do ep */}
             </div>
         

@@ -7,3 +7,16 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
 }
+.fotoAnime{
+
+    width: 16%;
+    background: black;
+}
+.sobreAnime p{
+    margin: auto;
+    width: 43%;
+    padding: 5px;
+    border-radius: 5px;
+background-color: #FFBE63;
+font-size: 30px;
+}
