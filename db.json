@@ -2,11 +2,18 @@
     "animes": [
       {
         "id": 1,
-        "nome": "Arifureta Shokugyou...",
+        "nome": "Arifureta Shokugyou de Sekai Saikyou (2ª Temporada)",
         "descricao": "O mais brabo do zap.",
         "nota": 8.5,
         "episodeos": "6",
-        "lancamento": false,
+        "lancamento": true,
+        "diaLancamento": "Domingo",
+        "especiais": "0",
+        "filmes": "0",
+        "autor": "Shirakome Ryou",
+        "diretor": "Akira Iwanaga",
+        "estudio": "Asread",
+        "ano": "2022", 
         "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
       },
       {

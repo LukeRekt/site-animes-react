@@ -5,6 +5,8 @@
     padding-right: 12px;
     border-radius: 20px;
     
+    
+    
 }
 .anime_box{
     margin: 11px;
@@ -12,11 +14,14 @@
     width: 193px;
     border-radius: 5px;
     cursor: pointer;
+    
+    
 }
 .anime_box img{
     max-height: 240px;
     border-radius: 5px;
     width: 100%;
+    
 }
 .anime_over{
     z-index: 3;
@@ -29,10 +34,12 @@
     width: 192px;
     height: 92%;
     border-radius: 10px;
+    
 }
 .anime_box:hover .anime_infos {
     top: 40%;
     margin-bottom: 1px;
+    
 }
 .anime_botao{
     margin-top: 0px;
@@ -41,7 +48,8 @@
     color: green;
     background-color: black;
     text-align: center;
-width: 100%;
+    width: 90%;
+
 }
 
 .anime_infos{
@@ -51,5 +59,13 @@ width: 100%;
     height: 80%;
     top: 65%;
     transition: 0.3s;
+    text-overflow: ellipsis;
+    width: 92%;
+    
+    
 
+}
+.anime_infos p:first-child{
+
+color: rgb(255, 255, 255);
 }

@@ -1,29 +1,29 @@
-import {useParams, useNavigate} from 'react-router-dom'
-import React, {useState, useEffect} from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Footer from '../layoult/Footer';
 import styles from './PageAnime.module.css'
 
-function PageAnime(){
+function PageAnime() {
 
 
-    const {id} = useParams();
+    const { id } = useParams();
 
     const [posts, setPosts] = useState([])
     let navigate = useNavigate();
     useEffect(() => {
         axios.get(`http://localhost:4000/animes/${id}`)
-        .then(res => {
-            setPosts(res.data)
-            console.log(res)
-        }).catch((err) =>{
-            return navigate("/");
-        })
+            .then(res => {
+                setPosts(res.data)
+                console.log(res)
+            }).catch((err) => {
+                return navigate("/");
+            })
     }, [])
-    function lancamento () {
-        if(posts.lancamento == true){
+    function lancamento() {
+        if (posts.lancamento == true) {
             return "EM LANÇAMENTO"
-        }else{
+        } else {
             return "Completo"
         }
     }
@@ -36,18 +36,37 @@ function PageAnime(){
             </div>
 
             <div className={styles.fotoAnime}>
-            <img src={posts.imagem} alt="" />
-            <div className={styles.sobreAnime}>
-                <p>{lanc}</p>
-                
-            </div>
-            <div className={styles.episodeosAnime}></div>
-                <div className={styles.especiaisAnime}></div>
-                <div className={styles.filmesAnime}></div>
-                <div className={styles.ProdAnime}></div>
-                <div className={styles.ProdAnime}></div>
-                <div className={styles.ProdAnime}></div>
-                <div className={styles.ProdAnime}></div>
+                <img src={posts.imagem} alt="" />
+                <div className={styles.sobreAnime}>
+                    <p>{lanc}</p>
+                    <p>{posts.diaLancamento}</p>
+                </div>
+                <div className={styles.boxInfoAnimes}>
+                    <p>Episodeos</p>
+                    {posts.episodeos}</div>
+                <div className={styles.boxInfoAnimes}>
+                    <p>Especiais</p>
+                    {posts.especiais}</div>
+                <div className={styles.boxInfoAnimes}>
+                    <p>Filmes</p>
+                    {posts.filmes}</div>
+                <div className={styles.prodAnime}>
+                    <p>Autor</p>
+                    <p>{posts.autor}</p>
+                </div>
+                <div className={styles.prodAnime}>
+                <p>Diretor</p>
+                <p>{posts.diretor}</p>
+                    </div>
+                <div className={styles.prodAnime}>
+                <p>Estudio</p>
+                <p>{posts.estudio}</p>
+                    </div>
+                <div className={styles.prodAnime}>
+                <p>Ano</p>
+                <p>{posts.ano}</p>
+                    
+                    </div>
             </div>
             <div className={styles.sinopseAnime}>
                 {/* padrao de sinopse simples */}
@@ -56,10 +75,10 @@ function PageAnime(){
 
                 {/* eps aqui listados vindo direto de um novo server json buscando de acordo com o id do ep */}
             </div>
-        
-        
+
+
         </div>
-        
+
     )
 }
 
