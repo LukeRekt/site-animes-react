@@ -10,11 +10,14 @@
     font-size: 40px;
     margin-bottom: 1%;
 
+
 }
 .fotoAnime{
     border-radius: 10px;
     width: 30%;
     background: #181829;
+    display: inline-block;
+    float: left;
 }
 .fotoAnime img{
     border-radius: 10px;
@@ -83,3 +86,21 @@
 
     
 }
+.sinopseAnime{
+    float: right;
+    width: 69%;
+    margin-top: 0px;
+    border-radius: 10px;
+    background-color: #1f1f3059;
+}
+.sinopseAnime p,h3{
+    margin-left: 2px;
+    
+}
+.episodeosAnime{
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    float: left;
+    width: 68%;
+    }

@@ -15,86 +15,33 @@
         "estudio": "Asread",
         "ano": "2022", 
         "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
+      }
+    ],
+    "episodios": [
+      {
+        "id": 1,
+        "numero": 1,
+        "nome": "Nome_EP_1"
+      },
+      {
+        "id": 1,
+        "numero": 1,
+        "nome": "Nome_EP_2"
+      },
+      {
+        "id": 1,
+        "numero": 1,
+        "nome": "Nome_EP_3"
       },
       {
         "id": 2,
-        "nome": "Boku no Hero Acade...",
-        "descricao": "O mais brabo do zap.",
-        "nota": 8.5,
-        "episodeos": "12",
-        "imagem": "https://meusanimes.com/animes/capas/assistir-boku-no-hero-academia-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
+        "numero": 2,
+        "nome": "Nome_EP_2"
       },
       {
         "id": 3,
-        "nome": "Arifureta Shokugyou...",
-        "descricao": "O mais brabo do zap.",
-        "nota": 8.5,
-        "episodeos": "6",
-        "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
-      },
-      {
-        "id": 4,
-        "nome": "Arifureta Shokugyou...",
-        "descricao": "O mais brabo do zap.",
-        "nota": 8.5,
-        "episodeos": "6",
-        "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
-      },
-      {
-        "id": 5,
-        "nome": "Arifureta Shokugyou...",
-        "descricao": "O mais brabo do zap.",
-        "nota": 8.5,
-        "episodeos": "6",
-        "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
-      },
-      {
-        "id": 6,
-        "nome": "Arifureta Shokugyou...",
-        "descricao": "O mais brabo do zap.",
-        "nota": 8.5,
-        "episodeos": "6",
-        "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
-      },
-      {
-        "id": 7,
-        "nome": "Arifureta Shokugyou...",
-        "descricao": "O mais brabo do zap.",
-        "nota": 8.5,
-        "episodeos": "6",
-        "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
-      },
-      {
-        "id": 8,
-        "nome": "Arifureta Shokugyou...",
-        "descricao": "O mais brabo do zap.",
-        "nota": 8.5,
-        "episodeos": "6",
-        "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
-      },
-      {
-        "id": 9,
-        "nome": "Arifureta Shokugyou...",
-        "descricao": "O mais brabo do zap.",
-        "nota": 8.5,
-        "episodeos": "6",
-        "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
-      },
-      {
-        "id": 10,
-        "nome": "Arifureta Shokugyou...",
-        "descricao": "O mais brabo do zap.",
-        "nota": 8.5,
-        "episodeos": "6",
-        "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
-      },
-      {
-        "id": 11,
-        "nome": "Arifureta Shokugyou...",
-        "descricao": "O mais brabo do zap.",
-        "nota": 8.5,
-        "episodeos": "6",
-        "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
+        "numero": 3,
+        "nome": "Nome_EP_3"
       }
     ]
   }

@@ -19,7 +19,7 @@ function Anime(props) {
                 <p>{diminuirTamanho(props.nome)}</p>
 
                 <div className={styles.anime_botao}>ANIME</div> 
-                <p>{props.episodeos} EPISÓDEOS</p>  
+                <p>{props.episodeos} EPISÓDIOS</p>  
                 </div>       
             </div>
             </div>

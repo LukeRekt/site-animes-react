@@ -1,14 +1,13 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Footer from '../layoult/Footer';
 import styles from './PageAnime.module.css'
+import Tabs from '../layoult/Tabs';
 
 function PageAnime() {
 
 
     const { id } = useParams();
-
     const [posts, setPosts] = useState([])
     let navigate = useNavigate();
     useEffect(() => {
@@ -20,8 +19,11 @@ function PageAnime() {
                 return navigate("/");
             })
     }, [])
+
+
+    
     function lancamento() {
-        if (posts.lancamento == true) {
+        if (posts.lancamento === true) {
             return "EM LANÇAMENTO"
         } else {
             return "Completo"
@@ -42,7 +44,7 @@ function PageAnime() {
                     <p>{posts.diaLancamento}</p>
                 </div>
                 <div className={styles.boxInfoAnimes}>
-                    <p>Episodeos</p>
+                    <p>Episódios</p>
                     {posts.episodeos}</div>
                 <div className={styles.boxInfoAnimes}>
                     <p>Especiais</p>
@@ -65,15 +67,17 @@ function PageAnime() {
                 <div className={styles.prodAnime}>
                 <p>Ano</p>
                 <p>{posts.ano}</p>
-                    
                     </div>
             </div>
             <div className={styles.sinopseAnime}>
-                {/* padrao de sinopse simples */}
+                <h3>Sinopse</h3>
+                <p>Segunda Temporada, Hajime Nagumo, de dezessete anos, é um otaku típico. No entanto, a sua vida simples é subitamente alterada quando ele, juntamente com o resto da sua classe, é transportado para um mundo de fantasia! Eles são tratados como heróis e encarregados do dever de salvar a raça humana da extinção. Mas o que deveria ter sido o sonho de qualquer otaku rapidamente se transforma num pesadelo para Hajime. Enquanto o resto da sua turma é abençoada com poderes divinos, Hajime tem apenas uma h abilidade de transm utação única. Ridicularizado e intimidado pelos seus colegas de classe por ser fraco, ele logo entra em desespero. Será que ele ai conseguir sobreviver neste mundo perigoso repleto de monstros e demônios com apenas um nível de força? Hajime Nagumo, de dezessete anos, é um otaku típico. No entanto, a sua vida simples é subitamente alterada quando ele, juntamente com o resto da sua classe, é transportado para um mundo de fantasia! Eles são tratados como heróis e encarregados do dever de salvar a raça humana da extinção. Mas o que deveria ter sido o sonho de qualquer otaku rapidamente se transforma num pesadelo para Hajime. Enquanto o resto da sua turma é abençoada com poderes divinos, Hajime tem apenas uma habilidade de transmutação única. Ridicularizado e intimidado pelos seus colegas de classe por ser fraco, ele logo entra em desespero.</p>
+                
             </div>
             <div className={styles.episodeosAnime}>
-
+            <Tabs id={posts.id}/>
                 {/* eps aqui listados vindo direto de um novo server json buscando de acordo com o id do ep */}
+
             </div>
 
 

@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import Anime from '../layoult/Animes'
 import Carousel from 'react-elastic-carousel'
-import TopAnimes from '../layoult/TopAnimes'
 import Footer from '../layoult/Footer'
 
 const breakPoints = [
