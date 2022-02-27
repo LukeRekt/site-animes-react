@@ -8,6 +8,7 @@ Um aplicativo usado para gerenciar orçamento de projetos, construído com React
 - [ ] Player animes
 - [ ] Ferramenta para adicionar animes
 - [ ] Calendario
+- [ ] Login de usuario - feito em nodejs com mysql ou mongodb
 - [ ] Perfil de usuario
 - [ ] Favoritos
 - [ ] Listas
