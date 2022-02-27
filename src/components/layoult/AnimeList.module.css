@@ -1,0 +1,16 @@
+
+.AnimeThumb{
+    background-color: red;
+    width: 19%;
+    margin-right: 4px;
+    height: 150px;
+    float: left;
+    margin-bottom: 4px;
+    margin-left: 2px;
+    cursor: pointer;
+
+}
+.AnimeThumb img{
+    width: 1%;
+    float: left;
+}
