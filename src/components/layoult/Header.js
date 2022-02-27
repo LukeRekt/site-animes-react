@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 import styles from './Header.module.css'
 
 import logo from '../../assets/img/logo.png';
-import avatar from './avatar.png';
+import avatar from '../../assets/img/fotosperfil/avatar.png';
 
 import { FaHouseUser, FaBell, FaNewspaper, FaStar, FaCalendarAlt } from 'react-icons/fa';
 
