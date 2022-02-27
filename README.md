@@ -3,8 +3,8 @@
 Um aplicativo usado para gerenciar orçamento de projetos, construído com React, JavaScript e CSS.
 
 ## Status do projeto
-- [x] Home (base)
-- [x] Pagina de Animes
+- [x] Home (base) - ainda precisa ser "decorada"
+- [x] Pagina de Animes - sera totalmente terminado quando o player de videos estiver pronto.
 - [ ] Player animes
 - [ ] Ferramenta para adicionar animes
 - [ ] Calendario
