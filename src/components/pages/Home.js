@@ -29,10 +29,12 @@ return(
         <div className={styles.container}>
         <div className={styles.carousel_animes}>
             <h1>TESTE 1</h1>
-        <Carousel breakPoints={breakPoints}>
-        {posts.map(post =>
+            <Carousel breakPoints={breakPoints}>
+            
+                {posts.map(post =>
             <Animes nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodeos}/>
              )} 
+        
              
         </Carousel>
         </div>
@@ -40,9 +42,11 @@ return(
         <h1>TESTE 2</h1>
      
         <Carousel breakPoints={breakPoints}>
-        {posts.map(post =>
+            
+                {posts.map(post =>
             <Animes nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodeos}/>
              )} 
+        
              
         </Carousel>
         </div>
