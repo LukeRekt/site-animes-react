@@ -1,83 +1,48 @@
 {
-    "animes": [
-      {
-        "id": 1,
-        "nome": "Arifureta Shokugyou de Sekai Saikyou (2ª Temporada)",
-        "descricao": "O mais brabo do zap.",
-        "nota": 8.5,
-        "episodeos": "6",
-        "lancamento": true,
-        "diaLancamento": "Domingo",
-        "especiais": "0",
-        "filmes": "0",
-        "autor": "Shirakome Ryou",
-        "diretor": "Akira Iwanaga",
-        "estudio": "Asread",
-        "ano": "2022", 
-        "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
-      }
-    ],
-    "episodios": [
-      {
-        "id": 1,
-        "numero": 1,
-        "nome": "Nome_EP_1"
-      },
-      {
-        "id": 1,
-        "numero": 1,
-        "nome": "Nome_EP_2"
-      },
-      {
-        "id": 1,
-        "numero": 1,
-        "nome": "Nome_EP_3"
-      },
-      {
-        "id": 1,
-        "numero": 1,
-        "nome": "Nome_EP_4"
-      },
-      {
-        "id": 1,
-        "numero": 1,
-        "nome": "Nome_EP_5"
-      },
-      {
-        "id": 1,
-        "numero": 1,
-        "nome": "Nome_EP_6"
-      },
-      {
-        "id": 1,
-        "numero": 1,
-        "nome": "Nome_EP_7"
-      },
-      {
-        "id": 1,
-        "numero": 1,
-        "nome": "Nome_EP_8"
-      },
-      {
-        "id": 1,
-        "numero": 1,
-        "nome": "Nome_EP_9"
-      },
-      {
-        "id": 1,
-        "numero": 1,
-        "nome": "Nome_EP_10"
-      },
-      
-      {
-        "id": 2,
-        "numero": 2,
-        "nome": "Nome_EP_2"
-      },
-      {
-        "id": 3,
-        "numero": 3,
-        "nome": "Nome_EP_3"
-      }
-    ]
-  }
+  "animes": [
+    {
+      "id": 1,
+      "nome": "Arifureta Shokugyou de Sekai Saikyou (2ª Temporada)",
+      "descricao": "O mais brabo do zap.",
+      "nota": 8.5,
+      "episodeos": "6",
+      "lancamento": true,
+      "diaLancamento": "Domingo",
+      "especiais": "0",
+      "filmes": "0",
+      "autor": "Shirakome Ryou",
+      "diretor": "Akira Iwanaga",
+      "estudio": "Asread",
+      "ano": "2022", 
+      "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
+    },
+    {
+      "id": 2,
+      "nome": "Boku no Hero Acade...",
+      "descricao": "O mais brabo do zap.",
+      "nota": 8.5,
+      "episodeos": "12",
+      "imagem": "https://meusanimes.com/animes/capas/assistir-boku-no-hero-academia-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
+    },
+    {
+      "id": 3,
+      "nome": "Arifureta Shokugyou...",
+      "descricao": "O mais brabo do zap.",
+      "nota": 8.5,
+      "episodeos": "6",
+      "imagem": "https://meusanimes.com/animes/capas/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-meus-animes-online.jpg"
+    }
+  ],
+  "episodios":[
+     {
+        "id":1,
+        "numero":1,
+        "nome":"Nome_EP_1"
+     },
+     {
+        "id":2,
+        "numero":2,
+        "nome":"Nome_EP_2"
+     }
+  ]
+}

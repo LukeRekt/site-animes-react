@@ -2,7 +2,6 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import styles from "./AnimeList.module.css"
-   
 
 
 function AnimeList(props){
@@ -10,11 +9,12 @@ function AnimeList(props){
     function testeNome(idUm, idDois, nome){
         if(idUm == idDois){
             return (<div>
-                {/* {nome} */}
+                
                 
                 <div className={styles.AnimeThumb}>
+                 
+                    <img src="https://subanimes.biz/wp-content/uploads/2022/01/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-subanimes-animes-online-brasil-2022.jpg" alt="" />
                     {nome}
-                    
                 
                 </div>
                 </div>

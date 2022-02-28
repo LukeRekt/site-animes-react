@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import styles from './Animes.module.css'
-function Anime(props) {
+function Animes(props) {
 
     function diminuirTamanho(nome){
         let novoNome = nome.substr(0,19)
@@ -29,4 +29,4 @@ function Anime(props) {
     )
 }
 
-export default Anime
+export default Animes

@@ -1,7 +1,7 @@
 import styles from './Home.module.css'
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import Anime from '../layoult/Animes'
+import Animes from '../layoult/Animes'
 import Carousel from 'react-elastic-carousel'
 import Footer from '../layoult/Footer'
 
@@ -31,7 +31,7 @@ return(
             <h1>TESTE 1</h1>
         <Carousel breakPoints={breakPoints}>
         {posts.map(post =>
-            <Anime nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodeos}/>
+            <Animes nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodeos}/>
              )} 
              
         </Carousel>
@@ -41,7 +41,7 @@ return(
      
         <Carousel breakPoints={breakPoints}>
         {posts.map(post =>
-            <Anime nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodeos}/>
+            <Animes nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodeos}/>
              )} 
              
         </Carousel>
