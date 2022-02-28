@@ -1,22 +1,23 @@
 
 import axios from 'axios'
-import React, { useState, useEffect } from 'react'
 import styles from "./AnimeList.module.css"
+import {Link} from 'react-router-dom';
 
 
 function AnimeList(props){
 
-    function testeNome(idUm, idDois, nome){
-        if(idUm == idDois){
+    function testeNome(idUm, idDois, nome, episodio){
+        if(idUm === idDois){
             return (<div>
                 
-                
+                <Link to={`/anime/${idUm}/${episodio}`}>
                 <div className={styles.AnimeThumb}>
                  
                     <img src="https://subanimes.biz/wp-content/uploads/2022/01/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-subanimes-animes-online-brasil-2022.jpg" alt="" />
                     {nome}
                 
                 </div>
+                </Link>
                 </div>
             )
         
@@ -26,7 +27,7 @@ function AnimeList(props){
     return (
         <div>
            
-           {testeNome(props.id, props.iddois, props.nome)}
+           {testeNome(props.id, props.iddois, props.nome, props.episodio)}
            
                 
                 

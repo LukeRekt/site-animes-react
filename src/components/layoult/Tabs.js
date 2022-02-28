@@ -34,7 +34,7 @@ useEffect(() => {
           <TabPanel value={value} index={0}>
           <div className={styles.AnimeListContainer}>
           {posts.map(post =>
-          <AnimeList nome={post.nome} id={post.id} iddois={props.id}/> )} 
+          <AnimeList nome={post.nome} id={post.id} iddois={props.id} episodio={post.numero}/> )} 
         
           
             {/* <AnimeList nome={props.nome}/> */}
