@@ -12,9 +12,9 @@ function AnimeList(props){
                 
                 <Link to={`/anime/${idUm}/${episodio}`}>
                 <div className={styles.AnimeThumb}>
-                 
+                 <p>{nome}</p>
                     <img src="https://subanimes.biz/wp-content/uploads/2022/01/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-subanimes-animes-online-brasil-2022.jpg" alt="" />
-                    {nome}
+                    
                 
                 </div>
                 </Link>

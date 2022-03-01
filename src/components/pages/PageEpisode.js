@@ -1,6 +1,8 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams,} from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import styles from './PageEpisode.module.css'
+import Footer from '../layoult/Footer'
 
 function PageEpisode(){
 
@@ -29,8 +31,12 @@ function PageEpisode(){
 
     return (
         <div>
-            <video src={ListEp(ep, posts)} controls></video>
+            <div className={styles.PageAnimeContainer}>
+                <h1>Nome do ep</h1>
+                <video src={ListEp(ep, posts)} controls></video></div>
+        
         </div>
+        
     )
 }
 

@@ -10,14 +10,16 @@ import PageEpisode from './components/pages/PageEpisode';
 import PageLogin from './components/pages/PageLogin';
 import PagePefil from './components/pages/PagePerfil';
 import PaginaNaoEncontrada from './components/pages/PaginaNaoEncontrada';
+import Footer from './components/layoult/Footer'
+import Container from './components/layoult/Container'
 
 function App() {
   return (
   <Router>
     <Header/>
-
+    <Container customClass="min-height">
     <Routes>
-        
+    
         <Route exact path="/" element={<Home/>}></Route>
         <Route exact path="/anime/:id" element={<PageAnime/>}></Route>
         <Route exact path="/anime/:id/:ep" element={<PageEpisode/>}></Route>
@@ -28,7 +30,10 @@ function App() {
         <Route exact path="/perfil" element={<PagePefil/>}></Route>
         <Route path='*' element={<PaginaNaoEncontrada/>}></Route>
         {/* <Route path="/projects" element={}></Route> */}
+       
         </Routes>
+        </Container>
+        <Footer/>
         
     </Router>
   );

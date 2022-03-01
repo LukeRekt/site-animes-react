@@ -4,7 +4,7 @@ import { FaFacebookF, FaTwitter, FaDiscord } from 'react-icons/fa';
 function Footer () {
 
     return(
-        <div>
+
             <div className={styles.footer_infos}>
                 <div className={styles.footer_redes}>
                     <a href=""><FaFacebookF/></a>
@@ -14,7 +14,6 @@ function Footer () {
                  
                 </div>
 
-            </div>
         </div>
     )
 }

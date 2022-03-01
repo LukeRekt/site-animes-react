@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './PageAnime.module.css'
 import Tabs from '../layoult/Tabs';
+import Footer from '../layoult/Footer'
 
 function PageAnime() {
 
@@ -11,7 +12,7 @@ function PageAnime() {
     const [posts, setPosts] = useState([])
     let navigate = useNavigate();
     useEffect(() => {
-        axios.get(`http://localhost:4000/animes/${id}`)
+        axios.get(`http://serverdacupula.ddns.net:4000/animes/${id}`)
             .then(res => {
                 setPosts(res.data)
                 console.log(res)
@@ -79,7 +80,6 @@ function PageAnime() {
                 {/* eps aqui listados vindo direto de um novo server json buscando de acordo com o id do ep */}
 
             </div>
-
 
         </div>
 
