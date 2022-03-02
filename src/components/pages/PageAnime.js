@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './PageAnime.module.css'
 import Tabs from '../layoult/Tabs';
-import Footer from '../layoult/Footer'
 
 function PageAnime() {
 
@@ -12,7 +11,7 @@ function PageAnime() {
     const [posts, setPosts] = useState([])
     let navigate = useNavigate();
     useEffect(() => {
-        axios.get(`http://serverdacupula.ddns.net:4000/animes/${id}`)
+        axios.get(`http://localhost:4000/animes/${id}`)
             .then(res => {
                 setPosts(res.data)
                 console.log(res)
@@ -72,7 +71,7 @@ function PageAnime() {
             </div>
             <div className={styles.sinopseAnime}>
                 <h3>Sinopse</h3>
-                <p>Segunda Temporada, Hajime Nagumo, de dezessete anos, é um otaku típico. No entanto, a sua vida simples é subitamente alterada quando ele, juntamente com o resto da sua classe, é transportado para um mundo de fantasia! Eles são tratados como heróis e encarregados do dever de salvar a raça humana da extinção. Mas o que deveria ter sido o sonho de qualquer otaku rapidamente se transforma num pesadelo para Hajime. Enquanto o resto da sua turma é abençoada com poderes divinos, Hajime tem apenas uma h abilidade de transm utação única. Ridicularizado e intimidado pelos seus colegas de classe por ser fraco, ele logo entra em desespero. Será que ele ai conseguir sobreviver neste mundo perigoso repleto de monstros e demônios com apenas um nível de força? Hajime Nagumo, de dezessete anos, é um otaku típico. No entanto, a sua vida simples é subitamente alterada quando ele, juntamente com o resto da sua classe, é transportado para um mundo de fantasia! Eles são tratados como heróis e encarregados do dever de salvar a raça humana da extinção. Mas o que deveria ter sido o sonho de qualquer otaku rapidamente se transforma num pesadelo para Hajime. Enquanto o resto da sua turma é abençoada com poderes divinos, Hajime tem apenas uma habilidade de transmutação única. Ridicularizado e intimidado pelos seus colegas de classe por ser fraco, ele logo entra em desespero.</p>
+                <p>Segunda Temporada, Hajime Nagumo, de dezessete anos, é um otaku típico. No entanto, a sua vida simples é subitamente alterada quando ele, juntamente com o resto da sua classe, é transportado para um mundo de fantasia! Eles são tratados como heróis e encarregados do dever de salvar a raça humana da extinção. Mas o que deveria ter sido o sonho de qualquer otaku rapidamente se transforma num pesadelo para Hajime. </p>
                 
             </div>
             <div className={styles.episodeosAnime}>

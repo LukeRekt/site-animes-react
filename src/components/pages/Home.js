@@ -3,7 +3,8 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import Animes from '../layoult/Animes'
 import Carousel from 'react-elastic-carousel'
-import Footer from '../layoult/Footer'
+import BotaoInfo from '../layoult/BotaoInfo'
+
 
 const breakPoints = [
     {width: 1, itemsToShow: 1 },
@@ -16,7 +17,7 @@ function Home(){
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get('http://serverdacupula.ddns.net:4000/animes')
+        axios.get('http://localhost:4000/animes')
         .then(res => {
             setPosts(res.data)
             console.log(res)
@@ -27,8 +28,18 @@ function Home(){
 return(
     <div>
         <div className={styles.container}>
+            <div className={styles.noticias}>
+                <h4>Boa Noite, Zap!</h4>
+                <p>Não sabe como assistir? CLIQUE AQUI e aprenda agora mesmo 🍙</p>
+                <p>Esta assistindo pelo celular e está sendo redirecionado para o twitter? Não sabe o que fazer? CLIQUE AQUI e aprenda agora mesmo como resolver 📛</p>
+                <p>Quer assistir sem protetor? Veja agora mesmo o nosso premium com um valor simbólico para estar ajudando o site, para saber mais CLIQUE AQUI💎</p>
+                <p>Equipe ZapAnimes 📞</p>
+                <p>👾 Discord</p>
+                <p>📷 Instagram</p>
+                <p>🐦 Twitter</p>
+            </div>
         <div className={styles.carousel_animes}>
-            <h1>TESTE 1</h1>
+            <BotaoInfo mensagem='ÚLTIMOS LANÇAMENTOS'/>
             <Carousel breakPoints={breakPoints}>
             
                 {posts.map(post =>
@@ -39,8 +50,7 @@ return(
         </Carousel>
         </div>
         <div className={styles.carousel_animes}>
-        <h1>TESTE 2</h1>
-     
+        <BotaoInfo mensagem='OS MAI BRABO DA CENA'/>
         <Carousel breakPoints={breakPoints}>
             
                 {posts.map(post =>

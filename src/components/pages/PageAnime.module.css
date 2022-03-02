@@ -16,7 +16,6 @@
     border-radius: 10px;
     width: 30%;
     background: #181829;
-    display: inline-block;
     float: left;
 }
 .fotoAnime img{
@@ -82,7 +81,7 @@
 }
 .prodAnime p:first-child{
     color: #FFBE63;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 
     
 }
@@ -104,3 +103,4 @@
     float: left;
     width: 68%;
     }
+    

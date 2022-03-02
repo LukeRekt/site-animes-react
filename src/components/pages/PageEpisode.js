@@ -33,7 +33,7 @@ function PageEpisode(){
         <div>
             <div className={styles.PageAnimeContainer}>
                 <h1>Nome do ep</h1>
-                <video src={ListEp(ep, posts)} controls></video></div>
+                <video src={ListEp(ep, posts)} controls width="70%px"></video></div>
         
         </div>
         
