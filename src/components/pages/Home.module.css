@@ -1,24 +1,9 @@
 *{
     color: white;
-}
-.noticias{
-    background-color: #181829;
-    width: 90%;
-    margin: auto;
-    border-radius: 10px;
-}
-.noticias h4{
-    border-bottom: 1px solid rgba(155, 155, 155, 0.267);
-}
-.noticias p, h4{
-padding: 10px;
-}
-.noticias p{
-    font-family: 'Montserrat', sans-serif;
-    padding-bottom: 5px;
+ 
 }
 .container{
-    margin-top: 100px;
+    margin-top: 1px;
     width: 80%;
     float: left;
     margin-left: 9%;

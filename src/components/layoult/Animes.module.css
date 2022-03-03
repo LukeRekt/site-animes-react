@@ -1,6 +1,6 @@
 .animes{
     display: inline-block;
-    background-color: rgba(0, 0, 0, 0.432);
+    /* background-color: rgba(0, 0, 0, 0.432); */
     border-radius: 20px;
     
     
@@ -25,12 +25,12 @@
     position: absolute;
     top: 0;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-weight: 900;
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.08167016806722693) 35%);
+    font-weight: 700;
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.08167016806722693) 60%);
     margin-top: 11px;
     width: 192px;
     height: 92%;
-    border-radius: 10px;
+    border-radius: 5px;
     
 }
 .anime_box:hover .anime_infos {
@@ -63,6 +63,5 @@
 
 }
 .anime_infos p:first-child{
-
 color: rgb(255, 255, 255);
 }
