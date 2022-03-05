@@ -14,7 +14,17 @@ function PageEpisode(){
                 return postsa[i].video;
               }
             }
+        }
           }
+          function ListNome(parametros, postsa){
+            for (var i = 0; i < postsa.length; i++){
+                
+                if (postsa[i].id == id){
+                  if(postsa[i].numero == parametros){
+                    return postsa[i].nome;
+                  }
+                }
+              }
     }
 
     const { id, ep } = useParams();
@@ -32,7 +42,7 @@ function PageEpisode(){
     return (
         <div>
             <div className={styles.PageAnimeContainer}>
-                <h1>Nome do ep</h1>
+                <h1>Episódio: {ListNome(ep, posts)}</h1>
                 <video src={ListEp(ep, posts)} controls width="70%px"></video></div>
         
         </div>

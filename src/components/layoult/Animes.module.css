@@ -17,13 +17,16 @@
 .anime_box img{
     max-height: 240px;
     border-radius: 5px;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    padding-top: 5%;
     
 }
 .anime_over{
+
     z-index: 3;
     position: absolute;
-    top: 0;
+    top: 2%;
     font-family: 'Montserrat', Arial, sans-serif;
     font-weight: 700;
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.08167016806722693) 60%);
