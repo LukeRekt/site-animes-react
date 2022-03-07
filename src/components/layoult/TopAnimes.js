@@ -9,3 +9,5 @@ function TopAnimes(){
 }
 
 export default TopAnimes
+
+//Pagina lateral desativada temporariamentes

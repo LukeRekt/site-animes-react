@@ -2,7 +2,6 @@ import { useParams,} from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './PageEpisode.module.css'
-import Footer from '../layoult/Footer'
 
 function PageEpisode(){
 
@@ -38,7 +37,7 @@ function PageEpisode(){
                 console.log(err)
             })
     }, [])
-
+    
     return (
         <div>
             <div className={styles.PageAnimeContainer}>
