@@ -1,4 +1,8 @@
 .PageAnimeContainer{
-    text-align: center;
-    margin-top: 1%;
+    float: left;
+    width: 100%;
+}
+.PageAnimeContainer video{
+    width: 50%;
+    margin-left: 10%;
 }

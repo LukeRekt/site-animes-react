@@ -2,6 +2,7 @@ import { useParams,} from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './PageEpisode.module.css'
+import SeletorEP from '../layoult/SeletorEp';
 
 function PageEpisode(){
 
@@ -40,10 +41,12 @@ function PageEpisode(){
     
     return (
         <div>
+          
             <div className={styles.PageAnimeContainer}>
                 <h1>Episódio: {ListNome(ep, posts)}</h1>
-                <video src={ListEp(ep, posts)} controls width="70%px"></video></div>
-        
+                <video src={ListEp(ep, posts)} controls></video>
+                <SeletorEP/>
+                </div>
         </div>
         
     )
