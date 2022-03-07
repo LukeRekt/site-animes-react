@@ -2,7 +2,7 @@
   "animes": [
     {
       "id": 1,
-      "nome": "Arifureta Shokugyou de Sekai Saikyou (2ª Temporada)",
+      "nome": "Arifureta Shokugyou de Sekai Saikyou",
       "descricao": "O mais brabo do zap.",
       "nota": 8.5,
       "episodeos": "6",
@@ -120,6 +120,7 @@
         "nome":"Irregular",
         "video": "https://vfhd.subanimes.biz/videos/stream/animes/legendado/A/Arifureta-Shokugyou-de-Sekai-Saikyou-2nd-Season/001/720p.mp4"
      },
+     
      {
       "id":1,
       "numero":2,

@@ -1,24 +1,52 @@
 
 .AnimeThumb{
     background-color: red;
-    width: 19%;
+    width: 23%;
     margin-right: 4px;
-    height: 150px;
+    height: 100px;
     float: left;
     margin-bottom: 4px;
     margin-left: 2px;
     position: relative;
-
+    background: #1f1f30b0;
+    padding: 12px;
+    padding-bottom: 50px;
+    border-radius: 5px;
+    overflow: hidden
 }
 .AnimeThumb p {
-    font-size: x-large;
+    font-size: 14px;
     position:absolute;
-    top: 62%;
+    top: 65%;
     color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.178);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    
 }
-.AnimeThumb img{
+.AnimeThumb p:nth-child(2){
+    border-top: 1px green solid;
+}
+.AnimeThumb p:nth-child(3){
+    top: 76%;
+    color: grey;
+}
+.pimba{
+    width: 100%;
+    background-color: black;
+    position: relative;
     height: 100%;
+    overflow: hidden;
+
+    
+}
+.pimba img{
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    transition: 0.4s;
+}
+.pimba img:hover{
+    height: 250px;
     width: 100%;
     
 }

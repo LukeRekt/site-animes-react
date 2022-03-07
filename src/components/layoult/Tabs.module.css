@@ -8,3 +8,7 @@ width: 100%;
     float: left;
     
 }
+Tabs {
+    background-color: 'red !important';
+    color: 'black !important';
+} 

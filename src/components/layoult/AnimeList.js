@@ -11,11 +11,11 @@ function AnimeList(props){
             return (<div>
                 
                 <Link to={`/anime/${idUm}/${episodio}`}>
-                <div className={styles.AnimeThumb}>
-                 <p>{nome}</p>
-                    <img src="https://subanimes.biz/wp-content/uploads/2022/01/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-subanimes-animes-online-brasil-2022.jpg" alt="" />
                     
-                
+                <div className={styles.AnimeThumb}>
+                <div className={styles.pimba}><img src="https://subanimes.biz/wp-content/uploads/2021/09/kimetsu-no-yaiba-demon-slayer-mugen-arc-online-subanimes-fhd.jpg" alt="" /></div>
+                <p>Episódio: {episodio}</p>
+                 <p>Título: {nome}</p>
                 </div>
                 </Link>
                 </div>
