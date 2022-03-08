@@ -4,7 +4,6 @@ import axios from 'axios'
 import Animes from '../layoult/Animes'
 import Carousel from 'react-elastic-carousel'
 import BotaoInfo from '../layoult/BotaoInfo'
-import Noticias from '../layoult/Noticias'
 
 
 const breakPoints = [
@@ -29,7 +28,6 @@ function Home(){
 return(
     <div>
         <div className={styles.container}>
-           <Noticias/>
            
         <div className={styles.carousel_animes}>
             <BotaoInfo mensagem='ÚLTIMOS LANÇAMENTOS'/>

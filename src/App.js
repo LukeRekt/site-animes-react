@@ -12,12 +12,14 @@ import PagePefil from './components/pages/PagePerfil';
 import PaginaNaoEncontrada from './components/pages/PaginaNaoEncontrada';
 import Footer from './components/layoult/Footer'
 import Container from './components/layoult/Container'
+import Noticias from  './components/layoult/Noticias'
 
 function App() {
   return (
   <Router>
     <Header/>
     <Container customClass="min-height">
+      <Noticias/>
     <Routes>
     
         <Route exact path="/" element={<Home/>}></Route>
