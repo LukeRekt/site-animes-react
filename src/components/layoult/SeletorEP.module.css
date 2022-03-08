@@ -1,18 +1,25 @@
 
 .Eps{
-  background-color: red;
+  background-color: #170857;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
   width: 80%;
   margin: auto;
   margin-top: 5px;
+  max-height: 45px;
+  transition: 0.4s;
 
-
+}
+.Eps:hover{
+  background-color: #251472;
 }
 .Eps p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
+}
+.Eps p:nth-child(2){
+  color: rgb(65, 65, 65);
 }
 div a {
   text-decoration: none;
