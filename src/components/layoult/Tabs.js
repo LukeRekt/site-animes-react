@@ -4,8 +4,37 @@ import React, { useState, useEffect } from 'react'
 import {Tabs, Tab, AppBar} from "@material-ui/core"
 import styles from "./Tabs.module.css"
 import AnimeList from './AnimeList'
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { orange, pink, green } from "@material-ui/core/colors";
 function Tabsa(props) {
-    
+    const theme = createMuiTheme({
+        overrides: {
+          MuiTabs: {
+            root: {
+                backgroundColor: orange[700],
+            },
+            indicator: {
+              backgroundColor: orange[700]
+            }
+          },
+          MuiTab: {
+            root: {
+              "&:hover": {
+                backgroundColor: orange[800],
+                color: orange[800]
+              }
+            },
+            selected: {
+              backgroundColor: orange[100],
+              color: orange[700],
+              "&:hover": {
+                backgroundColor: green[100],
+                color: green[700]
+              }
+            }
+          }
+        }
+      });
     
     const [posts, setPosts] = useState([])
 
@@ -25,9 +54,10 @@ useEffect(() => {
 
   return( 
       <div className={styles.container}>
+          <MuiThemeProvider theme={theme}>
           <AppBar style={{ minWidth: 400 }} position="relative">
-              <Tabs value={value} onChange={handleTabs}>
-                  <Tab label="Temporada 1"/>
+              <Tabs  value={value} onChange={handleTabs}>
+                  <Tab  label="Temporada 1"/>
                   <Tab label="Temporada 2"/>
               </Tabs>
           </AppBar>
@@ -42,6 +72,7 @@ useEffect(() => {
             </div>
 
           </TabPanel>
+          </MuiThemeProvider>
       </div>
   )
  }
