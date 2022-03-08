@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 function AnimeList(props){
 
     function testeNome(idUm, idDois, nome, episodio){
-        if(idUm === idDois){
+        if(idUm == idDois){
             return (<div>
                 
                 <Link to={`/anime/${idUm}/${episodio}`}>
