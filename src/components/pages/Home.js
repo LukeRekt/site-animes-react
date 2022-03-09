@@ -5,7 +5,8 @@ import Animes from '../layoult/Animes'
 import Carousel from 'react-elastic-carousel'
 import BotaoInfo from '../layoult/BotaoInfo'
 
-
+//tudo relacionado a login e seus dependentes nao devem ter prioridade no desenvolvimento.
+//prezar pelo funcionamento básico do site
 const breakPoints = [
     {width: 1, itemsToShow: 1 },
     {width: 550, itemsToShow: 2 },
