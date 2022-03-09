@@ -21,7 +21,7 @@ function SeletorEP(props) {
         }
         if (idUm == idDois && episodio == props.atual) {
             return (
-                <div className={styles.Eps} style={{ background: "#251472" }}>
+                <div className={styles.Eps} style={{ background: "#FFBE63" }}>
                     <p>Episódio: {episodio}</p>
                     <p>
                         Título: {nome}

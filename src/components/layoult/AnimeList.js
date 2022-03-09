@@ -14,8 +14,8 @@ function AnimeList(props) {
 
                     <div className={styles.AnimeThumb}>
                         <div className={styles.pimba}><img src="https://subanimes.biz/wp-content/uploads/2022/01/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-subanimes-animes-online-brasil-2022.jpg" alt="" /></div>
-                        <p>Episódio: {episodio}</p>
-                        <p>Título: {nome}</p>
+                        <p>EP: {episodio}</p>
+                        <p>{nome}</p>
                     </div>
                 </Link>
             </div>

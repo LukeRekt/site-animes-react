@@ -1,18 +1,17 @@
 
 .Eps{
-  background-color: #170857;
+  background-color: #0b003a;
   padding: 10px;
-  border-radius: 10px;
   text-align: center;
-  width: 80%;
-  margin: auto;
+  width: 90%;
   margin-top: 5px;
   max-height: 45px;
+  margin-left: 10px;
   transition: 0.4s;
 
 }
 .Eps:hover{
-  background-color: #251472;
+  background-color: #FFBE63;
 }
 .Eps p {
   font-family: 'Montserrat', sans-serif;

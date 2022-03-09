@@ -1,17 +1,22 @@
 .PageAnimeContainer{
     float: left;
     width: 100%;
+    
+    
 }
 .PageAnimeContainer video{
-    width: 50%;
-    margin-left: 10%;
+    width: 51%;
+    margin-left: 15%;
+    float: left;
+    
 }
 .container{
     float: right;
-    background: rgb(8, 8, 29);
-    width: 20%;
-    margin-right: 19%;
-    height: 100%;
+    background: #181829;
+    width: 18%;
+    margin-right: 15%;
+    margin-left: 5px;
+    border-radius: 8px;
     
     
 }
@@ -23,7 +28,6 @@
   
 }
 .listaEps{
-  
     height: 485px;
     overflow: scroll;
 }
@@ -41,7 +45,7 @@ padding-bottom: 10px;
   
 
   ::-webkit-scrollbar-track {
-    background: #0f0f29;
+    background: #181829;
   }
   
  
@@ -54,9 +58,3 @@ padding-bottom: 10px;
     background: #555;
   }
   ::-webkit-scrollbar-corner {background-color: transparent;}
-
-  .vidin{
-    width: 100%;
-    
-    background-color: red;
-  }

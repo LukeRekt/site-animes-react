@@ -13,13 +13,13 @@
 
 }
 .fotoAnime{
-    border-radius: 10px;
-    width: 30%;
+    border-radius: 8px;
+    width: 25%;
     background: #181829;
     float: left;
 }
 .fotoAnime img{
-    border-radius: 10px;
+    border-radius: 8px;
     width: 100%;
 }
 .sobreAnime{
@@ -87,13 +87,18 @@
 }
 .sinopseAnime{
     float: right;
-    width: 69%;
+    width: 74%;
     margin-top: 0px;
     border-radius: 10px;
     background-color: #1f1f3059;
 }
+.sinopseAnime h3{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.151);
+}
 .sinopseAnime p,h3{
-    margin-left: 2px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-left: 4px;
     
 }
 .episodeosAnime{
