@@ -54,3 +54,9 @@ padding-bottom: 10px;
     background: #555;
   }
   ::-webkit-scrollbar-corner {background-color: transparent;}
+
+  .vidin{
+    width: 100%;
+    
+    background-color: red;
+  }
