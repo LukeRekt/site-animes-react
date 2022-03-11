@@ -14,10 +14,24 @@ import Footer from './components/layoult/Footer'
 import Container from './components/layoult/Container'
 import Noticias from  './components/layoult/Noticias'
 
+import {useState, useEffect} from 'react'
+import {getTeste} from "./functions/teste"
+
 function App() {
+  const [data, setData] = useState("");
+  useEffect(() => {
+    getTeste()
+    .then((res) => {
+      setData(res.message)
+    })
+    .catch((err) => console.log(err));
+  }, []);
   return (
+    
   <Router>
+    <p>{data}</p>
     <Header/>
+    
     <Container customClass="min-height">
       <Noticias/>
     <Routes>
