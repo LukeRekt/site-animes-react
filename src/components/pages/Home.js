@@ -4,6 +4,8 @@ import axios from 'axios'
 import Animes from '../layoult/Animes'
 import Carousel from 'react-elastic-carousel'
 import BotaoInfo from '../layoult/BotaoInfo'
+import {useContext} from "react"
+import { UserContext } from '../../UserContext'
 
 //tudo relacionado a login e seus dependentes nao devem ter prioridade no desenvolvimento.
 //prezar pelo funcionamento básico do site
@@ -15,6 +17,8 @@ const breakPoints = [
 ];
 
 function Home(){
+    const {user} = useContext(UserContext)
+
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
@@ -29,7 +33,7 @@ function Home(){
 return(
     <div>
         <div className={styles.container}>
-           
+           <h1>Ola {user && <span>{user}</span>} {" "} home</h1>
         <div className={styles.carousel_animes}>
             <BotaoInfo mensagem='ÚLTIMOS LANÇAMENTOS'/>
             <Carousel breakPoints={breakPoints}>

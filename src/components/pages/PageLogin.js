@@ -1,11 +1,12 @@
 import { Button, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from "@material-ui/core";
-import { useState } from "react"
+import { useState, useContext } from "react"
 import styles from "./PageLogin.module.css"
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+import {UserContext} from "../../UserContext"
 
 import {login} from '../../api/user'
 
@@ -13,6 +14,7 @@ import {login} from '../../api/user'
 function PageLogin(){
 
     const navigate = useNavigate();
+    const {setUser} = useContext(UserContext);
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -26,6 +28,7 @@ function PageLogin(){
             if(res.error) toast.error(res.error);
             else{
                 toast.success(res.message);
+                setUser(res.username)
 
                 navigate("/")
             }

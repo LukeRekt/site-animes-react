@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Header from './components/layoult/Header';
 import Calendario from './components/pages/Calendario';
@@ -14,23 +14,42 @@ import Footer from './components/layoult/Footer'
 import Container from './components/layoult/Container'
 import Noticias from './components/layoult/Noticias'
 import PageRegister from './components/pages/PageRegister';
+import { useState, useEffect } from 'react';
 
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
-function App() {
+import {UserContext} from "./UserContext"
 
+//funcoes
+
+import {getUser} from './api/user'
+
+function App() {
+  const [user, setUser] = useState(null);
+
+	useEffect(() => {
+		const unsubscribe = getUser()
+			.then((res) => {
+				if (res.error) toast(res.error);
+				else setUser(res.username);
+			})
+			.catch((err) => toast(err));
+
+		return () => unsubscribe;
+	}, []);
   return (
 
     <Router>
-
-
+      
+      <UserContext.Provider value={{user, setUser}}>
       <Header />
       <ToastContainer toastStyle={{ backgroundColor: "#0C0C1D" }}/>
       <Container customClass="min-height">
         <Noticias />
+        
         <Routes>
-
+          
           <Route exact path="/" element={<Home />}></Route>
           <Route exact path="/anime/:id" element={<PageAnime />}></Route>
           <Route exact path="/anime/:id/:ep" element={<PageEpisode />}></Route>
@@ -46,7 +65,7 @@ function App() {
         </Routes>
       </Container>
       <Footer />
-
+      </UserContext.Provider>
     </Router>
   );
 }

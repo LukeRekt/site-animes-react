@@ -1,13 +1,34 @@
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import styles from './Header.module.css'
+import {useContext} from "react"
 
 import logo from '../../assets/img/logo.png';
 import avatar from '../../assets/img/fotosperfil/avatar.png';
+import { toast } from 'react-toastify';
+import { UserContext } from '../../UserContext';
+
 
 import { FaHouseUser, FaBell, FaNewspaper, FaStar, FaCalendarAlt } from 'react-icons/fa';
 
+//funcoes
+import {logout} from '../../api/user'
+
 
 function Header() {
+    const navigate = useNavigate();
+    const { user, setUser } = useContext(UserContext);;
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+
+        logout()
+            .then((res) => {
+                toast.success(res.message);
+                setUser(null);
+                navigate('/login');
+            })
+            .catch((err) => console.error(err));
+    }
 return (
     <div className={styles.header}>
         <Link to="/"><img className={styles.logo} src={logo} alt="Logo" /></Link>
@@ -17,7 +38,7 @@ return (
                 <li className={styles.item}><Link to="/favoritos"><FaStar/> FAVORITOS</Link></li>
                 <li className={styles.item}><Link to="/calendario"><FaCalendarAlt/>CALENDARIO</Link></li>
         </div>
-
+    {/* <button onClick={handleLogout}>Deslogar</button> */}
         <div className={styles.usuario}>
 
             <div className={styles.perfil}>
@@ -31,7 +52,7 @@ return (
         </div>
         </div>
     )
-
+    //usar {!user ? () : ()}
 }
 
 export default Header
