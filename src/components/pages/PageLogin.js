@@ -1,7 +1,50 @@
+import { Button, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from "@material-ui/core";
+import { useState } from "react"
 import styles from "./PageLogin.module.css"
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
+
 function PageLogin(){
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
+
     return (
-        <div style={styles.estilo}><h1>Pagina de Login</h1></div>
+        <div className={styles.container}>
+            <h1>Login</h1>
+            
+            <div className={styles.formGroup}>
+            <TextField size="small"
+            variant="outlined"
+            className="form-Group"
+            label="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}/>
+            </div>
+            <div className={styles.formGroup}>
+                <FormControl variant="outlined"
+                size="small"
+                className="formGroup">
+                <InputLabel>Senha</InputLabel>     
+                <OutlinedInput
+                label="Senha"
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                endAdornment={
+                    <InputAdornment>
+                    <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
+                        {showPassword ? ( <VisibilityIcon/> ) : (<VisibilityOffIcon/>)}
+                    </IconButton>
+                    </InputAdornment>
+                }/>               
+                </FormControl>
+            </div>
+            <div className="textCenter">
+                <Button variant="contained" disabled={!email || !password}>Enviar</Button>
+            </div>
+        </div>
     )
 }
 export default PageLogin

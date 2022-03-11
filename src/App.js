@@ -16,6 +16,7 @@ import Noticias from  './components/layoult/Noticias'
 
 import {useState, useEffect} from 'react'
 import {getTeste} from "./functions/teste"
+import PageRegister from './components/pages/PageRegister';
 
 function App() {
   const [data, setData] = useState("");
@@ -43,6 +44,7 @@ function App() {
         <Route exact path="/lista" element={<Lista/>}></Route>
         <Route exact path="/favoritos" element={<Favoritos/>}></Route>
         <Route exact path="/login" element={<PageLogin/>}></Route>
+        <Route exact path="/registrar" element={<PageRegister/>}></Route>
         <Route exact path="/perfil" element={<PagePefil/>}></Route>
         <Route path='*' element={<PaginaNaoEncontrada/>}></Route>
         {/* <Route path="/projects" element={}></Route> */}
