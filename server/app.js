@@ -1,9 +1,12 @@
 //LukeRektero-R6O3sno7yHBldteV
 const express = require('express');
+const {json, urlencoded} = express;
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const cors = require('cors');
 require("dotenv").config();
+const cookieParser = require("cookie-parser");
+const expressValidator = require("express-validator");
 
 const app = express();
 
@@ -17,10 +20,15 @@ mongoose.connect(process.env.MONGO_URI, {
 //middleware
 app.use(morgan("dev"));
 app.use(cors({ origin: true, credentials: true }));
+app.use(json());
+app.use(urlencoded({ extended: true}));
+app.use(cookieParser());
+app.use(expressValidator());
 
 //rotas
-const testRoute = require('./routes/test');
-app.use("/", testRoute)
+const userRoutes = require('./routes/user');
+//const testRoute = require('./routes/test');
+app.use("/", userRoutes)
 //porta
 const port = process.env.PORT || 8080;
 
