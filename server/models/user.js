@@ -31,13 +31,13 @@ const userSchema = new mongoose.Schema(
 
 //campo virtual
 userSchema.virtual("password").set(function (password) {
-	// create temp variable called _password
+	// cria uma variavel temporaria com nome de _password
 	this._password = password;
 
-	// generate a timestamp, uuidv1 gives us the unix timestamp
+	// uuidv1 gera uma timestamp
 	this.salt = uuidv1();
 
-	// encrypt the password function call
+	// encripta a funcao de chamada de senhas
 	this.hashedPassword = this.encryptPassword(password);
 });
 

@@ -1,3 +1,5 @@
+const User = require("../models/user")
+
 exports.userRegisterValidator = (req, res, next) => {
 
     //usuario nao eh null
@@ -24,4 +26,18 @@ exports.userRegisterValidator = (req, res, next) => {
     }
     next();
 
+};
+
+exports.userById = async (req, res, next) => {
+    User.findById(req._id).exec((err, user) => {
+        if (err || !user){
+            return res.status(404).json({
+                error: "Usuario nao encontrado",
+            });
+        }
+        //adicionar objeto de usuario na req com todas as infos
+        req.user = user;
+
+        next();
+    });
 };

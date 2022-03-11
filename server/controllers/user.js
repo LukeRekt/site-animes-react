@@ -70,5 +70,14 @@ exports.logout = (req, res) => {
 
     return res.json({
         message: "Deslogado com sucesso!",
+    });
+};
+
+exports.getLoggedInUser = (req, res) => {
+    const {username} = req.user;
+
+    return res.status(200).json({
+        message: "O Usuario ainda esta logado",
+        username,
     })
 }
