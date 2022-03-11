@@ -26,6 +26,7 @@ exports.register = async (req, res) => {
     const user = new User(req.body);
     await user.save();
 
+
     res.status(201).json({
         message: "Cadastrado com sucesso!",
     });
@@ -58,9 +59,12 @@ exports.login = async (req, res) => {
 
         //retornar resposta para o usuario
         const {username} = user;
+        const {userAvatar} = user;
+        console.log(userAvatar)
         return res.json({
             message: "Logado com sucesso!",
             username,
+            userAvatar,
         });
     });
 };
@@ -75,9 +79,10 @@ exports.logout = (req, res) => {
 
 exports.getLoggedInUser = (req, res) => {
     const {username} = req.user;
-
+    const {userAvatar} = req.user;
     return res.status(200).json({
         message: "O Usuario ainda esta logado",
         username,
+        userAvatar,
     })
 }

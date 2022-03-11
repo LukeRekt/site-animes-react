@@ -7,7 +7,7 @@ exports.verifyToken = (req, res, next) => {
 
     if(!accessToken){
         return res.status(403).json({
-            error: "Unauthorized",
+            error: "Nao Logado",
         });
     }
     let payload;
@@ -19,7 +19,7 @@ exports.verifyToken = (req, res, next) => {
         next();
     }catch(e){
         return res.status(403).json({
-            error: "Unauthorized",
+            error: "Nao Logado",
         })
     }
 }

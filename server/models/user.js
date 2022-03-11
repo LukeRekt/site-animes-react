@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema(
 			unique: true,
 			lowercase: true,
 		},
+		userAvatar: {
+			type: String,
+			required: true,
+		},
 		hashedPassword: {
 			type: String,
 			required: true,

@@ -43,7 +43,7 @@ function App() {
     <Router>
       
       <UserContext.Provider value={{user, setUser}}>
-      <Header />
+      <Header/>
       <ToastContainer toastStyle={{ backgroundColor: "#0C0C1D" }}/>
       <Container customClass="min-height">
         <Noticias />
