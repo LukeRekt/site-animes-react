@@ -1,3 +1,10 @@
 .container{
     background-color: grey;
 }
+.text_success small{
+    color: green;
+}
+.text_error small{
+    color: red;
+    
+}

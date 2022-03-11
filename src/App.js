@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/layoult/Header';
 import Calendario from './components/pages/Calendario';
@@ -12,47 +12,41 @@ import PagePefil from './components/pages/PagePerfil';
 import PaginaNaoEncontrada from './components/pages/PaginaNaoEncontrada';
 import Footer from './components/layoult/Footer'
 import Container from './components/layoult/Container'
-import Noticias from  './components/layoult/Noticias'
-
-import {useState, useEffect} from 'react'
-import {getTeste} from "./functions/teste"
+import Noticias from './components/layoult/Noticias'
 import PageRegister from './components/pages/PageRegister';
 
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
-  const [data, setData] = useState("");
-  useEffect(() => {
-    getTeste()
-    .then((res) => {
-      setData(res.message)
-    })
-    .catch((err) => console.log(err));
-  }, []);
+
   return (
-    
-  <Router>
-    <p>{data}</p>
-    <Header/>
-    
-    <Container customClass="min-height">
-      <Noticias/>
-    <Routes>
-    
-        <Route exact path="/" element={<Home/>}></Route>
-        <Route exact path="/anime/:id" element={<PageAnime/>}></Route>
-        <Route exact path="/anime/:id/:ep" element={<PageEpisode/>}></Route>
-        <Route exact path="/calendario" element={<Calendario/>}></Route>
-        <Route exact path="/lista" element={<Lista/>}></Route>
-        <Route exact path="/favoritos" element={<Favoritos/>}></Route>
-        <Route exact path="/login" element={<PageLogin/>}></Route>
-        <Route exact path="/registrar" element={<PageRegister/>}></Route>
-        <Route exact path="/perfil" element={<PagePefil/>}></Route>
-        <Route path='*' element={<PaginaNaoEncontrada/>}></Route>
-        {/* <Route path="/projects" element={}></Route> */}
-       
+
+    <Router>
+
+
+      <Header />
+      <ToastContainer toastStyle={{ backgroundColor: "#0C0C1D" }}/>
+      <Container customClass="min-height">
+        <Noticias />
+        <Routes>
+
+          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/anime/:id" element={<PageAnime />}></Route>
+          <Route exact path="/anime/:id/:ep" element={<PageEpisode />}></Route>
+          <Route exact path="/calendario" element={<Calendario />}></Route>
+          <Route exact path="/lista" element={<Lista />}></Route>
+          <Route exact path="/favoritos" element={<Favoritos />}></Route>
+          <Route exact path="/login" element={<PageLogin />}></Route>
+          <Route exact path="/registrar" element={<PageRegister />}></Route>
+          <Route exact path="/perfil" element={<PagePefil />}></Route>
+          <Route path='*' element={<PaginaNaoEncontrada />}></Route>
+          {/* <Route path="/projects" element={}></Route> */}
+
         </Routes>
-        </Container>
-        <Footer/>
-        
+      </Container>
+      <Footer />
+
     </Router>
   );
 }
