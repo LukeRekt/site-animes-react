@@ -10,7 +10,10 @@ import {toast} from 'react-toastify'
 //funcoes
 import {register} from '../../api/user'
 
+//const userAvatar = "AA";
+
 function PageRegister() {
+    const userAvatar = "https://cdn.discordapp.com/attachments/839342329596215337/952223274996219924/LukeRekt.jpg";
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -28,7 +31,7 @@ function PageRegister() {
     const handleRegister = async (e) =>{
         e.preventDefault();
         try{
-            const res = await register ({username, email, password});
+            const res = await register ({username, email, password, userAvatar});
             if(res.error) toast.warning(res.error);
             else{
                 toast.success(res.message);

@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema(
 		},
 		userAvatar: {
 			type: String,
-			required: true,
+			required: false,
 		},
 		hashedPassword: {
 			type: String,

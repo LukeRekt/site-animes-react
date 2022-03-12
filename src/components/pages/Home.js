@@ -18,6 +18,7 @@ const breakPoints = [
 
 function Home(){
     const {user} = useContext(UserContext)
+    
 
     const [posts, setPosts] = useState([])
 

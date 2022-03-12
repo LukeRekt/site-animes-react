@@ -1,5 +1,5 @@
-export const register = async ({ username, email, password } = {}) => {
-    const user = { username, email, password };
+export const register = async ({ username, email, password, userAvatar } = {}) => {
+    const user = { username, email, password, userAvatar };
 
     try {
         const res = await fetch(`${process.env.REACT_APP_API_URL}/registrar`, {

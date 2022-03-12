@@ -27,12 +27,12 @@ import {getUser} from './api/user'
 
 function App() {
   const [user, setUser] = useState(null);
-
+  const [avatar, setAvatar] = useState(null);
 	useEffect(() => {
 		const unsubscribe = getUser()
 			.then((res) => {
 				if (res.error) toast(res.error);
-				else setUser(res.username);
+				else{ setUser(res.username); setAvatar(res.userAvatar);}
 			})
 			.catch((err) => toast(err));
 
@@ -42,8 +42,8 @@ function App() {
 
     <Router>
       
-      <UserContext.Provider value={{user, setUser}}>
-      <Header/>
+      <UserContext.Provider value={{user, setUser, avatar, setAvatar}}>
+      <Header avatar={avatar}/>
       <ToastContainer toastStyle={{ backgroundColor: "#0C0C1D" }}/>
       <Container customClass="min-height">
         <Noticias />

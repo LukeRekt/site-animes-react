@@ -14,7 +14,7 @@ import { FaHouseUser, FaBell, FaNewspaper, FaStar, FaCalendarAlt } from 'react-i
 import {logout} from '../../api/user'
 
 
-function Header() {
+function Header(props) {
     const navigate = useNavigate();
     const { user, setUser } = useContext(UserContext);;
 
@@ -38,11 +38,14 @@ return (
                 <li className={styles.item}><Link to="/favoritos"><FaStar/> FAVORITOS</Link></li>
                 <li className={styles.item}><Link to="/calendario"><FaCalendarAlt/>CALENDARIO</Link></li>
         </div>
-    {/* <button onClick={handleLogout}>Deslogar</button> */}
+   <button onClick={handleLogout}>Deslogar</button> 
         <div className={styles.usuario}>
 
             <div className={styles.perfil}>
-            <Link to="/perfil"><img className={styles.avatar} src={avatar} alt="Avatar do usuário" /></Link>
+            <Link to="/perfil">
+                {(user ? <img className={styles.avatar} src={props.avatar} alt="Avatar do usuário" /> : <img className={styles.avatar} src="https://cdn.discordapp.com/attachments/839342329596215337/952223274996219924/LukeRekt.jpg" alt="Avatar do usuário" />)}
+                
+                </Link>
             <FaBell/>
             <div className={styles.notificacoes_contador}>
                 <p> 11</p>
