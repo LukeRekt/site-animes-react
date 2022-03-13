@@ -3,7 +3,7 @@ import styles from './Header.module.css'
 import {useContext} from "react"
 
 import logo from '../../assets/img/logo.png';
-import avatar from '../../assets/img/fotosperfil/avatar.png';
+// import avatar from '../../assets/img/fotosperfil/avatar.png';
 import { toast } from 'react-toastify';
 import { UserContext } from '../../UserContext';
 
@@ -14,10 +14,11 @@ import { FaHouseUser, FaBell, FaNewspaper, FaStar, FaCalendarAlt } from 'react-i
 import {logout} from '../../api/user'
 
 
-function Header(props) {
+function Header() {
+    //adicionar o setAvatar
     const navigate = useNavigate();
     const { user, setUser } = useContext(UserContext);;
-
+    const { avatar } = useContext(UserContext);;
     const handleLogout = (e) => {
         e.preventDefault();
 
@@ -43,7 +44,7 @@ return (
 
             <div className={styles.perfil}>
             <Link to="/perfil">
-                {(user ? <img className={styles.avatar} src={props.avatar} alt="Avatar do usuário" /> : <img className={styles.avatar} src="https://cdn.discordapp.com/attachments/839342329596215337/952223274996219924/LukeRekt.jpg" alt="Avatar do usuário" />)}
+                {(user ? <img className={styles.avatar} src={avatar} alt="Avatar do usuário" /> : <img className={styles.avatar} src="https://cdn.discordapp.com/attachments/839342329596215337/952223274996219924/LukeRekt.jpg" alt="Avatar do usuário" />)}
                 
                 </Link>
             <FaBell/>

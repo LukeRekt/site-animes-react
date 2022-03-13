@@ -33,7 +33,6 @@ function PageEpisode() {
     axios.get(`http://localhost:4000/episodios/`)
       .then(res => {
         setPosts(res.data)
-        console.log(res)
       }).catch((err) => {
         console.log(err)
       })

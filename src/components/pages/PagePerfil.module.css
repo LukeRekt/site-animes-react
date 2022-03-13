@@ -1,0 +1,40 @@
+.PerfilContainer{
+    background-color: green;
+    width: 70%;
+    margin: auto;
+}
+.userAvatar{
+    background-color: red;
+    width: 25%;
+    text-align: center;
+    padding-top: 8%;
+    border-radius: 7px;
+}
+.userAvatar p {
+    margin-top: 0;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+.userAvatar img{
+    
+    width: 35%;
+    border-radius: 50%;
+    border: 3px solid rgb(255, 136, 0);
+}
+.userSeguidores{
+    
+}
+.userSeguidores p{
+    display: inline;
+    
+    margin-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+}
+.assistidos{
+    background-color: red;
+    border-radius: 7px;
+    width: 25%;
+}

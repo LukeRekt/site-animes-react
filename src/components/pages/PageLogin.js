@@ -45,8 +45,7 @@ function PageLogin(){
             <h1>Login</h1>
             
             <div className={styles.formGroup}>
-            <TextField size="big"
-            color="red"
+            <TextField size="medium"
             variant="outlined"
             className="form-Group"
             label="Email"
@@ -55,7 +54,7 @@ function PageLogin(){
             </div>
             <div className={styles.formGroup}>
                 <FormControl variant="outlined"
-                size="big"
+                size="medium"
                 className="formGroup">
                 <InputLabel>Senha</InputLabel>     
                 <OutlinedInput
