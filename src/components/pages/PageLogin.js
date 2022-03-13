@@ -12,13 +12,16 @@ import {login} from '../../api/user'
 
 
 function PageLogin(){
-
+    const {user} = useContext(UserContext)
     const navigate = useNavigate();
     const {setUser} = useContext(UserContext);
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+
+    {user ? navigate("/") : console.log("ok")}
+    
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -42,7 +45,8 @@ function PageLogin(){
             <h1>Login</h1>
             
             <div className={styles.formGroup}>
-            <TextField size="small"
+            <TextField size="big"
+            color="red"
             variant="outlined"
             className="form-Group"
             label="Email"
@@ -51,7 +55,7 @@ function PageLogin(){
             </div>
             <div className={styles.formGroup}>
                 <FormControl variant="outlined"
-                size="small"
+                size="big"
                 className="formGroup">
                 <InputLabel>Senha</InputLabel>     
                 <OutlinedInput

@@ -38,7 +38,7 @@ return (
                 <li className={styles.item}><Link to="/favoritos"><FaStar/> FAVORITOS</Link></li>
                 <li className={styles.item}><Link to="/calendario"><FaCalendarAlt/>CALENDARIO</Link></li>
         </div>
-   <button onClick={handleLogout}>Deslogar</button> 
+   {/* <button onClick={handleLogout}>Deslogar</button>  */}
         <div className={styles.usuario}>
 
             <div className={styles.perfil}>

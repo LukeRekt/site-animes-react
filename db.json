@@ -118,7 +118,7 @@
       "id": 1,
       "numero": 1,
       "nome": "Irregular",
-      "video": "https://vfhd.subanimes.biz/videos/stream/animes/legendado/A/Arifureta-Shokugyou-de-Sekai-Saikyou-2nd-Season/001/720p.mp4"
+      "video": "http://localhost:8080/static/animes/arifureta/temporada1/legendado/720p.mp4"
     },
     {
       "id": 1,

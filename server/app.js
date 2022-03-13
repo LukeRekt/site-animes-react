@@ -29,6 +29,9 @@ app.use(expressValidator());
 const userRoutes = require('./routes/user');
 //const testRoute = require('./routes/test');
 app.use("/", userRoutes)
+
+app.use('/static', express.static('public'));
+
 //porta
 const port = process.env.PORT || 8080;
 

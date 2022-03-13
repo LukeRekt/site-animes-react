@@ -7,19 +7,23 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import CancelIcon from '@material-ui/icons/Cancel';
 import { useNavigate } from "react-router-dom";
 import {toast} from 'react-toastify'
+import {UserContext} from "../../UserContext"
+import {useContext} from "react"
 //funcoes
 import {register} from '../../api/user'
 
 //const userAvatar = "AA";
 
 function PageRegister() {
-    const userAvatar = "https://cdn.discordapp.com/attachments/839342329596215337/952223274996219924/LukeRekt.jpg";
+    const {user} = useContext(UserContext)
+    const userAvatar = "http://localhost:8080/static/imagens/avatars/LukeRekt.jpg";
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    {user ? navigate("/") : console.log("ok")}
 
     //validacao da senha
     let hasSixChar = password.length >= 6;
