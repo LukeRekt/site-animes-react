@@ -86,3 +86,19 @@ exports.getLoggedInUser = (req, res) => {
         userAvatar,
     })
 }
+
+exports.Teste = async (req, res) => {
+    const {username} = req.user;
+     const buscarUser = await User.findOne({
+         username: username,
+     });
+     buscarUser.userAvatar = "http://localhost:3232/static/imagens/avatars/LukeRekt.jpg"
+     buscarUser.save();
+    
+    
+    // const {username} = req.user;
+    // return res.status(200).json({
+    //     username,
+    // })
+    //a veracidade dos dados deve ser checada e buscada na db
+}
