@@ -23,7 +23,7 @@ function Home(){
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get('http://serverdacupula.ddns.net:4000/animes')
+        axios.get('http://localhost:4000/animes')
         .then(res => {
             setPosts(res.data)
         })
@@ -33,6 +33,7 @@ function Home(){
 return(
     <div>
         <div className={styles.container}>
+            
            <h1>Ola {user && <span>{user}</span>} {" "}</h1>
         <div className={styles.carousel_animes}>
             <BotaoInfo mensagem='ÚLTIMOS LANÇAMENTOS'/>

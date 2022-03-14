@@ -7,7 +7,7 @@ const cors = require('cors');
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const expressValidator = require("express-validator");
-
+const upload = require('express-fileupload')
 const app = express();
 
 
@@ -24,6 +24,7 @@ app.use(json());
 app.use(urlencoded({ extended: true}));
 app.use(cookieParser());
 app.use(expressValidator());
+app.use(upload());
 
 //rotas
 const userRoutes = require('./routes/user');
@@ -31,6 +32,19 @@ const userRoutes = require('./routes/user');
 app.use("/", userRoutes)
 
 app.use('/static', express.static('public'));
+
+//Upload de arquivos
+app.post("/avatar", (req, res) => {
+    const filename = Date.now() + "_" + req.files.screenshot.name;
+    const file = req.files.screenshot;
+    let uploadPath = __dirname + "/public/imagens/avatars/" + filename;
+    file.mv(uploadPath, (err) => {
+      if (err) {
+        return res.send(Err);
+      }
+    });
+    res.send(200);
+  });
 
 //porta
 const port = process.env.PORT || 8080;
