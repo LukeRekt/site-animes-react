@@ -39,7 +39,7 @@ function Tabsa(props) {
     const [posts, setPosts] = useState([])
 
 useEffect(() => {
-    axios.get('http://localhost:4000/episodios')
+    axios.get('http://serverdacupula.ddns.net:4000/episodios')
     .then(res => {
         setPosts(res.data)
         console.log(res)

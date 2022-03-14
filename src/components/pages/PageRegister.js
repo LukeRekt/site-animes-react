@@ -16,7 +16,7 @@ import {register} from '../../api/user'
 
 function PageRegister() {
     const {user} = useContext(UserContext)
-    const userAvatar = "http://localhost:8080/static/imagens/avatars/LukeRekt.jpg";
+    const userAvatar = "https://cdn.discordapp.com/attachments/839342329596215337/952744686546726983/92c92e952124a761ac219be876349302.webp";
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");

@@ -11,7 +11,7 @@ function PageAnime() {
     const [posts, setPosts] = useState([])
     let navigate = useNavigate();
     useEffect(() => {
-        axios.get(`http://localhost:4000/animes/${id}`)
+        axios.get(`http://serverdacupula.ddns.net:4000/animes/${id}`)
             .then(res => {
                 setPosts(res.data)
                 console.log(res)

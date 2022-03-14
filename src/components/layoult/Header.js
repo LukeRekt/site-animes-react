@@ -44,7 +44,7 @@ return (
 
             <div className={styles.perfil}>
             <Link to="/perfil">
-                {(user ? <img className={styles.avatar} src={avatar} alt="Avatar do usuário" /> : <img className={styles.avatar} src="https://cdn.discordapp.com/attachments/839342329596215337/952223274996219924/LukeRekt.jpg" alt="Avatar do usuário" />)}
+                {user ? (<img className={styles.avatar} src={avatar} alt="Avatar do usuário" />) : (<img className={styles.avatar} src="http://serverdacupula.ddns.net:3232/static/imagens/avatars/default.png" alt="" />)}
                 
                 </Link>
             <FaBell/>

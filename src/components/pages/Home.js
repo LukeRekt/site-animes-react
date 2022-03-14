@@ -23,7 +23,7 @@ function Home(){
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:4000/animes')
+        axios.get('http://serverdacupula.ddns.net:4000/animes')
         .then(res => {
             setPosts(res.data)
         })
