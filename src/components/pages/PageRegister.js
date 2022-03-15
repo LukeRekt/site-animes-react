@@ -56,8 +56,9 @@ function PageRegister() {
                 <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type="password" placeholder="Confirmar Senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
 
+                
 
-                <button onClick={handleRegister} disabled={
+                <button className={styles.botao} onClick={handleRegister} disabled={
                     !username ||
                     !email ||
                     !password ||
@@ -68,7 +69,9 @@ function PageRegister() {
                     !hasUpperChar ||
                     !hasNumber ||
                     !hasSpecialChar} >Registrar</button>
-
+    <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
+                    {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
+                </IconButton>
 
 
                 {password && (

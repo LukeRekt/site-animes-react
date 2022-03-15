@@ -25,7 +25,7 @@
     margin: auto;
     width: 400px;
 }
-input {
+.login input {
     color: #F73718;
     display: block;
     border-radius: 5px;
@@ -37,7 +37,7 @@ input {
     margin: 15px -10px;
   }
   
-  button {
+  .botao {
 
     cursor: pointer;
     color: #fff;
@@ -52,8 +52,8 @@ input {
     background-color: #F73718;
  
   }
-  button:disabled,
-button[disabled]{
+ .login button:disabled,
+ .login button[disabled]{
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;

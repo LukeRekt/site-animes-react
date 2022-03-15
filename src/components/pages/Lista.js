@@ -29,7 +29,7 @@ function Lista() {
             onChange={(e) => {
               setFile(e.target.files[0]);
             }} />
-          <button onClick={(e) => upload(e)}>Submit</button>
+          <button className="" onClick={(e) => upload(e)}>Submit</button>
         </h1>
       </div>
     </div>//essa página deve ser apenas possível de se visualizar caso esteja logado.

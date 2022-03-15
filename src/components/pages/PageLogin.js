@@ -58,7 +58,7 @@ function PageLogin() {
             <form className={styles.login}>
                 <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input type="password" placeholder="Password " value={password} onChange={(e) => setPassword(e.target.value)} />
-                <button onClick={handleLogin} disabled={!email ||
+                <button onClick={handleLogin} className={styles.botao} disabled={!email ||
                     !password}>Login</button>
                 <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
                     {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
