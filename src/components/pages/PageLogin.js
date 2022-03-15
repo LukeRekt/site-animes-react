@@ -34,6 +34,7 @@ function PageLogin(){
                 setUser(res.username)
 
                 navigate("/")
+                window.location.reload(); 
             }
         }catch (err){
             toast.error(err);

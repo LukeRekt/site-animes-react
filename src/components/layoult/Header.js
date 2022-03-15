@@ -30,6 +30,14 @@ function Header() {
             })
             .catch((err) => console.error(err));
     }
+
+    function returnAvatar(uAvatar){
+        if(uAvatar){
+            return(<Link to="/perfil"><img className={styles.avatar} src={avatar} alt="Avatar do usuário" /></Link>)
+        }else{
+            return(<Link to="/login"><img className={styles.avatar} src="http://localhost:3232/static/imagens/avatars/default.png" alt="" /></Link>)
+        }
+    }
 return (
     <div className={styles.header}>
         <Link to="/"><img className={styles.logo} src={logo} alt="Logo" /></Link>
@@ -43,10 +51,12 @@ return (
         <div className={styles.usuario}>
 
             <div className={styles.perfil}>
-            <Link to="/perfil">
-                {user ? (<img className={styles.avatar} src={avatar} alt="Avatar do usuário" />) : (<img className={styles.avatar} src="http://localhost:3232/static/imagens/avatars/default.png" alt="" />)}
                 
-                </Link>
+            {/* <Link to="/perfil"> */}
+                {/* {user ? (<img className={styles.avatar} src={avatar} alt="Avatar do usuário" />) : (<img className={styles.avatar} src="http://localhost:3232/static/imagens/avatars/default.png" alt="" />)} */}
+                {returnAvatar(avatar)}
+                
+                {/* </Link> */}
             <FaBell/>
             <div className={styles.notificacoes_contador}>
                 <p> 11</p>

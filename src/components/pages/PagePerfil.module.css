@@ -3,27 +3,76 @@
     width: 70%;
     margin: auto;
 }
-.userAvatar{
-    background-color: red;
+.leftUser{
+    float: left;
     width: 25%;
-    text-align: center;
-    padding-top: 8%;
+    
+}
+.rightUser p{
+    color: #ffffff;
+    
+}
+.rightUser{
+    float: right;
+    width: 74%;
+    background-color: #181829;
+    display: flex;
+    justify-content: space-between;
     border-radius: 7px;
 }
+.userAvatar{
+    background-color: #181829;
+    width: 100%;
+    text-align: center;
+    padding-top: 60%;
+    border-radius: 7px;
+    position: relative;
+
+}
+
 .userAvatar p {
     margin-top: 0;
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    margin-bottom: 5px;
+}
+.userAvatar p:nth-child(4){
+    font-size: 15px;
+    
 }
 .userAvatar img{
     
     width: 35%;
     border-radius: 50%;
-    border: 3px solid rgb(255, 136, 0);
+    border: 3px solid #eb9a2a;
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    left: 32%;
+    
+}
+.metadeAvatar{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    border-radius: 7px;
+    background-color: red;
+    /* background-color: #eb9a2a; */
+    /* background-image: url("https://aniyuki.com/wp-content/uploads/2022/01/aniyuki-zenitsu-agatsuma-31.gif"); */
+}
+.metadeAvatar img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 7px;
+    border: none;
+    width: 100%;
+    height: 100%;
 }
 .userSeguidores{
-    
+    padding-bottom: 10px;
 }
 .userSeguidores p{
     display: inline;
@@ -33,8 +82,20 @@
     font-weight: 700;
     font-size: 14px;
 }
-.assistidos{
-    background-color: red;
+
+.horasAssistidos{
+    background-color: #181829;
     border-radius: 7px;
-    width: 25%;
+    width: 100%;
+}
+.teste p{
+    margin: 0;
+    padding: 25px;
+    transition: 0.3s;
+    cursor: pointer;
+    font-size: 20px;
+}
+.teste p:hover{
+    background-color: #0C0C1D;
+    color: #eb9a2a;
 }
