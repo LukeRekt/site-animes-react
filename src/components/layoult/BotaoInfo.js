@@ -1,10 +1,10 @@
 import styles from './BotaoInfo.module.css'
 import { AiOutlinePlayCircle } from 'react-icons/ai';
 
-function BotaoInfo (props){
+function BotaoInfo(props) {
     return (
         <div className={styles.container}>
-            <p><AiOutlinePlayCircle size='26px'/> {props.mensagem}</p>
+            <p><AiOutlinePlayCircle size='26px' /> {props.mensagem}</p>
         </div>
     )
 }

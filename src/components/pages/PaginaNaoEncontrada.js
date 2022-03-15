@@ -1,6 +1,6 @@
 import styles from './PaginaNaoEncontrada.module.css'
 
-function PaginaNaoEncontrada () {
+function PaginaNaoEncontrada() {
     return (
         <div>
             <h1>Pagina nao encontrada</h1>

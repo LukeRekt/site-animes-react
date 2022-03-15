@@ -6,16 +6,16 @@ import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import CancelIcon from '@material-ui/icons/Cancel';
 import { useNavigate } from "react-router-dom";
-import {toast} from 'react-toastify'
-import {UserContext} from "../../UserContext"
-import {useContext} from "react"
+import { toast } from 'react-toastify'
+import { UserContext } from "../../UserContext"
+import { useContext } from "react"
 //funcoes
-import {register} from '../../api/user'
+import { register } from '../../api/user'
 
 //const userAvatar = "AA";
 
 function PageRegister() {
-    const {user} = useContext(UserContext)
+    const { user } = useContext(UserContext)
     const userAvatar = "https://cdn.discordapp.com/attachments/839342329596215337/952744686546726983/92c92e952124a761ac219be876349302.webp";
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
@@ -23,7 +23,7 @@ function PageRegister() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
-    {user ? navigate("/") : console.log("ok")}
+    { user ? navigate("/") : console.log("ok") }
 
     //validacao da senha
     let hasSixChar = password.length >= 6;
@@ -32,16 +32,16 @@ function PageRegister() {
     let hasNumber = /(.*[0-9].*)/.test(password);
     let hasSpecialChar = /(.*[^a-zA-Z0-9].*)/.test(password);
 
-    const handleRegister = async (e) =>{
+    const handleRegister = async (e) => {
         e.preventDefault();
-        try{
-            const res = await register ({username, email, password, userAvatar});
-            if(res.error) toast.warning(res.error);
-            else{
+        try {
+            const res = await register({ username, email, password, userAvatar });
+            if (res.error) toast.warning(res.error);
+            else {
                 toast.success(res.message);
                 navigate('/login');
             }
-        }catch(err){
+        } catch (err) {
             toast.error(err);
         }
     }
@@ -163,9 +163,9 @@ function PageRegister() {
                     !hasNumber ||
                     !hasSpecialChar
                 }
-                onClick={handleRegister}
-                    >
-                        Enviar</Button>
+                    onClick={handleRegister}
+                >
+                    Enviar</Button>
             </div>
         </div>
     )

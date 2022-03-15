@@ -21,7 +21,7 @@ function PageAnime() {
     }, [])
 
 
-    
+
     function lancamento() {
         if (posts.lancamento === true) {
             return "EM LANÇAMENTO"
@@ -57,25 +57,25 @@ function PageAnime() {
                     <p>{posts.autor}</p>
                 </div>
                 <div className={styles.prodAnime}>
-                <p>Diretor</p>
-                <p>{posts.diretor}</p>
-                    </div>
+                    <p>Diretor</p>
+                    <p>{posts.diretor}</p>
+                </div>
                 <div className={styles.prodAnime}>
-                <p>Estudio</p>
-                <p>{posts.estudio}</p>
-                    </div>
+                    <p>Estudio</p>
+                    <p>{posts.estudio}</p>
+                </div>
                 <div className={styles.prodAnime}>
-                <p>Ano</p>
-                <p>{posts.ano}</p>
-                    </div>
+                    <p>Ano</p>
+                    <p>{posts.ano}</p>
+                </div>
             </div>
             <div className={styles.sinopseAnime}>
                 <h3>Sinopse</h3>
                 <p>Segunda Temporada, Hajime Nagumo, de dezessete anos, é um otaku típico. No entanto, a sua vida simples é subitamente alterada quando ele, juntamente com o resto da sua classe, é transportado para um mundo de fantasia! Eles são tratados como heróis e encarregados do dever de salvar a raça humana da extinção. Mas o que deveria ter sido o sonho de qualquer otaku rapidamente se transforma num pesadelo para Hajime. </p>
-                
+
             </div>
             <div className={styles.episodeosAnime}>
-            <Tabs id={posts.id}/>
+                <Tabs id={posts.id} />
                 {/* eps aqui listados vindo direto de um novo server json buscando de acordo com o id do ep */}
 
             </div>
