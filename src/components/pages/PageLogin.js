@@ -43,17 +43,31 @@ function PageLogin() {
 
     return (
         <div className={styles.container}>
-            <h1>Login</h1>
 
-            <div className={styles.formGroup}>
+            {/* <div className={styles.formGroup}>
                 <TextField size="medium"
                     variant="outlined"
                     className="form-Group"
                     label="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)} />
-            </div>
-            <div className={styles.formGroup}>
+            </div> */}
+            
+
+
+            <form className={styles.login}>
+            <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <input type="password" placeholder="Password " value={password} onChange={(e) => setPassword(e.target.value)}/>
+            <button onClick={handleLogin}>Login</button>
+            <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
+                                    {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
+                                </IconButton>
+            </form>
+
+
+
+
+{/*                 
                 <FormControl variant="outlined"
                     size="medium"
                     className="formGroup">
@@ -70,12 +84,12 @@ function PageLogin() {
                                 </IconButton>
                             </InputAdornment>
                         } />
-                </FormControl>
-            </div>
-            <div className="textCenter">
+                </FormControl> */}
+            
+            {/* <div className="textCenter">
                 <Button variant="contained" disabled={!email || !password}
                     onClick={handleLogin}>Enviar</Button>
-            </div>
+            </div> */}
         </div>
     )
 }
