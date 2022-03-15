@@ -52,22 +52,23 @@ function PageLogin() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)} />
             </div> */}
-            
+
 
 
             <form className={styles.login}>
-            <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-            <input type="password" placeholder="Password " value={password} onChange={(e) => setPassword(e.target.value)}/>
-            <button onClick={handleLogin}>Login</button>
-            <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
-                                    {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
-                                </IconButton>
+                <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input type="password" placeholder="Password " value={password} onChange={(e) => setPassword(e.target.value)} />
+                <button onClick={handleLogin} disabled={!email ||
+                    !password}>Login</button>
+                <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
+                    {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
+                </IconButton>
             </form>
 
 
 
 
-{/*                 
+            {/*                 
                 <FormControl variant="outlined"
                     size="medium"
                     className="formGroup">
@@ -85,7 +86,7 @@ function PageLogin() {
                             </InputAdornment>
                         } />
                 </FormControl> */}
-            
+
             {/* <div className="textCenter">
                 <Button variant="contained" disabled={!email || !password}
                     onClick={handleLogin}>Enviar</Button>

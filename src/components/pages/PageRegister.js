@@ -48,44 +48,29 @@ function PageRegister() {
 
     return (
         <div className={styles.container}>
-            <h1>Registrar</h1>
-            <div className={styles.formGroup}>
 
-                <TextField size="small"
-                    variant="outlined"
-                    className="form-Group"
-                    label="Usuario"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)} />
-            </div>
 
-            <div className={styles.formGroup}>
+            <form className={styles.login}>
+                <input type="text" placeholder="Usuario" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <input type="password" placeholder="Confirmar Senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
 
-                <TextField size="small"
-                    variant="outlined"
-                    className="form-Group"
-                    label="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)} />
-            </div>
-            <div className={styles.formGroup}>
-                <FormControl variant="outlined"
-                    size="small"
-                    className="formGroup">
-                    <InputLabel>Senha</InputLabel>
-                    <OutlinedInput
-                        label="Senha"
-                        type={showPassword ? "text" : "password"}
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        endAdornment={
-                            <InputAdornment>
-                                <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
-                                    {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
-                                </IconButton>
-                            </InputAdornment>
-                        } />
-                </FormControl>
+
+                <button onClick={handleRegister} disabled={
+                    !username ||
+                    !email ||
+                    !password ||
+                    !confirmPassword ||
+                    password != confirmPassword ||
+                    !hasSixChar ||
+                    !hasLowerChar ||
+                    !hasUpperChar ||
+                    !hasNumber ||
+                    !hasSpecialChar} >Registrar</button>
+
+
+
                 {password && (
                     <div>
                         <div>
@@ -134,6 +119,51 @@ function PageRegister() {
                                 </span>)}
                         </div>
                     </div>)}
+                {password && confirmPassword && (password === confirmPassword ? <span>As senhas conferem</span> : <span>As senhas nao conferem</span>)}
+            </form>
+
+
+
+
+
+            {/* <div className={styles.formGroup}>
+
+                <TextField size="small"
+                    variant="outlined"
+                    className="form-Group"
+                    label="Usuario"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)} />
+            </div>
+
+            <div className={styles.formGroup}>
+
+                <TextField size="small"
+                    variant="outlined"
+                    className="form-Group"
+                    label="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)} />
+            </div>
+            <div className={styles.formGroup}>
+                <FormControl variant="outlined"
+                    size="small"
+                    className="formGroup">
+                    <InputLabel>Senha</InputLabel>
+                    <OutlinedInput
+                        label="Senha"
+                        type={showPassword ? "text" : "password"}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        endAdornment={
+                            <InputAdornment>
+                                <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
+                                    {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
+                                </IconButton>
+                            </InputAdornment>
+                        } />
+                </FormControl>
+               
             </div>
             <div className={styles.formGroup}>
 
@@ -166,7 +196,7 @@ function PageRegister() {
                     onClick={handleRegister}
                 >
                     Enviar</Button>
-            </div>
+            </div> */}
         </div>
     )
 }
