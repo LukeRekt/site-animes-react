@@ -2,20 +2,20 @@
     float: left;
     width: 100%;
     
-    
 }
 .PageAnimeContainer video{
-    width: 51%;
+    width: 54.5%;
     margin-left: 15%;
     float: left;
+    max-height: 56.6vh;
     
 }
 .container{
     float: right;
     background: #181829;
-    width: 18%;
+    width: 15.2%;
     margin-right: 15%;
-    margin-left: 5px;
+    margin-left: 1px;
     border-radius: 8px;
     
     

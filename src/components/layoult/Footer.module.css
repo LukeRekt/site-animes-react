@@ -4,12 +4,21 @@
     border-top: 1px solid rgba(155, 155, 155, 0.151);
     width: 100%;
     margin-top: 2%;
+    
 }
 .footer_redes{
     margin-top: 1%;
     margin-left: 43%;
     font-size: 40px;
+    
 }
 .footer_redes a {
     margin-left: 20px;
+    display: block;
+    background-color: rgba(217, 215, 250, 0.034);
+    width: 20%;
+}
+.footer_redes small {
+    font-size: 10px;
+    display: block;
 }

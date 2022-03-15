@@ -7,11 +7,15 @@ function Footer() {
 
         <div className={styles.footer_infos}>
             <div className={styles.footer_redes}>
-                <a href=""><FaFacebookF /></a>
-                <a href=""><FaTwitter /></a>
-                <a href=""><FaDiscord /></a>
+                <p>REDES SOCIAIS</p>
+                <a href=""><FaFacebookF/>Facebook</a>
+                <a href=""><FaTwitter />Twitter</a>
+                <a href=""><FaDiscord />Discord</a>
+                <small>Desenvolvido para testes e nao uso comercial</small>
 
-
+            </div>
+            <div className={styles.footer_infos}>
+                
             </div>
 
         </div>

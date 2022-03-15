@@ -31,7 +31,8 @@ Para iniciar o servidor:
 `npm start`  
 `npm run server`
 
-Dentro da pasta ./server
+Dentro da pasta ./server:
+
 `npm start`
 
 Para testar o app:
