@@ -88,14 +88,14 @@
     border-radius: 7px;
     width: 100%;
 }
-.teste p{
+.tab_color p{
     margin: 0;
     padding: 25px;
     transition: 0.3s;
     cursor: pointer;
     font-size: 20px;
 }
-.teste p:hover{
+.tab_color p:hover{
     background-color: #0C0C1D;
     color: #eb9a2a;
 }

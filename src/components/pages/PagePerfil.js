@@ -43,11 +43,11 @@ function PagePefil() {
                 </div>
             </div>
             <div className={styles.rightUser}>
-                <div onClick={() => toggleTab(1)} className={`${styles.favoritos} ${styles.teste}`} ><p><FaHeart /> Favoritos</p></div>
-                <div onClick={() => toggleTab(2)} className={`${styles.assistidos} ${styles.teste}`}><p><FaEye /> Assistidos</p></div>
-                <div onClick={() => toggleTab(3)} className={`${styles.maistarde} ${styles.teste}`}><p><FaClock /> Ver mais Tarde</p></div>
-                <div onClick={() => toggleTab(4)} className={`${styles.algumacoisa} ${styles.teste}`}><p><FaAccessibleIcon/> Alguma Coisa</p></div>
-                <div onClick={() => toggleTab(5)} className={`${styles.editarPerfil} ${styles.teste}`}><p><RiEqualizerLine /> Editar Perfil</p></div>
+                <div onClick={() => toggleTab(1)} className={`${styles.favoritos} ${styles.tab_color}`} ><p><FaHeart /> Favoritos</p></div>
+                <div onClick={() => toggleTab(2)} className={`${styles.assistidos} ${styles.tab_color}`}><p><FaEye /> Assistidos</p></div>
+                <div onClick={() => toggleTab(3)} className={`${styles.maistarde} ${styles.tab_color}`}><p><FaClock /> Ver mais Tarde</p></div>
+                <div onClick={() => toggleTab(4)} className={`${styles.algumacoisa} ${styles.tab_color}`}><p><FaAccessibleIcon /> Alguma Coisa</p></div>
+                <div onClick={() => toggleTab(5)} className={`${styles.editarPerfil} ${styles.tab_color}`}><p><RiEqualizerLine /> Editar Perfil</p></div>
             </div>
             <div className={styles.content_tabs}>
                 <div className={toggleState === 1 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>

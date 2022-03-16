@@ -7,7 +7,7 @@ import { Tabs, Tab, AppBar } from "@material-ui/core"
 import styles from "./Tabs.module.css"
 import AnimeList from './AnimeList'
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { orange, pink, green } from "@material-ui/core/colors"; 
+import { orange, pink, green } from "@material-ui/core/colors";
 function Tabsa(props) {
   const theme = createMuiTheme({
     overrides: {
