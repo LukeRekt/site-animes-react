@@ -19,22 +19,23 @@
 
 .login {
     overflow: hidden;
-    background-color: rgb(4, 32, 110);
+    background-color: #181829;
     padding: 40px 30px 30px 30px;
     border-radius: 10px;
     margin: auto;
     width: 400px;
+    box-shadow: #00000060 2px 2px 2px;
 }
 .login input {
-    color: #F73718;
+    color: #bebebe;
     display: block;
     border-radius: 5px;
     font-size: 16px;
-    background: rgb(41, 5, 75);
+    background: #22223b;
     width: 100%;
     border: 0;
     padding: 10px 10px;
-    margin: 15px -10px;
+    margin: 10px -10px;
   }
   
   .botao {
@@ -49,7 +50,8 @@
     margin-top: 10px;
     margin-left: -5px;
     border-radius: 5px;
-    background-color: #F73718;
+    background-color: #290b5a;
+    box-shadow: #00000060 1px 1px 1px;
  
   }
  .login button:disabled,
@@ -57,4 +59,8 @@
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
+}
+.verificaSenha
+{
+/* adasd */
 }

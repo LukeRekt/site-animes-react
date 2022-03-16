@@ -75,7 +75,7 @@ function PageRegister() {
 
 
                 {password && (
-                    <div>
+                    <div className={styles.verificaSenha}>
                         <div>
 
                             {hasSixChar ? (<span className={styles.text_success}><CheckCircleIcon className="mr-1" fontSize="small" />
