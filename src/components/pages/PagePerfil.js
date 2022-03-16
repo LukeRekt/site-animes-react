@@ -3,11 +3,17 @@ import { useContext } from "react"
 import { UserContext } from '../../UserContext'
 import { FaHeart, FaClock, FaEye } from 'react-icons/fa';
 import { RiEqualizerLine } from "react-icons/ri";
-import { GrConfigure } from "react-icons/gr";
+import { useState } from "react";
 
 function PagePefil() {
     const { user } = useContext(UserContext)
     const { avatar } = useContext(UserContext)
+    const [toggleState, setToggleState] = useState(1);
+
+    const toggleTab = (index) => {
+        setToggleState(index);
+    };
+
     return (
         <div className={styles.PerfilContainer}>
             <div className={styles.leftUser}>
@@ -37,11 +43,85 @@ function PagePefil() {
                 </div>
             </div>
             <div className={styles.rightUser}>
-                <div className={`${styles.favoritos} ${styles.teste}`} ><p><FaHeart /> Favoritos</p></div>
-                <div className={`${styles.assistidos} ${styles.teste}`}><p><FaEye /> Assistidos</p></div>
-                <div className={`${styles.maistarde} ${styles.teste}`}><p><FaClock /> Ver mais Tarde</p></div>
-                <div className={`${styles.algumacoisa} ${styles.teste}`}><p> Alguma Coisa</p></div>
-                <div className={`${styles.editarPerfil} ${styles.teste}`}><p><RiEqualizerLine /> Editar Perfil</p></div>
+                <div onClick={() => toggleTab(1)} className={`${styles.favoritos} ${styles.teste}`} ><p><FaHeart /> Favoritos</p></div>
+                <div onClick={() => toggleTab(2)} className={`${styles.assistidos} ${styles.teste}`}><p><FaEye /> Assistidos</p></div>
+                <div onClick={() => toggleTab(3)} className={`${styles.maistarde} ${styles.teste}`}><p><FaClock /> Ver mais Tarde</p></div>
+                <div onClick={() => toggleTab(4)} className={`${styles.algumacoisa} ${styles.teste}`}><p> Alguma Coisa</p></div>
+                <div onClick={() => toggleTab(5)} className={`${styles.editarPerfil} ${styles.teste}`}><p><RiEqualizerLine /> Editar Perfil</p></div>
+            </div>
+            <div className={styles.content_tabs}>
+                <div className={toggleState === 1 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
+                    <h2>Conteudo 1</h2>
+                    <p>cccccccc</p>
+                    <p>cccccccc</p>
+                    <p>cccccccc</p>
+                    <p>cccccccc</p>
+                    <p>cccccccc</p>
+                    <p>cccccccc</p>
+                    <p>cccccccc</p>
+                    <p>cccccccc</p>
+                    <p>cccccccc</p>
+                    <p>cccccccc</p>
+                    <p>cccccccc</p>
+                </div>
+
+                <div className={toggleState === 2 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
+                    <h2>Conteudo 2</h2>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                </div>
+
+                <div className={toggleState === 3 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
+                    <h2>Conteudo 3</h2>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                </div>
+                <div className={toggleState === 4 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
+                    <h2>Conteudo 4</h2>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                </div>
+                <div className={toggleState === 5 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
+                    <h2>Conteudo 5</h2>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                    <p>bbbbbb</p>
+                </div>
             </div>
         </div>
     )
