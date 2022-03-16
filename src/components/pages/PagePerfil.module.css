@@ -130,3 +130,37 @@
   .active_content {
     display: block;
   }
+  .EditGeral h2{
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.151);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-bottom: 10px;
+  }
+  .perfilInfos{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.151);
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .perfilInfos p{
+    width: 14%;
+    margin: 10px;
+    padding: 10px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .perfilInfos button{
+    height: 9%;
+    background-color: #181829;
+    border-radius: 50px;
+    margin: 10px;
+    padding: 10px;
+    border: 3px solid #ffbe63;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: #ffbe63;
+    cursor: pointer;
+  }

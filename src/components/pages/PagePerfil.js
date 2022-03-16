@@ -1,14 +1,14 @@
 import styles from './PagePerfil.module.css'
 import { useContext } from "react"
 import { UserContext } from '../../UserContext'
-import { FaHeart, FaClock, FaEye, FaAccessibleIcon } from 'react-icons/fa';
+import { FaHeart, FaClock, FaEye, FaAccessibleIcon, FaUserAlt, FaSmile, FaQuoteLeft } from 'react-icons/fa';
 import { RiEqualizerLine } from "react-icons/ri";
 import { useState } from "react";
 
 function PagePefil() {
     const { user } = useContext(UserContext)
     const { avatar } = useContext(UserContext)
-    const [toggleState, setToggleState] = useState(1);
+    const [toggleState, setToggleState] = useState(5);
 
     const toggleTab = (index) => {
         setToggleState(index);
@@ -109,18 +109,21 @@ function PagePefil() {
                     <p>bbbbbb</p>
                 </div>
                 <div className={toggleState === 5 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
-                    <h2>Conteudo 5</h2>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
+                    <div className={styles.EditGeral}>
+                        <h2>Geral</h2>
+                        <div className={styles.perfilInfos}>
+                            <p><FaUserAlt/> Nome Público</p>
+                            <button>Alterar</button>
+                        </div>
+                        <div className={styles.perfilInfos}>
+                            <p><FaSmile/> Nickname</p>
+                            <button>Alterar</button>
+                        </div>
+                        <div className={styles.perfilInfos}>
+                            <p><FaQuoteLeft/> Frase do perfil</p>
+                            <button>Alterar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
