@@ -101,7 +101,7 @@
 }
 
 .content {
-    background: white;
+    background: #181829;
     padding: 20px;
     width: 100%;
     height: 100%;
@@ -120,12 +120,12 @@
   }
   .content h2 {
     padding: 0px 0 5px 0px;
-    color: red;
+    color: white;
   }
   .content p {
     width: 100%;
     height: 100%;
-    color: red;
+    color: white;
   }
   .active_content {
     display: block;

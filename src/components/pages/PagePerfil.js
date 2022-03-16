@@ -1,7 +1,7 @@
 import styles from './PagePerfil.module.css'
 import { useContext } from "react"
 import { UserContext } from '../../UserContext'
-import { FaHeart, FaClock, FaEye } from 'react-icons/fa';
+import { FaHeart, FaClock, FaEye, FaAccessibleIcon } from 'react-icons/fa';
 import { RiEqualizerLine } from "react-icons/ri";
 import { useState } from "react";
 
@@ -46,7 +46,7 @@ function PagePefil() {
                 <div onClick={() => toggleTab(1)} className={`${styles.favoritos} ${styles.teste}`} ><p><FaHeart /> Favoritos</p></div>
                 <div onClick={() => toggleTab(2)} className={`${styles.assistidos} ${styles.teste}`}><p><FaEye /> Assistidos</p></div>
                 <div onClick={() => toggleTab(3)} className={`${styles.maistarde} ${styles.teste}`}><p><FaClock /> Ver mais Tarde</p></div>
-                <div onClick={() => toggleTab(4)} className={`${styles.algumacoisa} ${styles.teste}`}><p> Alguma Coisa</p></div>
+                <div onClick={() => toggleTab(4)} className={`${styles.algumacoisa} ${styles.teste}`}><p><FaAccessibleIcon/> Alguma Coisa</p></div>
                 <div onClick={() => toggleTab(5)} className={`${styles.editarPerfil} ${styles.teste}`}><p><RiEqualizerLine /> Editar Perfil</p></div>
             </div>
             <div className={styles.content_tabs}>
