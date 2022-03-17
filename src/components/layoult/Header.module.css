@@ -29,6 +29,8 @@
 
 .item a {
     font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
     color: #fff;
     text-decoration: none;
     padding: 5px;
