@@ -98,6 +98,15 @@
 .tab_color p:hover{
     background-color: #0C0C1D;
     color: #eb9a2a;
+
+    
+}
+.tab_color p svg {
+    transition: 0.4s;
+    font-size: 16px;
+}
+.tab_color p:hover > svg{
+    fill: #eb9a2a;
 }
 
 .content {
@@ -125,10 +134,13 @@
   .content p {
     width: 100%;
     height: 100%;
-    color: white;
+    color: rgba(255, 255, 255, .6);
   }
   .active_content {
     display: block;
+  }
+  .EditGeral{
+    margin-bottom: 30px;
   }
   .EditGeral h2{
     margin: 0;
@@ -146,11 +158,16 @@
     
   }
   .perfilInfos p{
-    width: 14%;
+    width: 15%;
     margin: 10px;
     padding: 10px;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
+  }
+  .perfilInfos p svg {
+    font-size: 20px;
+    fill: rgba(255, 255, 255, .6);
+    stroke: rgba(255, 255, 255, .6);
   }
   .perfilInfos button{
     height: 9%;

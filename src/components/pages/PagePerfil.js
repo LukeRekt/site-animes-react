@@ -1,14 +1,33 @@
 import styles from './PagePerfil.module.css'
 import { useContext } from "react"
 import { UserContext } from '../../UserContext'
-import { FaHeart, FaClock, FaEye, FaAccessibleIcon, FaUserAlt, FaSmile, FaQuoteLeft } from 'react-icons/fa';
+import { FaHeart, FaClock, FaEye, FaAccessibleIcon, FaUserAlt, FaSmile, FaQuoteLeft, FaPhoneAlt, FaLock, FaBirthdayCake, FaTransgenderAlt } from 'react-icons/fa';
+import { AiOutlineLogout } from "react-icons/ai";
 import { RiEqualizerLine } from "react-icons/ri";
+import { FiAtSign } from "react-icons/fi";
 import { useState } from "react";
+import { toast } from 'react-toastify';
+import {useNavigate} from 'react-router-dom'
+import { logout } from '../../api/user'
 
 function PagePefil() {
-    const { user } = useContext(UserContext)
+    const { user, setUser } = useContext(UserContext);
     const { avatar } = useContext(UserContext)
     const [toggleState, setToggleState] = useState(5);
+
+    const navigate = useNavigate();
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+
+        logout()
+            .then((res) => {
+                toast.success(res.message);
+                setUser(null);
+                navigate('/login');
+            })
+            .catch((err) => console.error(err));
+    }
 
     const toggleTab = (index) => {
         setToggleState(index);
@@ -116,12 +135,40 @@ function PagePefil() {
                             <button>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
-                            <p><FaSmile/> Nickname</p>
+                            <p><FaSmile/> Apelido</p>
                             <button>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
                             <p><FaQuoteLeft/> Frase do perfil</p>
                             <button>Alterar</button>
+                        </div>
+                    </div>
+                    <div className={styles.EditGeral}>
+                    <h2>Dados Pessoais</h2>
+                        <div className={styles.perfilInfos}>
+                            <p><FiAtSign/> Email</p>
+                            <button>Alterar</button>
+                        </div>
+                        <div className={styles.perfilInfos}>
+                            <p><FaPhoneAlt/> Número</p>
+                            <button>Alterar</button>
+                        </div>
+                        <div className={styles.perfilInfos}>
+                            <p><FaBirthdayCake/> Aniversário</p>
+                        </div>
+                        <div className={styles.perfilInfos}>
+                            <p><FaTransgenderAlt /> Gênero</p>
+                        </div>
+                    </div>
+                    <div className={styles.EditGeral}>
+                        <h2>Segurança</h2>
+                        <div className={styles.perfilInfos}>
+                            <p><FaLock/> Senha</p>
+                            <button>Alterar</button>
+                        </div>
+                        <div className={styles.perfilInfos}>
+                            <p><AiOutlineLogout/> Logout</p>
+                            <button onClick={handleLogout}>Deslogar</button>
                         </div>
                     </div>
                 </div>
