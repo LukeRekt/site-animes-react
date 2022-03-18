@@ -185,4 +185,9 @@
     font-weight: 700;
     color: #ffbe63;
     cursor: pointer;
+    transition: 0.4s;
+  }
+  .perfilInfos button:hover{
+    background-color: #ffbe63;
+    color: #181829;
   }

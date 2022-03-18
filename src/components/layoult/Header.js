@@ -1,6 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, } from 'react-router-dom';
 import styles from './Header.module.css'
-import { useContext } from "react"
+import { useContext, useState } from "react"
+
 
 import logo from '../../assets/img/logo.png';
 // import avatar from '../../assets/img/fotosperfil/avatar.png';
@@ -12,9 +13,25 @@ import { FaHouseUser, FaBell, FaNewspaper, FaStar, FaCalendarAlt } from 'react-i
 
 //funcoes
 import { logout } from '../../api/user'
+import ProfileBox from './ProfileBox';
 
+    
 
 function Header() {
+    const [menu, setMenu] = useState(false);
+    function toggleProfile(){
+        if(menu === true){
+            setMenu(false);
+            console.log("if")
+            
+            
+        }else{
+            setMenu(true);
+            console.log("else")
+            
+        }
+    
+    }
     //adicionar o setAvatar
     const navigate = useNavigate();
     const { user, setUser } = useContext(UserContext);;
@@ -43,15 +60,22 @@ function Header() {
             <div className={styles.usuario}>
 
                 <div className={styles.perfil}>
-
+                {/* <Link to="/perfil"></Link> */}
                     {/* <Link to="/perfil"> */}
                     {/* {user ? (<img className={styles.avatar} src={avatar} alt="Avatar do usuário" />) : (<img className={styles.avatar} src="http://localhost:3232/static/imagens/avatars/default.png" alt="" />)} */}
-                    {user ? (<Link to="/perfil"><img className={styles.avatar} src={avatar} alt="Avatar do usuário" /></Link>) : (<Link to="/login"><img className={styles.avatar} src="http://localhost:3232/static/imagens/avatars/default.png" alt="" /></Link>)}
+                    {user ? (<img onClick={toggleProfile} className={styles.avatar} src={avatar} alt="Avatar do usuário" />) : (<img onClick={toggleProfile} className={styles.avatar} src="http://localhost:3232/static/imagens/avatars/default.png" alt="" />)}
+                   
                     {/* </Link> */}
                     <FaBell />
+                    
                     <div className={styles.notificacoes_contador}>
                         <p> 11</p>
                     </div>
+                    <div className={styles.perfilBox}>
+
+                        { user ? (menu ? (<ProfileBox logado={false} visibility="visible" opacity={1}/>) : (<ProfileBox logado={false} visibility="hidden" opacity={0}/>)) : (menu ? (<ProfileBox logado={true} visibility="visible" opacity={0}/>) : (<ProfileBox logado={true} visibility="visible" opacity={1}/>))}
+                       
+                   </div>
                 </div>
 
             </div>

@@ -35,6 +35,7 @@
     text-decoration: none;
     padding: 5px;
     transition: 0.3s;
+
 }
 .item a:hover {
     border-radius: 50px;
@@ -49,6 +50,7 @@
     margin-right: 100px;
     max-width: 70px;
     border-radius: 50%;
+    cursor: pointer;
 }
 .perfil{
     font-size: 30px;
