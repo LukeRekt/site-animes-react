@@ -24,6 +24,7 @@ import {UserContext} from "./UserContext"
 //funcoes
 
 import {getUser} from './api/user'
+import UserProfileSearch from './components/pages/UserProfileSearch';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -59,6 +60,7 @@ function App() {
           <Route exact path="/login" element={<PageLogin />}></Route>
           <Route exact path="/registrar" element={<PageRegister />}></Route>
           <Route exact path="/perfil" element={<PagePefil />}></Route>
+          <Route exact path="/user/:id" element={<UserProfileSearch />}></Route>
           <Route path='*' element={<PaginaNaoEncontrada />}></Route>
           {/* <Route path="/projects" element={}></Route> */}
 

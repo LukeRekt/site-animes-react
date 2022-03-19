@@ -102,3 +102,25 @@ exports.Teste = async (req, res) => {
     // })
     //a veracidade dos dados deve ser checada e buscada na db
 }
+exports.buscarUser = async (req, res) => {
+    //buscar usuario baseado no email
+    const { username } = req.body;
+
+    await User.findOne({ username }).exec((err, usuario) => {
+        //se der erro ou nenhum usuario encontrado
+        if (err || !usuario) {
+            return res.status(401).json({
+                error: "Credenciais Invalidas",
+            });
+        }
+        //retornar resposta para o usuario
+        const { username } = usuario;
+        const { userAvatar } = usuario;
+        console.log(userAvatar)
+        return res.json({
+            message: "Logado com sucesso!",
+            username,
+            userAvatar,
+        });
+    });
+};
