@@ -14,16 +14,17 @@
 width: 100%;
 cursor: pointer;
 border-bottom: 1px solid rgba(128, 128, 128, 0.219);
-padding-bottom: 10px;
-margin-top: 15px;
-margin-bottom: 15px;
+height: 25%;
+margin: 0;
+transition: 0.3s;
 }
 .container svg{
     margin: 0;
     float: left;
-    margin-left: 10%;
+    margin-left: 3%;
     margin-right: 5px;
     fill: rgb(226, 226, 226);
+    
     
 
 }
@@ -34,13 +35,26 @@ margin-bottom: 15px;
     font-weight: 200;
     margin: 0;
     padding: 0;
+    padding-top: 10px;
     font-size: 20px;
     
 }
-.login:hover > p{
+.nomeUser p{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 5px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.219);
+}
+.login:hover{
+    background-color: #eb9a2a;
+}
+/* .login:hover > p{
     color: rgb(255, 153, 0);
 }
 .login:hover > p svg {
     
     fill: rgb(255, 153, 0);
-}
+} */
