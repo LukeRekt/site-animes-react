@@ -46,7 +46,7 @@ exports.login = async (req, res) => {
         //se usuario foi encontrado, usar metodo de autencticacao do model
         if (!user.authenticate(password)) {
             return res.status(401).json({
-                error: "Invalid email or password",
+                error: "Email ou senha inválidos",
             });
         }
         // gerar token como id do usuario e um jwt secret
@@ -60,11 +60,13 @@ exports.login = async (req, res) => {
         //retornar resposta para o usuario
         const { username } = user;
         const { userAvatar } = user;
+        const { userBanner } = user;
         console.log(userAvatar)
         return res.json({
             message: "Logado com sucesso!",
             username,
             userAvatar,
+            userBanner,
         });
     });
 };
@@ -80,10 +82,12 @@ exports.logout = (req, res) => {
 exports.getLoggedInUser = (req, res) => {
     const { username } = req.user;
     const { userAvatar } = req.user;
+    const { userBanner } = req.user;
     return res.status(200).json({
         message: "O Usuario ainda esta logado",
         username,
         userAvatar,
+        userBanner,
     })
 }
 
@@ -116,11 +120,13 @@ exports.buscarUser = async (req, res) => {
         //retornar resposta para o usuario
         const { username } = usuario;
         const { userAvatar } = usuario;
+        const { userBanner } = usuario;
         console.log(userAvatar)
         return res.json({
-            message: "Logado com sucesso!",
+            message: "Usuário encontrado!",
             username,
             userAvatar,
+            userBanner
         });
     });
 };

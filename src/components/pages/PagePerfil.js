@@ -13,6 +13,7 @@ import { logout } from '../../api/user'
 function PagePefil() {
     const { user, setUser } = useContext(UserContext);
     const { avatar } = useContext(UserContext)
+    const { banner } = useContext(UserContext)
     const [toggleState, setToggleState] = useState(5);
 
     const navigate = useNavigate();
@@ -34,12 +35,13 @@ function PagePefil() {
     };
 
     return (
+        
         <div className={styles.PerfilContainer}>
             <div className={styles.leftUser}>
 
                 <div className={styles.userAvatar}>
                     <div className={styles.metadeAvatar}>
-                        <img src="https://aniyuki.com/wp-content/uploads/2022/01/aniyuki-zenitsu-agatsuma-31.gif" alt="" />
+                        <img src={banner} alt="" />
                     </div>
                     <img src={avatar} alt="" />
                     <p>{user}</p>

@@ -20,7 +20,11 @@ const userSchema = new mongoose.Schema(
 		},
 		userAvatar: {
 			type: String,
-			required: false,
+			required: true,
+		},
+		userBanner: {
+			type: String,
+			required: true,
 		},
 		hashedPassword: {
 			type: String,

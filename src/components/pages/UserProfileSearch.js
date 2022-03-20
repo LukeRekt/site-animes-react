@@ -19,7 +19,7 @@ function UserProfileSearch() {
     const {id} = useParams(); 
 
     useEffect(() => {
-        axios.post('http://localhost:3232/buscar', {
+        axios.post('http://serverdacupula.ddns.net:3232/buscar', {
             username: id,
           })
           .then(function (response) {
@@ -44,7 +44,7 @@ function UserProfileSearch() {
 
                 <div className={styles.userAvatar}>
                     <div className={styles.metadeAvatar}>
-                        <img src="https://aniyuki.com/wp-content/uploads/2022/01/aniyuki-zenitsu-agatsuma-31.gif" alt="" />
+                        <img src={usuario.userBanner} alt="" />
                     </div>
                     <img src={usuario.userAvatar} alt="" />
                     <p>{usuario.username}</p>

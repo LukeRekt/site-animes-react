@@ -17,6 +17,7 @@ import { register } from '../../api/user'
 function PageRegister() {
     const { user } = useContext(UserContext)
     const userAvatar = "https://cdn.discordapp.com/attachments/839342329596215337/952744686546726983/92c92e952124a761ac219be876349302.webp";
+    const userBanner = "https://aniyuki.com/wp-content/uploads/2022/01/aniyuki-zenitsu-agatsuma-31.gif";
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -35,7 +36,7 @@ function PageRegister() {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            const res = await register({ username, email, password, userAvatar });
+            const res = await register({ username, email, password, userAvatar, userBanner });
             if (res.error) toast.warning(res.error);
             else {
                 toast.success(res.message);

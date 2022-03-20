@@ -29,11 +29,16 @@ import UserProfileSearch from './components/pages/UserProfileSearch';
 function App() {
   const [user, setUser] = useState(null);
   const [avatar, setAvatar] = useState(null);
+  const [banner, setBanner] = useState(null);
 	useEffect(() => {
 		const unsubscribe = getUser()
 			.then((res) => {
 				if (res.error) toast(res.error);
-				else{ setUser(res.username); setAvatar(res.userAvatar);}
+				else{ 
+          setUser(res.username); 
+          setAvatar(res.userAvatar);
+          setBanner(res.userBanner)
+        }
 			})
 			.catch((err) => toast(err));
 
@@ -43,7 +48,7 @@ function App() {
 
     <Router>
       
-      <UserContext.Provider value={{user, setUser, avatar, setAvatar}}>
+      <UserContext.Provider value={{user, setUser, avatar, setAvatar, banner, setBanner}}>
       <Header/>
       <ToastContainer toastStyle={{ backgroundColor: "#0C0C1D" }}/>
       <Container customClass="min-height">
