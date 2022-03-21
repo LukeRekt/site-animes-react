@@ -12,7 +12,6 @@
 }
 
 .PerfilContainer{
-    background-color: green;
     width: 70%;
     margin: auto;
 }
@@ -42,7 +41,6 @@
     position: relative;
 
 }
-
 .userAvatar p {
     margin-top: 0;
     font-size: 20px;
@@ -53,7 +51,6 @@
 }
 .userAvatar p:nth-child(4){
     font-size: 15px;
-    
 }
 .userAvatar img{
     
@@ -64,7 +61,6 @@
     z-index: 1;
     top: 20%;
     left: 32%;
-    
 }
 .metadeAvatar{
     position: absolute;
@@ -72,7 +68,6 @@
     width: 100%;
     height: 50%;
     border-radius: 7px;
-    background-color: red;
     /* background-color: #eb9a2a; */
     /* background-image: url("https://aniyuki.com/wp-content/uploads/2022/01/aniyuki-zenitsu-agatsuma-31.gif"); */
 }
@@ -124,14 +119,7 @@ animation-duration: 1s;
 animation-delay: 2.6s;
 animation-fill-mode: forwards;
 }
-
-
-
-
-
-
 .assistidosDetail{
-  
   width: 0%;
   height: 45%;
   border-radius: 0px 50px 50px 0px;
@@ -173,8 +161,6 @@ animation-fill-mode: forwards;
 .tab_color p:hover{
     background-color: #0C0C1D;
     color: #eb9a2a;
-
-    
 }
 .tab_color p svg {
     transition: 0.4s;
@@ -183,7 +169,6 @@ animation-fill-mode: forwards;
 .tab_color p:hover > svg{
     fill: #eb9a2a;
 }
-
 .content {
     background: #181829;
     padding: 20px;
@@ -191,16 +176,12 @@ animation-fill-mode: forwards;
     height: 100%;
     display: none;
     border-radius: 7px;
-    
-    
   }
   .content_tabs{
       width: 71%;
       float: left;
       margin-left: 14px;
       margin-top: 8px;
-      
-
   }
   .content h2 {
     padding: 0px 0 5px 0px;
@@ -246,6 +227,7 @@ animation-fill-mode: forwards;
     fill: rgba(255, 255, 255, .6);
     stroke: rgba(255, 255, 255, .6);
   }
+
   .perfilInfos button{
     height: 9%;
     background-color: #181829;
@@ -263,4 +245,30 @@ animation-fill-mode: forwards;
   .perfilInfos button:hover{
     background-color: #ffbe63;
     color: #181829;
+  }
+  .editInput {
+    display: block;
+    width: 30%;
+
+  }
+  .editInput button{
+    padding: 10px;
+    height: 45px;
+    margin-left: 5px;
+  }
+
+ 
+  .editInput input{
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #181829;
+    border: 1px solid #ffbe63;
+    border-radius: 50px;
+    height: 30px;
+    display: block;
   }

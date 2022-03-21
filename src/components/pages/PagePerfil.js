@@ -15,7 +15,7 @@ function PagePefil() {
     const { avatar } = useContext(UserContext)
     const { banner } = useContext(UserContext)
     const [toggleState, setToggleState] = useState(5);
-
+    const [toggleEdit, setToggleEdit] = useState(20);
     const navigate = useNavigate();
 
     const handleLogout = (e) => {
@@ -29,9 +29,16 @@ function PagePefil() {
             })
             .catch((err) => console.error(err));
     }
-
     const toggleTab = (index) => {
+       
         setToggleState(index);
+    };
+    const toggleEditBtn = (index) => {
+        if(toggleEdit == index){
+            setToggleEdit(20);
+        }else{
+        setToggleEdit(index);
+    }
     };
 
     return (
@@ -132,11 +139,23 @@ function PagePefil() {
                         <h2>Geral</h2>
                         <div className={styles.perfilInfos}>
                             <p><FaUserAlt/> Nome Público</p>
-                            <button>Alterar</button>
+                            {toggleEdit == 1 ? <div className={styles.editInput}>
+                                <input type="text" /> 
+                                <button>Salvar</button>
+                                <button>Cancelar</button>
+                                </div> : <></>}
+                            
+                            <button onClick={() => toggleEditBtn(1)}>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
                             <p><FaSmile/> Apelido</p>
-                            <button>Alterar</button>
+                            {toggleEdit == 2 ? <div className={styles.editInput}>
+                                <input type="text" /> 
+                                <button>Salvar</button>
+                                <button>Cancelar</button>
+                                </div> : <></>}
+                            
+                            <button onClick={() => toggleEditBtn(2)}>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
                             <p><FaQuoteLeft/> Frase do perfil</p>
@@ -147,11 +166,23 @@ function PagePefil() {
                     <h2>Dados Pessoais</h2>
                         <div className={styles.perfilInfos}>
                             <p><FiAtSign/> Email</p>
-                            <button>Alterar</button>
+                            {toggleEdit == 4 ? <div className={styles.editInput}>
+                                <input type="text" /> 
+                                <button>Salvar</button>
+                                <button>Cancelar</button>
+                                </div> : <></>}
+                            
+                            <button onClick={() => toggleEditBtn(4)}>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
                             <p><FaPhoneAlt/> Número</p>
-                            <button>Alterar</button>
+                            {toggleEdit == 5 ? <div className={styles.editInput}>
+                                <input type="text" /> 
+                                <button>Salvar</button>
+                                <button>Cancelar</button>
+                                </div> : <></>}
+                            
+                            <button onClick={() => toggleEditBtn(5)}>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
                             <p><FaBirthdayCake/> Aniversário</p>
@@ -164,7 +195,13 @@ function PagePefil() {
                         <h2>Segurança</h2>
                         <div className={styles.perfilInfos}>
                             <p><FaLock/> Senha</p>
-                            <button>Alterar</button>
+                            {toggleEdit == 8 ? <div className={styles.editInput}>
+                                <input type="text" /> 
+                                <button>Salvar</button>
+                                <button>Cancelar</button>
+                                </div> : <></>}
+                            
+                            <button onClick={() => toggleEditBtn(8)}>Alterar</button>
                         </div>
 
                     </div>
