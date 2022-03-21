@@ -4,10 +4,9 @@
 }
 .container{
     margin-top: 1px;
-    width: 75%;
-    float: left;
+    width: 70%;
     margin-left: 12%;
-
+    margin: auto;
 }
 .container h1{ 
     font-family: 'Montserrat', sans-serif;
@@ -16,7 +15,9 @@
     margin: auto;
 }
 .carousel_animes{
+    background-color: #181829;
     margin-bottom: 2%;
+    border-radius: 8px;
 }
 .carousel_animes h1{
     margin-bottom: 1%;

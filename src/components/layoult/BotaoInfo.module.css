@@ -1,18 +1,17 @@
 .container
 {
-    margin-left: 4%;
-    width: 30%;
-    
+
     
 }
 .container p {
     text-align: center;
+    margin-bottom: 0;
     padding: 1px;
-    font-size: 30px;
-    background-color: #151522;
+    font-size: 50px;
+    background-color: #1d1d35;
     border-radius: 7px;
     box-shadow: rgba(0, 0, 0, 0.274) 1px 1px 1px 1px;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
 }
