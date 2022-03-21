@@ -1,7 +1,7 @@
 import styles from './PagePerfil.module.css'
 import { useContext } from "react"
 import { UserContext } from '../../UserContext'
-import { FaHeart, FaClock, FaEye, FaUserAlt, FaSmile, FaQuoteLeft, FaPhoneAlt, FaLock, FaBirthdayCake, FaTransgenderAlt } from 'react-icons/fa';
+import { FaHeart, FaClock, FaEye, FaUserAlt, FaSmile, FaQuoteLeft, FaPhoneAlt, FaLock, FaBirthdayCake, FaTransgenderAlt, FaPlay} from 'react-icons/fa';
 import { AiOutlineLogout } from "react-icons/ai";
 import { RiEqualizerLine } from "react-icons/ri";
 import { FiAtSign } from "react-icons/fi";
@@ -52,15 +52,12 @@ function PagePefil() {
                     </div>
                 </div>
                 <div className={styles.horasAssistidos}>
-                    <p>HORAS ASSISTIDAS</p>
-                    <p>HORAS ASSISTIDAS</p>
-                    <p>HORAS ASSISTIDAS</p>
-                    <p>HORAS ASSISTIDAS</p>
-                    <p>HORAS ASSISTIDAS</p>
-                    <p>HORAS ASSISTIDAS</p>
-                    <p>HORAS ASSISTIDAS</p>
-                    <p>HORAS ASSISTIDAS</p>
-                    <p>HORAS ASSISTIDAS</p>
+                    <p>videos assistidos <br /> 0 (aprox 0 horas)</p>
+                    <div className={styles.assistidosDetail}>
+                        <div className={styles.detailsInside}>
+                            <FaPlay className={styles.playbutton}/>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className={styles.rightUser}>

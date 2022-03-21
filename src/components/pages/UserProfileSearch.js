@@ -19,7 +19,7 @@ function UserProfileSearch() {
     const {id} = useParams(); 
 
     useEffect(() => {
-        axios.post('http://serverdacupula.ddns.net:3232/buscar', {
+        axios.post('http://localhost:3232/buscar', {
             username: id,
           })
           .then(function (response) {

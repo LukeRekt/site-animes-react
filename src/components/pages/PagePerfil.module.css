@@ -1,3 +1,16 @@
+@keyframes details {
+  from {width: 0%}
+  to {width: 45%}
+}
+@keyframes detailsInside {
+  from {left: 100%; top: 8%;}
+  to {left: 44%;  top: 8%;}
+}
+@keyframes textAnim {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 .PerfilContainer{
     background-color: green;
     width: 70%;
@@ -88,7 +101,67 @@
 .horasAssistidos{
     background-color: #181829;
     border-radius: 7px;
+    margin-top: 8px;
     width: 100%;
+    height: 20vh;
+    overflow: hidden;
+    
+}
+
+.horasAssistidos p{
+margin: 0;
+padding: 0;
+float: right;
+text-align: center;
+margin-top: 20%;
+margin-right: 14%;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-weight: 600;
+opacity: 0;
+animation-name: textAnim;
+animation-duration: 1s;
+animation-delay: 2.6s;
+animation-fill-mode: forwards;
+}
+
+
+
+
+
+
+.assistidosDetail{
+  
+  width: 0%;
+  height: 45%;
+  border-radius: 0px 50px 50px 0px;
+  background-color: #ffbe63;
+  animation-name: details;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+  margin-top: 15%;
+  position: relative;
+}
+.detailsInside{
+  position: absolute;
+  background-color: #0C0C1D;
+  width: 53%;
+  height: 85%;
+  left: 100%;
+  top: 8%;
+  text-align: center;
+  border-radius: 60%;
+  animation-name: detailsInside;
+  animation-delay: 1.5s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.playbutton{
+  fill: #ffbe63;
+  margin-top: 19px;
+  margin-left: 5px;
+  font-size: 30px;
 }
 .tab_color p{
     margin: 0;
