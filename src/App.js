@@ -25,6 +25,7 @@ import {UserContext} from "./UserContext"
 
 import {getUser} from './api/user'
 import UserProfileSearch from './components/pages/UserProfileSearch';
+import VideoPlayer from './components/layoult/VideoPlayer';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -63,6 +64,7 @@ function App() {
           <Route exact path="/anime/:id/:ep" element={<PageEpisode />}></Route>
           <Route exact path="/calendario" element={<Calendario />}></Route>
           <Route exact path="/lista" element={<Lista />}></Route>
+          <Route exact path="/player" element={<VideoPlayer />}></Route>
           <Route exact path="/favoritos" element={<Favoritos />}></Route>
           <Route exact path="/login" element={<PageLogin />}></Route>
           <Route exact path="/registrar" element={<PageRegister />}></Route>

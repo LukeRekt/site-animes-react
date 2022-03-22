@@ -1,0 +1,107 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  video {
+    width: 100%;
+  }
+  
+  .video_wrapper {
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .video_wrapper:hover .controls {
+    transform: translateY(45%);
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 30px;
+    padding: 14px;
+    width: 100%;
+    
+    flex-wrap: wrap;
+    background: rgba(66, 55, 55, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transform: translateY(150%);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .actions button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .actions button i {
+    background-color: none;
+    color: white;
+    font-size: 30px;
+    
+  }
+  
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 300px;
+      -webkit-appearance: none;
+      background-color: #dddddd;
+      border-radius: 8px;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 10px;
+
+      -webkit-appearance: none;
+      color: #0C0C1D;
+      margin-top: -1px;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 5px;
+      -webkit-appearance: none;
+      height: 10px;
+      cursor: ew-resize;
+      background-color: #000000;
+         }
+
+}
+  
+  .velocity {
+    appearance: none;
+    background: none;
+    color: white;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .mute_btn {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .mute_btn i {
+    background-color: none;
+    color: white;
+    font-size: 20px;
+  }
