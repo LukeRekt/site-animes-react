@@ -192,6 +192,7 @@ animation-fill-mode: forwards;
     height: 100%;
     color: rgba(255, 255, 255, .6);
   }
+ 
   .active_content {
     display: block;
   }
@@ -271,4 +272,9 @@ animation-fill-mode: forwards;
     border-radius: 50px;
     height: 30px;
     display: block;
+  }
+  .naoTem p{
+    color: #5555553b;
+    text-align: center;
+    font-size: 50px;
   }

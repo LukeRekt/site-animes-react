@@ -77,62 +77,27 @@ function PagePefil() {
             </div>
             <div className={styles.content_tabs}>
                 <div className={toggleState === 1 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
-                    <h2>Conteudo 1</h2>
-                    <p>cccccccc</p>
-                    <p>cccccccc</p>
-                    <p>cccccccc</p>
-                    <p>cccccccc</p>
-                    <p>cccccccc</p>
-                    <p>cccccccc</p>
-                    <p>cccccccc</p>
-                    <p>cccccccc</p>
-                    <p>cccccccc</p>
-                    <p>cccccccc</p>
-                    <p>cccccccc</p>
+                    <div className={styles.naoTem}>
+                    <p><FaHeart fill='#5555553b'/> Você não tem nenhum favorito</p>
+                    </div>
+                    
                 </div>
 
                 <div className={toggleState === 2 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
-                    <h2>Conteudo 2</h2>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
+                <div className={styles.naoTem}>
+                    <p><FaEye fill='#5555553b'/> Você não assistiu nada</p>
+                    </div>
                 </div>
 
                 <div className={toggleState === 3 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
-                    <h2>Conteudo 3</h2>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
+                <div className={styles.naoTem}>
+                    <p><FaClock fill='#5555553b'/> Lista vazia</p>
+                    </div>
                 </div>
                 <div className={toggleState === 4 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
-                    <h2>Conteudo 4</h2>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
-                    <p>bbbbbb</p>
+                <div className={styles.naoTem}>
+                    <p><FaHeart fill='#5555553b'/> Você não tem nenhum favorito</p>
+                    </div>
                 </div>
                 <div className={toggleState === 5 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.EditGeral}>

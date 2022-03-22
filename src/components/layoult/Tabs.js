@@ -6,14 +6,15 @@ import React, { useState, useEffect } from 'react'
 import { Tabs, Tab, AppBar } from "@material-ui/core"
 import styles from "./Tabs.module.css"
 import AnimeList from './AnimeList'
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { MuiThemeProvider} from "@material-ui/core/styles";
+import { createTheme } from '@material-ui/core'
 import { orange, pink, green } from "@material-ui/core/colors";
 function Tabsa(props) {
-  const theme = createMuiTheme({
+  const theme = createTheme({
     overrides: {
       MuiTabs: {
         root: {
-          backgroundColor: orange[700],
+          backgroundColor: "#181829",
         },
         indicator: {
           backgroundColor: orange[700]
