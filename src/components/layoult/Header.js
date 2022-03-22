@@ -35,7 +35,7 @@ function Header() {
     //adicionar o setAvatar
     const navigate = useNavigate();
     const { user, setUser } = useContext(UserContext);;
-    const { avatar } = useContext(UserContext);;
+    const { avatar } = useContext(UserContext);
     const handleLogout = (e) => {
         e.preventDefault();
 
@@ -74,7 +74,6 @@ function Header() {
                     <div className={styles.perfilBox}>
 
                         { user ? (menu ? (<ProfileBox logado={false} visibility="visible" opacity={1}/>) : (<ProfileBox logado={false} visibility="hidden" opacity={0}/>)) : (menu ? (<ProfileBox logado={true} visibility="visible" opacity={1}/>) : (<ProfileBox logado={true} visibility="visible" opacity={0}/>))}
-                       
                    </div>
                 </div>
 

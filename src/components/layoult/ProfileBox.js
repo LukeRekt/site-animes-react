@@ -6,10 +6,11 @@ import { UserContext } from '../../UserContext';
 import { toast } from 'react-toastify';
 import { useContext } from 'react';
 import { AiOutlineLogout } from "react-icons/ai";
+import {FaStar} from "react-icons/fa"
 function ProfileBox (props) {
     const navigate = useNavigate();
-    const { user, setUser } = useContext(UserContext);;
-    
+    const { user, setUser } = useContext(UserContext);
+    const { admin } = useContext(UserContext)
     const pimba = {
         opacity: props.opacity,
         visibility: props.visibility,
@@ -25,6 +26,10 @@ function ProfileBox (props) {
             })
             .catch((err) => console.error(err));
     }
+    const salveadm = (e) => {
+        e.preventDefault();
+        alert("SAAAAALLVEEE ADDMM")    
+    }
 
     return(
         <div style={pimba} className={styles.container} >
@@ -36,6 +41,8 @@ function ProfileBox (props) {
             
             {props.logado ? (<Link to="/registrar"><div className={styles.login}>  <p><BiKey size="25px"/>Registrar</p></div></Link>) :
              (<div onClick={handleLogout} className={styles.login}>  <p><AiOutlineLogout size="23px"/>Deslogar</p></div>)}
+
+    {props.logado == false ? (admin == false ? (<></>) : (<div onClick={salveadm} className={styles.login}>  <p id={styles.admin}><FaStar size="23px"/>Admin</p></div>)) : (<></>)}
             </div>
     )
 }

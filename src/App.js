@@ -30,6 +30,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [avatar, setAvatar] = useState(null);
   const [banner, setBanner] = useState(null);
+  const [admin, setAdmin] = useState(null);
 	useEffect(() => {
 		const unsubscribe = getUser()
 			.then((res) => {
@@ -38,6 +39,7 @@ function App() {
           setUser(res.username); 
           setAvatar(res.userAvatar);
           setBanner(res.userBanner)
+          setAdmin(res.isAdmin)
         }
 			})
 			.catch((err) => toast(err));
@@ -48,7 +50,7 @@ function App() {
 
     <Router>
       
-      <UserContext.Provider value={{user, setUser, avatar, setAvatar, banner, setBanner}}>
+      <UserContext.Provider value={{user, setUser, avatar, setAvatar, banner, setBanner, admin, setAdmin}}>
       <Header/>
       <ToastContainer toastStyle={{ backgroundColor: "#0C0C1D" }}/>
       <Container customClass="min-height">

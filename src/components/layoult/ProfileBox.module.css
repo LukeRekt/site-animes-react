@@ -51,6 +51,7 @@ transition: 0.3s;
 .login:hover{
     background-color: #eb9a2a;
 }
+
 /* .login:hover > p{
     color: rgb(255, 153, 0);
 }
@@ -58,3 +59,12 @@ transition: 0.3s;
     
     fill: rgb(255, 153, 0);
 } */
+
+
+#admin{
+    color: red;
+    
+}
+#admin svg {
+    fill: #eb9a2a
+}
