@@ -7,7 +7,13 @@ const useVideoPlayer = (videoElement) => {
     speed: 1,
     isMuted: false,
     actualTime: 0,
+    totalTime: 0,
   });
+
+  const pularAberturaHandler = () =>{
+    videoElement.current.currentTime += 90
+}
+  
 
   const toggleFullscreen = () => {
     if (videoElement.current) {
@@ -30,12 +36,14 @@ const useVideoPlayer = (videoElement) => {
   }, [playerState.isPlaying, videoElement]);
 
   const handleOnTimeUpdate = () => {
+    const duracao = Math.round((videoElement.current.duration));
     const tempo = Math.round((videoElement.current.currentTime)); 
     const progress = (videoElement.current.currentTime / videoElement.current.duration) * 100;
     setPlayerState({
       ...playerState,
       progress,
       actualTime: tempo,
+      totalTime: duracao,
     });
   };
 
@@ -78,6 +86,7 @@ const useVideoPlayer = (videoElement) => {
     handleVideoSpeed,
     toggleMute,
     toggleFullscreen,
+    pularAberturaHandler,
   };
 };
 

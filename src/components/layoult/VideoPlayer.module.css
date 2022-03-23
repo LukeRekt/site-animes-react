@@ -15,7 +15,6 @@
     display: flex;
     justify-content: center;
     overflow: hidden;
-    border-radius: 10px;
   }
   
   .video_wrapper:hover .controls {
@@ -36,10 +35,16 @@
     box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     transform: translateY(150%);
     transition: all 0.3s ease-in-out;
+  }
+  .pularAbertura{
+    position: absolute;
+    background: rgba(66, 55, 55, 0.25);
+    top: 65%;
+    right:1%;
+
   }
   
   .actions button {

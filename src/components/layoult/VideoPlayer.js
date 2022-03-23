@@ -4,7 +4,21 @@ import styles from "./VideoPlayer.module.css";
 import { BiPlay, BiPause, BiVolumeFull, BiVolumeMute, BiFullscreen } from "react-icons/bi";
 import useVideoPlayer from "../../hooks/useVideoPlayer";
 
+
+
 const VideoPlayer = () => {
+  const PularAbertura = (tempoAtual) => {
+    if(tempoAtual >= 10 && tempoAtual <= 20){
+      //console.log(showDiv);
+      
+      return true
+      
+    }
+    //console.log("bbbbbb");
+    
+    return false;
+  }
+
     //https://stackoverflow.com/questions/4605342/how-to-format-html5-audios-currenttime-property-with-javascript
     function formatTime(seconds) {
        let minutes = Math.floor(seconds / 60);
@@ -23,6 +37,7 @@ const VideoPlayer = () => {
     handleVideoProgress,
     handleVideoSpeed,
     toggleMute,
+    pularAberturaHandler,
   } = useVideoPlayer(videoElement);
   return (
     <div className={styles.container}>
@@ -33,6 +48,9 @@ const VideoPlayer = () => {
           ref={videoElement}
           onTimeUpdate={handleOnTimeUpdate}
         />
+        {  PularAbertura(playerState.actualTime) ? (<div onClick={(e) => pularAberturaHandler(e)} className={styles.pularAbertura}> <p>PULAR ABERTURA</p></div>) : (<></>)}
+        {/* {  playerState.actualTime >= 20 ? (<></>) : (<></>)} */}
+        
         <div className={styles.controls}>
           <div className={styles.actions}>
             <button onClick={togglePlay}>
@@ -42,8 +60,9 @@ const VideoPlayer = () => {
                 <i className={`${styles.bx} ${styles.bx_pause}`}><BiPause fontSize="30px"/></i>
               )}
             </button>
+            
           </div>
-          
+          <p>{formatTime(playerState.actualTime)}</p>
           <input
             type="range"
             min="0"
@@ -51,6 +70,7 @@ const VideoPlayer = () => {
             value={playerState.progress}
             onChange={(e) => handleVideoProgress(e)}
           />
+          <p>{formatTime(playerState.totalTime)}</p>
           <select
             className={styles.velocity}
             value={playerState.speed}
@@ -71,7 +91,7 @@ const VideoPlayer = () => {
             )}
           </button>
           <button className={styles.mute_btn} onClick={toggleFullscreen}><BiFullscreen/> </button>
-          <p>{formatTime(playerState.actualTime)}</p>
+          
         </div>
       </div>
       
