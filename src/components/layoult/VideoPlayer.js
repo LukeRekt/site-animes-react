@@ -6,7 +6,7 @@ import useVideoPlayer from "../../hooks/useVideoPlayer";
 
 
 
-const VideoPlayer = () => {
+const VideoPlayer = (props) => {
   const PularAbertura = (tempoAtual) => {
     if(tempoAtual >= 10 && tempoAtual <= 20){
       //console.log(showDiv);
@@ -44,7 +44,7 @@ const VideoPlayer = () => {
         
       <div className={styles.video_wrapper}>
         <video
-          src="https://vfhd.subanimes.biz/videos/stream/animes/dublado/I/Ijiranaide-Nagatoro-san-Dublado/001/720p.mp4"
+          src={props.videoLink}
           ref={videoElement}
           onTimeUpdate={handleOnTimeUpdate}
         />

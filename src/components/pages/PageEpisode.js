@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './PageEpisode.module.css'
 import SeletorEP from '../layoult/SeletorEp';
+import VideoPlayer from '../layoult/VideoPlayer';
 
 function PageEpisode() {
 
@@ -42,8 +43,9 @@ function PageEpisode() {
     <div>
 
       <div className={styles.PageAnimeContainer}>
-        <video src={ListEp(ep, posts)} controls>
-        </video>
+        <VideoPlayer videoLink={ListEp(ep, posts)}/>
+        {/* <video src={ListEp(ep, posts)} controls>
+        </video> */}
         <div className={styles.container}>
           <p id={styles.maisEps}>MAIS EPISÓDIOS</p>
           <div className={styles.listaEps}>

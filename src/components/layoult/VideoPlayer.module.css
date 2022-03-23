@@ -1,8 +1,7 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    display: block;
+    float: left;
+    width: 54%;
   }
   video {
     width: 100%;
@@ -10,7 +9,6 @@
   
   .video_wrapper {
     width: 100%;
-    max-width: 700px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -41,10 +39,14 @@
   }
   .pularAbertura{
     position: absolute;
-    background: rgba(66, 55, 55, 0.25);
+    background: rgba(66, 55, 55, 0.603);
     top: 65%;
-    right:1%;
-
+    right:3%;
+    border-radius: 8px;
+  }
+  .pularAbertura p {
+    color: rgb(255, 255, 255);
+    padding: 0px 3px 0px 3px;
   }
   
   .actions button {
