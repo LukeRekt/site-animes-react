@@ -10,6 +10,7 @@
   "author": "Lucas Rodrigues",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.26.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",

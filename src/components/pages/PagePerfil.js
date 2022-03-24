@@ -9,6 +9,7 @@ import { useState } from "react";
 import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom'
 import { logout } from '../../api/user'
+import Axios from "axios";
 
 function PagePefil() {
     const { user, setUser } = useContext(UserContext);
@@ -17,6 +18,22 @@ function PagePefil() {
     const [toggleState, setToggleState] = useState(5);
     const [toggleEdit, setToggleEdit] = useState(20);
     const navigate = useNavigate();
+
+    // const [file, setFile] = useState(null);
+
+    // const upload = (e) => {
+    //   e.preventDefault();
+    //   let formData = new FormData();
+    //   formData.append("screenshot", file);
+    //   Axios.post("http://localhost:3232/avatar", formData, {
+    //     headers: {
+    //       "Content-Type": "multipart/form-data",
+    //     },
+    //   }).then((res) => {
+        
+    //     console.log("Sucesso! ", res);
+    //   });
+    // };
 
     const handleLogout = (e) => {
         e.preventDefault();
@@ -113,7 +130,7 @@ function PagePefil() {
                             <button onClick={() => toggleEditBtn(1)}>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
-                            <p><FaSmile/> Apelido</p>
+                            <p><FaSmile/> Apelido {user}</p>
                             {toggleEdit == 2 ? <div className={styles.editInput}>
                                 <input type="text" /> 
                                 <button>Salvar</button>
@@ -123,8 +140,14 @@ function PagePefil() {
                             <button onClick={() => toggleEditBtn(2)}>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
-                            <p><FaQuoteLeft/> Frase do perfil</p>
-                            <button>Alterar</button>
+                            <p><FaQuoteLeft/> Avatar</p>
+                            {/* <input
+            type="file"
+            name="screenshot"
+            onChange={(e) => {
+              setFile(e.target.files[0]);
+            }} /> onClick={(e) => upload(e)} */}
+          <button className="" >Submit</button>
                         </div>
                     </div>
                     <div className={styles.EditGeral}>
