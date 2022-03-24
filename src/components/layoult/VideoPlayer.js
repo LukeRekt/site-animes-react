@@ -5,8 +5,22 @@ import { BiPlay, BiPause, BiVolumeFull, BiVolumeMute, BiFullscreen } from "react
 import useVideoPlayer from "../../hooks/useVideoPlayer";
 
 
-
 const VideoPlayer = (props) => {
+  const videoContainer = document.getElementById('video-container');
+  function toggleFullScreena(pimba) {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else if (document.webkitFullscreenElement) {
+      // Need this to support Safari
+      document.webkitExitFullscreen();
+    } else if (pimba.webkitRequestFullscreen) {
+      // Need this to support Safari
+      pimba.webkitRequestFullscreen();
+    } else {
+      pimba.requestFullscreen();
+    }
+  }
+
   const PularAbertura = (tempoAtual) => {
     if(tempoAtual >= 10 && tempoAtual <= 20){
       //console.log(showDiv);
@@ -42,7 +56,7 @@ const VideoPlayer = (props) => {
   return (
     <div className={styles.container}>
         
-      <div className={styles.video_wrapper}>
+      <div id="video-container" className={styles.video_wrapper}>
         <video
           src={props.videoLink}
           ref={videoElement}
@@ -51,6 +65,8 @@ const VideoPlayer = (props) => {
         {  PularAbertura(playerState.actualTime) ? (<div onClick={(e) => pularAberturaHandler(e)} className={styles.pularAbertura}> <p>PULAR ABERTURA</p></div>) : (<></>)}
         {/* {  playerState.actualTime >= 20 ? (<></>) : (<></>)} */}
         
+        <div className={styles.controls_wrap}>
+          
         <div className={styles.controls}>
           <div className={styles.actions}>
             <button onClick={togglePlay}>
@@ -90,8 +106,9 @@ const VideoPlayer = (props) => {
               <i className={`${styles.bx} ${styles.bxs_volume_mute}`}><BiVolumeMute/></i>
             )}
           </button>
-          <button className={styles.mute_btn} onClick={toggleFullscreen}><BiFullscreen/> </button>
+          <button className={styles.mute_btn} onClick={(e) => toggleFullScreena(videoContainer)}><BiFullscreen/> </button>
           
+        </div>
         </div>
       </div>
       

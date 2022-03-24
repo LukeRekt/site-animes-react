@@ -6,7 +6,7 @@ import SeletorEP from '../layoult/SeletorEp';
 import VideoPlayer from '../layoult/VideoPlayer';
 
 function PageEpisode() {
-
+ 
   function ListEp(parametros, postsa) {
     for (var i = 0; i < postsa.length; i++) {
 
@@ -41,7 +41,7 @@ function PageEpisode() {
 
   return (
     <div>
-
+      
       <div className={styles.PageAnimeContainer}>
         <VideoPlayer videoLink={ListEp(ep, posts)}/>
         {/* <video src={ListEp(ep, posts)} controls>
