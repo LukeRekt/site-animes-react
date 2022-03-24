@@ -1,6 +1,6 @@
 .PageAnimeContainer{
     float: left;
-    width: 100%;
+    width: 70%;
     margin-left: 15%;
 }
 .PageAnimeContainer video{
@@ -11,11 +11,11 @@
 .container{
     float: right;
     background: #181829;
-    width: 15.2%;
-    margin-right: 30%;
+    width: 21%;
+    margin-right: 0%;
     margin-left: 1px;
     border-radius: 8px;
-    
+    overflow: hidden;
     
 }
 .container p {
@@ -24,10 +24,9 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   padding-bottom: 8px;
-  
 }
 .listaEps{
-    height: 485px;
+    height: 57.2vh;
     overflow: scroll;
 }
 .listaEps p{
