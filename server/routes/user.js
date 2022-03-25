@@ -16,7 +16,10 @@ router.get("/logout", logout)
 
 router.get("/user", verifyToken, userById, getLoggedInUser);
 
-router.post("/animes", registera)
+
+//animes
+
+router.post("/addanimes", verifyToken, userById, registera)
 
 router.get("/getanim", listar)
 

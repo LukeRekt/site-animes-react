@@ -1,7 +1,8 @@
 const User = require("../models/user")
 const jwt = require("jsonwebtoken");
 const user = require("../models/user");
-const fs = require('fs')
+const fs = require('fs');
+const { nextTick } = require("process");
 require("dotenv").config();
 
 exports.register = async (req, res) => {
@@ -97,7 +98,9 @@ exports.getLoggedInUser = (req, res) => {
         userAvatar,
         userBanner,
         isAdmin,
+        
     })
+    
 }
 
 // exports.Teste = async (req, res) => {
