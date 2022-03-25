@@ -23,9 +23,9 @@ function Home() {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:4000/animes')
+        axios.get('http://localhost:3232/getanim')
             .then(res => {
-                setPosts(res.data)
+                setPosts(res.data.animes)
             })
     }, [])
 
@@ -33,13 +33,14 @@ function Home() {
     return (
         <div>
             <div className={styles.container}>
+                
                 {/* <h1>Ola {user && <span>{user}</span>} {" "}</h1> */}
                 <div className={styles.carousel_animes}>
                     <BotaoInfo mensagem='ÚLTIMOS LANÇAMENTOS' />
                     <Carousel breakPoints={breakPoints}>
 
                         {posts.map(post =>
-                            <Animes nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodeos} />
+                            <Animes nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
                         )}
 
 
@@ -50,7 +51,7 @@ function Home() {
                     <Carousel breakPoints={breakPoints}>
 
                         {posts.map(post =>
-                            <Animes nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodeos} />
+                            <Animes nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
                         )}
 
 

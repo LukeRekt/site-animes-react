@@ -3,6 +3,7 @@ const router = express.Router();
 
 //importar controllers
 const { register, login, logout, getLoggedInUser, buscarUser } = require("../controllers/user")
+const { registera, listar} = require("../controllers/animes")
 //importar middlewares
 const { userRegisterValidator, userById } = require('../middlewares/user')
 const { verifyToken } = require("../middlewares/auth")
@@ -14,6 +15,10 @@ router.post("/login", login);
 router.get("/logout", logout)
 
 router.get("/user", verifyToken, userById, getLoggedInUser);
+
+router.post("/animes", registera)
+
+router.get("/getanim", listar)
 
 //editar infos
 
