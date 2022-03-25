@@ -11,9 +11,10 @@ function PageAnime() {
     const [posts, setPosts] = useState([])
     let navigate = useNavigate();
     useEffect(() => {
-        axios.get(`http://localhost:4000/animes/${id}`)
+        axios.get(`http://localhost:3232/getanim/${id}`)
             .then(res => {
-                setPosts(res.data)
+                console.log(res.data.animes)
+                setPosts(res.data.animes)
                 console.log(res)
             }).catch((err) => {
                 return navigate("/");
@@ -45,7 +46,7 @@ function PageAnime() {
                 </div>
                 <div className={styles.boxInfoAnimes}>
                     <p>Episódios</p>
-                    {posts.episodeos}</div>
+                    {posts.episodios}</div>
                 <div className={styles.boxInfoAnimes}>
                     <p>Especiais</p>
                     {posts.especiais}</div>

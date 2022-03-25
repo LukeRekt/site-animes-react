@@ -26,3 +26,17 @@ exports.listar = async (req, res) => {
     });
 };
 
+exports.getanime = async (req, res) => {
+    //buscar usuario baseado no email
+    const id = req.params.id
+    await Anime.findOne({id}).exec((err, animes) => {
+
+        //retornar resposta para o usuario
+        
+        return res.json({
+            animes,
+        });
+    });
+};
+
+
