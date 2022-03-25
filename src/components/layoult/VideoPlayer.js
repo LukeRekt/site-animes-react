@@ -22,7 +22,7 @@ const VideoPlayer = (props) => {
   }
 
   const PularAbertura = (tempoAtual) => {
-    if(tempoAtual >= 10 && tempoAtual <= 20){
+    if(tempoAtual >= 50 && tempoAtual <= 70){
       //console.log(showDiv);
       
       return true

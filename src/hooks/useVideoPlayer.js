@@ -11,7 +11,7 @@ const useVideoPlayer = (videoElement) => {
   });
 
   const pularAberturaHandler = () =>{
-    videoElement.current.currentTime += 90
+    videoElement.current.currentTime += 85
 }
   
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-
+const multer = require('multer');
+const upload = multer();
 //importar controllers
 const { register, login, logout, getLoggedInUser, buscarUser } = require("../controllers/user")
 const { registera, listar, getanime, getEpisodes, AddEpisode} = require("../controllers/animes")

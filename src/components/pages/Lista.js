@@ -9,7 +9,7 @@ function Lista() {
     e.preventDefault();
     let formData = new FormData();
     formData.append("screenshot", file);
-    Axios.post("http://localhost:3232/avatar", formData, {
+    Axios.post("http://localhost:3232/aaaaaa", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },

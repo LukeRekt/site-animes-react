@@ -34,7 +34,8 @@ app.use("/", userRoutes)
 app.use('/static', express.static('public'));
 
 //Upload de arquivos
-app.post("/avatara", (req, res) => {
+
+app.post("/avatar", (req, res) => {
   const filename = req.files.screenshot.name;
   const file = req.files.screenshot;
   let uploadPath = __dirname + "/public/imagens/avatars/" + filename;
@@ -45,6 +46,7 @@ app.post("/avatara", (req, res) => {
   });
   res.send(200);
 });
+
 
 //porta
 const port = process.env.PORT || 8080;
