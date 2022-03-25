@@ -100,18 +100,18 @@ exports.getLoggedInUser = (req, res) => {
     })
 }
 
-exports.Teste = async (req, res) => {
-    console.log(req.body)
-    const { username } = req.user;
-    console.log(req.user)
-    const buscarUser = await User.findOne({
-        username: username,
-    });
-    buscarUser.userAvatar = `http://localhost:3232/static/imagens/avatars/LukeRekt.png`
-    buscarUser.save();
+// exports.Teste = async (req, res) => {
+//     console.log(req.body)
+//     const { username } = req.user;
+//     console.log(req.user)
+//     const buscarUser = await User.findOne({
+//         username: username,
+//     });
+//     buscarUser.userAvatar = `http://localhost:3232/static/imagens/avatars/LukeRekt.png`
+//     buscarUser.save();
 
 
-  };
+//   };
     
 
     // const {username} = req.user;

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //importar controllers
-const { register, login, logout, getLoggedInUser, Teste, buscarUser } = require("../controllers/user")
+const { register, login, logout, getLoggedInUser, buscarUser } = require("../controllers/user")
 //importar middlewares
 const { userRegisterValidator, userById } = require('../middlewares/user')
 const { verifyToken } = require("../middlewares/auth")
@@ -17,7 +17,7 @@ router.get("/user", verifyToken, userById, getLoggedInUser);
 
 //editar infos
 
-router.post("/edit", verifyToken, userById, Teste)
+// router.post("/edit", verifyToken, userById, Teste)
 
 //buscar usuario
 router.post("/buscar", buscarUser)
