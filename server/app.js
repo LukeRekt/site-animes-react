@@ -35,10 +35,9 @@ app.use('/static', express.static('public'));
 
 //Upload de arquivos
 app.post("/avatar", (req, res) => {
-  const filename = Date.now() + "_" + req.files.screenshot.name;
+  const filename = req.files.screenshot.name;
   const file = req.files.screenshot;
   let uploadPath = __dirname + "/public/imagens/avatars/" + filename;
-  
   file.mv(uploadPath, (err) => {
     if (err) {
       return res.send(Err);

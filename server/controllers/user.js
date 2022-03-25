@@ -1,6 +1,7 @@
 const User = require("../models/user")
 const jwt = require("jsonwebtoken");
 const user = require("../models/user");
+const fs = require('fs')
 require("dotenv").config();
 
 exports.register = async (req, res) => {
@@ -26,6 +27,10 @@ exports.register = async (req, res) => {
     const user = new User(req.body);
     await user.save();
 
+    fs.copyFile('./public/imagens/avatars/default.png', `./public/imagens/avatars/${req.body.username}.png`, (err) => {
+        if (err) throw err;
+        console.log('Copiado');
+      });
 
     res.status(201).json({
         message: "Cadastrado com sucesso!",
@@ -96,22 +101,28 @@ exports.getLoggedInUser = (req, res) => {
 }
 
 exports.Teste = async (req, res) => {
+    console.log(req.body)
     const { username } = req.user;
+    console.log(req.user)
     const buscarUser = await User.findOne({
         username: username,
     });
-    buscarUser.userAvatar = "http://localhost:3232/static/imagens/avatars/LukeRekt.jpg"
+    buscarUser.userAvatar = `http://localhost:3232/static/imagens/avatars/LukeRekt.png`
     buscarUser.save();
 
+
+  };
+    
 
     // const {username} = req.user;
     // return res.status(200).json({
     //     username,
     // })
     //a veracidade dos dados deve ser checada e buscada na db
-}
+
 exports.buscarUser = async (req, res) => {
     //buscar usuario baseado no email
+    console.log(req);
     const { username } = req.body;
 
     await User.findOne({ username }).exec((err, usuario) => {

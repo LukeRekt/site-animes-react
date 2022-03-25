@@ -19,21 +19,22 @@ function PagePefil() {
     const [toggleEdit, setToggleEdit] = useState(20);
     const navigate = useNavigate();
 
-    // const [file, setFile] = useState(null);
+    const [file, setFile] = useState(null);
 
-    // const upload = (e) => {
-    //   e.preventDefault();
-    //   let formData = new FormData();
-    //   formData.append("screenshot", file);
-    //   Axios.post("http://localhost:3232/avatar", formData, {
-    //     headers: {
-    //       "Content-Type": "multipart/form-data",
-    //     },
-    //   }).then((res) => {
-        
-    //     console.log("Sucesso! ", res);
-    //   });
-    // };
+    const upload = (e) => {
+      e.preventDefault();
+      let formData = new FormData();
+      formData.append("screenshot", file, `${user}.png`);
+      
+      Axios.post("http://localhost:3232/avatar", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }).then((res) => {
+        window.location.reload();
+        console.log("Sucesso! ", res);
+      });
+    };
 
     const handleLogout = (e) => {
         e.preventDefault();
@@ -141,13 +142,13 @@ function PagePefil() {
                         </div>
                         <div className={styles.perfilInfos}>
                             <p><FaQuoteLeft/> Avatar</p>
-                            {/* <input
+                            <input
             type="file"
             name="screenshot"
             onChange={(e) => {
               setFile(e.target.files[0]);
-            }} /> onClick={(e) => upload(e)} */}
-          <button className="" >Submit</button>
+            }} /> 
+          <button className="" onClick={(e) => upload(e)}>Mudar</button>
                         </div>
                     </div>
                     <div className={styles.EditGeral}>
