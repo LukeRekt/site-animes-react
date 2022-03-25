@@ -8,7 +8,7 @@ import styles from "./Tabs.module.css"
 import AnimeList from './AnimeList'
 import { MuiThemeProvider} from "@material-ui/core/styles";
 import { createTheme } from '@material-ui/core'
-import { orange, pink, green } from "@material-ui/core/colors";
+import { orange, green } from "@material-ui/core/colors";
 function Tabsa(props) {
   const theme = createTheme({
     overrides: {
@@ -42,10 +42,10 @@ function Tabsa(props) {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:4000/episodios')
+    axios.get(`http://localhost:3232/getanim/episodios/1`)
       .then(res => {
-        setPosts(res.data)
-        console.log(res)
+        setPosts(res.data.episodios)
+        console.log(res.data.episodios)
       })
   }, [])
 
@@ -66,7 +66,7 @@ function Tabsa(props) {
         </AppBar>
         <TabPanel value={value} index={0}>
           <div className={styles.AnimeListContainer}>
-            {posts.map(post =>
+             {posts.map(post =>
               <AnimeList nome={post.nome} id={post.id} iddois={props.id} episodio={post.numero} />)}
 
 

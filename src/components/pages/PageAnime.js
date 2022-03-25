@@ -13,9 +13,7 @@ function PageAnime() {
     useEffect(() => {
         axios.get(`http://localhost:3232/getanim/${id}`)
             .then(res => {
-                console.log(res.data.animes)
                 setPosts(res.data.animes)
-                console.log(res)
             }).catch((err) => {
                 return navigate("/");
             })
@@ -76,7 +74,7 @@ function PageAnime() {
 
             </div>
             <div className={styles.episodeosAnime}>
-                <Tabs id={posts.id} />
+                <Tabs id={id} />
                 {/* eps aqui listados vindo direto de um novo server json buscando de acordo com o id do ep */}
 
             </div>

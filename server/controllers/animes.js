@@ -1,4 +1,5 @@
 const Anime = require("../models/animes")
+const Episodios = require("../models/episodios")
 require("dotenv").config();
 
 exports.registera = async (req, res) => {
@@ -35,6 +36,32 @@ exports.getanime = async (req, res) => {
         
         return res.json({
             animes,
+        });
+    });
+};
+
+
+exports.AddEpisode = async (req, res) => {
+    //testar se o user ja existe
+    
+
+    //se novo user, criar novo user
+    const episode = new Episodios(req.body);
+    await episode.save();
+
+    res.status(201).json({
+        message: "Cadastrado com sucesso!",
+    });
+};
+exports.getEpisodes = async (req, res) => {
+    //buscar usuario baseado no email
+    const id = req.params.id
+    await Episodios.find({id}).exec((err, episodios) => {
+
+        //retornar resposta para o usuario
+        
+        return res.json({
+            episodios,
         });
     });
 };
