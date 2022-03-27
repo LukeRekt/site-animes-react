@@ -12,7 +12,7 @@
   } */
   
   .searchModule {
-    width: 500px;
+    width: 80%;
     color: #252a32;
     overflow: hidden;
     float: left;
@@ -40,12 +40,50 @@
     max-height: 310px;
     background-color: #ffffff;
   }
+
+  .searchAnime {
+    width: 90%;
+    display: flex;
+  }
+  .searchAnime img{
+    width: 12%;
+    border: #ffbe63 2px solid;
+    border-radius: 3px;
+  }
+  .searchAnime p {
+    display: flex;
+    flex: 1;
+    color: #ffbe63;
+    width: 100%;
+    margin: 10px;
+    font-size: 20px;
+    border-bottom: 1px dashed #c7c0c02c;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+  }
+  .searchAnime span{
+    color: rgb(241, 241, 241);
+    margin-right: 3px;
+    font-weight: 300;
+  }
+  .infosAnimes{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .infosAnimes p {
+    margin: 10px;
+    padding: 10px;
+  }
+
   .searchModule ul li {
     padding: 15px;
     background: #181829;
     border-bottom: 1px solid #c7c0c0;
     margin-top: 0.5px;
   }
+  
   .searchModule li:hover {
     color: rgb(241, 249, 249);
     border-color: #272736;

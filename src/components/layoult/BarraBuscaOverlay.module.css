@@ -5,10 +5,16 @@ height: 100%;
 position: fixed;
 z-index: 4;
 display: inline;
+transition: 0.4s;
 }
 .searchWrapper{
-    margin-left: 36%;
+    margin-left: 15%;
     margin-top: 8%;
+}
+
+.searchWrapper svg:hover{
+    fill: #ffbe63;
+    transition: 0.2s;
 }
 .fechar{
     font-size: 50px;

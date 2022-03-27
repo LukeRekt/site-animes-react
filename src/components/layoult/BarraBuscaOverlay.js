@@ -9,9 +9,9 @@ function BarraBuscaOverlay(){
     const {visibility, setVisibility} = useVisibility();
 
     return (
-        <div> {visibility ? (<div style={{display:"block"}} className={styles.container}>
+        <div> {visibility ? (<div style={{opacity:"1"}} className={styles.container}>
            <div className={styles.searchWrapper}><InstantSearch/><div className={styles.fechar}><AiOutlineClose style={{cursor: "pointer"}} onClick={() => setVisibility(false)}/></div></div> 
-        </div>) : (<></>)}</div>
+        </div>) : (<div style={{visibility: "hidden", opacity:"0"}} className={styles.container}></div>)}</div>
         
     )
 }
