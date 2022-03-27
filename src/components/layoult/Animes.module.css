@@ -29,7 +29,7 @@
     top: 2%;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.08167016806722693) 60%);
     margin-top: 11px;
     width: 192px;
@@ -46,8 +46,8 @@
     margin-top: 0px;
     padding: 5px;
     border-radius: 10px;
-    color: rgb(255, 166, 0);
-    background-color: rgb(0, 0, 0);
+    color: #27ae60;
+    background-color: rgba(0, 0, 0, 0.61);
     text-align: center;
     width: 90%;
 

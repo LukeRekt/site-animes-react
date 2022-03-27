@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    width: 20%;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.container img {
+    width: 100%;
+    position: relative;
+    height: 300px;
+}
+.episodeInfos{
+    display: flex;
+    height: 150px;
+    margin: 10px;
+    width: 300px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.308);
+}
+.episodeInfos p{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    font-size: 20px;
+    z-index: 1;
+}

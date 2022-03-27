@@ -22,3 +22,8 @@
 .carousel_animes h1{
     margin-bottom: 1%;
 }
+.novosEpisodios{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

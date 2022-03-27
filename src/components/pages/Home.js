@@ -4,6 +4,7 @@ import axios from 'axios'
 import Animes from '../layoult/Animes'
 import Carousel from 'react-elastic-carousel'
 import BotaoInfo from '../layoult/BotaoInfo'
+import EpisodiosHome from '../layoult/EpisodiosHome'
 
 //tudo relacionado a login e seus dependentes nao devem ter prioridade no desenvolvimento.
 //prezar pelo funcionamento básico do site
@@ -33,8 +34,8 @@ function Home() {
                 
                 {/* <h1>Ola {user && <span>{user}</span>} {" "}</h1> */}
                 <div className={styles.carousel_animes}>
-                    <BotaoInfo mensagem='ÚLTIMOS LANÇAMENTOS' />
-                    <Carousel breakPoints={breakPoints}>
+                    <BotaoInfo mensagem='Lançamentos' />
+                    <Carousel pagination={false} breakPoints={breakPoints}>
 
                         {posts.map(post =>
                             <Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
@@ -44,15 +45,21 @@ function Home() {
                     </Carousel>
                 </div>
                 <div className={styles.carousel_animes}>
-                    <BotaoInfo mensagem='OS MAI BRABO DA CENA' />
-                    <Carousel breakPoints={breakPoints}>
+                    <BotaoInfo mensagem='Últimos Episódios em Lançamento' />
+                    {/* <Carousel pagination={false} breakPoints={breakPoints}>
 
                         {posts.map(post =>
                             <Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
                         )}
 
 
-                    </Carousel>
+                    </Carousel> */}
+                    <div className={styles.novosEpisodios}>
+                    {posts.map(post =>
+                            <EpisodiosHome key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
+                            )}
+                     </div>
+
                 </div>
             </div>
             {/* <TopAnimes/> */}
