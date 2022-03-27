@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import styles from './InstantSearch.module.css'
-import { Link, Navigate } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 class InstantSearch extends Component {
 
 
@@ -74,7 +74,7 @@ class InstantSearch extends Component {
         />
         <ul>
           {this.state.Posts.map((res) => {
-            return <Link to={`/anime/${res.id}`}><li key={res.id}>
+            return <Link to={`/anime/${res.id}`} key={res.id}><li key={res.id}>
               <div className={styles.searchAnime}>
                 <img src={res.imagem} alt="" /> 
                 <div className={styles.infosAnime}>

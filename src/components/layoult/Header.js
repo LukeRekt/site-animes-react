@@ -1,25 +1,22 @@
-import { Link, useNavigate, } from 'react-router-dom';
+import { Link,} from 'react-router-dom';
 import styles from './Header.module.css'
 import { useContext, useState } from "react"
-import BarraBuscaOverlay from './BarraBuscaOverlay';
 
 import logo from '../../assets/img/logo.png';
 // import avatar from '../../assets/img/fotosperfil/avatar.png';
-import { toast } from 'react-toastify';
 import { UserContext } from '../../UserContext';
 
 
 import { FaHouseUser, FaBell, FaNewspaper, FaStar, FaCalendarAlt, FaSearch } from 'react-icons/fa';
 
 //funcoes
-import { logout } from '../../api/user'
 import ProfileBox from './ProfileBox';
 import { useVisibility } from '../../context/Visibility';
 
 
 function Header() {
     const [menu, setMenu] = useState(false);
-    const {visibility, setVisibility} = useVisibility();
+    const {setVisibility} = useVisibility();
     function toggleProfile(){
         if(menu === true){
             setMenu(false);
@@ -34,20 +31,19 @@ function Header() {
     
     }
     //adicionar o setAvatar
-    const navigate = useNavigate();
-    const { user, setUser } = useContext(UserContext);;
+    const { user } = useContext(UserContext);;
     const { avatar } = useContext(UserContext);
-    const handleLogout = (e) => {
-        e.preventDefault();
+    // const handleLogout = (e) => {
+    //     e.preventDefault();
 
-        logout()
-            .then((res) => {
-                toast.success(res.message);
-                setUser(null);
-                navigate('/login');
-            })
-            .catch((err) => console.error(err));
-    }
+    //     logout()
+    //         .then((res) => {
+    //             toast.success(res.message);
+    //             setUser(null);
+    //             navigate('/login');
+    //         })
+    //         .catch((err) => console.error(err));
+    // }
     return (
         <div className={styles.header}>
             <Link to="/"><img className={styles.logo} src={logo} alt="Logo" /></Link>
@@ -57,7 +53,7 @@ function Header() {
                 <li className={styles.item}><Link to="/favoritos"><FaStar /> FAVORITOS</Link></li>
                 <li className={styles.item}><Link to="/calendario"><FaCalendarAlt />CALENDARIO</Link></li>
             </div>
-<FaSearch style={{cursor:"pointer"}} size="30px" onClick={() => setVisibility(true)}/>
+<FaSearch id={styles.lupa} style={{cursor:"pointer"}} size="30px" onClick={() => setVisibility(true)}/>
             {/* <button onClick={handleLogout}>Deslogar</button>  */}
             <div className={styles.usuario}>
 

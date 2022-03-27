@@ -4,8 +4,6 @@ import axios from 'axios'
 import Animes from '../layoult/Animes'
 import Carousel from 'react-elastic-carousel'
 import BotaoInfo from '../layoult/BotaoInfo'
-import { useContext } from "react"
-import { UserContext } from '../../UserContext'
 
 //tudo relacionado a login e seus dependentes nao devem ter prioridade no desenvolvimento.
 //prezar pelo funcionamento básico do site
@@ -17,7 +15,6 @@ const breakPoints = [
 ];
 
 function Home() {
-    const { user } = useContext(UserContext)
     
 
     const [posts, setPosts] = useState([])
@@ -40,7 +37,7 @@ function Home() {
                     <Carousel breakPoints={breakPoints}>
 
                         {posts.map(post =>
-                            <Animes nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
+                            <Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
                         )}
 
 
@@ -51,7 +48,7 @@ function Home() {
                     <Carousel breakPoints={breakPoints}>
 
                         {posts.map(post =>
-                            <Animes nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
+                            <Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
                         )}
 
 

@@ -3,20 +3,34 @@ background-color: #0c0c1dbd;
 width: 100%;
 height: 100%;
 position: fixed;
-z-index: 4;
+z-index: 1101;
 display: inline;
 transition: 0.4s;
 }
 .searchWrapper{
     margin-left: 15%;
-    margin-top: 8%;
+    margin-top: 5%;
 }
 
-.searchWrapper svg:hover{
-    fill: #ffbe63;
-    transition: 0.2s;
-}
+
 .fechar{
-    font-size: 50px;
+    background-color: #0c0c1dbd;
     float: left;
+    border: 1px solid rgba(105, 105, 105, 0.473);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.fechar:hover {
+    background-color: #ffbe63;
+    transition: 0.3s;
+}
+.fechar svg{
+    
+    padding: 0;
+    margin: 0;
+    font-size: 50px;
+}
+.fechar:hover > svg {
+    fill: #0c0c1dd8;
+    transition: 0.3s;
 }

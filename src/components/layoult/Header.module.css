@@ -9,6 +9,10 @@
     font-weight: 700;
     
 }
+#lupa:hover {
+    fill: #ffbe63;
+    transition: 0.4s;
+}
 
 #navegacao{
     float: left;
@@ -34,7 +38,7 @@
     color: #fff;
     text-decoration: none;
     padding: 5px;
-    transition: 0.3s;
+    transition: 0.5s;
 
 }
 .item a:hover {

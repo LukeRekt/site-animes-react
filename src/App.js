@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Header from './components/layoult/Header';
 import Calendario from './components/pages/Calendario';
@@ -27,7 +27,6 @@ import {UserContext} from "./UserContext"
 
 import {getUser} from './api/user'
 import UserProfileSearch from './components/pages/UserProfileSearch';
-import VideoPlayer from './components/layoult/VideoPlayer';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -50,7 +49,6 @@ function App() {
 		return () => unsubscribe;
 	}, []);
   return (
-
     <Router>
       
       <UserContext.Provider value={{user, setUser, avatar, setAvatar, banner, setBanner, admin, setAdmin}}>

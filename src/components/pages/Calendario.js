@@ -1,4 +1,3 @@
-import InstantSearch from "../layoult/InstantSearch"
 
 function Calendario() {
     return (//Deve ser possível adicionar no calendário por contas autorizadas  

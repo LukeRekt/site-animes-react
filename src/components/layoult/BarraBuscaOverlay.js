@@ -1,4 +1,3 @@
-import { useContext, useState } from "react"
 import styles from "./BarraBuscaOverlay.module.css"
 import InstantSearch from "./InstantSearch"
 import { AiOutlineClose } from "react-icons/ai";
