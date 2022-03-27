@@ -14,7 +14,9 @@ import Footer from './components/layoult/Footer'
 import Container from './components/layoult/Container'
 import Noticias from './components/layoult/Noticias'
 import PageRegister from './components/pages/PageRegister';
+import BarraBuscaOverlay from './components/layoult/BarraBuscaOverlay';
 import { useState, useEffect } from 'react';
+import VisibilityProvider from './context/Visibility';
 
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
@@ -52,7 +54,13 @@ function App() {
     <Router>
       
       <UserContext.Provider value={{user, setUser, avatar, setAvatar, banner, setBanner, admin, setAdmin}}>
-      <Header/>
+     <VisibilityProvider>
+     <BarraBuscaOverlay/>
+     <Header/>
+     </VisibilityProvider>
+      
+      
+      
       <ToastContainer toastStyle={{ backgroundColor: "#0C0C1D" }}/>
       <Container customClass="min-height">
         <Noticias />

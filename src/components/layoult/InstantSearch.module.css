@@ -10,19 +10,21 @@
     margin: 0;
     padding: 0;
   } */
+  
   .searchModule {
     width: 500px;
     color: #252a32;
     overflow: hidden;
+    float: left;
   }
   .searchModule input {
     padding: 15px;
-    border-radius: 3px;
+    border-radius: 9px;
     outline: none;
     border: none;
     width: 100%;
     font-size: 1.3rem;
-    border: 1px solid #363638;;
+    border: 1px solid #363638;
     background-color: #181829;
   }
   .searchModule input:focus {
