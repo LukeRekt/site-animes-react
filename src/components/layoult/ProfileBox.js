@@ -35,14 +35,17 @@ function ProfileBox (props) {
         <div style={pimba} className={styles.container} >
             
             {props.logado ? (<></>) : (<div className={styles.nomeUser}><p>@{user}</p> </div>)}
-
-            {props.logado ? (<Link to="/login"><div onClick={() => console.log("fechar")} className={styles.login}>  <p><BiKey size="25px"/>Login</p></div></Link>) :
-             (<Link to="/perfil"><div onClick={() => console.log("fechar")} className={styles.login}>  <p><BiKey size="25px"/>Perfil</p></div></Link>)}
+        <div className={styles.opcoes}>
+        {props.logado ? (<Link to="/login"><div onClick={() => console.log("fechar")} className={styles.login}> <BiKey size="40px"/> <p>Login</p></div></Link>) :
+             (<Link to="/perfil"><div onClick={() => console.log("fechar")} className={styles.login}>  <BiKey size="40px"/><p>Perfil</p></div></Link>)}
             
-            {props.logado ? (<Link to="/registrar"><div className={styles.login}>  <p><BiKey size="25px"/>Registrar</p></div></Link>) :
-             (<div onClick={handleLogout} className={styles.login}>  <p><AiOutlineLogout size="23px"/>Deslogar</p></div>)}
+            {props.logado ? (<Link to="/registrar"><div className={styles.login}> <BiKey size="40px"/> <p>Registrar</p></div></Link>) :
+             (<div onClick={handleLogout} className={styles.login}> <AiOutlineLogout size="40px"/> <p>Deslogar</p></div>)}
 
-    {props.logado == false ? (admin == false ? (<></>) : (<div onClick={salveadm} className={styles.login}>  <p id={styles.admin}><FaStar size="23px"/>Admin</p></div>)) : (<></>)}
+    {props.logado == false ? (admin == false ? (<></>) : (<div onClick={salveadm} id={styles.admin} className={styles.login}> <FaStar size="40px"/> <p id={styles.admin}>Admin</p></div>)) : (<></>)}
+
+        </div>
+            
             </div>
     )
 }
