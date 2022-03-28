@@ -36,8 +36,8 @@ function ProfileBox (props) {
             
             {props.logado ? (<></>) : (<div className={styles.nomeUser}><p>@{user}</p> </div>)}
         <div className={styles.opcoes}>
-        {props.logado ? (<Link to="/login"><div onClick={() => console.log("fechar")} className={styles.login}> <BiKey size="40px"/> <p>Login</p></div></Link>) :
-             (<Link to="/perfil"><div onClick={() => console.log("fechar")} className={styles.login}>  <BiKey size="40px"/><p>Perfil</p></div></Link>)}
+        {props.logado ? (<Link to="/login"><div className={styles.login}> <BiKey size="40px"/> <p>Login</p></div></Link>) :
+             (<Link to="/perfil"><div className={styles.login}>  <BiKey size="40px"/><p>Perfil</p></div></Link>)}
             
             {props.logado ? (<Link to="/registrar"><div className={styles.login}> <BiKey size="40px"/> <p>Registrar</p></div></Link>) :
              (<div onClick={handleLogout} className={styles.login}> <AiOutlineLogout size="40px"/> <p>Deslogar</p></div>)}

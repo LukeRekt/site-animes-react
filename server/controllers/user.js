@@ -30,7 +30,6 @@ exports.register = async (req, res) => {
 
     fs.copyFile('./public/imagens/avatars/default.png', `./public/imagens/avatars/${req.body.username}.png`, (err) => {
         if (err) throw err;
-        console.log('Copiado');
       });
 
     res.status(201).json({
@@ -68,7 +67,6 @@ exports.login = async (req, res) => {
         const { userAvatar } = user;
         const { userBanner } = user;
         const { isAdmin } = user;
-        console.log(userAvatar)
         return res.json({
             message: "Logado com sucesso!",
             username,
@@ -125,7 +123,6 @@ exports.getLoggedInUser = (req, res) => {
 
 exports.buscarUser = async (req, res) => {
     //buscar usuario baseado no email
-    console.log(req);
     const { username } = req.body;
 
     await User.findOne({ username }).exec((err, usuario) => {

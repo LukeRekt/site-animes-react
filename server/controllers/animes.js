@@ -8,7 +8,6 @@ exports.registera = async (req, res, next) => {
 
     //se novo user, criar novo user
     const anime = new Anime(req.body);
-    console.log(req.body)
     await anime.save();
 
     res.status(201).json({

@@ -20,15 +20,9 @@ function Header() {
     function toggleProfile(){
         if(menu === true){
             setMenu(false);
-            console.log("if")
-            
-            
         }else{
             setMenu(true);
-            console.log("else")
-            
         }
-    
     }
     //adicionar o setAvatar
     const { user } = useContext(UserContext);;
