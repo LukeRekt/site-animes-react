@@ -1,8 +1,5 @@
 .container{
     display: flex;
-    width: 20%;
-    flex-wrap: wrap;
-    flex-direction: row;
     
 }
 .container img {
@@ -11,11 +8,15 @@
     height: 300px;
     transition: 0.4s ;
 }
+.container a {
+    background-color: red;
+    margin: 8px;
+}
 .episodeInfos{
+    
     display: flex;
     height: 150px;
-    margin: 10px;
-    width: 300px;
+    width: 250px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.308);
     overflow-wrap: break-word;
@@ -57,9 +58,23 @@
     
     
 }
+.episodeInfos p:nth-child(4)
+{
+    top: 40%;
+    font-size: 15px;
+    font-weight: 500;
+    text-shadow: 2px 1px 2px black;
+}
+.episodeInfos p:nth-child(2)
+{
+    text-shadow: 2px 1px 2px black;
+    top: 80%;
+    font-weight: 400;
+}
 .episodeInfos p:nth-child(3)
 {
-    top: 80%;
+    text-shadow: 2px 1px 2px black;
+    top: 67%;
     font-weight: 400;
 }
 .qualidade p {

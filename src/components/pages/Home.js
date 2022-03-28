@@ -19,7 +19,7 @@ function Home() {
     
 
     const [posts, setPosts] = useState([])
-
+    const [postsep, setPostsep] = useState([])
     useEffect(() => {
         axios.get('http://localhost:3232/getanim')
             .then(res => {
@@ -27,6 +27,14 @@ function Home() {
             })
     }, [])
 
+    
+
+    useEffect(() => {
+        axios.get('http://localhost:3232/getanim/episodios/todos')
+            .then(res => {
+                setPostsep(res.data.episodios)
+            })
+    }, [])
 
     return (
         <div>
@@ -43,7 +51,7 @@ function Home() {
                     <Carousel pagination={false} breakPoints={breakPoints}>
 
                         {posts.map(post =>
-                            <Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
+                            <Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.numero} />
                         )}
 
 
@@ -60,8 +68,8 @@ function Home() {
 
                     </Carousel> */}
                     <div className={styles.novosEpisodios}>
-                    {posts.map(post =>
-                            <EpisodiosHome key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
+                    {postsep.map(post =>
+                            <EpisodiosHome key={post.numero} nome={post.nome} id={post.id} anime={post.nomeAnime} imagem={post.animeImagem} numero={post.numero} />
                             )}
                      </div>
 

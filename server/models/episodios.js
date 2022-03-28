@@ -19,6 +19,18 @@ const episodeosSchema = new mongoose.Schema(
 			trim: true,
 			lowercase: false,
 		},
+		nomeAnime: {
+			type: String,
+			required: true,
+			trim: true,
+			lowercase: false,
+		},
+		animeImagem: {
+			type: String,
+			required: true,
+			trim: true,
+			lowercase: false,
+		},
 		video: {
 			type: String,
 			required: true,
