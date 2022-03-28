@@ -33,6 +33,11 @@ function Home() {
             <div className={styles.container}>
                 
                 {/* <h1>Ola {user && <span>{user}</span>} {" "}</h1> */}
+                <div className={styles.botoesTeste}>
+                    <p>Lança Hoje!</p>
+                    <p>Completos</p>
+                    <p>Populares</p>
+                </div>
                 <div className={styles.carousel_animes}>
                     <BotaoInfo mensagem='Lançamentos' />
                     <Carousel pagination={false} breakPoints={breakPoints}>

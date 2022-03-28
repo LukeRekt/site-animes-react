@@ -53,7 +53,7 @@ function Header() {
                 <li className={styles.item}><Link to="/favoritos"><FaStar /> FAVORITOS</Link></li>
                 <li className={styles.item}><Link to="/calendario"><FaCalendarAlt />CALENDARIO</Link></li>
             </div>
-<FaSearch id={styles.lupa} style={{cursor:"pointer"}} size="30px" onClick={() => setVisibility(true)}/>
+            <FaSearch id={styles.lupa} style={{cursor:"pointer"}} size="30px" onClick={() => setVisibility(true)}/>
             {/* <button onClick={handleLogout}>Deslogar</button>  */}
             <div className={styles.usuario}>
 

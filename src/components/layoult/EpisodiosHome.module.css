@@ -3,11 +3,13 @@
     width: 20%;
     flex-wrap: wrap;
     flex-direction: row;
+    
 }
 .container img {
     width: 100%;
     position: relative;
     height: 300px;
+    transition: 0.4s ;
 }
 .episodeInfos{
     display: flex;
@@ -16,10 +18,54 @@
     width: 300px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.308);
+    overflow-wrap: break-word;
+    position: relative;
+    cursor: pointer;
+    
+    
+}
+.episodeInfos:hover > img{
+    height: 350px;
+    
+}
+.fundoAnime{
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.08167016806722693) 60%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    
+}
+.fundoAnime svg{
+    float: right;
+    font-size: 40px;
+    margin: 5px;
+    fill: #181829;
 }
 .episodeInfos p{
+    margin: 0;
     color: rgb(255, 255, 255);
     position: absolute;
-    font-size: 20px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
     z-index: 1;
+    width: 100%;
+    top: 55%;
+    left: 2%;
+    
+    
+}
+.episodeInfos p:nth-child(3)
+{
+    top: 80%;
+    font-weight: 400;
+}
+.qualidade p {
+    top: 10%;
+    width: 12%;
+    padding: 5px 8px 5px 8px;
+    border-radius: 2px;
+    background-color: #181829;
 }

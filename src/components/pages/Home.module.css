@@ -10,6 +10,7 @@
 }
 .container h1{ 
     font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
     color: #ffffff;;
     margin: auto;
@@ -26,4 +27,32 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.botoesTeste{
+    display: flex;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 28%;
+    background-color: #181829;
+    border-radius: 10px;
+}
+.botoesTeste p {
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin-right: 0px;
+    margin: 0;
+    padding: 10px 20px 10px 20px;
+    transition: 0.4s;
+}
+.botoesTeste p:hover{
+    background-color: #ffbe63;
+    
+    
+}
+.botoesTeste p:first-child {
+    color: #151538;
+    background-color: #ffbe63;;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
 }
