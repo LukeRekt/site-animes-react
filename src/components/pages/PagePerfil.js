@@ -15,6 +15,7 @@ function PagePefil() {
     const { user, setUser } = useContext(UserContext);
     const { avatar } = useContext(UserContext)
     const { banner } = useContext(UserContext)
+    const { email } = useContext(UserContext)
     const [toggleState, setToggleState] = useState(5);
     const [toggleEdit, setToggleEdit] = useState(20);
     const navigate = useNavigate();
@@ -122,6 +123,7 @@ function PagePefil() {
                         <h2>Geral</h2>
                         <div className={styles.perfilInfos}>
                             <p><FaUserAlt/> Nome Público</p>
+                            <p>{user}</p>
                             {toggleEdit == 1 ? <div className={styles.editInput}>
                                 <input type="text" /> 
                                 <button>Salvar</button>
@@ -131,7 +133,8 @@ function PagePefil() {
                             <button onClick={() => toggleEditBtn(1)}>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
-                            <p><FaSmile/> Apelido {user}</p>
+                            <p><FaSmile/> Apelido</p>
+                            <p>{user}</p>
                             {toggleEdit == 2 ? <div className={styles.editInput}>
                                 <input type="text" /> 
                                 <button>Salvar</button>
@@ -144,6 +147,7 @@ function PagePefil() {
                             <p><FaQuoteLeft/> Avatar</p>
                             <input
             type="file"
+            className={styles.inputFile}
             name="screenshot"
             onChange={(e) => {
               setFile(e.target.files[0]);
@@ -155,6 +159,7 @@ function PagePefil() {
                     <h2>Dados Pessoais</h2>
                         <div className={styles.perfilInfos}>
                             <p><FiAtSign/> Email</p>
+                            <p>{email}</p>
                             {toggleEdit == 4 ? <div className={styles.editInput}>
                                 <input type="text" /> 
                                 <button>Salvar</button>
@@ -165,6 +170,7 @@ function PagePefil() {
                         </div>
                         <div className={styles.perfilInfos}>
                             <p><FaPhoneAlt/> Número</p>
+                            <p>123456789</p>
                             {toggleEdit == 5 ? <div className={styles.editInput}>
                                 <input type="text" /> 
                                 <button>Salvar</button>
@@ -175,9 +181,13 @@ function PagePefil() {
                         </div>
                         <div className={styles.perfilInfos}>
                             <p><FaBirthdayCake/> Aniversário</p>
+                            <p className={styles.longe}>01/01/01</p>
+                            <button onClick={() => toggleEditBtn(1)}>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
                             <p><FaTransgenderAlt /> Gênero</p>
+                            <p className={styles.longe}>Helicóptero</p>
+                            <button onClick={() => toggleEditBtn(1)}>Alterar</button>
                         </div>
                     </div>
                     <div className={styles.EditGeral}>

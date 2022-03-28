@@ -1,6 +1,6 @@
 # Anime
 
-Um aplicativo usado para gerenciar orçamento de projetos, construído com React, JavaScript e CSS.
+Site de animes criado usando a stack M.E.R.N
 
 ## Status do projeto
 - [x] Home (base) - ainda precisa ser "decorada"

@@ -67,12 +67,14 @@ exports.login = async (req, res) => {
         const { userAvatar } = user;
         const { userBanner } = user;
         const { isAdmin } = user;
+        const { email } = user;
         return res.json({
             message: "Logado com sucesso!",
             username,
             userAvatar,
             userBanner,
             isAdmin,
+            email
         });
     });
 };
@@ -90,12 +92,14 @@ exports.getLoggedInUser = (req, res) => {
     const { userAvatar } = req.user;
     const { userBanner } = req.user;
     const { isAdmin } = req.user;
+    const { email } = req.user;
     return res.status(200).json({
         message: "O Usuario ainda esta logado",
         username,
         userAvatar,
         userBanner,
         isAdmin,
+        email
         
     })
     

@@ -33,6 +33,7 @@ function App() {
   const [avatar, setAvatar] = useState(null);
   const [banner, setBanner] = useState(null);
   const [admin, setAdmin] = useState(null);
+  const [email, setEmail] = useState(null);
 	useEffect(() => {
 		const unsubscribe = getUser()
 			.then((res) => {
@@ -42,6 +43,7 @@ function App() {
           setAvatar(res.userAvatar);
           setBanner(res.userBanner)
           setAdmin(res.isAdmin)
+          setEmail(res.email)
         }
 			})
 			.catch((err) => toast(err));
@@ -51,7 +53,7 @@ function App() {
   return (
     <Router>
       
-      <UserContext.Provider value={{user, setUser, avatar, setAvatar, banner, setBanner, admin, setAdmin}}>
+      <UserContext.Provider value={{user, setUser, avatar, setAvatar, banner, setBanner, admin, setAdmin, email, setEmail}}>
      <VisibilityProvider>
      <BarraBuscaOverlay/>
      <Header/>
