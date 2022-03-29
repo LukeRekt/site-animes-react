@@ -21,39 +21,59 @@
     float: left;
 }
 .fotoAnime img{
-    border-radius: 8px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
     width: 100%;
 }
 .sobreAnime{
     margin: auto;
-    border-radius: 5px;
-    background-color: #FFBE63;
-    font-size: 20px;
+    border-radius: 2px;
+    background-color: #ffbe63;
+    font-size: 15px;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    width: 97%;
+    font-weight: 400;
+    width: 90%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 10px;
+    
 }
 
 .sobreAnime p {
-    color: #12122b;
+    color: #181829;
     margin: 0px;
+
     
 }
-.sobreAnime p:first-child {
-    font-size: 30px;
-
+.sobreAnime p:nth-child(2){
+    font-size: 14px;
+    font-weight: 600;
+}
+.sobreAnime p:nth-child(3){
+    margin-left: 8%;
+    font-weight: 400;
+}
+.sobreAnimeTexto svg{
+    float: left;
+    margin-right: 5px;
+    font-size: 20px;
+    fill: #181829;
+}
+.sobreAnimeTexto{
+    
+    margin-left: 10px;
 }
 .boxInfoAnimes{
     text-align: center;
-    width: 30%;
+    width: 29%;
     font-size: 20px;
     background-color: #1F1F30;
     display: inline-block;
-    border-radius: 10px;
+    border-radius: 2px;
     margin-right: 5px;
     padding: 1px;
-    margin-left: 1%;
+    margin-left: 2%;
     margin-top: 2%;
     margin-bottom: 10px;
     font-family: 'Montserrat', sans-serif;
@@ -62,7 +82,8 @@
 }
 .boxInfoAnimes p {
     margin-bottom: 5px;
-    
+    font-weight: 600;
+    font-size: 15px;
 
 }
 .boxInfoAnimes p:first-child {
@@ -76,14 +97,19 @@
     
 }
 .prodAnime p{ 
-    font-weight: 900;
+    font-weight: 300;
     font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin-left: 5px;
     margin-bottom: 5px;
     margin-top: 0px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, .5);
     
 }
 .prodAnime p:first-child{
+    font-weight: 600;
+    font-size: 13px;
     color: #FFBE63;
     margin-bottom: 10px;
 
@@ -93,20 +119,29 @@
     float: right;
     width: 74%;
     margin-top: 0px;
-    border-radius: 10px;
+    border-radius: 2px;
     background-color: #1f1f3059;
 }
-.sinopseAnime h3{
-    border-bottom: 1px solid rgba(128, 128, 128, 0.151);
-    padding-bottom: 5px;
-    margin-top: 5px;
-}
+
 .sinopseAnime p,h3{
     font-family: 'Montserrat', sans-serif;
     font-family: 'Open Sans', sans-serif;
     font-weight: 100;
     margin-left: 5px;
+    color: rgba(255, 255, 255, .5);;
+   font-size: 12px;
+   font-weight: 300;
+   
     
+}
+.sinopseAnime p {
+    width: 99%;
+}
+.sinopseAnime h3{
+    margin-top: 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
 }
 .episodeosAnime{
     margin-top: 10px;

@@ -1,6 +1,5 @@
 
 .AnimeThumb{
-    background-color: red;
     width: 20%;
     margin-right: 4px;
     height: 100px;
@@ -11,7 +10,7 @@
     background: #1f1f30b0;
     padding: 12px;
     padding-bottom: 50px;
-    border-radius: 5px;
+    border-radius: 1px;
     overflow: hidden
 }
 .AnimeThumb p {
@@ -25,11 +24,25 @@
     
 }
 .AnimeThumb p:nth-child(2){
-    border-top: 1px green solid;
+    border-top: 3px solid #29294e;
 }
 .AnimeThumb p:nth-child(3){
-    top: 76%;
+    top: 78%;
     color: grey;
+}
+.AnimeQualidade{
+    position: absolute;
+    z-index: 2;
+    top: 2%;
+    left: 10%;
+}
+.AnimeQualidade p{
+    background-color: #181829;
+    padding: 5px 9px 5px 9px;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    border-radius: 2px;
 }
 .pimba{
     width: 100%;

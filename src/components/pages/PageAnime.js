@@ -1,5 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
+import { FaCheck } from "react-icons/fa";
+
 import axios from 'axios'
 import styles from './PageAnime.module.css'
 import Tabs from '../layoult/Tabs';
@@ -39,8 +41,13 @@ function PageAnime() {
             <div className={styles.fotoAnime}>
                 <img src={posts.imagem} alt="" />
                 <div className={styles.sobreAnime}>
+                
+                    <div className={styles.sobreAnimeTexto}>
+                    <FaCheck/>
                     <p>{lanc}</p>
                     <p>{posts.diaLancamento}</p>
+                    </div>
+                   
                 </div>
                 <div className={styles.boxInfoAnimes}>
                     <p>Episódios</p>
