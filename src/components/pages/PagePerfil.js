@@ -1,13 +1,13 @@
 import styles from './PagePerfil.module.css'
 import { useContext } from "react"
 import { UserContext } from '../../UserContext'
-import { FaHeart, FaClock, FaEye, FaUserAlt, FaSmile, FaQuoteLeft, FaPhoneAlt, FaLock, FaBirthdayCake, FaTransgenderAlt, FaPlay} from 'react-icons/fa';
+import { FaHeart, FaClock, FaEye, FaUserAlt, FaSmile, FaQuoteLeft, FaPhoneAlt, FaLock, FaBirthdayCake, FaTransgenderAlt, FaPlay } from 'react-icons/fa';
 import { AiOutlineLogout } from "react-icons/ai";
 import { RiEqualizerLine } from "react-icons/ri";
 import { FiAtSign } from "react-icons/fi";
 import { useState } from "react";
 import { toast } from 'react-toastify';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { logout } from '../../api/user'
 import Axios from "axios";
 
@@ -23,18 +23,18 @@ function PagePefil() {
     const [file, setFile] = useState(null);
 
     const upload = (e) => {
-      e.preventDefault();
-      let formData = new FormData();
-      formData.append("screenshot", file, `${user}.png`);
-      
-      Axios.post("http://localhost:3232/avatar", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }).then((res) => {
-        window.location.reload();
-        console.log("Sucesso! ", res);
-      });
+        e.preventDefault();
+        let formData = new FormData();
+        formData.append("screenshot", file, `${user}.png`);
+
+        Axios.post("http://localhost:3232/avatar", formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+        }).then((res) => {
+            window.location.reload();
+            console.log("Sucesso! ", res);
+        });
     };
 
     const handleLogout = (e) => {
@@ -49,19 +49,19 @@ function PagePefil() {
             .catch((err) => console.error(err));
     }
     const toggleTab = (index) => {
-       
+
         setToggleState(index);
     };
     const toggleEditBtn = (index) => {
-        if(toggleEdit == index){
+        if (toggleEdit == index) {
             setToggleEdit(20);
-        }else{
-        setToggleEdit(index);
-    }
+        } else {
+            setToggleEdit(index);
+        }
     };
 
     return (
-        
+
         <div className={styles.PerfilContainer}>
             <div className={styles.leftUser}>
 
@@ -81,7 +81,7 @@ function PagePefil() {
                     <p>videos assistidos <br /> 0 (aprox 0 horas)</p>
                     <div className={styles.assistidosDetail}>
                         <div className={styles.detailsInside}>
-                            <FaPlay className={styles.playbutton}/>
+                            <FaPlay className={styles.playbutton} />
                         </div>
                     </div>
                 </div>
@@ -92,95 +92,95 @@ function PagePefil() {
                 <div onClick={() => toggleTab(3)} className={`${styles.maistarde} ${styles.tab_color}`}><p><FaClock /> Ver mais Tarde</p></div>
                 <div onClick={() => toggleTab(5)} className={`${styles.editarPerfil} ${styles.tab_color}`}><p><RiEqualizerLine /> Editar Perfil</p></div>
                 <div onClick={handleLogout} className={`${styles.algumacoisa} ${styles.tab_color}`}><p><AiOutlineLogout /> Logout</p></div>
-                
+
             </div>
             <div className={styles.content_tabs}>
                 <div className={toggleState === 1 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.naoTem}>
-                    <p><FaHeart fill='#5555553b'/> Você não tem nenhum favorito</p>
+                        <p><FaHeart fill='#5555553b' /> Você não tem nenhum favorito</p>
                     </div>
-                    
+
                 </div>
 
                 <div className={toggleState === 2 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
-                <div className={styles.naoTem}>
-                    <p><FaEye fill='#5555553b'/> Você não assistiu nada</p>
+                    <div className={styles.naoTem}>
+                        <p><FaEye fill='#5555553b' /> Você não assistiu nada</p>
                     </div>
                 </div>
 
                 <div className={toggleState === 3 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
-                <div className={styles.naoTem}>
-                    <p><FaClock fill='#5555553b'/> Lista vazia</p>
+                    <div className={styles.naoTem}>
+                        <p><FaClock fill='#5555553b' /> Lista vazia</p>
                     </div>
                 </div>
                 <div className={toggleState === 4 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
-                <div className={styles.naoTem}>
-                    <p><FaHeart fill='#5555553b'/> Você não tem nenhum favorito</p>
+                    <div className={styles.naoTem}>
+                        <p><FaHeart fill='#5555553b' /> Você não tem nenhum favorito</p>
                     </div>
                 </div>
                 <div className={toggleState === 5 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.EditGeral}>
                         <h2>Geral</h2>
                         <div className={styles.perfilInfos}>
-                            <p><FaUserAlt/> Nome Público</p>
+                            <p><FaUserAlt /> Nome Público</p>
                             <p>{user}</p>
                             {toggleEdit == 1 ? <div className={styles.editInput}>
-                                <input type="text" /> 
+                                <input type="text" />
                                 <button>Salvar</button>
                                 <button>Cancelar</button>
-                                </div> : <></>}
-                            
+                            </div> : <></>}
+
                             <button onClick={() => toggleEditBtn(1)}>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
-                            <p><FaSmile/> Apelido</p>
+                            <p><FaSmile /> Apelido</p>
                             <p>{user}</p>
                             {toggleEdit == 2 ? <div className={styles.editInput}>
-                                <input type="text" /> 
+                                <input type="text" />
                                 <button>Salvar</button>
                                 <button>Cancelar</button>
-                                </div> : <></>}
-                            
+                            </div> : <></>}
+
                             <button onClick={() => toggleEditBtn(2)}>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
-                            <p><FaQuoteLeft/> Avatar</p>
+                            <p><FaQuoteLeft /> Avatar</p>
                             <input
-            type="file"
-            className={styles.inputFile}
-            name="screenshot"
-            onChange={(e) => {
-              setFile(e.target.files[0]);
-            }} /> 
-          <button className="" onClick={(e) => upload(e)}>Mudar</button>
+                                type="file"
+                                className={styles.inputFile}
+                                name="screenshot"
+                                onChange={(e) => {
+                                    setFile(e.target.files[0]);
+                                }} />
+                            <button className="" onClick={(e) => upload(e)}>Mudar</button>
                         </div>
                     </div>
                     <div className={styles.EditGeral}>
-                    <h2>Dados Pessoais</h2>
+                        <h2>Dados Pessoais</h2>
                         <div className={styles.perfilInfos}>
-                            <p><FiAtSign/> Email</p>
+                            <p><FiAtSign /> Email</p>
                             <p>{email}</p>
                             {toggleEdit == 4 ? <div className={styles.editInput}>
-                                <input type="text" /> 
+                                <input type="text" />
                                 <button>Salvar</button>
                                 <button>Cancelar</button>
-                                </div> : <></>}
-                            
+                            </div> : <></>}
+
                             <button onClick={() => toggleEditBtn(4)}>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
-                            <p><FaPhoneAlt/> Número</p>
+                            <p><FaPhoneAlt /> Número</p>
                             <p>123456789</p>
                             {toggleEdit == 5 ? <div className={styles.editInput}>
-                                <input type="text" /> 
+                                <input type="text" />
                                 <button>Salvar</button>
                                 <button>Cancelar</button>
-                                </div> : <></>}
-                            
+                            </div> : <></>}
+
                             <button onClick={() => toggleEditBtn(5)}>Alterar</button>
                         </div>
                         <div className={styles.perfilInfos}>
-                            <p><FaBirthdayCake/> Aniversário</p>
+                            <p><FaBirthdayCake /> Aniversário</p>
                             <p className={styles.longe}>01/01/01</p>
                             <button onClick={() => toggleEditBtn(1)}>Alterar</button>
                         </div>
@@ -193,13 +193,13 @@ function PagePefil() {
                     <div className={styles.EditGeral}>
                         <h2>Segurança</h2>
                         <div className={styles.perfilInfos}>
-                            <p><FaLock/> Senha</p>
+                            <p><FaLock /> Senha</p>
                             {toggleEdit == 8 ? <div className={styles.editInput}>
-                                <input type="text" /> 
+                                <input type="text" />
                                 <button>Salvar</button>
                                 <button>Cancelar</button>
-                                </div> : <></>}
-                            
+                            </div> : <></>}
+
                             <button onClick={() => toggleEditBtn(8)}>Alterar</button>
                         </div>
 

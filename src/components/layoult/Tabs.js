@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react'
 import { Tabs, Tab, AppBar } from "@material-ui/core"
 import styles from "./Tabs.module.css"
 import AnimeList from './AnimeList'
-import { MuiThemeProvider} from "@material-ui/core/styles";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 import { createTheme } from '@material-ui/core'
 import { orange, green } from "@material-ui/core/colors";
 function Tabsa(props) {
@@ -58,7 +58,7 @@ function Tabsa(props) {
   return (
     <div className={styles.container}>
       <MuiThemeProvider theme={theme}>
-        <AppBar style={{ minWidth: 400 }} position="relative">
+        <AppBar style={{ minWidth: 400, width: "109%" }} position="relative">
           <Tabs value={value} onChange={handleTabs}>
             <Tab label="Temporada 1" />
             <Tab label="Temporada 2" />
@@ -66,7 +66,7 @@ function Tabsa(props) {
         </AppBar>
         <TabPanel value={value} index={0}>
           <div className={styles.AnimeListContainer}>
-             {posts.map(post =>
+            {posts.map(post =>
               <AnimeList nome={post.nome} id={post.id} iddois={props.id} episodio={post.numero} />)}
 
 

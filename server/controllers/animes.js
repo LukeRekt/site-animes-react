@@ -4,7 +4,7 @@ require("dotenv").config();
 
 exports.registera = async (req, res, next) => {
     //testar se o user ja existe
-    
+
 
     //se novo user, criar novo user
     const anime = new Anime(req.body);
@@ -21,7 +21,7 @@ exports.listar = async (req, res) => {
     await Anime.find({}).exec((err, animes) => {
 
         //retornar resposta para o usuario
-        
+
         return res.json({
             animes,
         });
@@ -31,10 +31,10 @@ exports.listar = async (req, res) => {
 exports.getanime = async (req, res) => {
     //buscar usuario baseado no email
     const id = req.params.id
-    await Anime.findOne({id}).limit(20).exec((err, animes) => {
+    await Anime.findOne({ id }).limit(20).exec((err, animes) => {
 
         //retornar resposta para o usuario
-        
+
         return res.json({
             animes,
         });
@@ -44,7 +44,7 @@ exports.getanime = async (req, res) => {
 
 exports.AddEpisode = async (req, res) => {
     //testar se o user ja existe
-    
+
 
     //se novo user, criar novo user
     const episode = new Episodios(req.body);
@@ -57,10 +57,10 @@ exports.AddEpisode = async (req, res) => {
 exports.getEpisodes = async (req, res) => {
     //buscar usuario baseado no email
     const id = req.params.id
-    await Episodios.find({id}).exec((err, episodios) => {
+    await Episodios.find({ id }).exec((err, episodios) => {
 
         //retornar resposta para o usuario
-        
+
         return res.json({
             episodios,
         });
@@ -69,7 +69,7 @@ exports.getEpisodes = async (req, res) => {
 exports.getAllEpisodes = async (req, res) => {
     //buscar usuario baseado no email
     await Episodios.find({}).limit(20).exec((err, episodios) => {
-        
+
         //retornar resposta para o usuario
         return res.json({
             episodios,

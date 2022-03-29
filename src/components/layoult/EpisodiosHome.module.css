@@ -9,7 +9,6 @@
     transition: 0.4s ;
 }
 .container a {
-    background-color: red;
     margin: 8px;
 }
 .episodeInfos{
@@ -52,7 +51,6 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     z-index: 1;
-    width: 100%;
     top: 55%;
     left: 2%;
     
@@ -79,7 +77,6 @@
 }
 .qualidade p {
     top: 10%;
-    width: 12%;
     padding: 5px 8px 5px 8px;
     border-radius: 2px;
     background-color: #181829;

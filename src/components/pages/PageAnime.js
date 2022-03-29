@@ -41,13 +41,13 @@ function PageAnime() {
             <div className={styles.fotoAnime}>
                 <img src={posts.imagem} alt="" />
                 <div className={styles.sobreAnime}>
-                
+
                     <div className={styles.sobreAnimeTexto}>
-                    <FaCheck/>
-                    <p>{lanc}</p>
-                    <p>{posts.diaLancamento}</p>
+                        <FaCheck />
+                        <p>{lanc}</p>
+                        <p>{posts.diaLancamento}</p>
                     </div>
-                   
+
                 </div>
                 <div className={styles.boxInfoAnimes}>
                     <p>Episódios</p>
