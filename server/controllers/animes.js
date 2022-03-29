@@ -31,7 +31,7 @@ exports.listar = async (req, res) => {
 exports.getanime = async (req, res) => {
     //buscar usuario baseado no email
     const id = req.params.id
-    await Anime.findOne({id}).exec((err, animes) => {
+    await Anime.findOne({id}).limit(20).exec((err, animes) => {
 
         //retornar resposta para o usuario
         
@@ -68,7 +68,7 @@ exports.getEpisodes = async (req, res) => {
 };
 exports.getAllEpisodes = async (req, res) => {
     //buscar usuario baseado no email
-    await Episodios.find({}).exec((err, episodios) => {
+    await Episodios.find({}).limit(20).exec((err, episodios) => {
         
         //retornar resposta para o usuario
         return res.json({
