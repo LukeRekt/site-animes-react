@@ -12,10 +12,10 @@
     margin: 8px;
 }
 .episodeInfos{
-    
+    border: 1px solid rgba(255, 153, 0, 0.336);
     display: flex;
     height: 150px;
-    width: 250px;
+    width: 249px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.308);
     overflow-wrap: break-word;
@@ -42,6 +42,13 @@
     margin: 5px;
     fill: #181829;
 }
+.textosAnime{
+    background-color: #232335;
+    width: 100%;
+    position: absolute;
+    height: 30%;
+    bottom: 0%;
+}
 .episodeInfos p{
     margin: 0;
     color: rgb(255, 255, 255);
@@ -51,7 +58,7 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     z-index: 1;
-    top: 55%;
+    top: 10%;
     left: 2%;
     
     
@@ -66,13 +73,13 @@
 .episodeInfos p:nth-child(2)
 {
     text-shadow: 2px 1px 2px black;
-    top: 80%;
+    top: 40%;
     font-weight: 400;
 }
 .episodeInfos p:nth-child(3)
 {
     text-shadow: 2px 1px 2px black;
-    top: 67%;
+    top: 66%;
     font-weight: 400;
 }
 .qualidade p {
