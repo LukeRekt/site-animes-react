@@ -27,7 +27,6 @@ function Home() {
             })
     }, [])
 
-    
 
     useEffect(() => {
         axios.get('http://localhost:3232/getanim/episodios/todos')

@@ -1,11 +1,9 @@
-
 import axios from 'axios'
 import styles from "./AnimeList.module.css"
 import { Link } from 'react-router-dom';
 
 
 function AnimeList(props) {
-
     function testeNome(idUm, idDois, nome, episodio) {
         if (idUm == idDois) {
             return (<div>

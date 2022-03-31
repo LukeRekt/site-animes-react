@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import styles from './InstantSearch.module.css'
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 class InstantSearch extends Component {
 
 
@@ -15,21 +15,23 @@ class InstantSearch extends Component {
     this.node = React.createRef()
   }
   componentDidMount() {
-     document.addEventListener('mousedown', this.onIptClick)
-   }
-   componentWillUnmount() {
-     document.removeEventListener('mousedown', this.onIptClick)
-    
-   }
+    document.addEventListener('mousedown', this.onIptClick)
+  }
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.onIptClick)
+
+  }
   onIptClick = (e) => {
     if (this.node.current.contains(e.target)) {
       return
     }
-    setTimeout(() => {this.setState({
+    setTimeout(() => {
+      this.setState({
         Posts: [],
-      })}, 100);
-    
-    
+      })
+    }, 100);
+
+
   }
   onLsChange = async (e) => {
     if (this.isReqToken) {
@@ -59,7 +61,7 @@ class InstantSearch extends Component {
       Posts: searchRes,
     })
   }
-  
+
 
 
   render() {
@@ -76,14 +78,14 @@ class InstantSearch extends Component {
           {this.state.Posts.map((res) => {
             return <Link to={`/anime/${res.id}`} key={res.id}><li key={res.id}>
               <div className={styles.searchAnime}>
-                <img src={res.imagem} alt="" /> 
+                <img src={res.imagem} alt="" />
                 <div className={styles.infosAnime}>
-                <p>{res.nome}</p>
-                <p><span>Lançamento: </span> {res.diaLancamento}</p>
-                <p><span>Episódios: </span> {res.episodios}</p>
+                  <p>{res.nome}</p>
+                  <p><span>Lançamento: </span> {res.diaLancamento}</p>
+                  <p><span>Episódios: </span> {res.episodios}</p>
                 </div>
 
-            </div></li></Link>
+              </div></li></Link>
           })}
         </ul>
       </div>

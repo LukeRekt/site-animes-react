@@ -16,12 +16,12 @@ function EpisodiosHome(props) {
                         </div>
 
                         <div className={styles.textosAnime}>
-                        <p>Episódio: {props.numero}</p>
-                        <p>{props.nome}
-                        </p>
-                        <p>{props.anime}</p>
+                            <p>Episódio: {props.numero}</p>
+                            <p>{props.nome}
+                            </p>
+                            <p>{props.anime}</p>
                         </div>
-                     
+
                         <AiFillPlayCircle />
                     </div>
                     <img src={props.imagem} alt="" />
