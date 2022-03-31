@@ -31,7 +31,7 @@ function PageEpisode() {
   const { id, ep } = useParams();
   const [posts, setPosts] = useState([])
   useEffect(() => {
-    axios.get(`http://localhost:3232/getanim/episodios/${id}`)
+    axios.get(`http://192.168.1.9:3232/getanim/episodios/${id}`)
       .then(res => {
         setPosts(res.data.episodios)
       }).catch((err) => {
