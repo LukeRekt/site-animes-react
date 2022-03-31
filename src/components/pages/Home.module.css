@@ -55,3 +55,14 @@
     border-bottom-left-radius: 2px;
     border-top-left-radius: 2px;
 }
+
+@media (max-width: 600px)
+{
+  .container
+   {
+    width: 95%;
+   }
+ .botoesTeste{
+    width: 100%;
+ }
+}

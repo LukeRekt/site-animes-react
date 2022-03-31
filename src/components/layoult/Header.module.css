@@ -1,19 +1,27 @@
+
+
 .header{
     background-color: #0C0C1D;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgba(155, 155, 155, 0.068);
-    margin-left: 20%;
-    width: 1200px;
+    margin: auto;
+    width: 70%;
     font-weight: 700;
     
+}
+#lupa {
+    font-size: 30px;
 }
 #lupa:hover {
     fill: #ffbe63;
     transition: 0.4s;
 }
 
+.navegacaoMobile{
+    display: none;
+}
 #navegacao{
     float: left;
 }
@@ -78,4 +86,53 @@
     border-radius: 50%;
     padding: 5px;
     
+}
+@media (max-width: 600px)
+{
+    .header{
+        width: 100%;
+    }
+    .navegacaoMobile{
+        display: block;
+        margin-left: 5px;
+        margin-right: 7%;
+    }
+  .logo
+   {
+    width: 200px;
+    margin: auto;
+   }
+   .item{
+    list-style: none;
+    display: inline;
+    margin-right: 50px;
+    font-size: 5px;
+    
+}
+.avatar{
+    margin-top: 10px;
+    margin-right: 0px;
+    max-width: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.usuario{
+    width: 20%;
+}
+.perfil{
+
+    
+}
+.navegacaoMobile svg{ 
+    font-size: 25px;
+}
+.item{
+    display: none;
+}
+#lupa {
+    font-size: 20px;
+}
+.header svg:nth-child(2){
+    font-size: 90px;
+}
 }
