@@ -3,6 +3,7 @@
     background-color: rgb(226, 226, 226);
     width: 18.8%;
     margin: 5px;
+    margin-left: 10px;
     max-height: 180px;
 }
 .container a {
@@ -15,7 +16,7 @@
     transition: 0.4s ;
 }
 .episodeInfos{
-    border: 1px solid rgba(255, 153, 0, 0.336);
+
     display: flex;
     height: 100%;
     width: 100%;
@@ -96,7 +97,7 @@
 {
   .container{
    margin:auto;
-   margin-bottom: 10px;
+   margin-top: 10px;
     width: 77%;
     height: 400px;
     

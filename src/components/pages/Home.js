@@ -50,7 +50,7 @@ function Home() {
                     <Carousel pagination={false} breakPoints={breakPoints}>
 
                         {posts.map(post =>
-                            <Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.numero} />
+                            <Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
                         )}
 
 

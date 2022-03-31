@@ -60,7 +60,7 @@ function Tabsa(props) {
     <div className={styles.container}>
       {/* outro map deve ser adicionado para listar todas as temporadas do anime */}
       <MuiThemeProvider theme={theme}>
-        <AppBar style={{ minWidth: 400, width: "109%" }} position="relative">
+        <AppBar style={{ minWidth: 370, width: "100%" }} position="relative">
           <Tabs value={value} onChange={handleTabs}>
             <Tab label="Temporada 1" />
             <Tab label="Temporada 2" />

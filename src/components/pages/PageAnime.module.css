@@ -151,3 +151,21 @@
     width: 68%;
     }
     
+    @media (max-width: 600px)
+    {
+        .container
+       {
+        width: 95%;
+       }
+       .fotoAnime{
+           width: 100%;
+       }
+       .sinopseAnime{
+           margin-top: 10px;
+           width: 100%;
+       }
+       .episodeosAnime{
+           margin-left: 0;
+       }
+     
+    }
