@@ -30,7 +30,7 @@
     background-color: #181829;
     display: flex;
     justify-content: space-between;
-    border-radius: 7px;
+    border-radius: 2px;
 }
 .userAvatar{
     background-color: #181829;
@@ -292,4 +292,36 @@ padding-top: 20px;
     color: #5555553b;
     text-align: center;
     font-size: 50px;
+  }
+
+  @media (max-width: 600px)
+  {
+    .PerfilContainer{
+      width: 95%;
+      margin: auto;
+    }
+    .leftUser{
+      width: 100%
+    }
+    .horasAssistidos{
+      height: 21vh;
+      margin-bottom: 10px;
+    }
+    .rightUser
+     {
+       display: block;
+      width: 100%;
+     }
+     .content{
+      margin-top: 10px;
+     }
+     .content_tabs{
+      
+      width: 90%;
+      float: left;
+      margin-left: 0px;
+      margin-top: 0px;
+      
+  }
+   
   }

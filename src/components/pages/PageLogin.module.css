@@ -64,3 +64,11 @@
 {
 /* adasd */
 }
+
+@media (max-width: 600px)
+  {
+    .login{
+        margin: 0;
+        width: 83%;
+    }
+  }
