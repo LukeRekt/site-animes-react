@@ -13,7 +13,7 @@ function PageAnime() {
     const [posts, setPosts] = useState([])
     let navigate = useNavigate();
     useEffect(() => {
-        axios.get(`http://192.168.1.2:3232/getanim/${id}`)
+        axios.get(`http://179.55.91.159:3232/getanim/${id}`)
             .then(res => {
                 setPosts(res.data.animes)
             }).catch((err) => {

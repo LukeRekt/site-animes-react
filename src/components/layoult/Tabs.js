@@ -42,7 +42,7 @@ function Tabsa(props) {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    axios.get(`http://192.168.1.2:3232/getanim/episodios/${props.id}`)
+    axios.get(`http://179.55.91.159:3232/getanim/episodios/${props.id}`)
       .then(res => {
         setPosts(res.data.episodios)
         console.log(res.data.episodios)
