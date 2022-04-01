@@ -1,6 +1,6 @@
 @keyframes details {
   from {width: 0%}
-  to {width: 45%}
+  to {width: 40%}
 }
 @keyframes detailsInside {
   from {left: 100%; top: 8%;}
@@ -18,7 +18,7 @@
 .leftUser{
     float: left;
     width: 25%;
-    
+    height: 500px;
 }
 .rightUser p{
     color: #ffffff;
@@ -98,9 +98,9 @@
     border-radius: 7px;
     margin-top: 8px;
     width: 100%;
-    height: 20vh;
+    height: 35%;
     overflow: hidden;
-    
+    position: relative;
 }
 
 .horasAssistidos p{
@@ -120,8 +120,8 @@ animation-delay: 2.6s;
 animation-fill-mode: forwards;
 }
 .assistidosDetail{
-  width: 0%;
-  height: 45%;
+  width: 100%;
+  height: 40%;
   border-radius: 0px 50px 50px 0px;
   background-color: #ffbe63;
   animation-name: details;
@@ -129,13 +129,13 @@ animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   overflow: hidden;
   margin-top: 15%;
-  position: relative;
+  position: absolute;
 }
 .detailsInside{
   position: absolute;
   background-color: #0C0C1D;
   width: 53%;
-  height: 85%;
+  height: 83%;
   left: 100%;
   top: 8%;
   text-align: center;
@@ -147,9 +147,11 @@ animation-fill-mode: forwards;
 }
 .playbutton{
   fill: #ffbe63;
-  margin-top: 19px;
-  margin-left: 5px;
-  font-size: 30px;
+  
+  bottom: 30%;
+  left: 35%;
+  font-size: 180%;
+  position: absolute;
 }
 .tab_color p{
     margin: 0;
@@ -301,12 +303,19 @@ padding-top: 20px;
       margin: auto;
     }
     .leftUser{
-      width: 100%
+      width: 100%;
+      margin-bottom: 10px;
+      height: 500px;
     }
     .horasAssistidos{
-      height: 21vh;
-      margin-bottom: 10px;
-    }
+     height: 40%;
+      
+  }
+  .playbutton {
+    margin-top: 20%;
+  }
+    
+
     .rightUser
      {
        display: block;

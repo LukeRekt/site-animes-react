@@ -186,7 +186,7 @@ function PagePefil() {
                         </div>
                         <div className={styles.perfilInfos}>
                             <p><FaTransgenderAlt /> Gênero</p>
-                            <p className={styles.longe}>Helicóptero</p>
+                            <p className={styles.longe}>Helicóptero de Combate</p>
                             <button onClick={() => toggleEditBtn(1)}>Alterar</button>
                         </div>
                     </div>
