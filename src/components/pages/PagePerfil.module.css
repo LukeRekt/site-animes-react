@@ -153,9 +153,13 @@ animation-fill-mode: forwards;
   font-size: 180%;
   position: absolute;
 }
+.tab_color {
+  width: 100%;
+}
 .tab_color p{
+  text-align: center;
     margin: 0;
-    padding: 25px;
+    padding: 9%;
     transition: 0.3s;
     cursor: pointer;
     font-size: 20px;
