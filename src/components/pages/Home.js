@@ -21,7 +21,7 @@ function Home() {
     const [posts, setPosts] = useState([])
     const [postsep, setPostsep] = useState([])
     useEffect(() => {
-        axios.get('http://192.168.1.9:3232/getanim')
+        axios.get('http://192.168.1.2:3232/getanim')
             .then(res => {
                 setPosts(res.data.animes)
             })
@@ -29,7 +29,7 @@ function Home() {
 
 
     useEffect(() => {
-        axios.get('http://192.168.1.9:3232/getanim/episodios/todos')
+        axios.get('http://192.168.1.2:3232/getanim/episodios/todos')
             .then(res => {
                 setPostsep(res.data.episodios)
             })
