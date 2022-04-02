@@ -27,6 +27,7 @@ import {UserContext} from "./UserContext"
 
 import {getUser} from './api/user'
 import UserProfileSearch from './components/pages/UserProfileSearch';
+import PageAdmin from './components/pages/PageAdmin';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -78,6 +79,7 @@ function App() {
           <Route exact path="/perfil" element={<PagePefil />}></Route>
           <Route exact path="/user/:id" element={<UserProfileSearch />}></Route>
           <Route path='*' element={<PaginaNaoEncontrada />}></Route>
+          <Route exact path="/admin" element={<PageAdmin />}></Route>
           {/* <Route path="/projects" element={}></Route> */}
 
         </Routes>

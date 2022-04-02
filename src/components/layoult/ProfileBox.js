@@ -26,11 +26,6 @@ function ProfileBox(props) {
             })
             .catch((err) => console.error(err));
     }
-    const salveadm = (e) => {
-        e.preventDefault();
-        alert("SAAAAALLVEEE ADDMM")
-    }
-
     return (
         <div style={pimba} className={styles.container} >
 
@@ -42,7 +37,7 @@ function ProfileBox(props) {
                 {props.logado ? (<Link to="/registrar"><div className={styles.login}> <BiKey size="40px" /> <p>Registrar</p></div></Link>) :
                     (<div onClick={handleLogout} className={styles.login}> <AiOutlineLogout size="40px" /> <p>Deslogar</p></div>)}
 
-                {props.logado == false ? (admin == false ? (<></>) : (<div onClick={salveadm} id={styles.admin} className={styles.login}> <FaStar size="40px" /> <p id={styles.admin}>Admin</p></div>)) : (<></>)}
+                {props.logado == false ? (admin == false ? (<></>) : (<Link to="/admin"><div id={styles.admin} className={styles.login}> <FaStar size="40px" /> <p id={styles.admin}>Admin</p></div></Link>)) : (<></>)}
 
             </div>
 

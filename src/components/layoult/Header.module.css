@@ -119,10 +119,6 @@
 .usuario{
     width: 20%;
 }
-.perfil{
-
-    
-}
 .navegacaoMobile svg{ 
     font-size: 25px;
 }
@@ -135,4 +131,10 @@
 .header svg:nth-child(2){
     font-size: 90px;
 }
+}
+
+.avatar {
+    border: 2px solid #ffbe63;
+   width: 100%;
+    
 }
