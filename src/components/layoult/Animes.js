@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './Animes.module.css'
+import { AiFillPlayCircle } from "react-icons/ai";
 function Animes(props) {
     //Futuramente essa funcao deve ser substituida por um sistema mais funcional, que nao remova o nome, e sim, esconda.
     function diminuirTamanho(nome) {
-        let novoNome = nome.substr(0, 19)
+        let novoNome = nome.substr(0, 24)
         return novoNome + "...";
     }
 
@@ -11,7 +12,10 @@ function Animes(props) {
         <div className={styles.animes}>
             <Link to={`/anime/${props.id}`}>
                 <div className={styles.anime_box}>
-
+                    <div className={styles.qualidade_anime}>
+                        NOVO 
+                    </div>
+                    <AiFillPlayCircle />
                     <img src={props.imagem} alt="" />
                     <div className={styles.anime_over}>
                         <div className={styles.anime_infos}>
