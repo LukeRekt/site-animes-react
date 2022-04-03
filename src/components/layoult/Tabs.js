@@ -39,6 +39,7 @@ function Tabsa(props) {
     }
   });
 
+
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
@@ -55,6 +56,15 @@ function Tabsa(props) {
   }
   const [value, setValue] = useState(0)
 
+  function Teste(propsa){
+    
+    var indents = [];
+    for (var i = 0; i < propsa; i++) {
+      indents.push(<span className='indent' key={i}></span>);
+    }
+    return indents;
+  }
+
   return (
 
     <div className={styles.container}>
@@ -62,22 +72,27 @@ function Tabsa(props) {
       <MuiThemeProvider theme={theme}>
         <AppBar style={{ minWidth: 370, width: "100%" }} position="relative">
           <Tabs value={value} onChange={handleTabs}>
-            <Tab label="Temporada 1" />
-            <Tab label="Temporada 2" />
-
+        {Teste(props.temporadas).map((post, index) =>
+              <Tab label={`Temporada ${index + 1}`} />)}
+  
           </Tabs>
         </AppBar>
-        <TabPanel value={value} index={0}>
-          <div className={styles.AnimeListContainer}>
-            {posts.map(post =>
-              <AnimeList nome={post.nome} id={post.id} iddois={props.id} episodio={post.numero} />)}
-
-
-            {/* <AnimeList nome={props.nome}/> */}
-
-          </div>
-
-        </TabPanel>
+        
+        {Teste(props.temporadas).map((post, index) =>
+        
+             <TabPanel value={value} index={index}>
+             <div className={styles.AnimeListContainer}>
+               {posts.map(post =>
+               
+                 post.temporada == index + 1 ? (<AnimeList nome={post.nome} id={post.id} iddois={props.id} episodio={post.numero} temporada={index + 1} />) : (<></>))}
+   
+   
+               {/* <AnimeList nome={props.nome}/> */}
+   
+             </div>
+   
+           </TabPanel>)}
+        
       </MuiThemeProvider>
     </div>
   )

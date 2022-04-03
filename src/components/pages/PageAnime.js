@@ -81,7 +81,7 @@ function PageAnime() {
 
             </div>
             <div className={styles.episodeosAnime}>
-                <Tabs id={id} />
+                <Tabs id={id} temporadas={posts.temporadas}/>
                 {/* eps aqui listados vindo direto de um novo server json buscando de acordo com o id do ep */}
 
             </div>
