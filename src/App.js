@@ -70,7 +70,7 @@ function App() {
           
           <Route exact path="/" element={<Home />}></Route>
           <Route exact path="/anime/:id" element={<PageAnime />}></Route>
-          <Route exact path="/anime/:id/:ep" element={<PageEpisode />}></Route>
+          <Route exact path="/anime/:id/:temporada/:ep" element={<PageEpisode />}></Route>
           <Route exact path="/calendario" element={<Calendario />}></Route>
           <Route exact path="/lista" element={<Lista />}></Route>
           <Route exact path="/favoritos" element={<Favoritos />}></Route>

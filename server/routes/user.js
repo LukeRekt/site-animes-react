@@ -4,7 +4,7 @@ const multer = require('multer');
 const upload = multer();
 //importar controllers
 const { register, login, logout, getLoggedInUser, buscarUser } = require("../controllers/user")
-const { registera, listar, getanime, getEpisodes, getAllEpisodes, AddEpisode} = require("../controllers/animes")
+const { registera, listar, getanime, getEpisodes, getAllEpisodes, getEpisodespage, AddEpisode} = require("../controllers/animes")
 //importar middlewares
 const { userRegisterValidator, userById } = require('../middlewares/user')
 const { verifyToken } = require("../middlewares/auth")
@@ -32,7 +32,9 @@ router.post("/getanim/addep/", AddEpisode)
 
 router.get("/getanim/episodios/todos", getAllEpisodes)
 
-router.get("/getanim/episodios/:id", getEpisodes)
+router.get("/getanim/episodios/:id", getEpisodespage)
+
+router.get("/getanim/episodios/:temporada/:id", getEpisodes)
 
 //editar infos
 

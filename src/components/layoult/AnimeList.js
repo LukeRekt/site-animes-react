@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 
 function AnimeList(props) {
-    function testeNome(idUm, idDois, nome, episodio) {
+    function testeNome(idUm, idDois, nome, episodio, temporada) {
         if (idUm == idDois) {
             return (<div>
 
-                <Link to={`/anime/${idUm}/${episodio}`}>
+                <Link to={`/anime/${idUm}/${temporada}/${episodio}`}>
 
                     <div className={styles.AnimeThumb}>
                         <div className={styles.AnimeQualidade}><p>FHD</p></div>
@@ -26,7 +26,7 @@ function AnimeList(props) {
     return (
         <div>
 
-            {testeNome(props.id, props.iddois, props.nome, props.episodio)}
+            {testeNome(props.id, props.iddois, props.nome, props.episodio, props.temporada)}
 
 
 

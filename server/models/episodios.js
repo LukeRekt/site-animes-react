@@ -11,7 +11,11 @@ const episodeosSchema = new mongoose.Schema(
 			type: Number,
 			required: true,
 			trim: true,
-			lowercase: false,
+		},
+		temporada: {
+			type: Number,
+			required: true,
+			trim: true,
 		},
 		nome: {
 			type: String,

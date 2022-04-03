@@ -56,6 +56,19 @@ exports.AddEpisode = async (req, res) => {
 };
 exports.getEpisodes = async (req, res) => {
     //buscar usuario baseado no email
+    const temporada = req.params.temporada
+    const id = req.params.id
+    await Episodios.find({ temporada, id }).exec((err, episodios) => {
+
+        //retornar resposta para o usuario
+
+        return res.json({
+            episodios,
+        });
+    });
+};
+exports.getEpisodespage = async (req, res) => {
+    //buscar usuario baseado no email
     const id = req.params.id
     await Episodios.find({ id }).exec((err, episodios) => {
 
