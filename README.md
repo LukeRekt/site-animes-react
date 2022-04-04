@@ -9,7 +9,7 @@ Site de animes criado usando a stack M.E.R.N
 - [ ] Ferramenta para adicionar animes
 - [ ] Calendario
 - [x] Login de usuario - feito em nodejs com mongodb
-- [ ] Perfil de usuario
+- [x] Perfil de usuario
 - [ ] Favoritos
 - [ ] Listas
 - [ ] Watchpary
@@ -29,7 +29,6 @@ Para executar o Test Suite:
 Para iniciar o servidor:
 
 `npm start`  
-`npm run server`
 
 Dentro da pasta ./server:
 
