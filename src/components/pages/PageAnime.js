@@ -5,6 +5,8 @@ import { FaCheck } from "react-icons/fa";
 import axios from 'axios'
 import styles from './PageAnime.module.css'
 import Tabs from '../layoult/Tabs';
+import AnimeTemas from '../layoult/AnimeTemas';
+import { PinDropSharp } from '@material-ui/icons';
 
 function PageAnime() {
 
@@ -20,7 +22,6 @@ function PageAnime() {
                 return navigate("/");
             })
     }, [])
-
 
 
     function lancamento() {
@@ -77,7 +78,8 @@ function PageAnime() {
             </div>
             <div className={styles.sinopseAnime}>
                 <h3>Sinopse</h3>
-                <p>Segunda Temporada, Hajime Nagumo, de dezessete anos, é um otaku típico. No entanto, a sua vida simples é subitamente alterada quando ele, juntamente com o resto da sua classe, é transportado para um mundo de fantasia! Eles são tratados como heróis e encarregados do dever de salvar a raça humana da extinção. Mas o que deveria ter sido o sonho de qualquer otaku rapidamente se transforma num pesadelo para Hajime. </p>
+                <p>{posts.descricao}</p>
+                <AnimeTemas temas={posts.temas}/> 
 
             </div>
             <div className={styles.episodeosAnime}>

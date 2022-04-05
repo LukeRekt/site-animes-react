@@ -144,6 +144,10 @@
     font-size: 18px;
     font-weight: 500;
 }
+#temas{
+    background-color: red;
+    margin-right: 10px;
+}
 .episodeosAnime{
     margin-top: 10px;
     margin-left: 2.4%;
