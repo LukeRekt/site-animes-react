@@ -17,6 +17,16 @@ function PageEpisode() {
       }
     }
   }
+  function ListDub(parametros, postsa) {
+    for (var i = 0; i < postsa.length; i++) {
+
+      if (postsa[i].id == id) {
+        if (postsa[i].numero == parametros) {
+          return postsa[i].videoDublado;
+        }
+      }
+    }
+  }
   function ListNome(parametros, postsa) {
     for (var i = 0; i < postsa.length; i++) {
 
@@ -43,9 +53,11 @@ function PageEpisode() {
     <div>
       
       <div className={styles.PageAnimeContainer}>
-        <VideoPlayer videoLink={ListEp(ep, posts)}/>
-        {/* <video src={ListEp(ep, posts)} controls>
+        <VideoPlayer videoLink={ListEp(ep, posts)} videoDub={ListDub(ep, posts)}/>
+                {/* <video src={ListEp(ep, posts)} controls>
+
         </video> */}
+        
         <div className={styles.container}>
           <p id={styles.maisEps}>Episódios</p>
           <div className={styles.listaEps}>

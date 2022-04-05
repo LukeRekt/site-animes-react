@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./VideoPlayer.module.css";
 // import video from "./assets/video.mp4";
 import { BiPlay, BiPause, BiVolumeFull, BiVolumeMute, BiFullscreen } from "react-icons/bi";
@@ -6,6 +6,9 @@ import useVideoPlayer from "../../hooks/useVideoPlayer";
 
 
 const VideoPlayer = (props) => {
+
+  const [linkVideo, setLinkVideo] = useState(props.videoLink);
+
   const videoContainer = document.getElementById('video-container');
   function toggleFullScreena(pimba) {
     if (document.fullscreenElement) {
@@ -55,10 +58,19 @@ const VideoPlayer = (props) => {
   } = useVideoPlayer(videoElement);
   return (
     <div className={styles.container}>
-        
+         <div className={styles.SeletorLinguagem}>
+           
+          <div className={styles.Legendado} onClick={() => {setLinkVideo(props.videoLink)}}>
+            <p>Legendado</p>
+          </div>
+          <div className={styles.Dublado} onClick={() => {setLinkVideo(props.videoDub)}}>
+            <p>Dublado</p>
+          </div>
+        </div>
       <div id="video-container" className={styles.video_wrapper}>
+      
         <video
-          src={props.videoLink}
+          src={linkVideo}
           ref={videoElement}
           onTimeUpdate={handleOnTimeUpdate}
         />
