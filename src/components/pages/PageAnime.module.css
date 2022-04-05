@@ -120,16 +120,17 @@
     float: right;
     width: 74%;
     margin-top: 0px;
-    border-radius: 2px;
+    border-radius: 4px;
     background-color: #1f1f3059;
 }
 
 .sinopseAnime p,h3{
     font-family: 'Montserrat', sans-serif;
-    font-family: 'Open Sans', sans-serif;
+    
+    line-height: 19px;
     font-weight: 100;
     margin-left: 5px;
-    color: rgba(255, 255, 255, .5);;
+    color: rgba(255, 255, 255, .5);
    font-size: 12px;
    font-weight: 300;
    
@@ -137,12 +138,14 @@
 }
 .sinopseAnime p {
     width: 99%;
+    margin-top: 0;
+    margin-bottom: 5px;
 }
 .sinopseAnime h3{
-    margin-top: 5px;
+    margin: 10px 0px 5px 5px;
     color: white;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
 }
 #temas{
     background-color: red;
