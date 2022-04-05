@@ -35,6 +35,11 @@ const animesSchema = new mongoose.Schema(
 			trim: true,
 			lowercase: false,
 		},
+		episodios: {
+			type: Array,
+			required: true,
+			trim: true,
+		},
 		lancamento: {
 			type: Boolean,
 			required: true,
