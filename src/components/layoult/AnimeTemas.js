@@ -1,10 +1,15 @@
-import styles from "./AnimeTemas.js"
+import styles from "./AnimeTemas.module.css"
 function AnimeTemas(props){
-
-  return props.temas.map(item => (
-    <p>{item}</p>
-));
-}
+var temas = props.temas;
+  return(
+      <div className={styles.container}>
+          {temas.map(item => (
+    <p className={styles.tema}>{item}</p>
+))}
+          
+      </div>
+    
+  )}
 
 
 export default AnimeTemas

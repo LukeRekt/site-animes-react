@@ -6,22 +6,24 @@ import axios from 'axios'
 import styles from './PageAnime.module.css'
 import Tabs from '../layoult/Tabs';
 import AnimeTemas from '../layoult/AnimeTemas';
-import { PinDropSharp } from '@material-ui/icons';
 
 function PageAnime() {
 
 
     const { id } = useParams();
     const [posts, setPosts] = useState([])
+    const [temas, setTemas] = useState([])
     let navigate = useNavigate();
     useEffect(() => {
         axios.get(`http://192.168.1.2:3232/getanim/${id}`)
             .then(res => {
                 setPosts(res.data.animes)
+                setTemas(res.data.animes.temas)
             }).catch((err) => {
                 return navigate("/");
             })
     }, [])
+
 
 
     function lancamento() {
@@ -79,7 +81,7 @@ function PageAnime() {
             <div className={styles.sinopseAnime}>
                 <h3>Sinopse</h3>
                 <p>{posts.descricao}</p>
-                <AnimeTemas temas={posts.temas}/> 
+                <AnimeTemas temas={temas}/> 
 
             </div>
             <div className={styles.episodeosAnime}>
