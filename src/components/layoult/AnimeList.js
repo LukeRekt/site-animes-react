@@ -11,11 +11,15 @@ function AnimeList(props) {
                 <Link to={`/anime/${idUm}/${temporada}/${episodio}`}>
 
                     <div className={styles.AnimeThumb}>
+                    
                         <div className={styles.AnimeQualidade}><p>FHD</p></div>
+                       
                         <div className={styles.pimba}><img src="https://subanimes.biz/wp-content/uploads/2022/01/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-subanimes-animes-online-brasil-2022.jpg" alt="" /></div>
                         <p>Episódio: {episodio}</p>
                         <p>{nome}</p>
+                        <div className={styles.AnimeLingua}><div id={styles.AnimeDublado}><p>Dublado</p></div></div>
                     </div>
+                   
                 </Link>
             </div>
             )

@@ -65,6 +65,31 @@
     width: 100%;
     
 }
+.AnimeLingua{
+
+    position: absolute;
+    width: 100%;
+    left: 10%;
+    top: 50%;
+    display: flex;
+}
+.AnimeLingua p{
+
+    margin: 0;
+    padding: 4px;
+    top: 0;
+    width: 5%;
+    position: inherit;
+    font-size: 14px;
+}
+#AnimeLegendado{
+    margin-right: 9%;
+    background-color: #181829;
+}
+#AnimeDublado{
+    background-color: #181829;
+}
+
 @media (max-width: 600px)
 {
    .AnimeThumb{

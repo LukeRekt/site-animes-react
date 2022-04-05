@@ -40,6 +40,11 @@ const episodeosSchema = new mongoose.Schema(
 			required: true,
 			trim: true,
 		},
+		videoDublado: {
+			type: String,
+			required: true,
+			trim: true,
+		},
 		
     }
 );
