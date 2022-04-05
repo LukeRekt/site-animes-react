@@ -35,7 +35,7 @@ const animesSchema = new mongoose.Schema(
 			trim: true,
 			lowercase: false,
 		},
-		episodios: {
+		temas: {
 			type: Array,
 			required: true,
 			trim: true,
