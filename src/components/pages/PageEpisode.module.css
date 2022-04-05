@@ -10,11 +10,11 @@
 }
 .container{
     float: right;
-    background: #181829;
+    background: #1f1f30;
     width: 21%;
     margin-right: 0%;
     margin-left: 1px;
-    border-radius: 2px;
+    border-radius: 4px;
     height:60.6vh;
     overflow: hidden;
     
@@ -35,11 +35,20 @@
 }
 #maisEps{
   border-bottom: 1px solid rgba(155, 155, 155, 0.185);
-padding-bottom: 10px; 
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 10px 0px 10px 5px; 
+  background-color: #181829;;
+font-weight: 300;;
+font-size: 14px;
+
 }
 
+
+
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 1px;
   }
   
 

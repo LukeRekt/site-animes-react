@@ -31,7 +31,7 @@ function PageEpisode() {
   const {temporada, id, ep } = useParams();
   const [posts, setPosts] = useState([])
   useEffect(() => {
-    axios.get(`http://192.168.1.2:3232/getanim/episodios/${temporada}/${id}`)
+    axios.get(`http://192.168.1.8:3232/getanim/episodios/${temporada}/${id}`)
       .then(res => {
         setPosts(res.data.episodios)
       }).catch((err) => {
@@ -47,7 +47,7 @@ function PageEpisode() {
         {/* <video src={ListEp(ep, posts)} controls>
         </video> */}
         <div className={styles.container}>
-          <p id={styles.maisEps}>MAIS EPISÓDIOS</p>
+          <p id={styles.maisEps}>Episódios</p>
           <div className={styles.listaEps}>
             <div className={styles.Eps}>
               {posts.map(post =>

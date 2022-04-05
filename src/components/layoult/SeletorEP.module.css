@@ -1,12 +1,13 @@
 
 .Eps{
-  background-color: #0b003a;
-  padding: 10px;
+  background-color: #1f1f30;
+  
   text-align: center;
-  width: 89%;
-  margin-top: 5px;
-  max-height: 45px;
-  margin-left: 10px;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, .03);
+  display: flex;
+  align-items: center;
+  
   transition: 0.4s;
 
 }
@@ -22,4 +23,43 @@
 }
 div a {
   text-decoration: none;
+}
+.epNum{
+  float: left;
+  width: 15%;
+  height: 100%;
+  font-size: 17px;
+  font-weight: 700;
+  padding-top: 15px;
+  padding-right: 0px;
+  padding-bottom: 15px;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  
+  justify-content: center;
+  
+}
+.epNum p{
+  font-size: 17px;
+  
+  
+
+}
+.displayTitulos{
+  width: calc(100% - 60px);
+  overflow: hidden;
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  
+}
+.titulo{
+    font-size: 13px;
+    font-weight: 500 !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left !important;
 }

@@ -9,10 +9,11 @@ function SeletorEP(props) {
 
                 <Link to={`/anime/${idUm}/${episodio}`}>
                     <div className={styles.Eps}>
-                        <p>Episódio: {episodio}</p>
-                        <p>
-                            Título: {nome}
-                        </p>
+                        <div className={styles.epNum}><p>00{episodio}</p></div>
+                        <div className={styles.displayTitulos}>
+                    <p className={styles.titulo}>Episódio</p>
+                    <p className={styles.titulo}>{nome}</p>
+                    </div>
                     </div>
                 </Link>
             </div>
@@ -22,10 +23,14 @@ function SeletorEP(props) {
         if (idUm == idDois && episodio == props.atual) {
             return (
                 <div className={styles.Eps} style={{ background: "#FFBE63" }}>
-                    <p>Episódio: {episodio}</p>
-                    <p>
-                        Título: {nome}
-                    </p>
+                    <div className={styles.epNum}><p>00{episodio}</p></div>
+                    <div className={styles.displayTitulos}>
+                    <p className={styles.titulo}>Episódio</p>
+                    <p className={styles.titulo}>{nome}</p>
+                    </div>
+
+                        
+                    
                 </div>
             )
         }
