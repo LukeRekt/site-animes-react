@@ -31,7 +31,7 @@
     display: block;
     border-radius: 5px;
     font-size: 16px;
-    background: #22223b;
+    background: rgba(0, 0, 0, .2);
     width: 100%;
     border: 0;
     padding: 10px 10px;
@@ -39,28 +39,39 @@
   }
   
   .botao {
-
+   
+    width: 100%;
     cursor: pointer;
-    color: #fff;
+    color: #ffbe63;
     font-size: 16px;
     text-transform: uppercase;
     border: 0;
     padding: 10px 10px;
-
+    font-family: 'Montserrat', Arial, sans-serif;
+    text-align: center;
     margin-top: 10px;
     margin-left: -5px;
     border-radius: 5px;
-    background-color: #290b5a;
+    background-color: rgba(0, 0, 0, .3);
     box-shadow: #00000060 1px 1px 1px;
- 
+    font-weight: 400;
+    transition: 0.4s;
   }
+  
  .login button:disabled,
  .login button[disabled]{
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
 }
-
+.login button[disabled]:hover{
+  background-color: #cccccc;
+  color: #666666;
+}
+.login button:hover{
+  background-color: #ffbe63;
+  color: #181829;
+}
 
 @media (max-width: 600px)
   {

@@ -64,7 +64,6 @@ function PagePefil() {
 
         <div className={styles.PerfilContainer}>
             <div className={styles.leftUser}>
-
                 <div className={styles.userAvatar}>
                     <div className={styles.metadeAvatar}>
                         <img src={banner} alt="" />
@@ -87,10 +86,10 @@ function PagePefil() {
                 </div>
             </div>
             <div className={styles.rightUser}>
-                <div onClick={() => toggleTab(1)} className={`${styles.favoritos} ${styles.tab_color}`} ><p><FaHeart /> Favoritos</p></div>
-                <div onClick={() => toggleTab(2)} className={`${styles.assistidos} ${styles.tab_color}`}><p><FaEye /> Assistidos</p></div>
-                <div onClick={() => toggleTab(3)} className={`${styles.maistarde} ${styles.tab_color}`}><p><FaClock /> Ver mais Tarde</p></div>
-                <div onClick={() => toggleTab(5)} className={`${styles.editarPerfil} ${styles.tab_color}`}><p><RiEqualizerLine /> Editar Perfil</p></div>
+                <div onClick={() => toggleTab(1)} className={toggleState === 1 ? `${styles.favoritos} ${styles.ativo} ${styles.tab_color}`: `${styles.favoritos} ${styles.tab_color}`} ><p><FaHeart /> Favoritos</p></div>
+                <div onClick={() => toggleTab(2)} className={toggleState === 2 ? `${styles.assistidos} ${styles.ativo} ${styles.tab_color}`: `${styles.assistidos} ${styles.tab_color}`}><p><FaEye /> Assistidos</p></div>
+                <div onClick={() => toggleTab(3)} className={toggleState === 3 ? `${styles.maistarde} ${styles.ativo} ${styles.tab_color}`: `${styles.maistarde} ${styles.tab_color}`}><p><FaClock /> Ver mais Tarde</p></div>
+                <div onClick={() => toggleTab(5)} className={toggleState === 5 ? `${styles.editarPerfil} ${styles.ativo} ${styles.tab_color}` : `${styles.editarPerfil} ${styles.tab_color}`}><p><RiEqualizerLine /> Editar Perfil</p></div>
                 <div onClick={handleLogout} className={`${styles.algumacoisa} ${styles.tab_color}`}><p><AiOutlineLogout /> Logout</p></div>
 
             </div>

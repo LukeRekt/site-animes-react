@@ -57,11 +57,12 @@ function PageLogin() {
 
             <form className={styles.login}>
                 <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <input type="password" placeholder="Password " value={password} onChange={(e) => setPassword(e.target.value)} />
+                
+                {showPassword ? ( <div><input type="password" placeholder="Senha " value={password} onChange={(e) => setPassword(e.target.value)} /></div>) : (<div><input type="text" placeholder="Senha " value={password} onChange={(e) => setPassword(e.target.value)} /></div>)}
                 <button onClick={handleLogin} className={styles.botao} disabled={!email ||
                     !password}>Login</button>
                 <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
-                    {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
+                    {showPassword ? (<VisibilityOffIcon />) : (<VisibilityIcon />)}
                 </IconButton>
             </form>
 

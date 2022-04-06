@@ -58,6 +58,7 @@
     
 }
 .item a svg{
+    cursor: pointer;
     transition: 0.5s;
     font-size: 23px;
 }
