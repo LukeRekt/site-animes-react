@@ -43,10 +43,10 @@ function Header() {
             <div className={styles.navegacaoMobile}><FaAlignJustify/></div>
             <Link to="/"><img className={styles.logo} src={logo} alt="Logo" /></Link>
             <div id='navegacao'>
-                <li className={styles.item}> <Link to="/"><FaHouseUser /> INICIO</Link></li>
-                <li className={styles.item}><Link to="/lista"><FaNewspaper /> LISTA</Link></li>
-                <li className={styles.item}><Link to="/favoritos"><FaStar /> FAVORITOS</Link></li>
-                <li className={styles.item}><Link to="/calendario"><FaCalendarAlt />CALENDARIO</Link></li>
+                <li className={styles.item}> <Link to="/"><FaHouseUser />HOME</Link></li>
+                <li className={styles.item}><Link to="/lista"><FaNewspaper />LISTA</Link></li>
+                <li className={styles.item}><Link to="/favoritos"><FaStar />FAVORITOS</Link></li>
+                <li className={styles.item}><Link to="/calendario"><FaCalendarAlt />CALENDÁRIO</Link></li>
             </div>
             <FaSearch id={styles.lupa} onClick={() => setVisibility(true)} />
             {/* <button onClick={handleLogout}>Deslogar</button>  */}

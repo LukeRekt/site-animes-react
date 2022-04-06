@@ -3,11 +3,11 @@
 Site de animes criado usando a stack M.E.R.N
 
 ## Status do projeto
-- [x] Home (base) - ainda precisa ser "decorada"
-- [x] Pagina de Animes - sera totalmente terminado quando o player de videos estiver pronto.
+- [x] Home
+- [x] Pagina de Animes
 - [x] Player animes
 - [ ] Ferramenta para adicionar animes
-- [ ] Calendario
+- [x] Calendario
 - [x] Login de usuario - feito em nodejs com mongodb
 - [x] Perfil de usuario
 - [ ] Favoritos

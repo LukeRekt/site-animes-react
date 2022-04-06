@@ -33,9 +33,7 @@
   .content_tabs{
     width: 100%;
     float: left;
-    
     margin-top: 8px;
-    
 }
 .content {
     background: #181829;
@@ -44,7 +42,6 @@
     height: 100%;
     display: none;
     border-radius: 7px;
-    
   }
 .content h2 {
   padding: 0px 0 5px 0px;
@@ -63,6 +60,9 @@
 }
 .tab_color_active{
   background-color: #ffbe63;;
+  
+}
+.tab_color_active p {
   color: #0c0c1d;
 }
 .ultimo{
@@ -72,9 +72,6 @@
 .naoTem{
   display: flex;
   flex-wrap: wrap;
-}
-.animResize{
-
 }
 #teste{
   font-size: 40px;

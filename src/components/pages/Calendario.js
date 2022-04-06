@@ -37,7 +37,7 @@ function Calendario() {
                 <div onClick={() => toggleTab(4)} className={toggleState === 4 ? `${styles.editarPerfil}  ${styles.tab_color} ${styles.tab_color_active}` : `${styles.favoritos}  ${styles.tab_color} `}><p>Quarta</p></div>
                 <div onClick={() => toggleTab(5)} className={toggleState === 5 ? `${styles.algumacoisa}  ${styles.tab_color} ${styles.tab_color_active}` : `${styles.favoritos}  ${styles.tab_color} `}><p>Quinta</p></div>
                 <div onClick={() => toggleTab(6)} className={toggleState === 6 ? `${styles.algumacoisa}  ${styles.tab_color} ${styles.tab_color_active}` : `${styles.favoritos}  ${styles.tab_color} `}><p>Sexta</p></div>
-                <div onClick={() => toggleTab(7)} className={toggleState === 7 ? `${styles.algumacoisa} ${styles.ultimo} ${styles.tab_color} ${styles.tab_color_active}` : `${styles.favoritos}  ${styles.tab_color} `}><p>Sábado</p></div>
+                <div onClick={() => toggleTab(7)} className={toggleState === 7 ? `${styles.algumacoisa} ${styles.ultimo} ${styles.tab_color} ${styles.tab_color_active}` : `${styles.favoritos} ${styles.ultimo}  ${styles.tab_color} `}><p>Sábado</p></div>
             </div>
             <div className={styles.content_tabs}>
                 <div className={toggleState === 1 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>

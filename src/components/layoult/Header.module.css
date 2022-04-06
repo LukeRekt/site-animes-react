@@ -39,6 +39,7 @@
     
 }
 
+
 .item a {
     font-family: 'Montserrat', sans-serif;
     font-family: 'Open Sans', sans-serif;
@@ -53,7 +54,16 @@
     border-radius: 50px;
     padding: 5px;
     background-color: #ffbe63;
-    color: #700B97;
+    color: #0c0c1d;
+    
+}
+.item a svg{
+    transition: 0.5s;
+    font-size: 23px;
+}
+.item a:hover > svg{
+    fill: #0c0c1d;
+    
 }
 
 .avatar{
