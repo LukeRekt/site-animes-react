@@ -1,0 +1,9 @@
+#imagem{
+    background-color: #181829;
+    margin: auto;
+    width: 70%;
+}
+#imagem img {
+    margin-left: 19%;
+    width: 60%;
+}

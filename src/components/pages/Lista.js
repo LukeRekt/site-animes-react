@@ -1,6 +1,7 @@
 import FormData from "form-data";
 import Axios from "axios";
 import { useState } from "react";
+import Favoritos from "./Favoritos";
 
 function Lista() {
   const [file, setFile] = useState(null);
@@ -19,20 +20,22 @@ function Lista() {
   };
 
   return (
-    <div><h1>Lista</h1>
+    // <div><h1>Lista</h1>
 
-      <div>
-        <h1>teste upload de arquivos
-          <input
-            type="file"
-            name="screenshot"
-            onChange={(e) => {
-              setFile(e.target.files[0]);
-            }} />
-          <button className="" onClick={(e) => upload(e)}>Submit</button>
-        </h1>
-      </div>
-    </div>//essa página deve ser apenas possível de se visualizar caso esteja logado.
+    //   <div>
+    //     <h1>teste upload de arquivos
+    //       <input
+    //         type="file"
+    //         name="screenshot"
+    //         onChange={(e) => {
+    //           setFile(e.target.files[0]);
+    //         }} />
+    //       <button className="" onClick={(e) => upload(e)}>Submit</button>
+    //     </h1>
+    //   </div>
+    // </div>//essa página deve ser apenas possível de se visualizar caso esteja logado.
+
+    <div><Favoritos/></div>
 
   )
 }

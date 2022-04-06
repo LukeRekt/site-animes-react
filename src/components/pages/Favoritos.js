@@ -1,6 +1,12 @@
+import styles from "./Favoritos.module.css"
 function Favoritos (){
     return (
-        <div><h1>Favoritos</h1></div>//essa página deve ser apenas possível de se visualizar caso esteja logado.
+        <div>
+            <div id={styles.imagem}>
+            <img src="http://192.168.1.8:3232/static/imagens/assets/emConstrucao.png" alt="" srcset="" />
+            </div>
+            
+        </div>//essa página deve ser apenas possível de se visualizar caso esteja logado.
     )
 }
 
