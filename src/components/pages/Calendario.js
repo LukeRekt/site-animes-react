@@ -1,12 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Calendario.module.css"
+import axios from 'axios'
+import Animes from '../layoult/Animes'
+import { FaSadCry } from "react-icons/fa";
 function Calendario() {
-    const [toggleState, setToggleState] = useState(5);
+    const [toggleState, setToggleState] = useState(1);
 
     const toggleTab = (index) => {
 
         setToggleState(index);
     };
+
+    const [posts, setPosts] = useState([])
+    useEffect(() => {
+        axios.get('http://192.168.1.8:3232/getanim')
+            .then(res => {
+                setPosts(res.data.animes)
+            })
+    }, [])
+   
+    
+
+    function listarAnimes(animes, dia){
+        const getDay = animes => animes.diaLancamento === `${dia}`;
+        const anime = animes.filter(getDay);
+        return anime
+    }
+    console.log(listarAnimes(posts, "Segunda"))
 
     return (//Deve ser possível adicionar no calendário por contas autorizadas  
         <div className={styles.container}>
@@ -22,38 +42,62 @@ function Calendario() {
             <div className={styles.content_tabs}>
                 <div className={toggleState === 1 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.naoTem}>
-                        <p> Nenhum episódio hoje</p>
+                    {listarAnimes(posts, "Domingo").map(post =>
+                    <div className={styles.animResize}><Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} /></div>
+                            
+                        )}
+                        
                     </div>
 
                 </div>
 
                 <div className={toggleState === 2 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.naoTem}>
-                    <p> Nenhum episódio hoje</p>
+                    {listarAnimes(posts, "Segunda").map(post =>
+                    <div className={styles.animResize}><Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} /></div>
+                            
+                        )}
                     </div>
                 </div>
 
                 <div className={toggleState === 3 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.naoTem}>
-                    <p> Nenhum episódio hoje</p>
+                    {listarAnimes(posts, "Terça").map(post =>
+                    <div className={styles.animResize}><Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} /></div>
+                            
+                        )}
                     </div>
                 </div>
                 <div className={toggleState === 4 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.naoTem}>
-                    <p> Nenhum episódio hoje</p>
+                    {listarAnimes(posts, "Quarta").map(post =>
+                    <div className={styles.animResize}><Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} /></div>
+                            
+                        )}
                     </div>
                 </div>
                 <div className={toggleState === 5 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
-                <p> Nenhum episódio hoje</p>
+                {listarAnimes(posts, "Quinta").map(post =>
+                    <div className={styles.animResize}><Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} /></div>
+                            
+                        )}
                 </div>
                 <div className={toggleState === 6 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.naoTem}>
-                    <p> Nenhum episódio hoje</p>
+                    {listarAnimes(posts, "Sexta").map(post =>
+                    <div className={styles.animResize}><Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} /></div>
+                            
+                        )}
+                        <p id={styles.teste}> NENHUM ANIME NESTE DIA <FaSadCry/></p>
+                       
                     </div>
                 </div>
                 <div className={toggleState === 7 ? `${styles.content}  ${styles.active_content}` : `${styles.content} `}>
                     <div className={styles.naoTem}>
-                    <p> Nenhum episódio hoje</p>
+                    {listarAnimes(posts, "Sábado").map(post =>
+                    <div className={styles.animResize}><Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} /></div>
+                            
+                        )}
                     </div>
                 </div>
             </div>
