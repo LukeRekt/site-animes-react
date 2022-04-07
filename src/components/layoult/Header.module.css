@@ -13,6 +13,7 @@
 }
 #lupa {
     font-size: 30px;
+    cursor: pointer;
 }
 #lupa:hover {
     fill: #ffbe63;
@@ -137,7 +138,7 @@
     display: none;
 }
 #lupa {
-    font-size: 20px;
+    font-size: 20px; 
 }
 .header svg:nth-child(2){
     font-size: 90px;
