@@ -1,15 +1,16 @@
 import { useParams, useNavigate } from 'react-router-dom'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { FaCheck } from "react-icons/fa";
-
+import { FiHeart } from "react-icons/fi";
 import axios from 'axios'
 import styles from './PageAnime.module.css'
 import Tabs from '../layoult/Tabs';
 import AnimeTemas from '../layoult/AnimeTemas';
+import { UserContext } from '../../UserContext'
 
 function PageAnime() {
 
-
+    const { user } = useContext(UserContext);
     const { id } = useParams();
     const [posts, setPosts] = useState([])
     const [temas, setTemas] = useState([])
@@ -24,7 +25,7 @@ function PageAnime() {
             })
     }, [])
 
-
+    const favoritado = [1, 2, 3]
 
     function lancamento() {
         if (posts.lancamento === true) {
@@ -50,8 +51,13 @@ function PageAnime() {
                         <p>{lanc}</p>
                         <p>{posts.diaLancamento}</p>
                     </div>
-
+                
                 </div>
+                {user ? ( favoritado.includes(parseInt(id)) ?
+                (<div className={styles.favoritar}><p><FiHeart/> Favorito</p></div>) :
+                <div className={styles.favoritar}><p><FiHeart/> Favoritar</p></div>) 
+                : (<></>)}
+                
                 <div className={styles.boxInfoAnimes}>
                     <p>Episódios</p>
                     {posts.episodios}</div>

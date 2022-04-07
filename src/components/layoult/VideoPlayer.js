@@ -9,6 +9,8 @@ const VideoPlayer = (props) => {
 
   const [linkVideo, setLinkVideo] = useState(props.videoLink);
 
+
+
   const videoContainer = document.getElementById('video-container');
   function toggleFullScreena(pimba) {
     if (document.fullscreenElement) {
@@ -59,6 +61,7 @@ const VideoPlayer = (props) => {
   } = useVideoPlayer(videoElement);
   return (
     <div className={styles.container}>
+     
          <div className={styles.SeletorLinguagem}>
            
           <div className={styles.Legendado} onClick={() => {setLinkVideo(props.videoLink)}}>
