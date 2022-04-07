@@ -7,7 +7,7 @@ function EpisodiosHome(props) {
 
     return (
         <div className={styles.container}>
-            <Link to={`anime/${props.id}/${props.numero}`}>
+            <Link to={`anime/${props.id}/${props.temporada}/${props.numero}`}>
                 <div className={styles.episodeInfos}>
 
                     <div className={styles.fundoAnime}>

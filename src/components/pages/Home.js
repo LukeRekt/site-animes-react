@@ -68,7 +68,7 @@ function Home() {
                     </Carousel> */}
                     <div className={styles.novosEpisodios}>
                     {postsep.map(post =>
-                            <EpisodiosHome key={post.numero} nome={post.nome} id={post.id} anime={post.nomeAnime} imagem={post.animeImagem} numero={post.numero} />
+                            <EpisodiosHome key={post.numero} nome={post.nome} temporada={post.temporada} id={post.id} anime={post.nomeAnime} imagem={post.animeImagem} numero={post.numero} />
                             )}
                      </div>
 

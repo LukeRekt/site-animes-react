@@ -7,7 +7,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, .03);
   display: flex;
   align-items: center;
-  
+  padding: 5px 5px 5px 5px;
   transition: 0.4s;
 
 }
@@ -62,4 +62,7 @@ div a {
     white-space: nowrap;
     text-overflow: ellipsis;
     text-align: left !important;
+}
+#atual {
+  color: #1f1f30;
 }

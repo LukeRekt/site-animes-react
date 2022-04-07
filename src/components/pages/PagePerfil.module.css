@@ -134,7 +134,7 @@ animation-fill-mode: forwards;
 .detailsInside{
   position: absolute;
   background-color: #0C0C1D;
-  width: 53%;
+  width: 50%;
   height: 83%;
   left: 100%;
   top: 8%;
@@ -147,7 +147,7 @@ animation-fill-mode: forwards;
 }
 .playbutton{
   fill: #ffbe63;
-  bottom: 30%;
+  bottom: 27%;
   left: 35%;
   font-size: 180%;
   position: absolute;
