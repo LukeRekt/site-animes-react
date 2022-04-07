@@ -11,9 +11,11 @@ import { UserContext } from '../../UserContext'
 function PageAnime() {
 
     const { user } = useContext(UserContext);
+    const {favoritos} = useContext(UserContext);
     const { id } = useParams();
     const [posts, setPosts] = useState([])
     const [temas, setTemas] = useState([])
+    
     let navigate = useNavigate();
     useEffect(() => {
         axios.get(`http://192.168.1.8:3232/getanim/${id}`)
@@ -24,8 +26,6 @@ function PageAnime() {
                 return navigate("/");
             })
     }, [])
-
-    const favoritado = [1, 2, 3]
 
     function lancamento() {
         if (posts.lancamento === true) {
@@ -53,9 +53,8 @@ function PageAnime() {
                     </div>
                 
                 </div>
-                {user ? ( favoritado.includes(parseInt(id)) ?
-                (<div className={styles.favoritar}><p><FiHeart/> Favorito</p></div>) :
-                <div className={styles.favoritar}><p><FiHeart/> Favoritar</p></div>) 
+                {console.log(favoritos.includes(id))}
+                {user ? ( favoritos.includes(parseInt(id)) ? (<div className={styles.favoritar}><p><FiHeart/> Favorito</p></div>) : (<div className={styles.favoritar}><p><FiHeart/> Favoritar</p></div>)) 
                 : (<></>)}
                 
                 <div className={styles.boxInfoAnimes}>

@@ -68,13 +68,15 @@ exports.login = async (req, res) => {
         const { userBanner } = user;
         const { isAdmin } = user;
         const { email } = user;
+        const { animesFavoritos } = user;
         return res.json({
             message: "Logado com sucesso!",
             username,
             userAvatar,
             userBanner,
             isAdmin,
-            email
+            email,
+            animesFavoritos
         });
     });
 };
@@ -93,13 +95,15 @@ exports.getLoggedInUser = (req, res) => {
     const { userBanner } = req.user;
     const { isAdmin } = req.user;
     const { email } = req.user;
+    const {animesFavoritos} = req.user;
     return res.status(200).json({
         message: "O Usuario ainda esta logado",
         username,
         userAvatar,
         userBanner,
         isAdmin,
-        email
+        email,
+        animesFavoritos
         
     })
     
