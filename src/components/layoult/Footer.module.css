@@ -47,13 +47,21 @@
 .footer_redes{
     display: flex;
     flex-direction: column;
+    
 }
 .footer_redes a{
     background-color: #181829;
-    font-size: 14px;
-    padding: 10px 10px 10px 10px;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin: auto;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 50px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
     
 }
 .footer_redes a:hover{
@@ -66,6 +74,15 @@
 }
 .footer_disclamer{
     width: 11%;
+}
+.footer_small{
+    width: 100%;
+    display: flex;
+    margin-top: 1%;
+
+}
+.footer_small small{
+    margin: auto;
 }
 @media(max-width: 600px){
     .container{
