@@ -27,7 +27,7 @@ function PagePefil() {
         let formData = new FormData();
         formData.append("screenshot", file, `${user}.png`);
 
-        Axios.post("http://localhost:3232/avatar", formData, {
+        Axios.post("http://192.168.1.8:3232/avatar", formData, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },

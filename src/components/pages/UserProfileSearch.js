@@ -19,7 +19,7 @@ function UserProfileSearch() {
     const {id} = useParams(); 
 
     useEffect(() => {
-        axios.post('http://localhost:3232/buscar', {
+        axios.post('http://192.168.1.8:3232/buscar', {
             username: id,
           })
           .then(function (response) {
