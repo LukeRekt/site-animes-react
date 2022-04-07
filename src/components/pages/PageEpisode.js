@@ -86,7 +86,7 @@ function PageEpisode() {
           <div className={styles.listaEps}>
             <div className={styles.Eps}>
               {posts.map(post =>
-                <SeletorEP nome={post.nome} id={post.id} iddois={id} episodio={post.numero} atual={ep} />)}
+                <SeletorEP nome={post.nome} id={post.id} iddois={id} temporada={post.temporada} episodio={post.numero} atual={ep} />)}
             </div>
           </div>
         </div>
