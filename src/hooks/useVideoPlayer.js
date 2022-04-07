@@ -10,8 +10,8 @@ const useVideoPlayer = (videoElement) => {
     totalTime: 0,
   });
 
-  const pularAberturaHandler = () =>{
-    videoElement.current.currentTime += 85
+  const pularAberturaHandler = (tempoFim) =>{
+    videoElement.current.currentTime = tempoFim
 }
   
 

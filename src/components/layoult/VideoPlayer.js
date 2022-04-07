@@ -25,7 +25,8 @@ const VideoPlayer = (props) => {
   }
 
   const PularAbertura = (tempoAtual) => {
-    if(tempoAtual >= 50 && tempoAtual <= 70){
+    
+    if(tempoAtual >= props.inicioAbertura && tempoAtual <= props.fimAbertura){
       //console.log(showDiv);
       
       return true
@@ -74,7 +75,7 @@ const VideoPlayer = (props) => {
           ref={videoElement}
           onTimeUpdate={handleOnTimeUpdate}
         />
-        {  PularAbertura(playerState.actualTime) ? (<div onClick={(e) => pularAberturaHandler(e)} className={styles.pularAbertura}> <p>PULAR ABERTURA</p></div>) : (<></>)}
+        {  PularAbertura(playerState.actualTime) ? (<div onClick={(e) => pularAberturaHandler(props.fimAbertura)} className={styles.pularAbertura}> <p>PULAR ABERTURA</p></div>) : (<></>)}
         {/* {  playerState.actualTime >= 20 ? (<></>) : (<></>)} */}
         
         <div className={styles.controls_wrap}>

@@ -27,6 +27,26 @@ function PageEpisode() {
       }
     }
   }
+  function inicioAbertura(parametros, postsa) {
+    for (var i = 0; i < postsa.length; i++) {
+
+      if (postsa[i].id == id) {
+        if (postsa[i].numero == parametros) {
+          return postsa[i].inicioAbertura;
+        }
+      }
+    }
+  }
+  function fimAbertura(parametros, postsa) {
+    for (var i = 0; i < postsa.length; i++) {
+
+      if (postsa[i].id == id) {
+        if (postsa[i].numero == parametros) {
+          return postsa[i].fimAbertura;
+        }
+      }
+    }
+  }
   function ListNome(parametros, postsa) {
     for (var i = 0; i < postsa.length; i++) {
 
@@ -53,7 +73,10 @@ function PageEpisode() {
     <div>
       
       <div className={styles.PageAnimeContainer}>
-        <VideoPlayer videoLink={ListEp(ep, posts)} videoDub={ListDub(ep, posts)}/>
+        <VideoPlayer inicioAbertura={inicioAbertura(ep, posts)}
+         fimAbertura={fimAbertura(ep, posts)}
+          videoLink={ListEp(ep, posts)}
+           videoDub={ListDub(ep, posts)}/>
                 {/* <video src={ListEp(ep, posts)} controls>
 
         </video> */}

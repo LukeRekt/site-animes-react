@@ -45,6 +45,13 @@ const episodeosSchema = new mongoose.Schema(
 			required: true,
 			trim: true,
 		},
+		inicioAbertura:{
+			type: Number,
+			trim: true,
+		},
+		fimAbertura: {
+			type: Number,
+		},
 		
     }
 );
