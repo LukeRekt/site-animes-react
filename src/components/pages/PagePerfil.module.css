@@ -202,6 +202,10 @@ animation-fill-mode: forwards;
   .active_content {
     display: block;
   }
+  .tab_Favoritos{
+    display: flex;
+    flex-wrap: wrap;
+  }
   .EditGeral{
     margin-bottom: 30px;
   }

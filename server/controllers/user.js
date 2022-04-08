@@ -15,12 +15,12 @@ exports.register = async (req, res) => {
     });
     if (usernameExists) {
         return res.status(403).json({
-            error: "Usuario ja existe",
+            error: "Usuário já existe",
         });
     }
     if (emailExists) {
         return res.status(403).json({
-            error: "Email ja existe",
+            error: "Email já existe",
         });
     }
 
@@ -45,7 +45,7 @@ exports.login = async (req, res) => {
         //se der erro ou nenhum usuario encontrado
         if (err || !user) {
             return res.status(401).json({
-                error: "Credenciais Invalidas",
+                error: "Credenciais Inválidas",
             });
         }
         //se usuario foi encontrado, usar metodo de autencticacao do model

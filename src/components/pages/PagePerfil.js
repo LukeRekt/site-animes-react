@@ -5,20 +5,23 @@ import { FaHeart, FaClock, FaEye, FaUserAlt, FaSmile, FaQuoteLeft, FaPhoneAlt, F
 import { AiOutlineLogout } from "react-icons/ai";
 import { RiEqualizerLine } from "react-icons/ri";
 import { FiAtSign } from "react-icons/fi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom'
 import { logout } from '../../api/user'
 import Axios from "axios";
+import Animes from '../layoult/Animes';
 
 function PagePefil() {
     const { user, setUser } = useContext(UserContext);
     const { avatar } = useContext(UserContext)
     const { banner } = useContext(UserContext)
     const { email } = useContext(UserContext)
+        const {favoritos} = useContext(UserContext);
     const [toggleState, setToggleState] = useState(5);
     const [toggleEdit, setToggleEdit] = useState(20);
     const navigate = useNavigate();
+    const [posts, setPosts] = useState([])
 
     const [file, setFile] = useState(null);
 
@@ -36,6 +39,12 @@ function PagePefil() {
             console.log("Sucesso! ", res);
         });
     };
+    useEffect(() => {
+        Axios.get('http://192.168.1.8:3232/getanim')
+            .then(res => {
+                setPosts(res.data.animes)
+            })
+    }, [])
 
     const handleLogout = (e) => {
         e.preventDefault();
@@ -95,8 +104,11 @@ function PagePefil() {
             </div>
             <div className={styles.content_tabs}>
                 <div className={toggleState === 1 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
-                    <div className={styles.naoTem}>
-                        <p><FaHeart fill='#5555553b' /> Você não tem nenhum favorito</p>
+                    <div className={styles.tab_Favoritos}>
+                       {favoritos.length == 0 ? (<></>) : (posts.map((post, index) => 
+                        favoritos[index] ? (<Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />) : (<></>)))} 
+                            
+                        
                     </div>
 
                 </div>
@@ -115,6 +127,7 @@ function PagePefil() {
                 <div className={toggleState === 4 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.naoTem}>
                         <p><FaHeart fill='#5555553b' /> Você não tem nenhum favorito</p>
+                        
                     </div>
                 </div>
                 <div className={toggleState === 5 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
