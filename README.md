@@ -6,12 +6,12 @@ Site de animes criado usando a stack M.E.R.N
 - [x] Home
 - [x] Pagina de Animes
 - [x] Player animes
-- [ ] Ferramenta para adicionar animes
 - [x] Calendario
-- [x] Login de usuario - feito em nodejs com mongodb
+- [x] Login de usuario - JWT
 - [x] Perfil de usuario
-- [ ] Favoritos
+- [x] Favoritos
 - [ ] Listas
+- [ ] Ferramenta para adicionar animes
 - [ ] Watchpary
 
 ## Instruções de instalação e configuração
