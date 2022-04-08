@@ -56,13 +56,13 @@ function PageLogin() {
 
 
             <form className={styles.login}>
-                <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input type="email" autoComplete="true" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 
-                {showPassword ? ( <div><input type="password" placeholder="Senha " value={password} onChange={(e) => setPassword(e.target.value)} /></div>) : (<div><input type="text" placeholder="Senha " value={password} onChange={(e) => setPassword(e.target.value)} /></div>)}
+                {showPassword ? ( <div><input type="text" autoComplete="true" placeholder="Senha " value={password} onChange={(e) => setPassword(e.target.value)} /></div>) : (<div><input type="password" autoComplete="true" placeholder="Senha " value={password} onChange={(e) => setPassword(e.target.value)} /></div>)}
                 <button onClick={handleLogin} className={styles.botao} disabled={!email ||
                     !password}>Login</button>
                 <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
-                    {showPassword ? (<VisibilityOffIcon />) : (<VisibilityIcon />)}
+                    {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
                 </IconButton>
             </form>
 

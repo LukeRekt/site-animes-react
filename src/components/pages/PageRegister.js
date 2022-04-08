@@ -54,9 +54,9 @@ function PageRegister() {
 
             <form className={styles.login}>
                 <input type="text" placeholder="Usuario" value={username} onChange={(e) => setUsername(e.target.value)} />
-                <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                {showPassword ? ( <div><input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} /></div>) : (<div><input type="text" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} /></div>)}
-                {showPassword ? ( <div><input type="password" placeholder="Confirmar Senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /></div>) : (<div><input type="text" placeholder="Confirmar Senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /></div>)}
+                <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                {showPassword ? ( <div><input type="text" autoComplete="true" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} /></div>) : (<div><input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} /></div>)}
+                {showPassword ? ( <div><input type="text" autoComplete="true" placeholder="Confirmar Senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /></div>) : (<div><input type="password" placeholder="Confirmar Senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /></div>)}
                 {/* <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type="password" placeholder="Confirmar Senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /> */}
 
@@ -74,7 +74,7 @@ function PageRegister() {
                     !hasNumber ||
                     !hasSpecialChar} >Registrar</button>
     <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
-                    {showPassword ? (<VisibilityOffIcon />) : (<VisibilityIcon />)}
+                    {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
                 </IconButton>
                 
 

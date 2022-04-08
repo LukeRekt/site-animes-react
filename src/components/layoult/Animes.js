@@ -4,7 +4,7 @@ import { AiFillPlayCircle } from "react-icons/ai";
 function Animes(props) {
     //Futuramente essa funcao deve ser substituida por um sistema mais funcional, que nao remova o nome, e sim, esconda.
     function diminuirTamanho(nome) {
-        let novoNome = nome.substr(0, 24)
+        let novoNome = nome.substr(0, 22)
         return novoNome + "...";
     }
 
@@ -23,7 +23,7 @@ function Animes(props) {
                             <p>{diminuirTamanho(props.nome)}</p>
 
                             <div className={styles.anime_botao}>ANIME</div>
-                            <p>{props.episodeos} EPISÓDIOS</p>
+                            {props.episodeos == 1 ? (<p>{props.episodeos} EPISÓDIO</p>) : (<p>{props.episodeos} EPISÓDIOS</p>)}
                         </div>
                     </div>
                 </div>
