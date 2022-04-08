@@ -32,14 +32,16 @@
     background-color: #ffbe63;
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     width: 90%;
     margin-top: 1%;
     margin-bottom: 1%;
     padding: 10px;
+    display: flex;
+    align-items: center;
     
 }
+
 
 .sobreAnime p {
     color: #181829;
@@ -48,21 +50,21 @@
     
 }
 .sobreAnime p:nth-child(2){
-    font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 13px;
 }
 .sobreAnime p:nth-child(3){
-    margin-left: 8%;
+   
     font-weight: 400;
 }
-.sobreAnimeTexto svg{
-    float: left;
+.sobreAnime svg{
     margin-right: 5px;
-    font-size: 20px;
+    font-size: 25px;
     fill: #181829;
 }
 .sobreAnimeTexto{
-    
+    display: flex;
+    flex-direction: column;
     margin-left: 10px;
 }
 .favoritar{
@@ -71,6 +73,26 @@
     display: flex;
     
 }
+.animeCompleto{
+    margin: auto;
+    border-radius: 2px;
+    background-color: #27ae60;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    width: 90%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.animeCompleto svg {
+fill: white;
+}
+.animeCompleto p {
+    color: white;
+    }
 .favoritar p {
     font-size: 30px;
     margin: auto;

@@ -1,7 +1,8 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import React, { useState, useEffect, useContext } from 'react'
-import { FaCheck } from "react-icons/fa";
+import { BsLightningChargeFill } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi";
+import { FaCheck } from "react-icons/fa";
 import axios from 'axios'
 import styles from './PageAnime.module.css'
 import Tabs from '../layoult/Tabs';
@@ -34,7 +35,7 @@ function PageAnime() {
             return "Completo"
         }
     }
-    let lanc = lancamento();
+    const lanc = lancamento();
 
     return (
         <div className={styles.container}>
@@ -44,15 +45,23 @@ function PageAnime() {
 
             <div className={styles.fotoAnime}>
                 <img src={posts.imagem} alt="" />
-                <div className={styles.sobreAnime}>
-
+                {posts.lancamento == false ? (<div className={` ${styles.sobreAnime} ${styles.animeCompleto}`}>
+                <FaCheck/>
                     <div className={styles.sobreAnimeTexto}>
-                        <FaCheck />
+                        
+                        <p>{lanc}</p>
+                    </div>
+                
+                </div>) : (<div className={styles.sobreAnime}>
+                <BsLightningChargeFill/>
+                    <div className={styles.sobreAnimeTexto}>
+                        
                         <p>{lanc}</p>
                         <p>{posts.diaLancamento}</p>
                     </div>
                 
-                </div>
+                </div>)}
+                
                 {console.log(favoritos.includes(id))}
                 {user ? ( favoritos.includes(parseInt(id)) ? (<div className={styles.favoritar}><p><FiHeart/> Favorito</p></div>) : (<div className={styles.favoritar}><p><FiHeart/> Favoritar</p></div>)) 
                 : (<></>)}
