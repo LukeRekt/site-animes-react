@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 function AnimeList(props) {
-    function testeNome(idUm, idDois, nome, episodio, temporada) {
+    function testeNome(idUm, idDois, nome, episodio, temporada, imagem) {
         if (idUm == idDois) {
             return (<div>
 
@@ -14,7 +14,7 @@ function AnimeList(props) {
                     
                         <div className={styles.AnimeQualidade}><p>FHD</p></div>
                        
-                        <div className={styles.pimba}><img src="https://subanimes.biz/wp-content/uploads/2022/01/assistir-arifureta-shokugyou-de-sekai-saikyou-2-todos-os-episodios-legendado-hd-subanimes-animes-online-brasil-2022.jpg" alt="" /></div>
+                        <div className={styles.pimba}><img src={imagem} alt="" /></div>
                         <p>Episódio: {episodio}</p>
                         <p>{nome}</p>
                         <div className={styles.AnimeLingua}><div id={styles.AnimeDublado}><p>Dublado</p></div></div>
@@ -30,7 +30,7 @@ function AnimeList(props) {
     return (
         <div>
 
-            {testeNome(props.id, props.iddois, props.nome, props.episodio, props.temporada)}
+            {testeNome(props.id, props.iddois, props.nome, props.episodio, props.temporada, props.imagem)}
 
 
 
