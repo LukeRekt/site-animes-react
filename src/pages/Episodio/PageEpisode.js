@@ -2,8 +2,8 @@ import { useParams, } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './PageEpisode.module.css'
-import SeletorEP from '../../components/layoult/SeletorEp';
-import VideoPlayer from '../../components/layoult/VideoPlayer';
+import SeletorEP from '../../components/layoult/SeletorEp/SeletorEp';
+import VideoPlayer from '../../components/layoult/VideoPlayer/VideoPlayer';
 
 function PageEpisode() {
  

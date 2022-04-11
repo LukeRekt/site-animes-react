@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import styles from "./VideoPlayer.module.css";
 // import video from "./assets/video.mp4";
 import { BiPlay, BiPause, BiVolumeFull, BiVolumeMute, BiFullscreen } from "react-icons/bi";
-import useVideoPlayer from "../../hooks/useVideoPlayer";
+import useVideoPlayer from "../../../hooks/useVideoPlayer";
 
 
 const VideoPlayer = (props) => {

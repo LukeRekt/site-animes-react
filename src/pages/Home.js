@@ -1,10 +1,10 @@
 import styles from './Home.module.css'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Animes from '../components/layoult/Animes'
+import Animes from '../components/layoult/Animes/Animes'
 import Carousel from 'react-elastic-carousel'
-import BotaoInfo from '../components/layoult/BotaoInfo'
-import EpisodiosHome from '../components/layoult/EpisodiosHome'
+import BotaoInfo from '../components/layoult/BotaoInfo/BotaoInfo'
+import EpisodiosHome from '../components/layoult/EpisodiosHome/EpisodiosHome'
 
 //tudo relacionado a login e seus dependentes nao devem ter prioridade no desenvolvimento.
 //prezar pelo funcionamento básico do site

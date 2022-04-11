@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./Calendario.module.css"
 import axios from 'axios'
-import Animes from '../../components/layoult/Animes'
+import Animes from '../../components/layoult/Animes/Animes'
 import { FaSadCry } from "react-icons/fa";
 function Calendario() {
     const [toggleState, setToggleState] = useState(1);

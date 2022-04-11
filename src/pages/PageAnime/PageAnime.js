@@ -5,8 +5,8 @@ import { FiHeart } from "react-icons/fi";
 import { FaCheck } from "react-icons/fa";
 import axios from 'axios'
 import styles from './PageAnime.module.css'
-import Tabs from '../../components/layoult/Tabs';
-import AnimeTemas from '../../components/layoult/AnimeTemas';
+import Tabs from '../../components/layoult/Tabs/Tabs';
+import AnimeTemas from '../../components/layoult/AnimeTemas/AnimeTemas';
 import { UserContext } from '../../UserContext'
 
 function PageAnime() {
@@ -30,9 +30,12 @@ function PageAnime() {
 
     const onClickFavorite = () => {
 
-        
+        const headers = {
+            'Content-Type': 'application/json',
+            'Authorization': user
+          }
             //when we are already subscribed 
-            axios.get("http://localhost:3232/favoritar/1", {})
+            axios.get("http://localhost:3232/favoritar/1", {headers: headers})
             .then((response) => {
                  
              })

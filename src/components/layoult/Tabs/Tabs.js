@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 // import "./App.css";
 import { Tabs, Tab, AppBar } from "@material-ui/core"
 import styles from "./Tabs.module.css"
-import AnimeList from './AnimeList'
+import AnimeList from '../AnimeList/AnimeList'
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { createTheme } from '@material-ui/core'
 import { orange, green } from "@material-ui/core/colors";

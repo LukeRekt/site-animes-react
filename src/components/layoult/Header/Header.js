@@ -2,16 +2,16 @@ import { Link, } from 'react-router-dom';
 import styles from './Header.module.css'
 import { useContext, useState } from "react"
 
-import logo from '../../assets/img/logo.png';
+import logo from '../../../assets/img/logo.png';
 // import avatar from '../../assets/img/fotosperfil/avatar.png';
-import { UserContext } from '../../UserContext';
+import { UserContext } from '../../../UserContext';
 
 
 import { FaHouseUser, FaBell, FaNewspaper, FaStar, FaCalendarAlt, FaSearch, FaAlignJustify} from 'react-icons/fa';
 
 //funcoes
-import ProfileBox from './ProfileBox';
-import { useVisibility } from '../../context/Visibility';
+import ProfileBox from '../ProfileBox/ProfileBox';
+import { useVisibility } from '../../../context/Visibility';
 
 
 function Header() {

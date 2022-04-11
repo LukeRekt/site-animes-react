@@ -1,8 +1,8 @@
 import styles from "./BarraBuscaOverlay.module.css"
-import InstantSearch from "./InstantSearch"
+import InstantSearch from "../InstantSearch/InstantSearch"
 import { AiOutlineClose } from "react-icons/ai";
 
-import { useVisibility } from '../../context/Visibility'
+import { useVisibility } from '../../../context/Visibility'
 
 function BarraBuscaOverlay() {
     const { visibility, setVisibility } = useVisibility();

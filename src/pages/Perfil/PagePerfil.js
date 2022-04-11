@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom'
 import { logout } from '../../api/user'
 import Axios from "axios";
-import Animes from '../../components/layoult/Animes';
+import Animes from '../../components/layoult/Animes/Animes';
 
 function PagePefil() {
     const { user, setUser } = useContext(UserContext);

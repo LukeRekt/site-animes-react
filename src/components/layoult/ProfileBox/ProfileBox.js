@@ -1,8 +1,8 @@
 import styles from './ProfileBox.module.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { BiKey } from "react-icons/bi";
-import { logout } from '../../api/user';
-import { UserContext } from '../../UserContext';
+import { logout } from '../../../api/user';
+import { UserContext } from '../../../UserContext';
 import { toast } from 'react-toastify';
 import { useContext } from 'react';
 import { AiOutlineLogout } from "react-icons/ai";

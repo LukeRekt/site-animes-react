@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
-import Header from './components/layoult/Header';
+import Header from './components/layoult/Header/Header';
 import Calendario from './pages/Calendario/Calendario';
 import Favoritos from './pages/Favoritos/Favoritos';
 import Home from './pages/Home'
@@ -11,10 +11,10 @@ import PageLogin from './pages/Auth/PageLogin';
 import PageRegister from './pages/Auth/PageRegister';
 import PagePefil from './pages/Perfil/PagePerfil';
 import PaginaNaoEncontrada from './pages/404/PaginaNaoEncontrada';
-import Footer from './components/layoult/Footer'
+import Footer from './components/layoult/Footer/Footer'
 import Container from './components/layoult/Container'
-import Noticias from './components/layoult/Noticias'
-import BarraBuscaOverlay from './components/layoult/BarraBuscaOverlay';
+import Noticias from './components/layoult/Noticias/Noticias'
+import BarraBuscaOverlay from './components/layoult/BarraBuscaOverlay/BarraBuscaOverlay';
 import { useState, useEffect } from 'react';
 import VisibilityProvider from './context/Visibility';
 import UserProfileSearch from './pages/Perfil/UserProfileSearch';
