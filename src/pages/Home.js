@@ -1,10 +1,10 @@
 import styles from './Home.module.css'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Animes from '../layoult/Animes'
+import Animes from '../components/layoult/Animes'
 import Carousel from 'react-elastic-carousel'
-import BotaoInfo from '../layoult/BotaoInfo'
-import EpisodiosHome from '../layoult/EpisodiosHome'
+import BotaoInfo from '../components/layoult/BotaoInfo'
+import EpisodiosHome from '../components/layoult/EpisodiosHome'
 
 //tudo relacionado a login e seus dependentes nao devem ter prioridade no desenvolvimento.
 //prezar pelo funcionamento básico do site
@@ -21,7 +21,7 @@ function Home() {
     const [posts, setPosts] = useState([])
     const [postsep, setPostsep] = useState([])
     useEffect(() => {
-        axios.get('http://192.168.1.12:3232/getanim')
+        axios.get('http://localhost:3232/getanim')
             .then(res => {
                 setPosts(res.data.animes)
             })
@@ -29,7 +29,7 @@ function Home() {
 
 
     useEffect(() => {
-        axios.get('http://192.168.1.12:3232/getanim/episodios/todos')
+        axios.get('http://localhost:3232/getanim/episodios/todos')
             .then(res => {
                 setPostsep(res.data.episodios)
             })

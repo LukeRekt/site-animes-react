@@ -1,22 +1,24 @@
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Header from './components/layoult/Header';
-import Calendario from './components/pages/Calendario';
-import Favoritos from './components/pages/Favoritos';
-import Home from './components/pages/Home'
-import Lista from './components/pages/Lista';
-import PageAnime from './components/pages/PageAnime';
-import PageEpisode from './components/pages/PageEpisode';
-import PageLogin from './components/pages/PageLogin';
-import PagePefil from './components/pages/PagePerfil';
-import PaginaNaoEncontrada from './components/pages/PaginaNaoEncontrada';
+import Calendario from './pages/Calendario/Calendario';
+import Favoritos from './pages/Favoritos/Favoritos';
+import Home from './pages/Home'
+import Lista from './pages/Lista/Lista';
+import PageAnime from './pages/PageAnime/PageAnime';
+import PageEpisode from './pages/Episodio/PageEpisode';
+import PageLogin from './pages/Auth/PageLogin';
+import PageRegister from './pages/Auth/PageRegister';
+import PagePefil from './pages/Perfil/PagePerfil';
+import PaginaNaoEncontrada from './pages/404/PaginaNaoEncontrada';
 import Footer from './components/layoult/Footer'
 import Container from './components/layoult/Container'
 import Noticias from './components/layoult/Noticias'
-import PageRegister from './components/pages/PageRegister';
 import BarraBuscaOverlay from './components/layoult/BarraBuscaOverlay';
 import { useState, useEffect } from 'react';
 import VisibilityProvider from './context/Visibility';
+import UserProfileSearch from './pages/Perfil/UserProfileSearch';
+import PageAdmin from './pages/PageAdmin/PageAdmin';
 
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
@@ -26,8 +28,7 @@ import {UserContext} from "./UserContext"
 //funcoes
 
 import {getUser} from './api/user'
-import UserProfileSearch from './components/pages/UserProfileSearch';
-import PageAdmin from './components/pages/PageAdmin';
+
 
 function App() {
   const [user, setUser] = useState(null);

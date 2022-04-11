@@ -36,7 +36,7 @@ function PageRegister() {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            const userAvatar = `http://192.168.1.12:3232/static/imagens/avatars/${username}.png`;
+            const userAvatar = `http://localhost:3232/static/imagens/avatars/${username}.png`;
             const res = await register({ username, email, password, userAvatar, userBanner });
             if (res.error) toast.warning(res.error);
             else {

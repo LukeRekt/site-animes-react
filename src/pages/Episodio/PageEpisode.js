@@ -2,8 +2,8 @@ import { useParams, } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './PageEpisode.module.css'
-import SeletorEP from '../layoult/SeletorEp';
-import VideoPlayer from '../layoult/VideoPlayer';
+import SeletorEP from '../../components/layoult/SeletorEp';
+import VideoPlayer from '../../components/layoult/VideoPlayer';
 
 function PageEpisode() {
  
@@ -61,7 +61,7 @@ function PageEpisode() {
   const {temporada, id, ep } = useParams();
   const [posts, setPosts] = useState([])
   useEffect(() => {
-    axios.get(`http://192.168.1.12:3232/getanim/episodios/${temporada}/${id}`)
+    axios.get(`http://localhost:3232/getanim/episodios/${temporada}/${id}`)
       .then(res => {
         setPosts(res.data.episodios)
       }).catch((err) => {

@@ -1,7 +1,7 @@
 import FormData from "form-data";
 import Axios from "axios";
 import { useState } from "react";
-import Favoritos from "./Favoritos";
+import Favoritos from "../Favoritos/Favoritos";
 
 function Lista() {
   const [file, setFile] = useState(null);

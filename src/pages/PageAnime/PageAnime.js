@@ -5,8 +5,8 @@ import { FiHeart } from "react-icons/fi";
 import { FaCheck } from "react-icons/fa";
 import axios from 'axios'
 import styles from './PageAnime.module.css'
-import Tabs from '../layoult/Tabs';
-import AnimeTemas from '../layoult/AnimeTemas';
+import Tabs from '../../components/layoult/Tabs';
+import AnimeTemas from '../../components/layoult/AnimeTemas';
 import { UserContext } from '../../UserContext'
 
 function PageAnime() {
@@ -19,7 +19,7 @@ function PageAnime() {
     
     let navigate = useNavigate();
     useEffect(() => {
-        axios.get(`http://192.168.1.12:3232/getanim/${id}`)
+        axios.get(`http://localhost:3232/getanim/${id}`)
             .then(res => {
                 setPosts(res.data.animes)
                 setTemas(res.data.animes.temas)

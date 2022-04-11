@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom'
 import { logout } from '../../api/user'
 import Axios from "axios";
-import Animes from '../layoult/Animes';
+import Animes from '../../components/layoult/Animes';
 
 function PagePefil() {
     const { user, setUser } = useContext(UserContext);
@@ -40,7 +40,7 @@ function PagePefil() {
         });
     };
     useEffect(() => {
-        Axios.get('http://192.168.1.8:3232/getanim')
+        Axios.get('http://localhost:3232/getanim')
             .then(res => {
                 setPosts(res.data.animes)
             })

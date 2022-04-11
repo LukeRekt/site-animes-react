@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./Calendario.module.css"
 import axios from 'axios'
-import Animes from '../layoult/Animes'
+import Animes from '../../components/layoult/Animes'
 import { FaSadCry } from "react-icons/fa";
 function Calendario() {
     const [toggleState, setToggleState] = useState(1);
@@ -13,7 +13,7 @@ function Calendario() {
 
     const [posts, setPosts] = useState([])
     useEffect(() => {
-        axios.get('http://192.168.1.12:3232/getanim')
+        axios.get('http://localhost:3232/getanim')
             .then(res => {
                 setPosts(res.data.animes)
             })

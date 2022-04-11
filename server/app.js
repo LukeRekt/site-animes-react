@@ -49,7 +49,7 @@ app.post("/avatar", (req, res) => {
 
 
 //porta
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3232;
 
 
 const server = app.listen(port, () => console.log(`Server rodando na porta ${port}`))
