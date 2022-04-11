@@ -12,7 +12,7 @@ import { UserContext } from '../../UserContext'
 function PageAnime() {
 
     const { user } = useContext(UserContext);
-    const {favoritos} = useContext(UserContext);
+    const {favoritos, setFavoritos} = useContext(UserContext);
     const { id } = useParams();
     const [posts, setPosts] = useState([])
     const [temas, setTemas] = useState([])
@@ -27,6 +27,22 @@ function PageAnime() {
                 return navigate("/");
             })
     }, [])
+
+    const onClickFavorite = () => {
+
+        
+            //when we are already subscribed 
+            axios.get("http://localhost:3232/favoritar/1", {})
+            .then((response) => {
+                 
+             })
+            .catch((err) => {
+                  
+             });
+    
+
+        
+    }
 
     function lancamento() {
         if (posts.lancamento === true) {
@@ -63,7 +79,7 @@ function PageAnime() {
                 </div>)}
                 
                 {console.log(favoritos.includes(id))}
-                {user ? ( favoritos.includes(parseInt(id)) ? (<div className={styles.favoritar}><p><FiHeart/> Favorito</p></div>) : (<div className={styles.favoritar}><p><FiHeart/> Favoritar</p></div>)) 
+                {user ? ( favoritos.includes(parseInt(id)) ? (<div onClick={onClickFavorite} className={styles.favoritar}><p><FiHeart/> Favorito</p></div>) : (<div className={styles.favoritar}><p><FiHeart/> Favoritar</p></div>)) 
                 : (<></>)}
                 
                 <div className={styles.boxInfoAnimes}>

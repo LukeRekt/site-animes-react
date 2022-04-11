@@ -49,7 +49,7 @@ function Home() {
                     <BotaoInfo mensagem='Lançamentos' />
                     <Carousel pagination={false} breakPoints={breakPoints}>
 
-                        {posts.map(post =>
+                        {posts.map((post) =>
                             <Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
                         )}
 
@@ -67,8 +67,8 @@ function Home() {
 
                     </Carousel> */}
                     <div className={styles.novosEpisodios}>
-                    {postsep.map(post =>
-                            <EpisodiosHome key={post.numero} nome={post.nome} temporada={post.temporada} id={post.id} anime={post.nomeAnime} imagem={post.animeImagem} numero={post.numero} />
+                    {postsep.map((post, index) =>
+                            <EpisodiosHome key={index} nome={post.nome} temporada={post.temporada} id={post.id} anime={post.nomeAnime} imagem={post.animeImagem} numero={post.numero} />
                             )}
                      </div>
 

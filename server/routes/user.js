@@ -3,8 +3,8 @@ const router = express.Router();
 const multer = require('multer');
 const upload = multer();
 //importar controllers
-const { register, login, logout, getLoggedInUser, buscarUser } = require("../controllers/user")
-const { registera, listar, getanime, getEpisodes, getAllEpisodes, getEpisodespage, AddEpisode} = require("../controllers/animes")
+const { register, login, logout, getLoggedInUser, buscarUser, getFavorito } = require("../controllers/user")
+const { registera, listar, getanime, getEpisodes, getAllEpisodes, getEpisodespage, AddEpisode, } = require("../controllers/animes")
 //importar middlewares
 const { userRegisterValidator, userById } = require('../middlewares/user')
 const { verifyToken } = require("../middlewares/auth")
@@ -26,6 +26,7 @@ router.get("/getanim", listar)
 
 router.get("/getanim/:id", getanime)
 
+router.get("/favoritar/:id", verifyToken, userById, getFavorito)
 //Episodios
 
 router.post("/getanim/addep/", AddEpisode)
@@ -42,5 +43,7 @@ router.get("/getanim/episodios/:temporada/:id", getEpisodes)
 
 //buscar usuario
 router.post("/buscar", buscarUser)
+
+//
 
 module.exports = router;

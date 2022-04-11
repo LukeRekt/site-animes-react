@@ -11,8 +11,6 @@ import axios from 'axios'
 import {useNavigate, useParams} from 'react-router-dom'
 
 function UserProfileSearch() {
-    const { user, setUser } = useContext(UserContext);
-    const { avatar } = useContext(UserContext)
     const [toggleState, setToggleState] = useState(5);
     const [usuario, setUsuario] = useState({});
     const navigate = useNavigate();
@@ -24,8 +22,6 @@ function UserProfileSearch() {
           })
           .then(function (response) {
             setUsuario(response.data)
-            console.log(response.data);
-            console.log(usuario.username)
           })
           .catch(function (error) {
             console.log(error);

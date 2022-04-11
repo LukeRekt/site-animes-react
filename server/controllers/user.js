@@ -153,3 +153,30 @@ exports.buscarUser = async (req, res) => {
         });
     });
 };
+
+
+exports.getFavorito = async (req, res) => {
+    //buscar usuario baseado no email
+    const { animesFavoritos } = req.user;
+    const id = parseInt(req.params.id)
+    const { username } = req.user;
+    User.findOneAndUpdate({username:`${username}`}, {$pull:{animesFavoritos: id}}, function(err,doc) { 
+        if (err) { throw err; }
+        else return res.json({
+            message: "favorito",
+        });
+    });
+
+        //retornar resposta para o usuario
+       
+
+            
+           
+       
+        
+           
+        
+        
+    
+
+};
