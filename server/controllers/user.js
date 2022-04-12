@@ -57,11 +57,11 @@ exports.login = async (req, res) => {
         }
         // gerar token como id do usuario e um jwt secret
         const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
-            expiresIn: "24h",
+            expiresIn: "24h"
         });
 
         //persistir o token como "jwt" em um cookie com data de validade
-        res.cookie("jwt", token, { expire: new Date() + 9999, httpOnly: true });
+        res.cookie("jwt", token, { expire: new Date() + 9999, httpOnly: false });
 
         //retornar resposta para o usuario
         const { username } = user;
@@ -158,24 +158,15 @@ exports.buscarUser = async (req, res) => {
 
 exports.getFavorito = async (req, res) => {
     //buscar usuario baseado no email
-    const id = parseInt(req.params.id)
-    const { username } = req.user;
-
-    var pimba = {nomeUsuario: username,
-                 idAnime: id}
-
-    console.log(pimba)
-
-    const favorite = new Favorito(pimba);
-
-     favorite.save((err, doc) => {
-         if (err) return res.json({ success: false, err })
-         return res.status(200).json({ success: true })
-     })
+    const favorite = new Favorito(req.body);
+console.log(req.body)
+    favorite.save((err, doc) => {
+        if (err) return res.json({ success: false, err })
+        return res.status(200).json({ success: true })
+    })
 
         //retornar resposta para o usuario
-     
-        
+       
         
     
 

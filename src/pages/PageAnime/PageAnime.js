@@ -8,15 +8,21 @@ import styles from './PageAnime.module.css'
 import Tabs from '../../components/layoult/Tabs/Tabs';
 import AnimeTemas from '../../components/layoult/AnimeTemas/AnimeTemas';
 import { UserContext } from '../../UserContext'
+import Cookies from 'universal-cookie';
 
 function PageAnime() {
-
+    const cookies = new Cookies();
     const { user } = useContext(UserContext);
     const {favoritos, setFavoritos} = useContext(UserContext);
     const { id } = useParams();
     const [posts, setPosts] = useState([])
     const [temas, setTemas] = useState([])
     const CORS_PROXY_API = `https://cors.ryanking13.workers.dev/?u=`;
+
+    const variables = {
+        nomeUsuario: user,
+        idAnime: id,
+    }
     
     let navigate = useNavigate();
     useEffect(() => {
@@ -30,8 +36,18 @@ function PageAnime() {
     }, [])
 
     const onClickFavorite = () => {
-        
-    }
+        axios.post('http://localhost:3232/favoritar', variables, {
+            headers: {
+              'Authorization': `${cookies.get('jwt')}`
+            }
+          })
+          .then((res) => {
+            console.log(res.data)
+          })
+          .catch((error) => {
+            console.error(error)
+          })
+}
 
     function lancamento() {
         if (posts.lancamento === true) {
@@ -44,6 +60,7 @@ function PageAnime() {
 
     return (
         <div className={styles.container}>
+            
             <div className={styles.nomeAnime}>
                 {posts.nome}
             </div>

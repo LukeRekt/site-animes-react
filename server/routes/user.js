@@ -26,7 +26,7 @@ router.get("/getanim", listar)
 
 router.get("/getanim/:id", getanime)
 
-router.get("/favoritar/:id", verifyToken, userById, getFavorito)
+router.post("/favoritar",   verifyToken, userById, getFavorito)
 //Episodios
 
 router.post("/getanim/addep/", AddEpisode)
