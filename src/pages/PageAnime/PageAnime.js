@@ -16,6 +16,7 @@ function PageAnime() {
     const { id } = useParams();
     const [posts, setPosts] = useState([])
     const [temas, setTemas] = useState([])
+    const CORS_PROXY_API = `https://cors.ryanking13.workers.dev/?u=`;
     
     let navigate = useNavigate();
     useEffect(() => {
@@ -29,21 +30,6 @@ function PageAnime() {
     }, [])
 
     const onClickFavorite = () => {
-
-        const headers = {
-            'Content-Type': 'application/json',
-            'Authorization': user
-          }
-            //when we are already subscribed 
-            axios.get("http://localhost:3232/favoritar/1", {headers: headers})
-            .then((response) => {
-                 
-             })
-            .catch((err) => {
-                  
-             });
-    
-
         
     }
 

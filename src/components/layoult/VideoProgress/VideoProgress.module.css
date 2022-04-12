@@ -1,0 +1,7 @@
+.BarraTotal{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+.BarraConcluido{
+    background-color: #ffbe63;
+}
