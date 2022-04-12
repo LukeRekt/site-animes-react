@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const user = require("../models/user");
 const fs = require('fs');
 const { nextTick } = require("process");
+const Favorito = require("../models/Favorito");
 require("dotenv").config();
 
 exports.register = async (req, res) => {
@@ -160,22 +161,20 @@ exports.getFavorito = async (req, res) => {
     const id = parseInt(req.params.id)
     const { username } = req.user;
 
-    query = {username: username}
-    User.findOneAndUpdate({username: username}, {$pull:{animesFavoritos: id}}, {new: true}, function(err,doc) { 
-        if (err) { throw err; }
-        else return res.status(200).json({
-            message: "favorito",
-        });
-    });
+    var pimba = {nomeUsuario: username,
+                 idAnime: id}
+
+    console.log(pimba)
+
+    const favorite = new Favorito(pimba);
+
+     favorite.save((err, doc) => {
+         if (err) return res.json({ success: false, err })
+         return res.status(200).json({ success: true })
+     })
 
         //retornar resposta para o usuario
-       
-
-            
-           
-       
-        
-           
+     
         
         
     
