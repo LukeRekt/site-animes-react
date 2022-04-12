@@ -92,6 +92,14 @@
     border-radius: 2px;
     background-color: #181829;
 }
+.progressoAnime{
+    position: absolute;
+    left: 0%;
+    bottom: 21%;
+    z-index: 0;
+    width: 100%;
+
+}
 
 @media (max-width: 600px)
 {
