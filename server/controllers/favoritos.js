@@ -1,7 +1,7 @@
 const Favoritos = require("../models/Favoritos");
 
 exports.getFavorito = async (req, res) => {
-    Favorito.find({ "movieId": req.body.movieId, "userFrom": req.body.userFrom })
+    Favoritos.find({ "idAnime": req.body.idAnime, "nomeUsuario": req.body.nomeUsuario })
         .exec((err, subscribe) => {
             if (err) return res.status(400).send(err)
 
@@ -17,8 +17,7 @@ exports.getFavorito = async (req, res) => {
 
 
 exports.addFavorito = async (req, res) => {
-    const favorite = new Favorito(req.body);
-console.log(req.body)
+    const favorite = new Favoritos(req.body);
     favorite.save((err, doc) => {
         if (err) return res.json({ success: false, err })
         return res.status(200).json({ success: true })
@@ -26,10 +25,7 @@ console.log(req.body)
 
 };
 exports.remFavorito = async (req, res) => {
-    let nome = req.body.nomeUsuario
-    let idAnime = req.body.idAnime
-    console.log(nome)
-    Favoritos.findOneAndDelete({nomeUsuario: nome, idAnime: idAnime })
+    Favoritos.findOneAndDelete({nomeUsuario: req.body.nomeUsuario, idAnime: req.body.idAnime })
     .exec((err, doc) => {
         if (err) return res.status(400).json({ success: false, err });
         res.status(200).json({ success: true, doc })
