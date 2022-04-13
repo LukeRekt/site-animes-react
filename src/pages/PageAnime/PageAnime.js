@@ -8,19 +8,17 @@ import styles from './PageAnime.module.css'
 import Tabs from '../../components/layoult/Tabs/Tabs';
 import AnimeTemas from '../../components/layoult/AnimeTemas/AnimeTemas';
 import { UserContext } from '../../UserContext'
-import Cookies from 'universal-cookie';
 
 function PageAnime() {
-    const cookies = new Cookies();
     const { user } = useContext(UserContext);
     const {favoritos, setFavoritos} = useContext(UserContext);
     const { id } = useParams();
     const [posts, setPosts] = useState([])
     const [temas, setTemas] = useState([])
-    const CORS_PROXY_API = `https://cors.ryanking13.workers.dev/?u=`;
 
     const variables = {
         nomeUsuario: user,
+        nomeAnime: posts.nome,
         idAnime: id,
     }
     
@@ -36,9 +34,10 @@ function PageAnime() {
     }, [])
 
     const onClickFavorite = () => {
-        axios.post('http://localhost:3232/favoritar', variables, {
+        axios.post('http://localhost:3232/favoritar', variables, { withCredentials: true }, {
             headers: {
-              'Authorization': `${cookies.get('jwt')}`
+            //   'Authorization': `${cookies.get('jwt')}`,
+            'Content-Type': 'application/json'
             }
           })
           .then((res) => {
@@ -85,7 +84,7 @@ function PageAnime() {
                 </div>)}
                 
                 {console.log(favoritos.includes(id))}
-                {user ? ( favoritos.includes(parseInt(id)) ? (<div onClick={onClickFavorite} className={styles.favoritar}><p><FiHeart/> Favorito</p></div>) : (<div className={styles.favoritar}><p><FiHeart/> Favoritar</p></div>)) 
+                {user ? ( favoritos.includes(parseInt(id)) ? (<div className={styles.favoritar}><p><FiHeart/> Favorito</p></div>) : (<div onClick={onClickFavorite} className={styles.favoritar}><p><FiHeart/> Favoritar</p></div>)) 
                 : (<></>)}
                 
                 <div className={styles.boxInfoAnimes}>
