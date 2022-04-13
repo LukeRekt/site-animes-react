@@ -26,9 +26,6 @@ const userSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
-		animesFavoritos: {
-			type: Array,
-		},
 		isAdmin: {
 			type: Boolean,
 			default: false
