@@ -1,26 +1,24 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import React, { useState, useEffect, useContext } from 'react'
 import { BsLightningChargeFill } from "react-icons/bs";
-import { FiHeart } from "react-icons/fi";
+
 import { FaCheck } from "react-icons/fa";
 import axios from 'axios'
 import styles from './PageAnime.module.css'
 import Tabs from '../../components/layoult/Tabs/Tabs';
 import AnimeTemas from '../../components/layoult/AnimeTemas/AnimeTemas';
 import { UserContext } from '../../UserContext'
+import BotaoFavorito from '../../components/layoult/BotaoFavorito/BotaoFavorito';
 
 function PageAnime() {
     const { user } = useContext(UserContext);
     const {favoritos, setFavoritos} = useContext(UserContext);
+
     const { id } = useParams();
     const [posts, setPosts] = useState([])
     const [temas, setTemas] = useState([])
 
-    const variables = {
-        nomeUsuario: user,
-        nomeAnime: posts.nome,
-        idAnime: id,
-    }
+
     
     let navigate = useNavigate();
     useEffect(() => {
@@ -31,22 +29,8 @@ function PageAnime() {
             }).catch((err) => {
                 return navigate("/");
             })
-    }, [])
 
-    const onClickFavorite = () => {
-        axios.post('http://localhost:3232/favoritar', variables, { withCredentials: true }, {
-            headers: {
-            //   'Authorization': `${cookies.get('jwt')}`,
-            'Content-Type': 'application/json'
-            }
-          })
-          .then((res) => {
-            console.log(res.data)
-          })
-          .catch((error) => {
-            console.error(error)
-          })
-}
+    }, [])
 
     function lancamento() {
         if (posts.lancamento === true) {
@@ -83,9 +67,7 @@ function PageAnime() {
                 
                 </div>)}
                 
-                {console.log(favoritos.includes(id))}
-                {user ? ( favoritos.includes(parseInt(id)) ? (<div className={styles.favoritar}><p><FiHeart/> Favorito</p></div>) : (<div onClick={onClickFavorite} className={styles.favoritar}><p><FiHeart/> Favoritar</p></div>)) 
-                : (<></>)}
+                {user ? ( <BotaoFavorito user={user} nome={posts.nome} id={id} />) : (<></>)}
                 
                 <div className={styles.boxInfoAnimes}>
                     <p>Episódios</p>

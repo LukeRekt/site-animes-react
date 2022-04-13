@@ -60,7 +60,7 @@ exports.login = async (req, res) => {
         });
 
         //persistir o token como "jwt" em um cookie com data de validade
-        res.cookie("jwt", token, { expire: new Date() + 9999, httpOnly: false });
+        res.cookie("jwt", token, { expire: new Date() + 9999, httpOnly: true });
 
         //retornar resposta para o usuario
         const { username } = user;

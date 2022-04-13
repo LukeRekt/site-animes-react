@@ -1,0 +1,20 @@
+.favoritar{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    
+}
+.favoritar p {
+    font-size: 30px;
+    margin: auto;
+    padding: 10px;
+    background-color: #1F1F30;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.4s;
+    
+}
+.favoritar p:hover{
+    background-color: #ffbe63;
+    color: #1F1F30;
+}
