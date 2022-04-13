@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 const user = require("../models/user");
 const fs = require('fs');
 const { nextTick } = require("process");
-const Favorito = require("../models/Favorito");
 require("dotenv").config();
 
 exports.register = async (req, res) => {
@@ -153,21 +152,4 @@ exports.buscarUser = async (req, res) => {
             userBanner
         });
     });
-};
-
-
-exports.getFavorito = async (req, res) => {
-    //buscar usuario baseado no email
-    const favorite = new Favorito(req.body);
-console.log(req.body)
-    favorite.save((err, doc) => {
-        if (err) return res.json({ success: false, err })
-        return res.status(200).json({ success: true })
-    })
-
-        //retornar resposta para o usuario
-       
-        
-    
-
 };
