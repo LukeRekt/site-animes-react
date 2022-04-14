@@ -1,6 +1,8 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import styles from "./FavoritosHandle.module.css"
+import { HiEmojiSad } from "react-icons/hi";
 function FavoritosHandle (props){
     const [Favorited, setFavorited] = useState()
     const [CarregandoFavoritos, setCarregandoFavoritos] = useState(true)
@@ -18,14 +20,25 @@ function FavoritosHandle (props){
     }, [])
 
     return (
+        
        <div className={styles.container}>
-          {CarregandoFavoritos ? (<>Carregando</>) : ( Favorited.map(teste => {
-            return <div className={styles.animeCapa}><img src={teste.imagemAnime} alt="" /></div>
+          {CarregandoFavoritos ? (<>Carregando</>) : ( Favorited.length == 0 ? (<div id={styles.nenhumFav}><p> Você não tem nenhum favorito <HiEmojiSad/></p></div>) : (Favorited.map(teste => {
+                    return <div className={styles.animeCapa}>
+                    <Link to={`/anime/${teste.idAnime}`}>
+                    <div className={styles.animeOver}>
+                    <small>
+                    <p>{teste.nomeAnime} </p>
+                    </small>
+                    </div>
+                    <img src={teste.imagemAnime} alt="" />
+                    </Link>
+                    </div>
+                
                 {/* {console.log(teste.idAnime, teste.nomeAnime, teste.nomeUsuario, teste.imagemAnime)} */}
                  
                
                
-        }))} 
+        })))} 
        
        </div>
         
