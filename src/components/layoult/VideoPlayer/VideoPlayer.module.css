@@ -71,6 +71,29 @@
     color: #ffbe63;;
     
   }
+
+  .continuarAnime{
+    position: absolute;
+    top: 60%;
+    right:3%;
+ 
+  }
+
+  .continuarAnime p {
+    border-radius: 30px;
+    cursor: pointer;
+    background: rgba(66, 55, 55, 0.603);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    padding: 10px 5px 10px 5px;
+    transition: 0.4s;
+  }
+  .continuarAnime p:hover{
+    background: rgb(31, 29, 29);
+    color: #ffbe63;;
+    
+  }
   
   .actions button {
     background: none;

@@ -1,13 +1,32 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./VideoPlayer.module.css";
 // import video from "./assets/video.mp4";
 import { BiPlay, BiPause, BiVolumeFull, BiVolumeMute, BiFullscreen } from "react-icons/bi";
 import useVideoPlayer from "../../../hooks/useVideoPlayer";
+import axios from "axios";
 
 
 const VideoPlayer = (props) => {
 
   const [linkVideo, setLinkVideo] = useState(props.videoLink);
+  const [tempoSalvo, setTempoSalvo] = useState();
+
+  const variables = {
+    nomeUsuario: "Luke",
+    temporadaAnime: 1,
+    episodioAnime: 1,
+    idAnime: 1,
+  
+  }
+  useEffect(() => {
+     axios.post('http://localhost:3232/getprogresso',  variables, { withCredentials: true })
+  .then(res => {
+       setTempoSalvo(res.data.tempoAtual)
+       console.log(tempoSalvo)
+      // setCarregandoFavoritos(false)
+  })
+}, [])
+
 
 
 
@@ -27,17 +46,19 @@ const VideoPlayer = (props) => {
   }
 
   const PularAbertura = (tempoAtual) => {
-    
     if(tempoAtual >= props.inicioAbertura && tempoAtual <= props.fimAbertura){
-      //console.log(showDiv);
-      
       return true
-      
     }
-    //console.log("bbbbbb");
-    
     return false;
   }
+  const ContinuarAnime = () => {
+     if(tempoSalvo){
+      return true
+    }
+    return false;
+  
+  }
+
 
     //https://stackoverflow.com/questions/4605342/how-to-format-html5-audios-currenttime-property-with-javascript
     function formatTime(seconds) {
@@ -58,10 +79,19 @@ const VideoPlayer = (props) => {
     handleVideoSpeed,
     toggleMute,
     pularAberturaHandler,
+    continuarHandler,
   } = useVideoPlayer(videoElement);
+  function foo() {
+    console.log("video rodando")
+    }
+    if (playerState.isPlaying === false)
+    console.log("video parado")
+    else
+    setTimeout(foo, 1000);
   return (
+    
     <div className={styles.container}>
-     
+     {console.log(playerState.isPlaying)}
          <div className={styles.SeletorLinguagem}>
            
           <div className={styles.Legendado} onClick={() => {setLinkVideo(props.videoLink)}}>
@@ -78,7 +108,8 @@ const VideoPlayer = (props) => {
           ref={videoElement}
           onTimeUpdate={handleOnTimeUpdate}
         />
-        {  PularAbertura(playerState.actualTime) ? (<div onClick={(e) => pularAberturaHandler(props.fimAbertura)} className={styles.pularAbertura}> <p>PULAR ABERTURA</p></div>) : (<></>)}
+         {  PularAbertura(playerState.actualTime) ? (<div onClick={(e) => pularAberturaHandler(props.fimAbertura)} className={styles.pularAbertura}> <p>PULAR ABERTURA</p></div>) : (<></>)} 
+        {  ContinuarAnime() && playerState.actualTime < 20 ? (<div onClick={(e) => continuarHandler(tempoSalvo)} className={styles.continuarAnime}> <p>Continuar Reprodução</p></div>) : (<></>)}
         {/* {  playerState.actualTime >= 20 ? (<></>) : (<></>)} */}
         
         <div className={styles.controls_wrap}>

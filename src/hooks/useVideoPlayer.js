@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 
+  
+ 
+
+
 const useVideoPlayer = (videoElement) => {
   const [playerState, setPlayerState] = useState({
     isPlaying: false,
@@ -12,6 +16,9 @@ const useVideoPlayer = (videoElement) => {
 
   const pularAberturaHandler = (tempoFim) =>{
     videoElement.current.currentTime = tempoFim
+}
+const continuarHandler = (tempoFim) =>{
+  videoElement.current.currentTime = tempoFim
 }
   
 
@@ -87,6 +94,7 @@ const useVideoPlayer = (videoElement) => {
     toggleMute,
     toggleFullscreen,
     pularAberturaHandler,
+    continuarHandler,
   };
 };
 
