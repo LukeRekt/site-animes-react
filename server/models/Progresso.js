@@ -1,9 +1,14 @@
 const mongoose = require("mongoose");
 
-const progressoAnimesSchema = new mongoose.Schema(
+const progressoSchema = new mongoose.Schema(
 	{
 		nomeUsuario: {
 			type: String,
+			required: true,
+			trim: true,
+		},
+		temporadaAnime: {
+			type: Number,
 			required: true,
 			trim: true,
 		},
@@ -21,4 +26,4 @@ const progressoAnimesSchema = new mongoose.Schema(
 );
 
 
-module.exports = mongoose.model("ProgessoAnimes", progressoAnimesSchema);
+module.exports = mongoose.model("Progresso", progressoSchema);

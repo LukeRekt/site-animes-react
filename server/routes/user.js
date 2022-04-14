@@ -6,6 +6,7 @@ const upload = multer();
 const { register, login, logout, getLoggedInUser, buscarUser } = require("../controllers/user")
 const { registera, listar, getanime, getEpisodes, getAllEpisodes, getEpisodespage, AddEpisode, } = require("../controllers/animes")
 const { getFavorito, getAllFavoritos, addFavorito, remFavorito } = require("../controllers/favoritos")
+const { getProgresso, addProgresso } = require("../controllers/progresso")
 //importar middlewares
 const { userRegisterValidator, userById } = require('../middlewares/user')
 const { verifyToken } = require("../middlewares/auth")
@@ -32,6 +33,11 @@ router.post("/getfavorito", verifyToken, userById, getFavorito)
 router.post("/getallfavoritos", getAllFavoritos)
 router.post("/favoritar", verifyToken, userById, addFavorito)
 router.post("/remfavorito", verifyToken, userById, remFavorito)
+
+//tempo
+router.post("/getprogresso", verifyToken, userById, getProgresso)
+router.post("/addprogresso", verifyToken, userById, addProgresso)
+
 //Episodios
 
 router.post("/getanim/addep/", AddEpisode)
