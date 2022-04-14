@@ -34,7 +34,6 @@ exports.remProgresso = async (req, res) => {
 
 // exports.getAllFavoritos = async (req, res) => {
 
-//     //Need to find all of the Users that I am subscribing to From Subscriber Collection 
 //     Favoritos.find({ 'nomeUsuario': req.body.nomeUsuario })
 //         .exec((err, favorites) => {
 //             if (err) return res.status(400).send(err);
