@@ -1,7 +1,7 @@
 const Progresso = require("../models/Progresso");
 
 exports.getProgresso = async (req, res) => {
-    Progresso.findOne({ "idAnime": req.body.idAnime, "nomeUsuario": req.body.nomeUsuario, "temporadaAnime": req.body.temporadaAnime })
+    Progresso.findOne({ "idAnime": req.body.idAnime, "nomeUsuario": req.body.nomeUsuario, "temporadaAnime": req.body.temporadaAnime, "episodioAnime": req.body.episodioAnime })
         .exec((err, subscribe) => {
             if (err) return res.status(400).send(err)
            
@@ -24,13 +24,13 @@ exports.addProgresso = async (req, res) => {
     })
 
 };
-// exports.remFavorito = async (req, res) => {
-//     Favoritos.findOneAndDelete({nomeUsuario: req.body.nomeUsuario, idAnime: req.body.idAnime })
-//     .exec((err, doc) => {
-//         if (err) return res.status(400).json({ success: false, err });
-//         res.status(200).json({ success: true, doc })
-//     })
-// };
+exports.remProgresso = async (req, res) => {
+    Progresso.findOneAndDelete({nomeUsuario: req.body.nomeUsuario, idAnime: req.body.idAnime, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime})
+    .exec((err, doc) => {
+        if (err) return res.status(400).json({ success: false, err });
+        res.status(200).json({ success: true, doc })
+    })
+};
 
 // exports.getAllFavoritos = async (req, res) => {
 

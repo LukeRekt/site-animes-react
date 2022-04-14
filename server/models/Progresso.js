@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 
 const progressoSchema = new mongoose.Schema(
 	{
+		idAnime: {
+			type: Number,
+			required: true,
+			trim: true,
+		},
 		nomeUsuario: {
 			type: String,
 			required: true,
@@ -12,9 +17,9 @@ const progressoSchema = new mongoose.Schema(
 			required: true,
 			trim: true,
 		},
-		idAnime: {
+		episodioAnime: {
 			type: Number,
-			required: true,
+			required:true,
 			trim: true,
 		},
         tempoAtual:{
