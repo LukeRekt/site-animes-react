@@ -29,7 +29,7 @@ router.get("/getanim/:id", getanime)
 
 //favoritos
 router.post("/getfavorito", verifyToken, userById, getFavorito)
-router.post("/getallfavoritos", verifyToken, userById, getAllFavoritos)
+router.post("/getallfavoritos", getAllFavoritos)
 router.post("/favoritar", verifyToken, userById, addFavorito)
 router.post("/remfavorito", verifyToken, userById, remFavorito)
 //Episodios

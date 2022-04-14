@@ -10,18 +10,18 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom'
 import { logout } from '../../api/user'
 import Axios from "axios";
-import Animes from '../../components/layoult/Animes/Animes';
+import FavoritosHandle from '../../components/layoult/FavoritosHandle/FavoritosHandle';
 
 function PagePefil() {
     const { user, setUser } = useContext(UserContext);
     const { avatar } = useContext(UserContext)
     const { banner } = useContext(UserContext)
     const { email } = useContext(UserContext)
-        const {favoritos} = useContext(UserContext);
     const [toggleState, setToggleState] = useState(5);
     const [toggleEdit, setToggleEdit] = useState(20);
     const navigate = useNavigate();
     const [posts, setPosts] = useState([])
+    const [pageCarregando, setPageCarregando] = useState(true)
 
     const [file, setFile] = useState(null);
 
@@ -43,6 +43,7 @@ function PagePefil() {
         Axios.get('http://localhost:3232/getanim')
             .then(res => {
                 setPosts(res.data.animes)
+                
             })
     }, [])
 
@@ -58,7 +59,7 @@ function PagePefil() {
             .catch((err) => console.error(err));
     }
     const toggleTab = (index) => {
-
+        setPageCarregando(false);
         setToggleState(index);
     };
     const toggleEditBtn = (index) => {
@@ -105,9 +106,10 @@ function PagePefil() {
             <div className={styles.content_tabs}>
                 <div className={toggleState === 1 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.tab_Favoritos}>
-                       {favoritos.length == 0 ? (<></>) : (posts.map((post, index) => 
-                        favoritos[index] ? (<Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />) : (<></>)))} 
+                       {/* {favoritos.length == 0 ? (<></>) : (posts.map((post, index) => 
+                        favoritos[index] ? (<Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />) : (<></>)))}  */}
                             
+                            {pageCarregando ? (<>Carregando</>) : (<FavoritosHandle user={user}/>)}
                         
                     </div>
 

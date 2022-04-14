@@ -67,7 +67,7 @@ function PageAnime() {
                 
                 </div>)}
                 
-                {user ? ( <BotaoFavorito user={user} nome={posts.nome} id={id} />) : (<></>)}
+                {user ? ( <BotaoFavorito user={user} nome={posts.nome} id={id} imagem={posts.imagem} />) : (<></>)}
                 
                 <div className={styles.boxInfoAnimes}>
                     <p>Episódios</p>

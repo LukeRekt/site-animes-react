@@ -38,7 +38,7 @@ exports.getAllFavoritos = async (req, res) => {
     Favoritos.find({ 'nomeUsuario': req.body.nomeUsuario })
         .exec((err, favorites) => {
             if (err) return res.status(400).send(err);
-            return res.status(200).json({ success: true, favorites })
+            return res.status(200).json( {favoritos: favorites} )
         })
 };
 

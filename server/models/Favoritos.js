@@ -12,6 +12,11 @@ const favoritosSchema = new mongoose.Schema(
 			required: true,
 			trim: true,
 		},
+		imagemAnime:{
+			type: String,
+			required: true,
+			trim:true
+		},
 		idAnime: {
 			type: Number,
 			required: true,
