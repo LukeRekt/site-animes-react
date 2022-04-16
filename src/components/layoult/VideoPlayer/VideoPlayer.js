@@ -109,7 +109,7 @@ const VideoPlayer = (props) => {
           onTimeUpdate={handleOnTimeUpdate}
         />
          {  PularAbertura(playerState.actualTime) ? (<div onClick={(e) => pularAberturaHandler(props.fimAbertura)} className={styles.pularAbertura}> <p>PULAR ABERTURA</p></div>) : (<></>)} 
-        {  ContinuarAnime() && playerState.actualTime < 20 ? (<div onClick={(e) => continuarHandler(tempoSalvo)} className={styles.continuarAnime}> <p>Continuar Reprodução</p></div>) : (<></>)}
+        {  ContinuarAnime() && playerState.actualTime < 20 && playerState.actualTime > 1 ? (<div onClick={(e) => continuarHandler(tempoSalvo)} className={styles.continuarAnime}> <p>Continuar Reprodução</p></div>) : (<></>)}
         {/* {  playerState.actualTime >= 20 ? (<></>) : (<></>)} */}
         
         <div className={styles.controls_wrap}>

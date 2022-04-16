@@ -30,8 +30,9 @@ exports.updateProgresso = async (req, res) => {
     
     const doc = await Progresso.findOneAndUpdate(filter, update, {
       returnOriginal: false
+    
     });
-    doc.age;
+    res.status(200).json({ novoTempo: doc.tempoAtual })
 
 };
 exports.remProgresso = async (req, res) => {
