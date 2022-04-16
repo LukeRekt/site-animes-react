@@ -24,6 +24,16 @@ exports.addProgresso = async (req, res) => {
     })
 
 };
+exports.updateProgresso = async (req, res) => {
+    const filter = { idAnime: 1, nomeUsuario: "Luke", temporadaAnime: 1, episodioAnime: 1 };
+    const update = { tempoAtual: req.body.tempoAtual };
+    
+    const doc = await Progresso.findOneAndUpdate(filter, update, {
+      returnOriginal: false
+    });
+    doc.age;
+
+};
 exports.remProgresso = async (req, res) => {
     Progresso.findOneAndDelete({nomeUsuario: req.body.nomeUsuario, idAnime: req.body.idAnime, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime})
     .exec((err, doc) => {
