@@ -29,7 +29,7 @@ const progressoSchema = new mongoose.Schema(
 		},
         tempoAtual:{
             type: Number,
-            require: false,
+            require: true,
             trim: true,
         }
     }

@@ -1,17 +1,33 @@
 const Progresso = require("../models/Progresso");
 
 exports.getProgresso = async (req, res) => {
-    Progresso.findOne({ "idAnime": req.body.idAnime, "nomeUsuario": req.body.nomeUsuario, "temporadaAnime": req.body.temporadaAnime, "episodioAnime": req.body.episodioAnime })
-        .exec((err, subscribe) => {
-            if (err) return res.status(400).send(err)
+//     Progresso.findOne({ "idAnime": req.body.idAnime, "nomeUsuario": req.body.nomeUsuario, "temporadaAnime": req.body.temporadaAnime, "episodioAnime": req.body.episodioAnime,  })
+//         .exec((err, subscribe) => {
+//             if (err) return res.status(400).send(err)
            
-            let result = false;
-            if (subscribe.tempoAtual > 10) {
-                result = subscribe.tempoAtual;
-            }
-            res.status(200).json({ success: true, tempoAtual: result })
+//             let result = false;
+//             if (subscribe.tempoAtual > 10) {
+//                 result = subscribe.tempoAtual;
+//             }
+//             res.status(200).json({ success: true, tempoAtual: result })
             
-        })
+//         })
+
+// };
+const filter = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime };
+const update = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime };
+const doc = await Progresso.findOneAndUpdate(filter, update,{
+  returnOriginal: false,
+  new: true, 
+  upsert: true
+});
+ let result = 0;
+ if(doc.tempoAtual > 10){
+     res.status(200).json({ tempoAtual: doc.tempoAtual })
+ }
+// else if(doc.tempoAtual > 10){
+//     result = doc.tempoAtual;
+// }
 
 };
 
@@ -29,8 +45,9 @@ exports.updateProgresso = async (req, res) => {
     const update = { tempoAtual: req.body.tempoAtual };
     
     const doc = await Progresso.findOneAndUpdate(filter, update, {
-      returnOriginal: false
-    
+      returnOriginal: false,
+      new: true, 
+      upsert: true
     });
     res.status(200).json({ novoTempo: doc.tempoAtual })
 
