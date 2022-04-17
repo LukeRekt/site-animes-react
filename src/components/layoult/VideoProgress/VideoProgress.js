@@ -14,7 +14,8 @@ function VideoProgress(props) {
 
     function calculoPorcentagem(tempoAtual, tempoTotal){
         let calcA = (tempoAtual * 100) / tempoTotal;
-         return setTempoSalvo(calcA);
+        console.log(Math.floor(calcA))
+         return setTempoSalvo((Math.floor(calcA)));
     }
     useEffect(() =>  {
         axios.post('http://localhost:3232/getprogresso',  variables, { withCredentials: true })
@@ -25,7 +26,7 @@ function VideoProgress(props) {
 
     return (
         <div className={styles.BarraTotal}>
-            {tempoSalvo == null ? (<></>) : (<dir className={styles.BarraConcluido} style={{width: `${tempoSalvo}%`}}></dir>)}
+            {tempoSalvo == null ? (<></>) : (<div className={styles.BarraConcluido} style={{width: `${tempoSalvo}%`}}></div>)}
             
         </div>
     )

@@ -1,0 +1,11 @@
+.AnimeContainer{
+    width: 20%;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.AnimeContainer img{
+    width: 60% !important;
+    object-fit: cover;
+}
