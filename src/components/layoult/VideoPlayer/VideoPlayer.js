@@ -12,21 +12,7 @@ const VideoPlayer = (props) => {
   const [tempoSalvo, setTempoSalvo] = useState();
   const [tempoPimba, setPimba] = useState(0);
 
-  const variables = {
-    nomeUsuario: "Luke",
-    temporadaAnime: 1,
-    episodioAnime: 1,
-    idAnime: 1,
-  
-  }
 
-  useEffect(() => {
-     axios.post('http://localhost:3232/getprogresso',  variables, { withCredentials: true })
-  .then(res => {
-       setTempoSalvo(res.data.tempoAtual)
-      // setCarregandoFavoritos(false)
-  })
-}, [])
 
 
 
@@ -82,13 +68,31 @@ const VideoPlayer = (props) => {
     pularAberturaHandler,
     continuarHandler,
   } = useVideoPlayer(videoElement);
+  const variables = {
+    nomeUsuario: "Luke",
+    temporadaAnime: 1,
+    episodioAnime: 1,
+    idAnime: 1,
+    tempoTotal: playerState.totalTime
+  
+  }
+
+  useEffect(() => {
+     axios.post('http://localhost:3232/getprogresso',  variables, { withCredentials: true })
+  .then(res => {
+       setTempoSalvo(res.data.tempoAtual)
+      // setCarregandoFavoritos(false)
+  })
+}, [])
+
   function foo(state, tempo) {
     let variablesUpdate = {
       nomeUsuario: "Luke",
       temporadaAnime: 1,
       episodioAnime: 1,
       idAnime: 1,
-      tempoAtual: tempo
+      tempoAtual: tempo,
+      tempoTotal: playerState.totalTime
     
     }
     console.log(state, tempo)

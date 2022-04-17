@@ -11,12 +11,15 @@ function VideoProgress(props) {
       }
 
     const [tempoSalvo, setTempoSalvo] = useState();
-    useEffect(() => {
+
+    function calculoPorcentagem(tempoAtual, tempoTotal){
+        let calcA = (tempoAtual * 100) / tempoTotal;
+         return setTempoSalvo(calcA);
+    }
+    useEffect(() =>  {
         axios.post('http://localhost:3232/getprogresso',  variables, { withCredentials: true })
      .then(res => {
-          setTempoSalvo(res.data.tempoAtual)
-          console.log(tempoSalvo)
-         // setCarregandoFavoritos(false)
+        calculoPorcentagem(res.data.tempoAtual, res.data.tempoTotal);
      })
    }, [])
 

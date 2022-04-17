@@ -15,15 +15,14 @@ exports.getProgresso = async (req, res) => {
 
 // };
 const filter = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime };
-const update = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime };
+const update = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime, tempoTotal: req.body.tempoTotal, };
 const doc = await Progresso.findOneAndUpdate(filter, update,{
   returnOriginal: false,
   new: true, 
   upsert: true
 });
- let result = 0;
  if(doc.tempoAtual > 10){
-     res.status(200).json({ tempoAtual: doc.tempoAtual })
+     res.status(200).json({ tempoAtual: doc.tempoAtual, tempoTotal: doc.tempoTotal })
  }
 // else if(doc.tempoAtual > 10){
 //     result = doc.tempoAtual;
@@ -42,7 +41,7 @@ exports.addProgresso = async (req, res) => {
 };
 exports.updateProgresso = async (req, res) => {
     const filter = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime };
-    const update = { tempoAtual: req.body.tempoAtual };
+    const update = { tempoAtual: req.body.tempoAtual, tempoTotal: req.body.tempoTotal };
     
     const doc = await Progresso.findOneAndUpdate(filter, update, {
       returnOriginal: false,
