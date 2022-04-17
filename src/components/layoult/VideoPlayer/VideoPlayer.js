@@ -10,6 +10,7 @@ const VideoPlayer = (props) => {
 
   const [linkVideo, setLinkVideo] = useState(props.videoLink);
   const [tempoSalvo, setTempoSalvo] = useState();
+  const [tempoPimba, setPimba] = useState(0);
 
   const variables = {
     nomeUsuario: "Luke",
@@ -18,11 +19,11 @@ const VideoPlayer = (props) => {
     idAnime: 1,
   
   }
+
   useEffect(() => {
      axios.post('http://localhost:3232/getprogresso',  variables, { withCredentials: true })
   .then(res => {
        setTempoSalvo(res.data.tempoAtual)
-       console.log(tempoSalvo)
       // setCarregandoFavoritos(false)
   })
 }, [])
@@ -81,20 +82,50 @@ const VideoPlayer = (props) => {
     pularAberturaHandler,
     continuarHandler,
   } = useVideoPlayer(videoElement);
-  function foo() {
-    console.log("video rodando")
+  function foo(state, tempo) {
+    let variablesUpdate = {
+      nomeUsuario: "Luke",
+      temporadaAnime: 1,
+      episodioAnime: 1,
+      idAnime: 1,
+      tempoAtual: tempo
+    
     }
-    if (playerState.isPlaying === false)
-    console.log("video parado")
-    else
-    setTimeout(foo, 1000);
+    console.log(state, tempo)
+    if (state == true){
+    
+    axios.post('http://localhost:3232/updateprogresso',  variablesUpdate, { withCredentials: true })
+    .then(res => {
+         
+         console.log(res)
+        // setCarregandoFavoritos(false)
+    })
+    }else{
+      console.log("video parado", state)
+    }
+  }
+ 
+  useEffect(() => {
+    console.log("rodou")
+    if(playerState.actualTime >= tempoPimba){
+      foo(playerState.isPlaying, playerState.actualTime)
+      setPimba(playerState.actualTime + 10)
+    }
+    
+    const interval = setInterval(() => {
+      
+      if(playerState.isPlaying){
+      
+    }
+    }, 5000);
+  
+    return () => clearInterval(interval);
+  }, [playerState.isPlaying, playerState.actualTime, tempoPimba]);
   return (
     
     <div className={styles.container}>
-     {console.log(playerState.isPlaying)}
-         <div className={styles.SeletorLinguagem}>
-           
-          <div className={styles.Legendado} onClick={() => {setLinkVideo(props.videoLink)}}>
+         <div className={styles.SeletorLinguagem}>     
+   <div className={styles.Legendado} onClick={() => {setLinkVideo(props.videoLink)}}>
             <p>Legendado</p>
           </div>
           <div className={styles.Dublado} onClick={() => {setLinkVideo(props.videoDub)}}>
@@ -109,7 +140,7 @@ const VideoPlayer = (props) => {
           onTimeUpdate={handleOnTimeUpdate}
         />
          {  PularAbertura(playerState.actualTime) ? (<div onClick={(e) => pularAberturaHandler(props.fimAbertura)} className={styles.pularAbertura}> <p>PULAR ABERTURA</p></div>) : (<></>)} 
-        {  ContinuarAnime() && playerState.actualTime < 20 && playerState.actualTime > 1 ? (<div onClick={(e) => continuarHandler(tempoSalvo)} className={styles.continuarAnime}> <p>Continuar Reprodução</p></div>) : (<></>)}
+        {  ContinuarAnime() && playerState.actualTime < 20 && playerState.actualTime > 1 ? (<div onClick={(e) => {continuarHandler(tempoSalvo); setPimba(tempoSalvo)}} className={styles.continuarAnime}> <p>Continuar Reprodução</p></div>) : (<></>)}
         {/* {  playerState.actualTime >= 20 ? (<></>) : (<></>)} */}
         
         <div className={styles.controls_wrap}>
@@ -131,7 +162,7 @@ const VideoPlayer = (props) => {
             min="0"
             max="100"
             value={playerState.progress}
-            onChange={(e) => handleVideoProgress(e)}
+            onChange={(e) => {handleVideoProgress(e); setPimba(playerState.actualTime)}}
           />
           <p>{formatTime(playerState.totalTime)}</p>
           <select

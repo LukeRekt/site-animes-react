@@ -25,7 +25,7 @@ exports.addProgresso = async (req, res) => {
 
 };
 exports.updateProgresso = async (req, res) => {
-    const filter = { idAnime: 1, nomeUsuario: "Luke", temporadaAnime: 1, episodioAnime: 1 };
+    const filter = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime };
     const update = { tempoAtual: req.body.tempoAtual };
     
     const doc = await Progresso.findOneAndUpdate(filter, update, {
