@@ -3,11 +3,13 @@ import styles from "./AnimeAssistidoPlaceholder.module.css"
 function AnimeAssistidoPlaceholder (){
     return (
         <div>
+            <div className={styles.container}>
             <div className={styles.AnimeContainer}>
                 <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/7LMSllDXEVBBwY7yQop2CY0AW7I.jpg" alt="" />
-                <div className={styles.BarraProgressi}><VideoProgress temporada={1}/></div>
+                <div className={styles.BarraProgresso}><VideoProgress temporada={1}/></div>
             </div>
             
+        </div>
         </div>
     )
 }

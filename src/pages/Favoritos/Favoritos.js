@@ -10,7 +10,7 @@ function Favoritos (){
             
             
             <div id={styles.imagem}>
-            {/* <img src="http://localhost:3232/static/imagens/assets/emConstrucao.png" alt="" srcset="" /> */}
+            <img src="http://localhost:3232/static/imagens/assets/emConstrucao.png" alt="" srcset="" />
             
             </div>
             <AnimeAssistidoPlaceholder/>
