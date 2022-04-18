@@ -5,8 +5,10 @@ import styles from './PageEpisode.module.css'
 import SeletorEP from '../../components/layoult/SeletorEp/SeletorEp';
 import VideoPlayer from '../../components/layoult/VideoPlayer/VideoPlayer';
 
+
 function PageEpisode() {
- 
+
+
   function ListEp(parametros, postsa) {
     for (var i = 0; i < postsa.length; i++) {
 
@@ -76,7 +78,11 @@ function PageEpisode() {
         <VideoPlayer inicioAbertura={inicioAbertura(ep, posts)}
          fimAbertura={fimAbertura(ep, posts)}
           videoLink={ListEp(ep, posts)}
-           videoDub={ListDub(ep, posts)}/>
+           videoDub={ListDub(ep, posts)}
+           nomeEp={ListNome(ep, posts)}
+           idAnim={id}
+           temporada={temporada}
+           episodio={ep}/>
                 {/* <video src={ListEp(ep, posts)} controls>
 
         </video> */}

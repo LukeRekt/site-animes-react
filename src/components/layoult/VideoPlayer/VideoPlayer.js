@@ -4,6 +4,8 @@ import styles from "./VideoPlayer.module.css";
 import { BiPlay, BiPause, BiVolumeFull, BiVolumeMute, BiFullscreen } from "react-icons/bi";
 import useVideoPlayer from "../../../hooks/useVideoPlayer";
 import axios from "axios";
+import { useContext } from "react"
+import { UserContext } from '../../../UserContext'
 
 
 const VideoPlayer = (props) => {
@@ -11,7 +13,7 @@ const VideoPlayer = (props) => {
   const [linkVideo, setLinkVideo] = useState(props.videoLink);
   const [tempoSalvo, setTempoSalvo] = useState();
   const [tempoPimba, setPimba] = useState(0);
-
+  const { user } = useContext(UserContext);
 
 
 
@@ -68,31 +70,37 @@ const VideoPlayer = (props) => {
     pularAberturaHandler,
     continuarHandler,
   } = useVideoPlayer(videoElement);
-  const variables = {
-    nomeUsuario: "Luke",
-    temporadaAnime: 1,
-    episodioAnime: 1,
-    idAnime: 1,
-    tempoTotal: playerState.totalTime
-  
-  }
+ 
 
   useEffect(() => {
-     axios.post('http://localhost:3232/getprogresso',  variables, { withCredentials: true })
-  .then(res => {
-       setTempoSalvo(res.data.tempoAtual)
-      // setCarregandoFavoritos(false)
-  })
-}, [])
+    const variables = {
+      nomeUsuario: user,
+      temporadaAnime: props.temporada,
+      episodioAnime: props.episodio,
+      idAnime: props.idAnim,
+      tempoTotal: playerState.totalTime,
+      nomeEp: props.nomeEp
+    
+    }
+    if(user){
+      axios.post('http://localhost:3232/getprogresso',  variables, { withCredentials: true })
+      .then(res => {
+           setTempoSalvo(res.data.tempoAtual)
+          // setCarregandoFavoritos(false)
+      })
+    }
+    
+}, [user])
 
   function foo(state, tempo) {
     let variablesUpdate = {
-      nomeUsuario: "Luke",
-      temporadaAnime: 1,
-      episodioAnime: 1,
-      idAnime: 1,
+      nomeUsuario: user,
+      temporadaAnime: props.temporada,
+      episodioAnime: props.episodio,
+      idAnime: props.idAnim,
       tempoAtual: tempo,
-      tempoTotal: playerState.totalTime
+      tempoTotal: playerState.totalTime,
+      nomeEp: props.nomeEp
     
     }
     console.log(state, tempo)
@@ -110,11 +118,17 @@ const VideoPlayer = (props) => {
   }
  
   useEffect(() => {
+
+
     console.log("rodou")
-    if(playerState.actualTime >= tempoPimba){
-      foo(playerState.isPlaying, playerState.actualTime)
-      setPimba(playerState.actualTime + 10)
+    if(user){
+      console.log(user,props.temporada, props.episodio)
+      if(playerState.actualTime >= tempoPimba){
+        foo(playerState.isPlaying, playerState.actualTime)
+        setPimba(playerState.actualTime + 10)
+      }
     }
+    
     
     const interval = setInterval(() => {
       
@@ -124,7 +138,7 @@ const VideoPlayer = (props) => {
     }, 5000);
   
     return () => clearInterval(interval);
-  }, [playerState.isPlaying, playerState.actualTime, tempoPimba]);
+  }, [playerState.isPlaying, playerState.actualTime, tempoPimba, user]);
   return (
     
     <div className={styles.container}>
@@ -144,7 +158,7 @@ const VideoPlayer = (props) => {
           onTimeUpdate={handleOnTimeUpdate}
         />
          {  PularAbertura(playerState.actualTime) ? (<div onClick={(e) => pularAberturaHandler(props.fimAbertura)} className={styles.pularAbertura}> <p>PULAR ABERTURA</p></div>) : (<></>)} 
-        {  ContinuarAnime() && playerState.actualTime < 20 && playerState.actualTime > 1 ? (<div onClick={(e) => {continuarHandler(tempoSalvo); setPimba(tempoSalvo)}} className={styles.continuarAnime}> <p>Continuar Reprodução</p></div>) : (<></>)}
+        {  user ? (ContinuarAnime() && playerState.actualTime < 20 && playerState.actualTime > 1 ? (<div onClick={(e) => {continuarHandler(tempoSalvo); setPimba(tempoSalvo)}} className={styles.continuarAnime}> <p>Continuar Reprodução</p></div>) : (<></>)) : (<></>)}
         {/* {  playerState.actualTime >= 20 ? (<></>) : (<></>)} */}
         
         <div className={styles.controls_wrap}>

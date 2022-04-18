@@ -22,6 +22,11 @@ const progressoSchema = new mongoose.Schema(
 			required:true,
 			trim: true,
 		},
+		nomeEp: {
+			type: String,
+			required:true,
+			trim: true,
+		},
 		tempoTotal: {
 			type:Number,
 			required:false,

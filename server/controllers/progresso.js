@@ -15,7 +15,7 @@ exports.getProgresso = async (req, res) => {
 
 // };
 const filter = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime };
-const update = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime, tempoTotal: req.body.tempoTotal, };
+const update = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime, tempoTotal: req.body.tempoTotal, nomeEp: req.body.nomeEp};
 const doc = await Progresso.findOneAndUpdate(filter, update,{
   returnOriginal: false,
   new: true, 
@@ -41,7 +41,7 @@ exports.addProgresso = async (req, res) => {
 };
 exports.updateProgresso = async (req, res) => {
     const filter = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime };
-    const update = { tempoAtual: req.body.tempoAtual, tempoTotal: req.body.tempoTotal };
+    const update = { tempoAtual: req.body.tempoAtual, tempoTotal: req.body.tempoTotal, nomeEp: req.body.nomeEp };
     
     const doc = await Progresso.findOneAndUpdate(filter, update, {
       returnOriginal: false,
@@ -51,6 +51,8 @@ exports.updateProgresso = async (req, res) => {
     res.status(200).json({ novoTempo: doc.tempoAtual })
 
 };
+
+//por enquanto nao sera utilizado
 exports.remProgresso = async (req, res) => {
     Progresso.findOneAndDelete({nomeUsuario: req.body.nomeUsuario, idAnime: req.body.idAnime, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime})
     .exec((err, doc) => {
