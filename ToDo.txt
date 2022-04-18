@@ -2,11 +2,13 @@ ToDo com ordem de prioridade:
 Transferir todo o trabalho de processamento de dados para o node.js.
 Continuar Reproducao:
   -Rotas basicas(adicionar, buscar, remover) - Pronto
-  -Barra de progresso
+  -Barra de progresso - pronto
 Informacoes do usuário:
   -Assistidos:
    -2 opcoes, automatico ou de marcacao manual
   -Ver mais tarde:
    -Segue o mesmo padrao do Favoritos, porem, com episodios.
+ Perfil:
+  -adicionar os assistidos e sua barra de progresso
 Edicao de dados pessoais
 Encontrar uma solucao para o envio de imagens... (Potencial correcao seria usar : Withcredentials: true)

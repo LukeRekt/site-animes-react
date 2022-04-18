@@ -8,7 +8,7 @@ Site de animes criado usando a stack M.E.R.N
 - [x] Player animes
 - [x] Calendario
 - [x] Login de usuario - JWT
-- [x] Perfil de usuario
+- [ ] Perfil de usuario - Parcialmente completo
 - [x] Favoritos
 - [ ] Listas
 - [ ] Ferramenta para adicionar animes
