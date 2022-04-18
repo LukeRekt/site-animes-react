@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom'
 import { logout } from '../../api/user'
 import Axios from "axios";
 import FavoritosHandle from '../../components/layoult/FavoritosHandle/FavoritosHandle';
+import AnimeAssistido from '../../components/layoult/AnimeAssistidoPlaceholder/AnimeAssistido';
 
 function PagePefil() {
     const { user, setUser } = useContext(UserContext);
@@ -117,7 +118,7 @@ function PagePefil() {
 
                 <div className={toggleState === 2 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.naoTem}>
-                        <p><FaEye fill='#5555553b' /> Você não assistiu nada</p>
+                        <AnimeAssistido/>
                     </div>
                 </div>
 
