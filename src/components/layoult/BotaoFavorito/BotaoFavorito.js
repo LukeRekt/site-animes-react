@@ -55,7 +55,7 @@ useEffect(() => {
 
 }, [])
 return (<>
-{Favorited == true ? (<div onClick={onClickFavorite} className={styles.favoritar}><p><FiHeart/> Favorito</p></div>) : (<div onClick={onClickFavorite} className={styles.favoritar}><p><FiHeart/> Favoritar</p></div>)}
+{Favorited == true ? (<div onClick={onClickFavorite} className={styles.favoritar}><div id={styles.favoritado}><p><FiHeart/> Favorito</p></div></div>) : (<div onClick={onClickFavorite} className={styles.favoritar}><p><FiHeart/> Favoritar</p></div>)}
 </>)
 }
 
