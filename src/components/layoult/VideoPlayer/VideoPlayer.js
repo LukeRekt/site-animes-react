@@ -90,7 +90,7 @@ const VideoPlayer = (props) => {
       })
     }
     
-}, [user])
+}, [user, props.nomeEp])
 
   function foo(state, tempo) {
     let variablesUpdate = {

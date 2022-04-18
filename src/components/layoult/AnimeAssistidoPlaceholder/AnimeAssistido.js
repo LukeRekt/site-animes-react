@@ -1,6 +1,6 @@
 import VideoProgress from "../VideoProgress/VideoProgress"
-import styles from "./AnimeAssistidoPlaceholder.module.css"
-function AnimeAssistidoPlaceholder (){
+import styles from "./AnimeAssistido.module.css"
+function AnimeAssistido (){
     return (
         <div>
             <div className={styles.container}>
@@ -13,4 +13,4 @@ function AnimeAssistidoPlaceholder (){
         </div>
     )
 }
-export default AnimeAssistidoPlaceholder
+export default AnimeAssistido
