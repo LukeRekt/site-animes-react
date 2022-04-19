@@ -23,7 +23,9 @@ function AnimeAssistido (props){
                 {porcentagem.map((post, index) => {
        return <div key={index} className={styles.AnimeContainer}>
              <img src={post.animeImagem} alt="" />
-            <div className={styles.BarraProgresso}><VideoProgress tempoAtual={post.tempoAtual} tempoTotal={post.tempoTotal}/></div>
+            <div className={styles.BarraProgresso}>
+                <VideoProgress tempoAtual={post.tempoAtual} tempoTotal={post.tempoTotal}/>
+            </div>
         </div>
                 })}
           

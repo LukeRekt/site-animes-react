@@ -1,12 +1,14 @@
 .container {
-    width: 15%;
+    width: 100%;
+
 }
 .AnimeContainer{
-    width: 100%;
+    width: 20%;
     background-color: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 }
 .AnimeContainer img{
     width: 100% !important;

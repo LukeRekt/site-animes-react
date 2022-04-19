@@ -69,6 +69,16 @@ function PageEpisode() {
       }
     }
   }
+  function ListNomeAnime(parametros, postsa) {
+    for (var i = 0; i < postsa.length; i++) {
+
+      if (postsa[i].id == id) {
+        if (postsa[i].numero == parametros) {
+          return postsa[i].nomeAnime;
+        }
+      }
+    }
+  }
 
   const {temporada, id, ep } = useParams();
   const [posts, setPosts] = useState([])
@@ -93,7 +103,9 @@ function PageEpisode() {
            idAnim={id}
            temporada={temporada}
            episodio={ep}
-           animeImagem={ListImage(ep, posts)}/>
+           animeImagem={ListImage(ep, posts)}
+           nomeAnime={ListNomeAnime(ep, posts)}
+           />
                 {/* <video src={ListEp(ep, posts)} controls>
 
         </video> */}

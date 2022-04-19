@@ -80,7 +80,8 @@ const VideoPlayer = (props) => {
       idAnime: props.idAnim,
       tempoTotal: playerState.totalTime,
       nomeEp: props.nomeEp,
-      animeImagem: props.animeImagem
+      animeImagem: props.animeImagem,
+      nomeAnime: props.nomeAnime
     
     }
     if(user){
@@ -91,7 +92,7 @@ const VideoPlayer = (props) => {
       })
     }
     
-}, [user, props.nomeEp, props.animeImagem])
+}, [user, props.nomeEp, props.animeImagem, props.nomeAnime])
 
   function foo(state, tempo) {
     let variablesUpdate = {

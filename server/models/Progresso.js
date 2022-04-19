@@ -27,6 +27,11 @@ const progressoSchema = new mongoose.Schema(
 			required:true,
 			trim: true,
 		},
+		nomeAnime:{
+			type: String,
+			required:true,
+			trim: true,
+		},
 		animeImagem: {
 			type:String,
 			required:false,
