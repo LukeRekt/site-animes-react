@@ -41,7 +41,7 @@ exports.addProgresso = async (req, res) => {
 };
 exports.updateProgresso = async (req, res) => {
     const filter = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime };
-    const update = { tempoAtual: req.body.tempoAtual, tempoTotal: req.body.tempoTotal, nomeEp: req.body.nomeEp, animeImagem: req.bode.animeImagem };
+    const update = { tempoAtual: req.body.tempoAtual, tempoTotal: req.body.tempoTotal, nomeEp: req.body.nomeEp, animeImagem: req.body.animeImagem };
     
     const doc = await Progresso.findOneAndUpdate(filter, update, {
       returnOriginal: false,
