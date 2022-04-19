@@ -118,7 +118,7 @@ function PagePefil() {
 
                 <div className={toggleState === 2 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.naoTem}>
-                        <AnimeAssistido/>
+                        <AnimeAssistido user={user}/>
                     </div>
                 </div>
 

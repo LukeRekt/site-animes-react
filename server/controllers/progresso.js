@@ -61,12 +61,12 @@ exports.remProgresso = async (req, res) => {
     })
 };
 
-// exports.getAllFavoritos = async (req, res) => {
+ exports.getAllProgresso = async (req, res) => {
 
-//     Favoritos.find({ 'nomeUsuario': req.body.nomeUsuario })
-//         .exec((err, favorites) => {
-//             if (err) return res.status(400).send(err);
-//             return res.status(200).json( {favoritos: favorites} )
-//         })
-// };
+     Progresso.find({ 'nomeUsuario': req.body.nomeUsuario })
+        .exec((err, progressos) => {
+            if (err) return res.status(400).send(err);
+             return res.status(200).json( {progresso: progressos} )
+         })
+ };
 
