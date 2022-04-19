@@ -14,8 +14,8 @@ exports.getProgresso = async (req, res) => {
 //         })
 
 // };
-const filter = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime, nomeAnime: req.body.nomeAnime };
-const update = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime, tempoTotal: req.body.tempoTotal, nomeEp: req.body.nomeEp, animeImagem: req.body.animeImagem, nomeAnime: req.body.nomeAnime};
+const filter = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime,};
+const update = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime, tempoTotal: req.body.tempoTotal, nomeEp: req.body.nomeEp, animeImagem: req.body.animeImagem,};
 const doc = await Progresso.findOneAndUpdate(filter, update,{
   returnOriginal: false,
   new: true, 
@@ -41,7 +41,7 @@ exports.addProgresso = async (req, res) => {
 };
 exports.updateProgresso = async (req, res) => {
     const filter = { idAnime: req.body.idAnime, nomeUsuario: req.body.nomeUsuario, temporadaAnime: req.body.temporadaAnime, episodioAnime: req.body.episodioAnime};
-    const update = { tempoAtual: req.body.tempoAtual, tempoTotal: req.body.tempoTotal, nomeEp: req.body.nomeEp, animeImagem: req.body.animeImagem };
+    const update = { tempoAtual: req.body.tempoAtual, tempoTotal: req.body.tempoTotal, nomeEp: req.body.nomeEp, animeImagem: req.body.animeImagem, nomeAnime: req.body.nomeAnime  };
     
     const doc = await Progresso.findOneAndUpdate(filter, update, {
       returnOriginal: false,

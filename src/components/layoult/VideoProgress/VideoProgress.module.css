@@ -4,5 +4,16 @@
 }
 .BarraConcluido{
     background-color: #ffbe63;
-    height: 5px;
+    height: 19px;
+    position: relative !important;
+}
+.BarraConcluido p{
+    padding: 0 !important;
+    margin: 0!important;
+    position: absolute !important;
+    top: -2% !important;
+    text-align: end !important;
+    font-size: 15px !important;
+    color: black !important;
+    font-family: 'Montserrat', sans-serif;
 }

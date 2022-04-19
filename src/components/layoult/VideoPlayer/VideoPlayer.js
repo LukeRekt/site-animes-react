@@ -81,7 +81,7 @@ const VideoPlayer = (props) => {
       tempoTotal: playerState.totalTime,
       nomeEp: props.nomeEp,
       animeImagem: props.animeImagem,
-      nomeAnime: props.nomeAnime
+
     
     }
     if(user){
@@ -92,7 +92,7 @@ const VideoPlayer = (props) => {
       })
     }
     
-}, [user, props.nomeEp, props.animeImagem, props.nomeAnime])
+}, [user, props.nomeEp, props.animeImagem])
 
   function foo(state, tempo) {
     let variablesUpdate = {
@@ -103,7 +103,7 @@ const VideoPlayer = (props) => {
       tempoAtual: tempo,
       tempoTotal: playerState.totalTime,
       nomeEp: props.nomeEp,
-    
+      nomeAnime: props.nomeAnime    
     }
     console.log(state, tempo)
     if (state == true){
@@ -140,7 +140,7 @@ const VideoPlayer = (props) => {
     }, 5000);
   
     return () => clearInterval(interval);
-  }, [playerState.isPlaying, playerState.actualTime, tempoPimba, user,]);
+  }, [playerState.isPlaying, playerState.actualTime, tempoPimba, user, props.nomeAnime]);
   return (
     
     <div className={styles.container}>
