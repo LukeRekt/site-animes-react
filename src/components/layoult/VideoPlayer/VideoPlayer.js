@@ -110,8 +110,6 @@ const VideoPlayer = (props) => {
     
     axios.post('http://localhost:3232/updateprogresso',  variablesUpdate, { withCredentials: true })
     .then(res => {
-         
-         console.log(res)
         // setCarregandoFavoritos(false)
     })
     }else{
@@ -121,8 +119,6 @@ const VideoPlayer = (props) => {
  
   useEffect(() => {
 
-
-    console.log("rodou")
     if(user){
       console.log(user,props.temporada, props.episodio)
       if(playerState.actualTime >= tempoPimba){

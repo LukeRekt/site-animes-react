@@ -41,7 +41,7 @@
     width: 100%;
     z-index: 3;
     flex-wrap: wrap;
-    background: #181829b0;
+    background: rgba(66, 55, 55, 0.25);
     box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -112,25 +112,27 @@
   @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type='range'] {
       overflow: hidden;
-      width: 50%;
+      width: 24%;
+      -webkit-appearance: none;
       background-color: #dddddd;
       border-radius: 8px;
     }
     
     input[type='range']::-webkit-slider-runnable-track {
-      height: 15px;
+      height: 10px;
+
+      -webkit-appearance: none;
       color: #0C0C1D;
       margin-top: -1px;
     }
     
     input[type='range']::-webkit-slider-thumb {
       width: 5px;
-
+      -webkit-appearance: none;
       height: 10px;
-
+      cursor: ew-resize;
       background-color: #000000;
          }
-
 
 }
   
