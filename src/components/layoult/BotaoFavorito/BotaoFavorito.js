@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect} from 'react'
 import styles from "./BotaoFavorito.module.css"
-import { FiHeart } from "react-icons/fi";
+import { AiFillHeart } from "react-icons/ai";
 function BotaoFavorito (props){ 
 
     const [Favorited, setFavorited] = useState()
@@ -55,7 +55,7 @@ useEffect(() => {
 
 }, [])
 return (<>
-{Favorited == true ? (<div onClick={onClickFavorite} className={styles.favoritar}><div id={styles.favoritado}><p><FiHeart/> Favorito</p></div></div>) : (<div onClick={onClickFavorite} className={styles.favoritar}><p><FiHeart/> Favoritar</p></div>)}
+{Favorited == true ? (<div onClick={onClickFavorite} className={styles.favoritar}><div id={styles.favoritado}><p><AiFillHeart/> Favorito</p></div></div>) : (<div onClick={onClickFavorite} className={styles.favoritar}><p><AiFillHeart/> Favoritar</p></div>)}
 </>)
 }
 

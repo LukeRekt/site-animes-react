@@ -16,6 +16,7 @@
     
     
 }
+
 .favoritar p:hover{
     background-color: #ffbe63;
     color: #1F1F30;
@@ -23,4 +24,9 @@
 #favoritado p{
     color: #1F1F30;
     background-color: #ffbe63;
+}
+#favoritado svg {
+    fill: #1F1F30;
+
+    
 }
