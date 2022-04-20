@@ -23,7 +23,8 @@ function PagePefil() {
     const navigate = useNavigate();
     const [posts, setPosts] = useState([])
     const [pageCarregando, setPageCarregando] = useState(true)
-
+    const [totalAssistido, setTotalAssistido] = useState([]);
+    const [totalAssistidoTempo, setTotalAssistidoTempo] = useState();
     const [file, setFile] = useState(null);
 
     const upload = (e) => {
@@ -40,6 +41,18 @@ function PagePefil() {
             console.log("Sucesso! ", res);
         });
     };
+    const variables = {
+        nomeUsuario: user,
+      }
+    useEffect(() =>  {
+       
+        Axios.post('http://localhost:3232/getallprogresso',  variables)
+     .then(res => {
+         setTotalAssistido(res.data.progresso)
+         setTotalAssistidoTempo(res.data.progresso.length * 24 / 60)
+        // setPorcentagem(res);a
+     })
+   }, [user])
     useEffect(() => {
         Axios.get('http://localhost:3232/getanim')
             .then(res => {
@@ -70,7 +83,13 @@ function PagePefil() {
             setToggleEdit(index);
         }
     };
+    
 
+   
+            
+        console.log(totalAssistidoTempo)
+        
+    
     return (
 
         <div className={styles.PerfilContainer}>
@@ -88,7 +107,8 @@ function PagePefil() {
                     </div>
                 </div>
                 <div className={styles.horasAssistidos}>
-                    <p>videos assistidos <br /> 0 (aprox 0 horas)</p>
+                    {console.log(totalAssistido)}
+                    <p>videos assistidos <br /> {totalAssistido.length} (aprox {totalAssistidoTempo} horas)</p>
                     <div className={styles.assistidosDetail}>
                         <div className={styles.detailsInside}>
                             <FaPlay className={styles.playbutton} />
