@@ -30,9 +30,9 @@ function PagePefil() {
     const upload = (e) => {
         e.preventDefault();
         let formData = new FormData();
-        formData.append("screenshot", file, `${user}.png`);
+        formData.append("screenshot", file);
 
-        Axios.post("http://192.168.1.8:3232/avatar", formData, {
+        Axios.post("http://localhost:3232/trocaravatarteste", formData,  {withCredentials: true}, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },

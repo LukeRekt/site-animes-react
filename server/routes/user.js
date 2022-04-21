@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const upload = multer();
 //importar controllers
-const { register, login, logout, getLoggedInUser, buscarUser } = require("../controllers/user")
+const { register, login, logout, getLoggedInUser, buscarUser, trocarAvatar } = require("../controllers/user")
 const { registera, listar, getanime, getEpisodes, getAllEpisodes, getEpisodespage, AddEpisode, } = require("../controllers/animes")
 const { getFavorito, getAllFavoritos, addFavorito, remFavorito } = require("../controllers/favoritos")
 const { getProgresso, addProgresso, remProgresso, updateProgresso, getAllProgresso } = require("../controllers/progresso")
@@ -59,5 +59,10 @@ router.get("/getanim/episodios/:temporada/:id", getEpisodes)
 router.post("/buscar", buscarUser)
 
 //
+
+
+//teste avatar
+
+router.post("/trocaravatarteste", verifyToken, userById, trocarAvatar)
 
 module.exports = router;
