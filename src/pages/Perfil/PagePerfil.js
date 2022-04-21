@@ -2,7 +2,7 @@ import styles from './PagePerfil.module.css'
 import { useContext } from "react"
 import { UserContext } from '../../UserContext'
 import { FaHeart, FaClock, FaEye, FaUserAlt, FaSmile, FaQuoteLeft, FaPhoneAlt, FaLock, FaBirthdayCake, FaTransgenderAlt, FaPlay } from 'react-icons/fa';
-import { AiOutlineLogout } from "react-icons/ai";
+import { AiOutlineLogout, AiFillCamera } from "react-icons/ai";
 import { RiEqualizerLine } from "react-icons/ri";
 import { FiAtSign } from "react-icons/fi";
 import { useState, useEffect } from "react";
@@ -83,11 +83,6 @@ function PagePefil() {
             setToggleEdit(index);
         }
     };
-    
-
-   
-            
-        console.log(totalAssistidoTempo)
         
     
     return (
@@ -96,9 +91,10 @@ function PagePefil() {
             <div className={styles.leftUser}>
                 <div className={styles.userAvatar}>
                     <div className={styles.metadeAvatar}>
+                        <div id={styles.alterarBanner}><AiFillCamera/></div>
                         <img src={banner} alt="" />
                     </div>
-                    <img src={avatar} alt="" />
+                    <img id={styles.avatar} src={avatar} alt="" />
                     <p>{user}</p>
                     <p>@{user}</p>
                     <div className={styles.userSeguidores}>
