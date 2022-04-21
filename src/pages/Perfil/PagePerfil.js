@@ -94,6 +94,7 @@ function PagePefil() {
                         <div id={styles.alterarBanner}><AiFillCamera/></div>
                         <img src={banner} alt="" />
                     </div>
+                    <div id={styles.overAvatar}><AiFillCamera/></div>
                     <img id={styles.avatar} src={avatar} alt="" />
                     <p>{user}</p>
                     <p>@{user}</p>

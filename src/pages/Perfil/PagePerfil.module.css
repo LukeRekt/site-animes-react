@@ -97,6 +97,31 @@
 #avatar{
   z-index: 3;
 }
+#overAvatar{
+  position: absolute;
+  top: 20.1%;
+  left: 32.1%;
+  background-color: #0b0b1398;
+  padding: 35px 35px 20px 35px;
+  z-index: 4;
+  border-radius: 50%;
+  font-size: 50px;
+  opacity: 0;
+  transition: 0.4s;
+
+}
+#overAvatar svg {
+  font-size: 50px;
+  fill: #0b0b13;
+  cursor: pointer;
+  transition: 0.4s;
+}
+#overAvatar svg:hover {
+  fill: #ffbe63;
+}
+.userAvatar:hover > #overAvatar{
+  opacity: 1;
+}
 .metadeAvatar img {
     position: absolute;
     top: 0;
