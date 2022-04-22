@@ -1,16 +1,18 @@
 .container {
     width: 100%;
-
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-.AnimeContainer{
+.container a{
     width: 20%;
-    background-color: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    margin-right: 5px;
     
 }
 .AnimeContainer:hover > .AnimeOver{
@@ -18,6 +20,7 @@
 }
 .AnimeContainer img{
     width: 100% !important;
+    height: 300px;
     object-fit: cover;
 }
 .AnimeOver{
@@ -50,6 +53,8 @@
     top:70%;
 }
 .BarraProgresso{
+    margin: 0;
+    padding: 0;
     z-index: 1;
 }
 #nadaEncontrado{
