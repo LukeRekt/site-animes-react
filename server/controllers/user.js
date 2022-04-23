@@ -156,9 +156,12 @@ exports.buscarUser = async (req, res) => {
 
 exports.trocarAvatar = async (req, res) => {
     const { username } = req.user;
-
+    const filename = req.files.screenshot.name;
+    const file = req.files.screenshot;
+    let uploadPath = __dirname + "../../public/imagens/avatars/" + filename;
+    file.mv(uploadPath);
     const filter = {username: username}
-    const update = { userAvatar: "teste"};
+    const update = { userAvatar: `http://localhost:3232/static/imagens/avatars/${filename}`};
     
     const doc = await User.findOneAndUpdate(filter, update, {
     //   returnOriginal: false,
@@ -172,9 +175,9 @@ exports.trocarAvatar = async (req, res) => {
 
 
  
-    // const filename = req.files.screenshot.name;
-    // const file = req.files.screenshot;
-    // let uploadPath = __dirname + "../../public/imagens/avatars/" + filename;
-    // file.mv(uploadPath);
+    // 
+    // 
+    // 
+    // 
     
 };

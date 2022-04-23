@@ -7,5 +7,9 @@ Informacoes do usuário:
  Perfil:
   -adicionar os assistidos e sua barra de progresso
 Edicao de dados pessoais
-  -Nao foi possivel testar a troca de avatar e banner devido a um erro na rede local.
 Encontrar uma solucao para o envio de imagens... (Corrigido com Withcredentials: true)
+
+TOOLING:
+  -Painel de adm
+  -Adicionar/Remover Animes e episodios
+  -Banimento de usuários

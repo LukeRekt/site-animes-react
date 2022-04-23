@@ -32,7 +32,7 @@ function PagePefil() {
         let formData = new FormData();
         formData.append("screenshot", file);
 
-        Axios.post("http://localhost:3232/trocaravatarteste", formData,  {withCredentials: true}, {
+        Axios.post("http://localhost:3232/trocaravatar", formData,  {withCredentials: true}, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },
