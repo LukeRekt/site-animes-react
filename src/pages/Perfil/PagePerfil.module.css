@@ -55,6 +55,7 @@
 .userAvatar img{
     
     width: 35%;
+    height: 41%;
     border-radius: 50%;
     border: 3px solid #eb9a2a;
     position: absolute;
