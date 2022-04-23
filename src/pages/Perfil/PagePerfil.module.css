@@ -116,7 +116,7 @@
   cursor: pointer;
   transition: 0.4s;
 }
-#overAvatar svg:hover {
+#overAvatar svg {
   fill: #ffbe63;
 }
 .userAvatar:hover > #overAvatar{

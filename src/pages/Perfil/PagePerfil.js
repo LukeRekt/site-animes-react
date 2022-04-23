@@ -27,10 +27,10 @@ function PagePefil() {
     const [totalAssistidoTempo, setTotalAssistidoTempo] = useState();
     const [file, setFile] = useState(null);
 
-    const upload = (e) => {
+    const upload = (e, arquivo) => {
         e.preventDefault();
         let formData = new FormData();
-        formData.append("screenshot", file);
+        formData.append("screenshot", arquivo);
 
         Axios.post("http://localhost:3232/trocaravatar", formData,  {withCredentials: true}, {
             headers: {
@@ -92,9 +92,10 @@ function PagePefil() {
                 <div className={styles.userAvatar}>
                     <div className={styles.metadeAvatar}>
                         <div id={styles.alterarBanner}><AiFillCamera/></div>
-                        <img src={banner} alt="" />
+                        <img  src={banner} alt="" />
                     </div>
-                    <div id={styles.overAvatar}><AiFillCamera/></div>
+                    <div id={styles.overAvatar}> <input type="file" name="screenshot" onChange={(e) => upload(e, e.target.files[0])}
+                      style={{opacity: 0.0, position: "absolute", top: 0, left: 0, bottom: 0, right: 0, width: "100%", height:"100%"}} /><AiFillCamera/></div>
                     <img id={styles.avatar} src={avatar} alt="" />
                     <p>{user}</p>
                     <p>@{user}</p>
@@ -175,7 +176,7 @@ function PagePefil() {
 
                             <button onClick={() => toggleEditBtn(2)}>Alterar</button>
                         </div>
-                        <div className={styles.perfilInfos}>
+                        {/* <div className={styles.perfilInfos}>
                             <p><FaQuoteLeft /> Avatar</p>
                             <input
                                 type="file"
@@ -185,7 +186,7 @@ function PagePefil() {
                                     setFile(e.target.files[0]);
                                 }} />
                             <button className="" onClick={(e) => upload(e)}>Mudar</button>
-                        </div>
+                        </div> */}
                     </div>
                     <div className={styles.EditGeral}>
                         <h2>Dados Pessoais</h2>

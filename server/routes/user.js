@@ -64,5 +64,6 @@ router.post("/buscar", buscarUser)
 //teste avatar
 
 router.post("/trocaravatar", verifyToken, userById, trocarAvatar)
+// router.post("/trocaravatar", verifyToken, userById, trocarBanner)
 
 module.exports = router;
