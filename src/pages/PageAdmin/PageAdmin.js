@@ -6,6 +6,7 @@ import { RiEqualizerLine } from "react-icons/ri";
 import { useState, useEffect } from "react";
 import ListAnimesAdmin from "./ListAnimesAdmin/ListAnimesAdmin";
 import AddAnime from "./AddAnime/AddAnime";
+import UsuariosAdmin from "./UsuariosAdmin/UsuariosAdmin";
 function PageAdmin () { 
     const { user, setUser } = useContext(UserContext);
 
@@ -49,7 +50,7 @@ function PageAdmin () {
                 </div>
                 <div className={toggleState === 4 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                 <div className={styles.naoTem}>
-                        
+                        <UsuariosAdmin/>
                         </div>
                 </div>
                 </div>
