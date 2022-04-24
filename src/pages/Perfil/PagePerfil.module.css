@@ -103,7 +103,7 @@
   top: 20.1%;
   left: 32.1%;
   background-color: #0b0b1398;
-  padding: 35px 35px 20px 35px;
+  padding:10% 10% 8% 11%;
   z-index: 4;
   border-radius: 50%;
   font-size: 50px;
@@ -116,6 +116,9 @@
   fill: #0b0b13;
   cursor: pointer;
   transition: 0.4s;
+}
+#overAvatar input{
+  cursor: pointer;
 }
 #overAvatar svg {
   fill: #ffbe63;
@@ -380,5 +383,12 @@ padding-top: 20px;
       float: left;
       margin-left: 0px;
       margin-top: 0px;
+  }
+
+  #overAvatar{
+
+    padding:10% 14% 9% 11%;
+
+  
   }
   }

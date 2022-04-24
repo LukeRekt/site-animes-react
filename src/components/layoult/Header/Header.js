@@ -56,7 +56,7 @@ function Header() {
                     {/* <Link to="/perfil"></Link> */}
                     {/* <Link to="/perfil"> */}
                     {/* {user ? (<img className={styles.avatar} src={avatar} alt="Avatar do usuário" />) : (<img className={styles.avatar} src="http://localhost:3232/static/imagens/avatars/default.png" alt="" />)} */}
-                    {user ? (<img onClick={toggleProfile} className={styles.avatar} src={avatar} alt="Avatar do usuário" />) : (<img onClick={toggleProfile} className={styles.avatar} src="http://localhost:3232/static/imagens/avatars/default.png" alt="" />)}
+                    {user ? (<img onClick={toggleProfile} className={styles.avatar} src={avatar} alt="Perfil" />) : (<img onClick={toggleProfile} className={styles.avatar} src="http://localhost:3232/static/imagens/avatars/default.png" alt="" />)}
 
                     {/* </Link> */}
                     {/* <FaBell /> */}

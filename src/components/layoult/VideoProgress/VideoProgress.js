@@ -21,7 +21,7 @@ function VideoProgress(props) {
 
     return (
         <div className={styles.BarraTotal}>
-            {tempoSalvo == null ? (<></>) : (<div className={styles.BarraConcluido} style={{width: `${tempoSalvo}%`}}><p>{tempoSalvo}%</p></div>)}
+            {tempoSalvo == null ? (<></>) : ( isNaN(tempoSalvo) ? (<div className={styles.BarraConcluido} style={{width: `0%`}}><p>0%</p></div>) : (<div className={styles.BarraConcluido} style={{width: `${tempoSalvo}%`}}><p>{tempoSalvo}%</p></div>))}
             
         </div>
     )
