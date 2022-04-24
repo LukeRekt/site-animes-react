@@ -13,7 +13,6 @@ function ListAnimesAdmin (props){
             .then(res => {
                 setAnimesAdmin(res.data.animes)
                 setCarregandoFavoritos(false)
-                console.log(AnimesAdmin.length)
             })
     }, [])
 
