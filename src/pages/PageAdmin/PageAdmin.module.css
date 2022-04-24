@@ -1,5 +1,73 @@
-.container{
-    width: 70%;
-    background-color: red;
-    margin: auto;
-}
+.PerfilContainer{
+      width: 94.5%;
+      margin-left: 15%;
+  }
+  .rightUser p{
+      color: #ffffff;
+      
+  }
+  .rightUser{
+      width: 74%;
+      background-color: #181829;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 2px;
+  }
+  .tab_color {
+    width: 100%;
+  }
+  .tab_color p{
+    text-align: center;
+      margin: 0;
+      padding: 9%;
+      transition: 0.3s;
+      cursor: pointer;
+      font-size: 20px;
+  }
+  .tab_color p:hover{
+      background-color: #0C0C1D;
+      color: #eb9a2a;
+  }
+  .tab_color p svg {
+      transition: 0.4s;
+      font-size: 16px;
+  }
+  .tab_color p:hover > svg{
+      fill: #eb9a2a;
+  }
+  .content {
+      background: #181829;
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+      display: none;
+      border-radius: 7px; 
+      margin-left: 10px;
+      margin-top: 5px;
+    }
+    .content_tabs{
+        width: 71%;
+    }
+    .content h2 {
+      padding: 0px 0 5px 0px;
+      color: white;
+    }
+    .content p {
+      width: 100%;
+      height: 100%;
+      color: rgba(255, 255, 255, .6);
+      display: inline;
+    }
+   
+    .active_content {
+      display: block;
+    }
+    .naoTem p{
+      color: #5555553b;
+      text-align: center;
+      font-size: 50px;
+    }
+    .ativo{
+      background-color: #0C0C1D !important;
+      color: #0c0c1d !important;
+    }
