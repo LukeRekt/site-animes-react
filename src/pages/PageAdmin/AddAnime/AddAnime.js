@@ -1,3 +1,5 @@
+import styles from './AddAnime.module.css'
+
 function AddAnime(){
 
     return (
