@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import styles from './AddAnime.module.css'
 
@@ -7,7 +8,7 @@ function AddAnime(){
     const [descricao, setDescricao] = useState("");
     const [nota, setNota] = useState("");
     const [episodios, setEpisodios] = useState("");
-    const [lancamento, setLancamento] = useState("");
+    const [lancamento, setLancamento] = useState(false);
     const [diaLancamento, setDiaLancamento] = useState("");
     const [especiais, setEspeciais] = useState("");
     const [filmes, setFilmes] = useState("");
@@ -17,6 +18,41 @@ function AddAnime(){
     const [ano, setAno] = useState("");
     const [imagem, setImagem] = useState("");
     const [temporadas, setTemporadas] = useState("");
+    
+
+    const variables = {
+        id:25,
+        nome: nome,
+        descricao: descricao,
+        nota: nota,
+        temporadas: temporadas,
+        episodios: episodios,
+        lancamento: lancamento,
+        diaLancamento: diaLancamento,
+        especiais: especiais,
+        filmes: filmes,
+        autor: autor,
+        diretor: diretor,
+        estudio: estudio,
+        ano: ano,
+        imagem: imagem
+        
+    }
+
+
+    const handleRegister = async (e) => {
+            axios.post('http://localhost:3232/addanimes', variables, { withCredentials: true }, {
+                headers: {
+                //   'Authorization': `${cookies.get('jwt')}`,
+                'Content-Type': 'application/json'
+                }
+              })
+              .catch((error) => {
+                console.error(error)
+              })
+        
+}
+
 
     // const handleRegister = async (e) => {
     //     e.preventDefault();
@@ -40,9 +76,10 @@ function AddAnime(){
             <form className={styles.login}>
                 <input type="text" placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)} />
                 <input type="text" placeholder="Descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} />
-                <input type="text" placeholder="Nota" value={nota} onChange={(e) => setNota(e.target.value)} />
-                <input type="text" placeholder="Episodios" value={episodios} onChange={(e) => setEpisodios(e.target.value)} />
-                <input type="text" placeholder="Lancamento" value={lancamento} onChange={(e) => setLancamento(e.target.value)} />
+                <input type="number" placeholder="Nota" value={nota} onChange={(e) => setNota(e.target.value)} />
+                <input type="number" placeholder="Episodios" value={episodios} onChange={(e) => setEpisodios(e.target.value)} />
+                <span>Em Lancamento?</span>
+                <input type="checkbox" placeholder="Lancamento" value={lancamento} onChange={(e) => setLancamento(!lancamento)} />
                 <input type="text" placeholder="Dia Lancamento" value={diaLancamento} onChange={(e) => setDiaLancamento(e.target.value)} />
                 <input type="text" placeholder="Especiais" value={especiais} onChange={(e) => setEspeciais(e.target.value)} />
                 <input type="text" placeholder="Filmes" value={filmes} onChange={(e) => setFilmes(e.target.value)} />
@@ -64,15 +101,17 @@ function AddAnime(){
                     !hasUpperChar ||
                     !hasNumber ||
                     !hasSpecialChar} 
-                    onClick={handleRegister}
+                    
                     */}
 
-                <button className={styles.botao}>Registrar</button>
+                <button onClick={handleRegister} className={styles.botao}>Registrar</button>
                            
             </form>
+            <button onClick={()=> console.log(lancamento)} className={styles.botao}>Registrar</button>
         </div>
     )
-
+                
+            
 
 }
 export default AddAnime
