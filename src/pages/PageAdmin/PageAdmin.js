@@ -10,7 +10,7 @@ import UsuariosAdmin from "./UsuariosAdmin/UsuariosAdmin";
 function PageAdmin () { 
     const { user, setUser } = useContext(UserContext);
 
-    const [toggleState, setToggleState] = useState(5);
+    const [toggleState, setToggleState] = useState(1);
 
     const toggleTab = (index) => {
         setToggleState(index);
