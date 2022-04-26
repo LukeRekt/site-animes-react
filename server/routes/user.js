@@ -4,7 +4,7 @@ const multer = require('multer');
 const upload = multer();
 //importar controllers
 const { register, login, logout, getLoggedInUser, buscarUser, trocarAvatar } = require("../controllers/user")
-const { registera, listar, getanime, getEpisodes, getAllEpisodes, getEpisodespage, AddEpisode, } = require("../controllers/animes")
+const { addAnime, listar, getanime, getEpisodes, getAllEpisodes, getEpisodespage, AddEpisode, } = require("../controllers/animes")
 const { getFavorito, getAllFavoritos, addFavorito, remFavorito } = require("../controllers/favoritos")
 const { getProgresso, addProgresso, remProgresso, updateProgresso, getAllProgresso } = require("../controllers/progresso")
 //importar middlewares
@@ -22,7 +22,7 @@ router.get("/user", verifyToken, userById, getLoggedInUser);
 
 //animes
 
-router.post("/addanimes", verifyToken, userById, registera)
+router.post("/addanimes", verifyToken, userById, addAnime)
 
 router.get("/getanim", listar)
 

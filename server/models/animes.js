@@ -6,6 +6,7 @@ const animesSchema = new mongoose.Schema(
 			type: Number,
 			required: true,
 			trim: true,
+			unique: true,
 		},
 		nome: {
 			type: String,

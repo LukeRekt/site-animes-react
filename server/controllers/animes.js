@@ -2,7 +2,7 @@ const Anime = require("../models/animes")
 const Episodios = require("../models/episodios")
 require("dotenv").config();
 
-exports.registera = async (req, res, next) => {
+exports.addAnime = async (req, res, next) => {
     //testar se o user ja existe
 
 
@@ -11,7 +11,7 @@ exports.registera = async (req, res, next) => {
     await anime.save();
 
     res.status(201).json({
-        message: "Cadastrado com sucesso!",
+        message: "Anime cadastrado com sucesso!",
     });
     next();
 };
