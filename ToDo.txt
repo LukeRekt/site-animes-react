@@ -5,11 +5,9 @@ Informacoes do usuário:
    -Segue o mesmo padrao do Favoritos, porem, com episodios.| - Ideia descartada temporariamente
 
  Perfil:
-  -adicionar os assistidos e sua barra de progresso
 Edicao de dados pessoais
-Encontrar uma solucao para o envio de imagens... (Corrigido com Withcredentials: true)
-
 TOOLING:
   -Painel de adm
   -Adicionar/Remover Animes e episodios
+  -Editar Episodios
   -Banimento de usuários

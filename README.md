@@ -14,7 +14,7 @@ Site de animes criado usando a stack M.E.R.N
 - [ ] Listas
 - [ ] Ferramenta para adicionar animes
 - [ ] Watchpary
-
+- [ ] Página de ADM
 ## Instruções de instalação e configuração
 
 Clone este repositório. Você precisará do `node` e `npm` instalados globalmente em sua máquina.
