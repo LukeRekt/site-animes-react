@@ -74,9 +74,11 @@
 .avatar{
     margin-top: 10px;
     margin-right: 100px;
-    max-width: 70px;
     border-radius: 50%;
+    min-height: 70px;
     max-height: 70px;
+    max-width: 70px;
+    min-width: 70px;
     cursor: pointer;
 }
 .perfil{

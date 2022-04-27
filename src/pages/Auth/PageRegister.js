@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify'
 import { UserContext } from "../../UserContext"
 import { useContext } from "react"
+import ReCAPTCHA from 'react-google-recaptcha';
 //funcoes
 import { register } from '../../api/user'
 
@@ -24,6 +25,7 @@ function PageRegister() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    const [captcha, setCaptcha] = useState(false);
     { user ? navigate("/") : console.log("ok") }
 
     //validacao da senha
@@ -32,6 +34,12 @@ function PageRegister() {
     let hasUpperChar = /(.*[A-Z].*)/.test(password);
     let hasNumber = /(.*[0-9].*)/.test(password);
     let hasSpecialChar = /(.*[^a-zA-Z0-9].*)/.test(password);
+
+
+    function onChange(value) {
+        console.log('Captcha value:', value);
+        setCaptcha(true);
+      }
 
     const handleRegister = async (e) => {
         e.preventDefault();
@@ -60,8 +68,10 @@ function PageRegister() {
                 {/* <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type="password" placeholder="Confirmar Senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /> */}
 
-                
-
+<ReCAPTCHA
+        sitekey="6Ldy4acfAAAAACb4ewQbknKrJSQjQjQ0rZVTbz-_"
+        onChange={onChange}
+        />
                 <button className={styles.botao} onClick={handleRegister} disabled={
                     !username ||
                     !email ||
@@ -72,7 +82,8 @@ function PageRegister() {
                     !hasLowerChar ||
                     !hasUpperChar ||
                     !hasNumber ||
-                    !hasSpecialChar} >Registrar</button>
+                    !hasSpecialChar ||
+                    captcha == false} >Registrar</button>
     <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
                     {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
                 </IconButton>

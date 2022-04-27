@@ -5,7 +5,7 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import ReCAPTCHA from 'react-google-recaptcha';
 import { UserContext } from "../../UserContext"
 
 import { login } from '../../api/user'
@@ -19,6 +19,7 @@ function PageLogin() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    const [captcha, setCaptcha] = useState(false);
 
     { user ? navigate("/") : console.log("ok") }
 
@@ -40,9 +41,14 @@ function PageLogin() {
             toast.error(err);
         }
     }
+    function onChange(value) {
+        console.log('Captcha value:', value);
+        setCaptcha(true);
+      }
 
     return (
         <div className={styles.container}>
+
 
             {/* <div className={styles.formGroup}>
                 <TextField size="medium"
@@ -59,8 +65,12 @@ function PageLogin() {
                 <input type="email" autoComplete="true" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 
                 {showPassword ? ( <div><input type="text" autoComplete="true" placeholder="Senha " value={password} onChange={(e) => setPassword(e.target.value)} /></div>) : (<div><input type="password" autoComplete="true" placeholder="Senha " value={password} onChange={(e) => setPassword(e.target.value)} /></div>)}
+                <ReCAPTCHA
+        sitekey="6Ldy4acfAAAAACb4ewQbknKrJSQjQjQ0rZVTbz-_"
+        onChange={onChange}
+        />
                 <button onClick={handleLogin} className={styles.botao} disabled={!email ||
-                    !password}>Login</button>
+                    !password || captcha == false}>Login</button>
                 <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
                     {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
                 </IconButton>
