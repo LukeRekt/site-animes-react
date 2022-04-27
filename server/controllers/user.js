@@ -170,14 +170,16 @@ exports.trocarAvatar = async (req, res) => {
     });
     console.log(username)
     res.status(200).json({ novoAvatar: doc.userAvatar })
-
-
-
-
- 
     // 
     // 
     // 
     // 
     
 };
+
+exports.setTeste = async (req, res) => {
+    console.log(req.body);
+    console.log(req.files);
+    return res.status(200);
+
+}

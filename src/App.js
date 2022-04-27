@@ -28,6 +28,7 @@ import {UserContext} from "./UserContext"
 //funcoes
 
 import {getUser} from './api/user'
+import Testes from './pages/Testes/Testes';
 
 
 function App() {
@@ -83,6 +84,7 @@ function App() {
           <Route exact path="/user/:id" element={<UserProfileSearch />}></Route>
           <Route path='*' element={<PaginaNaoEncontrada />}></Route>
           <Route exact path="/admin" element={<PageAdmin />}></Route>
+          <Route exact path="/testes" element={<Testes />}></Route>
           {/* <Route path="/projects" element={}></Route> */}
 
         </Routes>
