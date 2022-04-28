@@ -106,7 +106,7 @@ function PagePefil() {
                 </div>
                 <div className={styles.horasAssistidos}>
                     {console.log(totalAssistido)}
-                    <p>videos assistidos <br /> {totalAssistido.length} (aprox {totalAssistidoTempo} horas)</p>
+                    <p>episódios assistidos <br /> {totalAssistido.length} (aprox {totalAssistidoTempo} horas)</p>
                     <div className={styles.assistidosDetail}>
                         <div className={styles.detailsInside}>
                             <FaPlay className={styles.playbutton} />

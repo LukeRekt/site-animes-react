@@ -179,6 +179,9 @@ exports.trocarAvatar = async (req, res) => {
 
 exports.setTeste = async (req, res) => {
     console.log(req.body);
+    if(req.files == null){
+        return res.status(200);    
+    }
     console.log(req.files);
     return res.status(200);
 
