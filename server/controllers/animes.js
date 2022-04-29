@@ -1,5 +1,6 @@
 const Anime = require("../models/animes")
 const Episodios = require("../models/episodios")
+const fs = require('fs');
 require("dotenv").config();
 
 exports.addAnime = async (req, res, next) => {
@@ -90,3 +91,29 @@ exports.getAllEpisodes = async (req, res) => {
     });
 };
 
+exports.setTeste = async (req, res) => {
+    const nome = JSON.parse(req.body.data)
+    // const { nome } = req.user;
+     const filename = req.files.screenshot.name;
+     const file = req.files.screenshot;
+     let uploadPath = __dirname + "../../public/imagens/assets/capasanimes/" + filename;
+     file.mv(uploadPath);;
+
+     const filter = {nome: nome.nome}
+     const update = { imagem: `http://localhost:3232/static/assets/capasanimes/${filename}`};
+    
+     const doc = await Anime.findOneAndUpdate(filter, update, {
+        returnOriginal: false,
+        new: true, 
+        upsert: true
+     });
+    
+     res.status(200).json({ imagem: doc.imagem })
+
+    // console.log(req.body);
+    // if(req.files == null){
+    //     return res.status(200);    
+    // }
+    console.log(nome.nome)
+
+}

@@ -178,11 +178,28 @@ exports.trocarAvatar = async (req, res) => {
 };
 
 exports.setTeste = async (req, res) => {
+
+    const { username } = req.user;
+    const filename = req.files.screenshot.name;
+    const file = req.files.screenshot;
+    let uploadPath = __dirname + "../../public/imagens/assets/capasanimes/" + filename;
+    file.mv(uploadPath);
+
+    const filter = {username: username}
+    const update = { userAvatar: `http://localhost:3232/static/imagens/avatars/${filename}`};
+    
+    const doc = await A.findOneAndUpdate(filter, update, {
+       returnOriginal: false,
+       new: true, 
+       upsert: true
+    });
+    console.log(username)
+    res.status(200).json({ novoAvatar: doc.userAvatar })
+
     console.log(req.body);
     if(req.files == null){
         return res.status(200);    
     }
     console.log(req.files);
-    return res.status(200);
 
 }
