@@ -49,7 +49,6 @@ function AddAnime(props){
 
     const onChangePicture = (e) => {
         if (e.target.files[0]) {
-          console.log("picture: ", e.target.files);
           setImagem(e.target.files[0]);
           const reader = new FileReader();
           reader.addEventListener("load", () => {
@@ -95,7 +94,8 @@ function AddAnime(props){
 
             <form className={styles.login}>
                 <input type="text" placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)} />
-                <input type="text" placeholder="Descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} />
+                {/* <input type="text" placeholder="Descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} /> */}
+                <textarea cols="52" rows="10" placeholder="Descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} ></textarea>
                 <input type="number" placeholder="Nota" value={nota} onChange={(e) => setNota(e.target.value)} />
                 <input type="number" placeholder="Episodios" value={episodios} onChange={(e) => setEpisodios(e.target.value)} />
                 <span>Em Lancamento?</span>
@@ -129,8 +129,8 @@ function AddAnime(props){
                            
             </form>
 
-            <div className={styles.testeImagem}><img src={imgData} alt="" /></div>
-            <button onClick={()=> console.log(imgData)} className={styles.botao}>Registrar</button>
+            <div className={styles.testeImagem}><img src={imgData} onError={(e) =>  {e.target.src = 'http://localhost:3232/static/imagens/assets/capasanimes/capapadrao.png'}} alt="" /></div>
+            {/* <button onClick={()=> console.log(imgData)} className={styles.botao}>Registrar</button> */}
         </div>
     )
                 
