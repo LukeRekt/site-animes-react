@@ -105,15 +105,19 @@ exports.setTeste = async (req, res) => {
         nome: dados.nome,
         descricao: dados.descricao,
         nota: dados.nota,
+        temporadas: dados.temporadas,
         episodios: dados.episodios,
         lancamento: dados.lancamento,
+        diaLancamento: dados.diaLancamento,
         especiais: dados.especiais,
         filmes: dados.filmes,
         autor: dados.autor,
         diretor: dados.diretor,
         estudio: dados.estudio,
         ano: dados.ano,
-        imagem: `http://localhost:3232/static/imagens/assets/capasanimes/${filename}`};
+        imagem: `http://localhost:3232/static/imagens/assets/capasanimes/${filename}`,
+        temas: dados.temas};
+        
     
      const doc = await Anime.findOneAndUpdate(filter, update, {
         returnOriginal: false,

@@ -19,7 +19,7 @@ function AddAnime(props){
     const [temporadas, setTemporadas] = useState("");
     const [imagem, setImagem] = useState([])
     const [imgData, setImgData] = useState([])
-
+    const [temas, setTemas] = useState("")
     const variables = {
         id: props.totalIds + 1,
         nome: nome,
@@ -34,7 +34,9 @@ function AddAnime(props){
         autor: autor,
         diretor: diretor,
         estudio: estudio,
-        ano: ano
+        ano: ano,
+        temas: temas.split(','),
+
         
     }
 
@@ -110,6 +112,7 @@ function AddAnime(props){
                 {/* <input type="text" placeholder="Imagem" value={imagem} onChange={(e) => setImagem(e.target.value)} /> */}
                 <input type="file" name="screenshot" onChange={onChangePicture} />
                 <input type="text" placeholder="Temporadas" value={temporadas} onChange={(e) => setTemporadas(e.target.value)} />
+                <input type="text" placeholder="Temas" value={temas} onChange={(e) => setTemas(e.target.value)} />
                
                 {/* disabled={
                     !username ||
@@ -126,11 +129,11 @@ function AddAnime(props){
                     */}
 
                 <button onClick={handleRegister} className={styles.botao}>Registrar</button>
-                           
+                           <p>TotalAnimes: {props.totalIds}</p>
             </form>
 
             <div className={styles.testeImagem}><img src={imgData} onError={(e) =>  {e.target.src = 'http://localhost:3232/static/imagens/assets/capasanimes/capapadrao.png'}} alt="" /></div>
-            {/* <button onClick={()=> console.log(imgData)} className={styles.botao}>Registrar</button> */}
+            {/* <button onClick={()=> console.log(temas.split(','))} className={styles.botao}>Registrar</button> */}
         </div>
     )
                 
