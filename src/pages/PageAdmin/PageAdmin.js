@@ -7,10 +7,21 @@ import { useState, useEffect } from "react";
 import ListAnimesAdmin from "./ListAnimesAdmin/ListAnimesAdmin";
 import AddAnime from "./AddAnime/AddAnime";
 import UsuariosAdmin from "./UsuariosAdmin/UsuariosAdmin";
+import axios from "axios";
 function PageAdmin () { 
     const { user, setUser } = useContext(UserContext);
 
     const [toggleState, setToggleState] = useState(1);
+
+    const [animesQntt, setAnimesQntt] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:3232/getanim')
+            .then(res => {
+                setAnimesQntt(res.data.animes.length)
+                
+            })
+    }, [])
 
     const toggleTab = (index) => {
         setToggleState(index);
@@ -31,7 +42,7 @@ function PageAdmin () {
             <div className={styles.content_tabs}>
                 <div className={toggleState === 1 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.tab_Favoritos}>
-                    <AddAnime/>
+                    <AddAnime totalIds={animesQntt}/>
                         
                     </div>
 

@@ -92,15 +92,28 @@ exports.getAllEpisodes = async (req, res) => {
 };
 
 exports.setTeste = async (req, res) => {
-    const nome = JSON.parse(req.body.data)
+    const dados = JSON.parse(req.body.data)
     // const { nome } = req.user;
      const filename = req.files.screenshot.name;
      const file = req.files.screenshot;
      let uploadPath = __dirname + "../../public/imagens/assets/capasanimes/" + filename;
      file.mv(uploadPath);;
 
-     const filter = {nome: nome.nome}
-     const update = { imagem: `http://localhost:3232/static/assets/capasanimes/${filename}`};
+     const filter = {nome: dados.nome}
+     const update = {
+        id: dados.id,
+        nome: dados.nome,
+        descricao: dados.descricao,
+        nota: dados.nota,
+        episodios: dados.episodios,
+        lancamento: dados.lancamento,
+        especiais: dados.especiais,
+        filmes: dados.filmes,
+        autor: dados.autor,
+        diretor: dados.diretor,
+        estudio: dados.estudio,
+        ano: dados.ano,
+        imagem: `http://localhost:3232/static/imagens/assets/capasanimes/${filename}`};
     
      const doc = await Anime.findOneAndUpdate(filter, update, {
         returnOriginal: false,
@@ -114,6 +127,6 @@ exports.setTeste = async (req, res) => {
     // if(req.files == null){
     //     return res.status(200);    
     // }
-    console.log(nome.nome)
+    console.log(req.body.data)
 
 }

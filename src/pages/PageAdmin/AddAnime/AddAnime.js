@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import styles from './AddAnime.module.css'
 
-function AddAnime(){
+function AddAnime(props){
 
     const [nome, setNome] = useState("");
     const [descricao, setDescricao] = useState("");
@@ -16,12 +16,12 @@ function AddAnime(){
     const [diretor, setDiretor] = useState("");
     const [estudio, setEstudio] = useState("");
     const [ano, setAno] = useState("");
-    const [imagem, setImagem] = useState("");
     const [temporadas, setTemporadas] = useState("");
-    
+    const [imagem, setImagem] = useState([])
+    const [imgData, setImgData] = useState([])
 
     const variables = {
-        id:25,
+        id: props.totalIds + 1,
         nome: nome,
         descricao: descricao,
         nota: nota,
@@ -34,14 +34,34 @@ function AddAnime(){
         autor: autor,
         diretor: diretor,
         estudio: estudio,
-        ano: ano,
-        imagem: imagem
+        ano: ano
         
     }
 
 
+
+
+    const formData = new FormData();
+  
+
+    formData.append('data', JSON.stringify(variables));
+    formData.append('screenshot', imagem)
+
+    const onChangePicture = (e) => {
+        if (e.target.files[0]) {
+          console.log("picture: ", e.target.files);
+          setImagem(e.target.files[0]);
+          const reader = new FileReader();
+          reader.addEventListener("load", () => {
+            setImgData(reader.result);
+          });
+          reader.readAsDataURL(e.target.files[0]);
+        }
+      };
+
     const handleRegister = async (e) => {
-            axios.post('http://localhost:3232/addanimes', variables, { withCredentials: true }, {
+        //http://localhost:3232/addanimes
+            axios.post('http://localhost:3232/Testes', formData, { withCredentials: true }, {
                 headers: {
                 //   'Authorization': `${cookies.get('jwt')}`,
                 'Content-Type': 'application/json'
@@ -87,7 +107,8 @@ function AddAnime(){
                 <input type="text" placeholder="Diretor" value={diretor} onChange={(e) => setDiretor(e.target.value)} />
                 <input type="text" placeholder="Estudio" value={estudio} onChange={(e) => setEstudio(e.target.value)} />
                 <input type="text" placeholder="Ano" value={ano} onChange={(e) => setAno(e.target.value)} />
-                <input type="text" placeholder="Imagem" value={imagem} onChange={(e) => setImagem(e.target.value)} />
+                {/* <input type="text" placeholder="Imagem" value={imagem} onChange={(e) => setImagem(e.target.value)} /> */}
+                <input type="file" name="screenshot" onChange={onChangePicture} />
                 <input type="text" placeholder="Temporadas" value={temporadas} onChange={(e) => setTemporadas(e.target.value)} />
                
                 {/* disabled={
@@ -107,7 +128,9 @@ function AddAnime(){
                 <button onClick={handleRegister} className={styles.botao}>Registrar</button>
                            
             </form>
-            <button onClick={()=> console.log(lancamento)} className={styles.botao}>Registrar</button>
+
+            <div className={styles.testeImagem}><img src={imgData} alt="" /></div>
+            <button onClick={()=> console.log(imgData)} className={styles.botao}>Registrar</button>
         </div>
     )
                 
