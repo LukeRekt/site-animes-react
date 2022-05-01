@@ -8,6 +8,6 @@ Informacoes do usuário:
 Edicao de dados pessoais
 TOOLING:
   -Painel de adm
-  -Adicionar/Remover Animes e episodios
+  - Remover Animes e episodios
   -Editar Episodios
   -Banimento de usuários

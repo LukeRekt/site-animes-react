@@ -12,7 +12,7 @@ Site de animes criado usando a stack M.E.R.N
 - [ ] Update imagens do usuario
 - [x] Favoritos
 - [ ] Listas
-- [ ] Ferramenta para adicionar animes
+- [x] Ferramenta para adicionar animes
 - [ ] Watchpary
 - [ ] Página de ADM
 ## Instruções de instalação e configuração
