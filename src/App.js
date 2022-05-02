@@ -29,6 +29,7 @@ import {UserContext} from "./UserContext"
 
 import {getUser} from './api/user'
 import Testes from './pages/Testes/Testes';
+import EditarAnime from './pages/PageAdmin/ListAnimesAdmin/EditarAnime/EditarAnime';
 
 
 function App() {
@@ -84,6 +85,7 @@ function App() {
           <Route exact path="/user/:id" element={<UserProfileSearch />}></Route>
           <Route path='*' element={<PaginaNaoEncontrada />}></Route>
           <Route exact path="/admin" element={<PageAdmin />}></Route>
+          <Route exact path="/admin/editar/:id" element={<EditarAnime />}></Route>
           <Route exact path="/testes" element={<Testes />}></Route>
           {/* <Route path="/projects" element={}></Route> */}
 

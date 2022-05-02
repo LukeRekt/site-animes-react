@@ -22,7 +22,7 @@ function ListAnimesAdmin (props){
   
   {CarregandoAnimesAdmin ? (<>Carregando</>) : ( AnimesAdmin.length == 0 ? (<div id={styles.nenhumFav}><p> Você não tem nenhum favorito <HiEmojiSad/></p></div>) : (AnimesAdmin.map((teste, index) => {
                     return <div key={index} className={styles.animeCapa}>
-                    <Link to={`/anime/${teste.id}`}>
+                    <Link to={`/admin/editar/${teste.id}`}>
                     <div className={styles.animeOver}>
                     <small>
                     <p>{teste.nome} </p>
