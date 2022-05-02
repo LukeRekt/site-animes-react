@@ -9,6 +9,7 @@ import Tabs from '../../components/layoult/Tabs/Tabs';
 import AnimeTemas from '../../components/layoult/AnimeTemas/AnimeTemas';
 import { UserContext } from '../../UserContext'
 import BotaoFavorito from '../../components/layoult/BotaoFavorito/BotaoFavorito';
+import Helmet from 'react-helmet';
 
 function PageAnime() {
     const { user } = useContext(UserContext);
@@ -43,7 +44,30 @@ function PageAnime() {
 
     return (
         <div className={styles.container}>
-            
+            <Helmet>
+            <title>{posts.nome}</title>
+            <link rel="canonical" href="http://mysite.com/example" />
+            {/* Microsoft */}
+            <meta name="msapplication-TileImage" content="http://www.example.com/image01.jpg"/>
+
+            {/* Fb & Wp */}
+            <meta property="og:site_name" content="The Rock Photo Studio"/>
+            <meta property="og:title" content="The Rock Photo Studio in Florida"/>
+            <meta property="og:description" content="The best photo studio for your events"/>
+
+            <meta property="og:image" content="http://www.example.com/image01.jpg"/>
+
+<meta property="og:type" content="website" />
+<meta property="og:image:type" content="image/jpeg"/>
+
+{/* Tamanho da imagem. Uma tamanho maior que 300px nao funciona no whatsapp */}
+<meta property="og:image:width" content="300"/>
+<meta property="og:image:height" content="300"/>
+
+{/* Site que vai ser acessado ao clicar */}
+<meta property="og:url" content="http://teste.com"/>
+
+            </Helmet>
             <div className={styles.nomeAnime}>
                 {posts.nome}
             </div>
