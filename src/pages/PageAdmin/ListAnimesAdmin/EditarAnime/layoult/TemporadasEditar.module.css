@@ -1,0 +1,20 @@
+.container{
+    background-color: green;
+}
+.listTemporadas{
+    display: flex;
+    flex-direction: column;
+    
+}
+.barraTemporada{
+    background-color: aqua;
+    width: 60%;
+    margin: auto;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.barraTemporada:hover{
+    background-color: rgb(12, 15, 204);
+
+}

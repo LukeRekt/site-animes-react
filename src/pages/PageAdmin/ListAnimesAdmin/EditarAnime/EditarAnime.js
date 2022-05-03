@@ -2,12 +2,14 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './EditarAnime.module.css'
+import TemporadasEditar from './layoult/TemporadasEditar';
 
 function EditarAnime(){
     const { id } = useParams();
-    const [posts, setPosts] = useState([])
+    
 
     //valores do form
+    
     const [nome, setNome] = useState([])
     const [descricao, setDescricao] = useState([])
     const [nota, setNota] = useState([])
@@ -19,6 +21,7 @@ function EditarAnime(){
     const [diretor, setDiretor] = useState([])
     const [estudio, setEstudio] = useState([])
     const [ano, setAno] = useState([])
+    const [imagem, setImagem] = useState([])
     const [temporadas, setTemporadas] = useState([])
     const [temas, setTemas] = useState([])
 
@@ -31,13 +34,14 @@ function EditarAnime(){
                 setDescricao(res.data.animes.descricao)
                 setNota(res.data.animes.nota)
                 setEpisodios(res.data.animes.episodios)
-                setDiaLancameto(res.data.animes.diaLancameto)
+                setDiaLancameto(res.data.animes.diaLancamento)
                 setEspeciais(res.data.animes.especiais)
                 setFilmes(res.data.animes.filmes)
                 setAutor(res.data.animes.autor)
                 setDiretor(res.data.animes.diretor)
                 setEstudio(res.data.animes.estudio)
                 setAno(res.data.animes.ano)
+                setImagem(res.data.animes.imagem)
                 setTemporadas(res.data.animes.temporadas)
                 setTemas(res.data.animes.temas)
             }).catch((err) => {
@@ -49,7 +53,7 @@ function EditarAnime(){
     return (
         <div className={styles.container}>
             <div className={styles.imagem}>
-                <img src={posts.imagem} alt="" />
+                <img src={imagem} alt="" />
             </div>
             <div className={styles.formulario}>
                 <form>
@@ -68,9 +72,13 @@ function EditarAnime(){
                     <input type="file" name="" id="" />
                     <input type="text" value={temporadas} placeholder='Temporadas' />
                     <input type="text" value={temas} placeholder='Temas' />
-                    <button>Enviar</button>
+                    <button>Alterar</button>
                 </form>
+                
             </div>
+            <div className={styles.temporadas}>
+                    <TemporadasEditar temporadas={temporadas}/>
+                </div>
             {console.log(nome)}
             {console.log(temas)}
             </div>
