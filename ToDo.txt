@@ -1,13 +1,9 @@
 ToDo com ordem de prioridade:
-Transferir todo o trabalho de processamento de dados para o node.js.
-Informacoes do usuário:
- | -Ver mais tarde:
-   -Segue o mesmo padrao do Favoritos, porem, com episodios.| - Ideia descartada temporariamente
-
- Perfil:
-Edicao de dados pessoais
 TOOLING:
   -Painel de adm
   - Remover Animes e episodios
   -Editar Episodios
-  -Banimento de usuários
+
+Informacoes do usuário:
+ Perfil:
+Edicao de dados pessoais
