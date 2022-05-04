@@ -8,14 +8,14 @@
     transition: 0.4s;
     }
     .searchWrapper{
-        margin-left: 15%;
-        margin-top: 5%;
+        margin-left: 25%;
+        margin-top: 10%;
     }
     
     
     .fechar{
         background-color: #0c0c1dbd;
-        float: left;
+        float: right;
         border: 1px solid rgba(105, 105, 105, 0.473);
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;

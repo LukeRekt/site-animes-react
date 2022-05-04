@@ -60,17 +60,34 @@ function PageLogin() {
             </div> */}
 
 
+            <div className={styles.leftform}>
+                a
+            </div>
+
+
+
 
             <form className={styles.login}>
+                <h1>LOGIN DO USUÁRIO</h1>
                 <input type="email" autoComplete="true" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 
                 {showPassword ? ( <div><input type="text" autoComplete="true" placeholder="Senha " value={password} onChange={(e) => setPassword(e.target.value)} /></div>) : (<div><input type="password" autoComplete="true" placeholder="Senha " value={password} onChange={(e) => setPassword(e.target.value)} /></div>)}
+                <small><span>Esqueceu sua senha ?</span></small>
+                <div className="captcha" style={{transform:"scale(1.1, 1)", transform: "translate(-5px, 0px)", transformOrigin:"0 0"}}>
                 <ReCAPTCHA
         sitekey="6Ldy4acfAAAAACb4ewQbknKrJSQjQjQ0rZVTbz-_"
         onChange={onChange}
+        theme="dark"
         />
+        </div>
                 <button onClick={handleLogin} className={styles.botao} disabled={!email ||
                     !password || captcha == false}>Login</button>
+
+                    <div id={styles.bottomFormText}>
+                    <small>Novo usuário? <span>Cadastre-se</span></small>
+                    <small>Consulte os <span>Termos de usuário.</span></small>
+                    </div>
+                   
                 <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
                     {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
                 </IconButton>
