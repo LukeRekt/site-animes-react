@@ -30,6 +30,8 @@ import {UserContext} from "./UserContext"
 import {getUser} from './api/user'
 import Testes from './pages/Testes/Testes';
 import EditarAnime from './pages/PageAdmin/ListAnimesAdmin/EditarAnime/EditarAnime';
+import LoginVisibilityProvider from './context/LoginVisibility';
+import AuthLoginOverlay from './components/layoult/AuthOverlay/AuthLoginOverlay';
 
 
 function App() {
@@ -60,9 +62,13 @@ function App() {
     <Router>
       
       <UserContext.Provider value={{user, setUser, avatar, setAvatar, banner, setBanner, admin, setAdmin, email, setEmail, favoritos, setFavoritos}}>
+      <LoginVisibilityProvider>
+        <AuthLoginOverlay/>
      <VisibilityProvider>
+      
      <BarraBuscaOverlay/>
      <Header/>
+     
      </VisibilityProvider>
       
       
@@ -91,6 +97,7 @@ function App() {
 
         </Routes>
       </Container>
+      </LoginVisibilityProvider>
       <Footer />
       </UserContext.Provider>
     </Router>

@@ -1,8 +1,9 @@
 import axios from 'axios'
 import React, { useState, useEffect} from 'react'
 import styles from "./Testes.module.css"
+import { useLoginVisibility } from '../../context/LoginVisibility';
 function Testes (){ 
-
+  const { setLoginVisibility } = useLoginVisibility();
     //prototipo para upload de animes com sua respectiva thumb
     const variables = {
         nome: "Luke",
@@ -32,6 +33,16 @@ return (<div className={styles.container}>
 
 <input type="file" name="screenshot" onChange={(e) => setFavorited(e.target.files[0])} />
 <button onClick={onClickFavorite}>Teste</button>
+
+
+
+
+
+<button onClick={() => setLoginVisibility(true)}>PAGINA DE LOGIN</button>
+
+
+
+
 {/* //onClickFavorite */}
 </div>)
 }
