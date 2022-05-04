@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import ReCAPTCHA from 'react-google-recaptcha';
 import { UserContext } from "../../UserContext"
+import { useLoginVisibility } from '../../context/LoginVisibility'
 
 import { login } from '../../api/user'
 
@@ -20,8 +21,8 @@ function PageLogin() {
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [captcha, setCaptcha] = useState(false);
-
-    { user ? navigate("/") : console.log("ok") }
+    const { setLoginVisibility } = useLoginVisibility();
+    // { user ? navigate("/") : console.log("ok") }
 
 
     const handleLogin = async (e) => {
@@ -33,9 +34,9 @@ function PageLogin() {
             else {
                 toast.success(res.message);
                 setUser(res.username)
-
-                navigate("/")
-                window.location.reload();
+                setLoginVisibility(false);
+                 navigate("/")
+                 window.location.reload();
             }
         } catch (err) {
             toast.error(err);
@@ -61,7 +62,10 @@ function PageLogin() {
 
 
             <div className={styles.leftform}>
-                a
+                <div className={styles.animationCanvas}>
+                    
+                    <img src="https://c.tenor.com/WrR1Rxwxw3sAAAAM/nezuko-running.gif" alt="" />
+                </div>
             </div>
 
 

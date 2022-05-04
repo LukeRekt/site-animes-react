@@ -7,7 +7,9 @@ import { toast } from 'react-toastify';
 import { useContext } from 'react';
 import { AiOutlineLogout } from "react-icons/ai";
 import { FaStar } from "react-icons/fa"
+import { useLoginVisibility } from '../../../context/LoginVisibility';
 function ProfileBox(props) {
+    const { setLoginVisibility } = useLoginVisibility();
     const navigate = useNavigate();
     const { user, setUser } = useContext(UserContext);
     const { admin } = useContext(UserContext)
@@ -22,7 +24,7 @@ function ProfileBox(props) {
             .then((res) => {
                 toast.success(res.message);
                 setUser(null);
-                navigate('/login');
+                navigate('/');
             })
             .catch((err) => console.error(err));
     }
@@ -31,7 +33,7 @@ function ProfileBox(props) {
 
             {props.logado ? (<></>) : (<div className={styles.nomeUser}><p>@{user}</p> </div>)}
             <div className={styles.opcoes}>
-                {props.logado ? (<Link to="/login"><div className={styles.login}> <BiKey size="40px" /> <p>Login</p></div></Link>) :
+                {props.logado ? (<div onClick={() => setLoginVisibility(true)} className={styles.login}> <BiKey size="40px" /> <p>Login</p></div>) :
                     (<Link to="/perfil"><div className={styles.login}>  <BiKey size="40px" /><p>Perfil</p></div></Link>)}
 
                 {props.logado ? (<Link to="/registrar"><div className={styles.login}> <BiKey size="40px" /> <p>Registrar</p></div></Link>) :

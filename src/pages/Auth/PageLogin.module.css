@@ -9,6 +9,21 @@
 .leftform{
   background-color: #181829;
   width: 44%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: #00000060 2px 2px 2px;
+}
+.animationCanvas{
+  border-radius: 1%;
+  overflow: hidden;
+  background-color: #cccccc;
+  width: 85%;
+}
+.animationCanvas img{
+
+  width: 100%;
 }
 .formGroup{
    display: block;

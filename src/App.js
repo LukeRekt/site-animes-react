@@ -62,8 +62,9 @@ function App() {
     <Router>
       
       <UserContext.Provider value={{user, setUser, avatar, setAvatar, banner, setBanner, admin, setAdmin, email, setEmail, favoritos, setFavoritos}}>
+      
       <LoginVisibilityProvider>
-        <AuthLoginOverlay/>
+      <AuthLoginOverlay/>
      <VisibilityProvider>
       
      <BarraBuscaOverlay/>
@@ -74,6 +75,9 @@ function App() {
       
       
       <ToastContainer toastStyle={{ backgroundColor: "#0C0C1D" }}/>
+      
+        
+        
       <Container customClass="min-height">
         <Noticias />
         
@@ -85,7 +89,7 @@ function App() {
           <Route exact path="/calendario" element={<Calendario />}></Route>
           <Route exact path="/lista" element={<Lista />}></Route>
           <Route exact path="/favoritos" element={<Favoritos />}></Route>
-          <Route exact path="/login" element={<PageLogin />}></Route>
+          {/* <Route exact path="/login" element={<PageLogin />}></Route> */}
           <Route exact path="/registrar" element={<PageRegister />}></Route>
           <Route exact path="/perfil" element={<PagePefil />}></Route>
           <Route exact path="/user/:id" element={<UserProfileSearch />}></Route>
@@ -98,9 +102,13 @@ function App() {
         </Routes>
       </Container>
       </LoginVisibilityProvider>
-      <Footer />
       </UserContext.Provider>
+      
+      
+      <Footer />
+     
     </Router>
+    
   );
 }
 
