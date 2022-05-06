@@ -31,7 +31,7 @@ import {getUser} from './api/user'
 import Testes from './pages/Testes/Testes';
 import EditarAnime from './pages/PageAdmin/ListAnimesAdmin/EditarAnime/EditarAnime';
 import LoginVisibilityProvider from './context/LoginVisibility';
-import AuthLoginOverlay from './components/layoult/AuthOverlay/AuthLoginOverlay';
+import AuthLoginOverlay from './components/layoult/AuthOverlay/Login/AuthLoginOverlay';
 
 
 function App() {

@@ -64,7 +64,7 @@ function PageLogin() {
             <div className={styles.leftform}>
                 <div className={styles.animationCanvas}>
                     
-                    <img src="https://c.tenor.com/WrR1Rxwxw3sAAAAM/nezuko-running.gif" alt="" />
+                    <img src="http://localhost:3232/static/imagens/assets/nezuko-running.gif" alt="" />
                 </div>
             </div>
 

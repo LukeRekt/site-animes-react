@@ -1,8 +1,8 @@
 import styles from "./AuthLoginOverlay.module.css"
-import PageLogin from "../../../pages/Auth/PageLogin"
+import PageLogin from "../../../../pages/Auth/PageLogin"
 import { AiOutlineClose } from "react-icons/ai";
 
-import { useLoginVisibility } from '../../../context/LoginVisibility'
+import { useLoginVisibility } from '../../../../context/LoginVisibility'
 
 function AuthLoginOverlay() {
     const { loginVisibility, setLoginVisibility } = useLoginVisibility();
