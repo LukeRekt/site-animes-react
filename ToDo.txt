@@ -7,3 +7,7 @@ TOOLING:
 Informacoes do usuário:
  Perfil:
 Edicao de dados pessoais
+Front-End:
+  -Terminar a tela de login
+  -Fazer a nova tela de cadastro.
+  
