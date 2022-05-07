@@ -9,8 +9,10 @@ import { useContext } from 'react';
 import { AiOutlineLogout } from "react-icons/ai";
 import { FaStar } from "react-icons/fa"
 import { useLoginVisibility } from '../../../context/LoginVisibility';
+import { useRegisterVisibility } from '../../../context/RegisterVisibility';
 function ProfileBox(props) {
     const { setLoginVisibility } = useLoginVisibility();
+    const { setRegisterVisibility } = useRegisterVisibility();
     const navigate = useNavigate();
     const { user, setUser } = useContext(UserContext);
     const { admin } = useContext(UserContext)
@@ -42,7 +44,7 @@ function ProfileBox(props) {
                 {props.logado ? (<div onClick={() => setLoginVisibility(true)} className={styles.login}> <BiKey size="40px" /> <p>Login</p></div>) :
                     (<Link to="/perfil"><div className={styles.login}>  <BiKey size="40px" /><p>Perfil</p></div></Link>)}
 
-                {props.logado ? (<Link to="/registrar"><div className={styles.login}> <BsPencilSquare size="34px" /> <p>Registrar</p></div></Link>) :
+                {props.logado ? (<div onClick={() => setRegisterVisibility(true)} className={styles.login}>  <BsPencilSquare size="34px" /> <p>Registrar</p></div>) :
                     (<div onClick={handleLogout} className={styles.login}> <AiOutlineLogout size="40px" /> <p>Deslogar</p></div>)}
 
                 {props.logado == false ? (admin == false ? (<></>) : (<Link to="/admin"><div id={styles.admin} className={styles.login}> <FaStar size="40px" /> <p id={styles.admin}>Admin</p></div></Link>)) : (<></>)}

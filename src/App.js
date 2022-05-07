@@ -33,6 +33,9 @@ import EditarAnime from './pages/PageAdmin/ListAnimesAdmin/EditarAnime/EditarAni
 import LoginVisibilityProvider from './context/LoginVisibility';
 import AuthLoginOverlay from './components/layoult/AuthOverlay/Login/AuthLoginOverlay';
 
+import RegisterVisibilityProvider from './context/RegisterVisibility';
+import AuthRegisterOverlay from './components/layoult/AuthOverlay/Registro/AuthRegisterOverlay';
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -62,7 +65,8 @@ function App() {
     <Router>
       
       <UserContext.Provider value={{user, setUser, avatar, setAvatar, banner, setBanner, admin, setAdmin, email, setEmail, favoritos, setFavoritos}}>
-      
+      <RegisterVisibilityProvider>
+        <AuthRegisterOverlay/>
       <LoginVisibilityProvider>
       <AuthLoginOverlay/>
      <VisibilityProvider>
@@ -102,6 +106,7 @@ function App() {
         </Routes>
       </Container>
       </LoginVisibilityProvider>
+      </RegisterVisibilityProvider>
       </UserContext.Provider>
       
       
