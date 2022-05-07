@@ -8,6 +8,7 @@ Informacoes do usuário:
  Perfil:
 Edicao de dados pessoais
 Front-End:
-  -Terminar a tela de login
-  -Fazer a nova tela de cadastro.
+  -Fazer alteracoes na página home
+  -Alterar a página de Perfil
+  -Alterar a página de Perfil de Usuários buscados
   
