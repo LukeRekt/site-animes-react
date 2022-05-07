@@ -94,7 +94,7 @@ function App() {
           <Route exact path="/lista" element={<Lista />}></Route>
           <Route exact path="/favoritos" element={<Favoritos />}></Route>
           {/* <Route exact path="/login" element={<PageLogin />}></Route> */}
-          <Route exact path="/registrar" element={<PageRegister />}></Route>
+          {/* <Route exact path="/registrar" element={<PageRegister />}></Route> */}
           <Route exact path="/perfil" element={<PagePefil />}></Route>
           <Route exact path="/user/:id" element={<UserProfileSearch />}></Route>
           <Route path='*' element={<PaginaNaoEncontrada />}></Route>

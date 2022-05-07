@@ -29,12 +29,29 @@
    display: block;
    margin-bottom: 5px;
 }
+.text_success{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text_success svg{
+  fill: green;
+}
 .text_success small{
-    color: green;
+    color: green !important;
+}
+.text_error{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .text_error small{
-    color: red;
+    color: red !important;
     
+}
+.text_error svg{
+  fill: red !important;
+  
 }
 
 
@@ -126,6 +143,12 @@
 }
 #bottomFormText small{
   text-align: start;
+}
+
+.verificaSenha{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 

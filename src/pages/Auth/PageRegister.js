@@ -10,6 +10,7 @@ import { toast } from 'react-toastify'
 import { UserContext } from "../../UserContext"
 import { useContext } from "react"
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useRegisterVisibility } from '../../context/RegisterVisibility'
 //funcoes
 import { register } from '../../api/user'
 
@@ -26,7 +27,7 @@ function PageRegister() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [captcha, setCaptcha] = useState(false);
-    { user ? navigate("/") : console.log("ok") }
+    const { setRegisterVisibility } = useRegisterVisibility();
 
     //validacao da senha
     let hasSixChar = password.length >= 6;
@@ -49,7 +50,8 @@ function PageRegister() {
             if (res.error) toast.warning(res.error);
             else {
                 toast.success(res.message);
-                navigate('/login');
+                setRegisterVisibility(false);
+                navigate('/');
             }
         } catch (err) {
             toast.error(err);
@@ -59,8 +61,15 @@ function PageRegister() {
     return (
         <div className={styles.container}>
 
+<div className={styles.leftform}>
+                <div className={styles.animationCanvas}>
+                    
+                    <img src="http://localhost:3232/static/imagens/assets/nezuko-running.gif" alt="" />
+                </div>
+            </div>
 
             <form className={styles.login}>
+            <h1>REGISTRO DO USUÁRIO</h1>
                 <input type="text" placeholder="Usuario" value={username} onChange={(e) => setUsername(e.target.value)} />
                 <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 {showPassword ? ( <div><input type="text" autoComplete="true" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} /></div>) : (<div><input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} /></div>)}
@@ -71,6 +80,7 @@ function PageRegister() {
 <ReCAPTCHA
         sitekey="6Ldy4acfAAAAACb4ewQbknKrJSQjQjQ0rZVTbz-_"
         onChange={onChange}
+        theme="dark"
         />
                 <button className={styles.botao} onClick={handleRegister} disabled={
                     !username ||
@@ -102,7 +112,7 @@ function PageRegister() {
                         </div>
                         <div>
 
-                            {hasLowerChar ? (<span className={styles.text_success}><CheckCircleIcon className="mr-1" fontSize="small" />
+                            {hasLowerChar ? (<span className={styles.text_success}><CheckCircleIcon className="mr-1" fontSize="small" color="green" />
                                 <small>Pelo menos uma letra minuscula</small></span>) : (<span className={styles.text_error}>
                                     <CancelIcon className="mr-1"
                                         fontSize="small" />
