@@ -60,8 +60,7 @@ function Home() {
 
                     </Carousel>
                 </div>
-
-                <div className={styles.carousel_animes}>
+                {user ? (<div className={styles.carousel_animes}>
                     <BotaoInfo mensagem='Continuar reproducao' />
                     <div className={styles.continuarReproducao}>
                    <AnimeAssistido user={user}/>
@@ -69,7 +68,8 @@ function Home() {
                      </div>
                   
 
-                </div>
+                </div>) : (<></>)}
+
 
                 <div className={styles.carousel_animes}>
                     <BotaoInfo mensagem='Últimos Episódios em Lançamento' />
