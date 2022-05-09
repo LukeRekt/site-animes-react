@@ -19,6 +19,10 @@ Site de animes criado usando a stack M.E.R.N
 
 Clone este repositório. Você precisará do `node` e `npm` instalados globalmente em sua máquina.
 
+## Screenshots do projeto
+#Home
+![Página Perfil](https://github.com/LukeRekt/site-animes-react/raw/main/Perfil.PNG?raw=true)
+
 ### Instalação:
 
 `npm install`  
