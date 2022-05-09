@@ -16,17 +16,28 @@
     margin: auto;
 }
 .carousel_animes{
-    background-color: #181829;
+    /* Alterar cor de fundo do carousel */
+    background-color: #18182900;
     border-radius: 3px;
 }
 .carousel_animes h1{
     margin-bottom: 1%;
+}
+.continuarReproducao{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
 }
 .novosEpisodios{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+
+
 .botoesTeste{
     display: flex;
     cursor: pointer;

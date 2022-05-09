@@ -1,13 +1,16 @@
 import styles from './Home.module.css'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import Animes from '../components/layoult/Animes/Animes'
 import Carousel from 'react-elastic-carousel'
 import BotaoInfo from '../components/layoult/BotaoInfo/BotaoInfo'
 import EpisodiosHome from '../components/layoult/EpisodiosHome/EpisodiosHome'
+import AnimeAssistido from '../components/layoult/AnimeAssistidoPlaceholder/AnimeAssistido'
+import { UserContext } from '../UserContext'
 
 //tudo relacionado a login e seus dependentes nao devem ter prioridade no desenvolvimento.
 //prezar pelo funcionamento básico do site
+
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 2 },
@@ -16,7 +19,7 @@ const breakPoints = [
 ];
 
 function Home() {
-    
+    const { user } = useContext(UserContext)
 
     const [posts, setPosts] = useState([])
     const [postsep, setPostsep] = useState([])
@@ -57,6 +60,17 @@ function Home() {
 
                     </Carousel>
                 </div>
+
+                <div className={styles.carousel_animes}>
+                    <BotaoInfo mensagem='Continuar reproducao' />
+                    <div className={styles.continuarReproducao}>
+                   <AnimeAssistido user={user}/>
+                   
+                     </div>
+                  
+
+                </div>
+
                 <div className={styles.carousel_animes}>
                     <BotaoInfo mensagem='Últimos Episódios em Lançamento' />
                     {/* <Carousel pagination={false} breakPoints={breakPoints}>
