@@ -13,6 +13,9 @@
 }
 #lupa {
     font-size: 30px;
+    background-color: rgba(255, 255, 255, .05);
+    padding: 8px;
+    border-radius: 50px;
     cursor: pointer;
 }
 #lupa:hover {

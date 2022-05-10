@@ -61,3 +61,16 @@
 #nadaEncontrado{
     margin-left: 15%;
 }
+
+@media (max-width: 600px)
+{
+  .container a
+   {
+    width: 70%;
+    margin: auto;
+   }
+   .BarraProgresso{
+    margin-bottom: 5px;
+}
+
+}
