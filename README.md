@@ -9,7 +9,7 @@ Site de animes criado usando a stack M.E.R.N
 - [x] Calendario
 - [x] Login de usuario - JWT
 - [ ] Perfil de usuario - Parcialmente completo
-- [ ] Update imagens do usuario
+- [x] Update imagens do usuario
 - [x] Favoritos
 - [ ] Listas
 - [x] Ferramenta para adicionar animes
@@ -20,8 +20,15 @@ Site de animes criado usando a stack M.E.R.N
 Clone este repositório. Você precisará do `node` e `npm` instalados globalmente em sua máquina.
 
 ## Screenshots do projeto
+
 #Home
+![Página Home](https://github.com/LukeRekt/site-animes-react/raw/main/Home.PNG?raw=true)
+#Perfil
 ![Página Perfil](https://github.com/LukeRekt/site-animes-react/raw/main/Perfil.PNG?raw=true)
+#Pagina Anime
+![Pagina-Anime](https://github.com/LukeRekt/site-animes-react/raw/main/Pagina Anime.PNG?raw=true)
+#Assistidos
+![Assistidos](https://github.com/LukeRekt/site-animes-react/raw/main/Assistidos.PNG?raw=true)
 
 ### Instalação:
 
