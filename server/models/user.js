@@ -30,6 +30,18 @@ const userSchema = new mongoose.Schema(
 			type: Boolean,
 			default: false
 		},
+		numeroTelefone: {
+			type: Number,
+			default: 0
+		},
+		// dataNascimento: {
+		// 	type: Date,
+		// 	default: 0
+		// },
+		genero: {
+			type: String,
+			default: "Não"
+		},
 		hashedPassword: {
 			type: String,
 			required: true,

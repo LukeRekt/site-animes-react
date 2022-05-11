@@ -1,0 +1,353 @@
+@keyframes details {
+    from {width: 0%}
+    to {width: 40%}
+  }
+  @keyframes detailsInside {
+    from {left: 100%; top: 8%;}
+    to {left: 44%;  top: 8%;}
+  }
+  @keyframes textAnim {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  .PerfilContainer{
+      width: 70%;
+      margin: auto;
+  }
+  .leftUser{
+      float: left;
+      width: 25%;
+      height: 500px;
+  }
+  .rightUser p{
+      color: #ffffff;
+      
+  }
+  .rightUser{
+      float: right;
+      width: 74%;
+      background-color: #181829;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 2px;
+  }
+  .userAvatar{
+      background-color: #181829;
+      width: 100%;
+      text-align: center;
+      padding-top: 60%;
+      border-radius: 7px;
+      position: relative;
+  
+  }
+  .userAvatar p {
+      margin-top: 0;
+      font-size: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      margin-bottom: 5px;
+  }
+  .userAvatar p:nth-child(4){
+      font-size: 15px;
+  }
+  .userAvatar img{
+      
+      width: 35%;
+      height: 41%;
+      border-radius: 50%;
+      border: 3px solid #eb9a2a;
+      position: absolute;
+      z-index: 1;
+      top: 20%;
+      left: 32%;
+  }
+  .metadeAvatar{
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 50%;
+      border-radius: 7px;
+      /* background-color: #eb9a2a; */
+      /* background-image: url("https://aniyuki.com/wp-content/uploads/2022/01/aniyuki-zenitsu-agatsuma-31.gif"); */
+  }
+  #alterarBanner
+  {
+    position: absolute;
+    background-color: #181829c5;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.4s;
+    
+  }
+  #alterarBanner svg {
+    font-size: 50px;
+    fill: #0b0b13;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  #alterarBanner svg:hover {
+    fill: #ffbe63;
+  }
+  .metadeAvatar:hover > #alterarBanner{
+    opacity: 1;
+  }
+  #avatar{
+    z-index: 3;
+  }
+  #overAvatar{
+    position: absolute;
+    top: 20.1%;
+    left: 32.1%;
+    background-color: #0b0b1398;
+    padding:10% 10% 8% 11%;
+    z-index: 4;
+    border-radius: 50%;
+    font-size: 50px;
+    opacity: 0;
+    transition: 0.4s;
+  
+  }
+  #overAvatar svg {
+    font-size: 50px;
+    fill: #0b0b13;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  #overAvatar input{
+    cursor: pointer;
+  }
+  #overAvatar svg {
+    fill: #ffbe63;
+  }
+  .userAvatar:hover > #overAvatar{
+    opacity: 1;
+  }
+  .metadeAvatar img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 7px;
+      border: none;
+      width: 100%;
+      height: 100%;
+  }
+  .userSeguidores{
+      padding-bottom: 10px;
+  }
+  .userSeguidores p{
+      display: inline;
+      
+      margin-right: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+  }
+  
+  .horasAssistidos{
+      background-color: #181829;
+      border-radius: 7px;
+      margin-top: 8px;
+      width: 100%;
+      height: 35%;
+      overflow: hidden;
+      position: relative;
+  }
+  
+  .horasAssistidos p{
+  margin: 0;
+  padding: 0;
+  float: right;
+  text-align: center;
+  margin-top: 20%;
+  margin-right: 14%;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  opacity: 0;
+  animation-name: textAnim;
+  animation-duration: 1s;
+  animation-delay: 2.6s;
+  animation-fill-mode: forwards;
+  }
+  .assistidosDetail{
+    width: 100%;
+    height: 40%;
+    border-radius: 0px 50px 50px 0px;
+    background-color: #ffbe63;
+    animation-name: details;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+    margin-top: 15%;
+    position: absolute;
+  }
+  .detailsInside{
+    position: absolute;
+    background-color: #0C0C1D;
+    width: 50%;
+    height: 83%;
+    left: 100%;
+    top: 8%;
+    text-align: center;
+    border-radius: 60%;
+    animation-name: detailsInside;
+    animation-delay: 1.5s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  .playbutton{
+    fill: #ffbe63;
+    bottom: 27%;
+    left: 35%;
+    font-size: 180%;
+    position: absolute;
+  }
+  .tab_color {
+    width: 100%;
+  }
+  .tab_color p{
+    text-align: center;
+      margin: 0;
+      padding: 9%;
+      transition: 0.3s;
+      cursor: pointer;
+      font-size: 20px;
+  }
+  .tab_color p:hover{
+      background-color: #0C0C1D;
+      color: #eb9a2a;
+  }
+  .tab_color p svg {
+      transition: 0.4s;
+      font-size: 16px;
+  }
+  .tab_color p:hover > svg{
+      fill: #eb9a2a;
+  }
+  .content {
+      background: #181829;
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+      display: none;
+      border-radius: 7px; 
+    }
+    .content_tabs{
+        width: 71%;
+        float: left;
+        margin-left: 14px;
+        margin-top: 8px;
+    }
+    .content h2 {
+      padding: 0px 0 5px 0px;
+      color: white;
+    }
+    .content p {
+      width: 100%;
+      height: 100%;
+      color: rgba(255, 255, 255, .6);
+      display: inline;
+    }
+   
+    .active_content {
+      display: block;
+    }
+    .tab_Favoritos{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .EditGeral{
+      margin-bottom: 30px;
+    }
+    .EditGeral h2{
+      margin: 0;
+      padding: 0;
+      font-size: 17px;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.151);
+      font-family: 'Montserrat', sans-serif;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 500;
+      padding-bottom: 10px;
+    }
+    .perfilInfos{
+      border-bottom: 1px solid rgba(128, 128, 128, 0.151);
+      display: flex;
+      justify-content: start;
+      
+    }
+    .perfilInfos p{
+      width: 15%;
+      margin-right: 25% !important;
+      margin: 10px;
+      padding: 10px;
+      font-weight: 100;
+      font-family: 'Montserrat', sans-serif;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .perfilInfos p svg {
+      font-size: 20px;
+      fill: rgba(255, 255, 255, .6);
+      stroke: rgba(255, 255, 255, .6);
+    }
+    .inputFile{
+  padding-top: 20px;
+    }
+    input[type="file"] {
+      color: #eb9a2a;
+  }
+    .naoTem p{
+      color: #5555553b;
+      text-align: center;
+      font-size: 50px;
+    }
+    .ativo{
+      background-color: #0C0C1D !important;
+      color: #0c0c1d !important;
+    }
+  
+    @media (max-width: 600px)
+    {
+      .PerfilContainer{
+        width: 95%;
+        margin: auto;
+      }
+      .leftUser{
+        width: 100%;
+        margin-bottom: 10px;
+        height: 500px;
+      }
+      .horasAssistidos{
+       height: 40%;
+        
+    }
+    .playbutton {
+      margin-top: 20%;
+    }
+      .rightUser
+       {
+         display: block;
+        width: 100%;
+       }
+       .content{
+        margin-top: 10px;
+       }
+       .content_tabs{
+        
+        width: 90%;
+        float: left;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+  
+    #overAvatar{
+  
+      padding:10% 14% 9% 11%;
+  
+    
+    }
+    }
