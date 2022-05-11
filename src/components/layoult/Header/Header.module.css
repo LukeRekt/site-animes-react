@@ -13,7 +13,7 @@
 }
 #lupa {
     font-size: 30px;
-    background-color: rgba(255, 255, 255, .05);
+    background-color: rgba(255, 255, 255, 0.021);
     padding: 8px;
     border-radius: 50px;
     cursor: pointer;
