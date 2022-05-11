@@ -15,9 +15,8 @@ function Footer() {
         <a href="https://github.com/LukeRekt/site-animes-react">Github</a>
         </div>
         <div className={styles.footer_parceiros}>
-        <h3>Os de vdd</h3>
-        <a href="/">Os de vdd 1</a>
-        <a href="/">Os de vdd 1</a>
+        <h3>Parceiros</h3>
+        <a href="https://discord.gg/6a4JT3fvrz">Cafézino Animes</a>
         </div>
             <div className={styles.footer_redes}>
                 <h3>Redes Sociais</h3>
