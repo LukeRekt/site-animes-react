@@ -4,7 +4,7 @@ import axios from 'axios'
 import styles from './PageEpisode.module.css'
 import SeletorEP from '../../components/layoult/SeletorEp/SeletorEp';
 import VideoPlayer from '../../components/layoult/VideoPlayer/VideoPlayer';
-
+import { AiOutlineFileSearch } from 'react-icons/ai';
 
 function PageEpisode() {
 
@@ -112,6 +112,10 @@ function PageEpisode() {
         
         <div className={styles.container}>
           <p id={styles.maisEps}>Episódios</p>
+          <div className={styles.buscarEp}>
+            <AiOutlineFileSearch/>
+            <input type="text" placeholder='Ir para o episódio' />
+          </div>
           <div className={styles.listaEps}>
             <div className={styles.Eps}>
               {posts.map(post =>

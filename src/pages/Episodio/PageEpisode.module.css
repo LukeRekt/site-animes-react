@@ -27,6 +27,22 @@
   font-weight: 700;
   padding-bottom: 8px;
 }
+.buscarEp{
+  display: flex;
+  align-items: center;
+}
+.buscarEp svg{
+  font-size: 30px;
+}
+.buscarEp input {
+  padding: 5px;
+  width: 85%;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(255, 255, 255);
+  background-color: #1f1f30;
+  border: none;
+
+}
 .listaEps{
     height: 57.2vh;
     overflow: scroll;
