@@ -7,6 +7,7 @@ import BotaoInfo from '../components/layoult/BotaoInfo/BotaoInfo'
 import EpisodiosHome from '../components/layoult/EpisodiosHome/EpisodiosHome'
 import AnimeAssistido from '../components/layoult/AnimeAssistidoPlaceholder/AnimeAssistido'
 import { UserContext } from '../UserContext'
+import BotaoVerMais from '../components/layoult/BotaoVerMais/VerMais'
 
 //tudo relacionado a login e seus dependentes nao devem ter prioridade no desenvolvimento.
 //prezar pelo funcionamento básico do site
@@ -67,7 +68,7 @@ function Home() {
                    
                      </div>
                   
-
+                     <BotaoVerMais/>
                 </div>) : (<></>)}
 
 
@@ -92,6 +93,7 @@ function Home() {
                    
                      </div>
                   
+                  <BotaoVerMais/>
 
                 </div>
             </div>

@@ -1,0 +1,18 @@
+.container{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.container p {
+    font-family: 'Montserrat', sans-serif;
+    padding: 7px 12px 7px 12px;
+    border-radius: 20px;
+    background: #181829;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.container p:hover {
+    color: #2c2c2c;
+    background: #ffbe63;
+}
