@@ -83,6 +83,10 @@ exports.getEpisodespage = async (req, res) => {
 exports.getAllEpisodes = async (req, res) => {
     const id = req.params.id
     //buscar usuario baseado no email
+
+    if (isNaN(id)) return res.json({
+        Mensagem: "Número de eps inválido"
+    });
     await Episodios.find({}).limit(id).exec((err, episodios) => {
 
         //retornar resposta para o usuario
