@@ -45,7 +45,7 @@ router.post("/getallprogresso", getAllProgresso)
 
 router.post("/getanim/addep/", AddEpisode)
 
-router.get("/getanim/episodios/todos", getAllEpisodes)
+router.get("/getanim/episodios/todos/:id", getAllEpisodes)
 
 router.get("/getanim/episodios/:id", getEpisodespage)
 

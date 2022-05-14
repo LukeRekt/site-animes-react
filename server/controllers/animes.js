@@ -81,8 +81,9 @@ exports.getEpisodespage = async (req, res) => {
     });
 };
 exports.getAllEpisodes = async (req, res) => {
+    const id = req.params.id
     //buscar usuario baseado no email
-    await Episodios.find({}).limit(20).exec((err, episodios) => {
+    await Episodios.find({}).limit(id).exec((err, episodios) => {
 
         //retornar resposta para o usuario
         return res.json({

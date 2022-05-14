@@ -24,6 +24,7 @@ function Home() {
 
     const [posts, setPosts] = useState([])
     const [postsep, setPostsep] = useState([])
+    const [episodios, setEpisodiosQuantidade] = useState(5);
     useEffect(() => {
         axios.get('http://localhost:3232/getanim')
             .then(res => {
@@ -33,11 +34,11 @@ function Home() {
 
 
     useEffect(() => {
-        axios.get('http://localhost:3232/getanim/episodios/todos')
+        axios.get(`http://localhost:3232/getanim/episodios/todos/${episodios}`)
             .then(res => {
                 setPostsep(res.data.episodios)
             })
-    }, [])
+    }, [episodios])
 
     return (
         <div>
@@ -68,7 +69,7 @@ function Home() {
                    
                      </div>
                   
-                     <BotaoVerMais/>
+                     
                 </div>) : (<></>)}
 
 
@@ -93,8 +94,7 @@ function Home() {
                    
                      </div>
                   
-                  <BotaoVerMais/>
-
+                  <BotaoVerMais onClick={() => setEpisodiosQuantidade(episodios + 5)}/>
                 </div>
             </div>
             {/* <TopAnimes/> */}

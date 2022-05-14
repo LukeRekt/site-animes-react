@@ -1,8 +1,8 @@
 import styles from "./VerMais.module.css"
 
-function BotaoVerMais(){
+function BotaoVerMais(props){
     return (
-        <div className={styles.container}>
+        <div onClick={props.onClick} className={styles.container}>
             <p>Ver Mais</p>
         </div>
     )
