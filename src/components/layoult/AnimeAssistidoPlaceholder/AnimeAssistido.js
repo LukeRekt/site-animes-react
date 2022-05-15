@@ -5,10 +5,13 @@ import { Link } from "react-router-dom";
 import VideoProgress from "../VideoProgress/VideoProgress"
 import styles from "./AnimeAssistido.module.css"
 import { HiEmojiSad } from "react-icons/hi";
+import BotaoVerMais from "../BotaoVerMais/VerMais";
 function AnimeAssistido (props){
     const [porcentagem, setPorcentagem] = useState([]);
+    const [episodios, setEpisodiosQuantidade] = useState(6);
     const variables = {
         nomeUsuario: props.user,
+        quantidadeEps: episodios
       }
     useEffect(() =>  {
        
@@ -18,10 +21,10 @@ function AnimeAssistido (props){
          console.log(porcentagem)
         // setPorcentagem(res);a
      })
-   }, [props.user])
+   }, [props.user, episodios])
 
     return (
-        <div>
+        <div className={styles.containerGeral}>
             <div className={styles.container}>
                 {porcentagem.length !== 0 ? (porcentagem.map((post, index) => {
                     
@@ -42,10 +45,15 @@ function AnimeAssistido (props){
                          </div>
                          
                      </div></Link>
+                     
                              })) : (<p id={styles.nadaEncontrado}>Você ainda não assitiu nada <HiEmojiSad/></p>)}
           
             
         </div>
+        <div id={styles.areaBotao}>
+        <BotaoVerMais onClick={() => setEpisodiosQuantidade(episodios + 5)}/>
+        </div>
+        
         </div>
     )
 }

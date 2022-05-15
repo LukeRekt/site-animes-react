@@ -63,7 +63,7 @@ exports.remProgresso = async (req, res) => {
 
  exports.getAllProgresso = async (req, res) => {
 
-     Progresso.find({ 'nomeUsuario': req.body.nomeUsuario })
+     Progresso.find({ 'nomeUsuario': req.body.nomeUsuario }).limit(req.body.quantidadeEps)
         .exec((err, progressos) => {
             if (err) return res.status(400).send(err);
              return res.status(200).json( {progresso: progressos} )
