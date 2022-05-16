@@ -346,6 +346,11 @@ padding-top: 20px;
     text-align: center;
     font-size: 50px;
   }
+  .AnimeAssistidoInside button{
+    text-align: center;
+    width: 15%;
+    background-color: #0b0b13;
+  }
   .ativo{
     background-color: #0C0C1D !important;
     color: #0c0c1d !important;
