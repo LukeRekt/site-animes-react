@@ -13,6 +13,7 @@ import Axios from "axios";
 import FavoritosHandle from '../../components/layoult/FavoritosHandle/FavoritosHandle';
 import AnimeAssistido from '../../components/layoult/AnimeAssistidoPlaceholder/AnimeAssistido';
 
+
 function PagePefil() {
     const { user, setUser } = useContext(UserContext);
     const { avatar } = useContext(UserContext)
@@ -125,8 +126,6 @@ function PagePefil() {
             <div className={styles.content_tabs}>
                 <div className={toggleState === 1 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                     <div className={styles.tab_Favoritos}>
-                       {/* {favoritos.length == 0 ? (<></>) : (posts.map((post, index) => 
-                        favoritos[index] ? (<Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />) : (<></>)))}  */}
                             
                             {pageCarregando ? (<>Carregando</>) : (<FavoritosHandle user={user}/>)}
                         
