@@ -26,7 +26,7 @@ Clone este repositório. Você precisará do `node` e `npm` instalados globalmen
 #Perfil
 ![Página Perfil](https://github.com/LukeRekt/site-animes-react/raw/main/Perfil.PNG?raw=true)
 #Pagina Anime
-![Pagina-Anime](https://github.com/LukeRekt/site-animes-react/raw/main/Pagina Anime.PNG?raw=true)
+![PaginaAnime](https://github.com/LukeRekt/site-animes-react/raw/main/PaginaAnime.PNG?raw=true)
 #Assistidos
 ![Assistidos](https://github.com/LukeRekt/site-animes-react/raw/main/Assistidos.PNG?raw=true)
 
