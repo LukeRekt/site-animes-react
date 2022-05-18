@@ -44,6 +44,8 @@ Para iniciar o servidor:
 
 Dentro da pasta ./server:
 
+Renomeie o arquivo ".env.example", para ".env", e preencha com as informações requeridas.
+
 `npm start`
 
 Para testar o app:
