@@ -1,4 +1,8 @@
 ToDo com ordem de prioridade:
+-Ver mais tarde nos episódios
+-comentários
+-implementar um sistema de chat para testes
+-corrigir alguns problema de alinhamento
 TOOLING:
   -Painel de adm
   - Remover Animes e episodios
