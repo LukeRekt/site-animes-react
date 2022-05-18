@@ -6,10 +6,12 @@ import { HiEmojiSad } from "react-icons/hi";
 import BotaoVerMais from '../BotaoVerMais/VerMais'
 function FavoritosHandle (props){
     const [Favorited, setFavorited] = useState()
+    const [verMais, setVermais] = useState(5)
     const [CarregandoFavoritos, setCarregandoFavoritos] = useState(true)
 
     const variables = {
         nomeUsuario: props.user,
+        quantidade: verMais
     }
 
     useEffect(() => {
@@ -18,7 +20,7 @@ function FavoritosHandle (props){
                 setFavorited(res.data.favoritos)
                 setCarregandoFavoritos(false)
             })
-    }, [])
+    }, [verMais])
 
     return (
         
@@ -42,7 +44,7 @@ function FavoritosHandle (props){
                
         })))} 
         </div>
-       <BotaoVerMais/>
+       <BotaoVerMais onClick={() => setVermais(verMais + 5)}/>
        </div>
         
         
