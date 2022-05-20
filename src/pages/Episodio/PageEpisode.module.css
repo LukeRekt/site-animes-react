@@ -69,7 +69,36 @@ font-size: 14px;
   margin-left: 15%;
   margin-top: 5px;
 }
+.baixoEpisodios {
+  display: flex;
+}
+.baixoEpisodios p {
+  margin: 0;
+  padding: 5px 10px 5px 10px;
+  background: #181829;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.baixoEpisodios p:first-child {
+  border-right: 1px rgba(122, 122, 122, 0.253) solid;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.baixoEpisodios p:nth-child(2) {
 
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.baixoEpisodios p svg{
+ font-size: 30px;
+}
+.baixoEpisodios p:hover {
+
+  background: #242433;
+
+}
 
 ::-webkit-scrollbar {
     width: 1px;

@@ -5,7 +5,8 @@ import styles from './PageEpisode.module.css'
 import SeletorEP from '../../components/layoult/SeletorEp/SeletorEp';
 import VideoPlayer from '../../components/layoult/VideoPlayer/VideoPlayer';
 import { AiOutlineFileSearch } from 'react-icons/ai';
-
+import { GiHamburgerMenu } from "react-icons/gi";
+import { BiRightArrowAlt } from "react-icons/bi";
 function PageEpisode() {
 
 
@@ -125,7 +126,10 @@ function PageEpisode() {
         </div>
       </div>
       <div className={styles.BaixoContainer}>
-                a
+                <div className={styles.baixoEpisodios}>
+                  <p> <GiHamburgerMenu/></p>
+                  <p>PRÓXIMO <BiRightArrowAlt/></p>
+                </div>
       </div>
     </div>
 
