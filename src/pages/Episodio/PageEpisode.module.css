@@ -1,20 +1,22 @@
 .PageAnimeContainer{
-    float: left;
+    /* float: left; */
+    display: flex; /* Novo */
     margin-top: 1%;
     width: 70%;
     margin-left: 15%;
+    
 }
 .PageAnimeContainer video{
     width: 100%;
-    float: left;
+    /* float: left; */
 
 }
 .container{
-    float: right;
+    /* float: right; */
     background: #1f1f30;
     width: 21%;
     margin-right: 0%;
-    margin-left: 1px;
+    margin-left: 10px; /** era 1px **/
     border-radius: 4px;
     height:60.6vh;
     overflow: hidden;
@@ -61,7 +63,12 @@ font-weight: 400;;
 font-size: 14px;
 
 }
-
+.BaixoContainer{
+  background-color: red;
+  width: 55%;
+  margin-left: 15%;
+  margin-top: 5px;
+}
 
 
 ::-webkit-scrollbar {
@@ -90,12 +97,17 @@ font-size: 14px;
   .PageAnimeContainer{
     width: 95%;
     margin-left: 4%;
-    
+    flex-direction: column;
   }
   .container{
     margin-top: 10px;
-    width: 95%;
-    float: left;
+    width: 94%;
+    margin-bottom: 5px;
+    /* float: left; */
+  }
+  .BaixoContainer{
+    margin: auto;
+    width: 89%;
   }
  
 }
