@@ -64,7 +64,6 @@ font-size: 14px;
 
 }
 .BaixoContainer{
-  background-color: red;
   width: 55%;
   margin-left: 15%;
   margin-top: 5px;
@@ -90,6 +89,7 @@ font-size: 14px;
 
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
+  margin-right: 10px;
 }
 .baixoEpisodios p svg{
  font-size: 30px;
@@ -99,6 +99,23 @@ font-size: 14px;
   background: #242433;
 
 }
+.UtilEpisodios{
+display: flex;
+font-size: 15px;
+}
+.UtilEpisodios p{
+  border-radius: 3px;
+}
+.UtilEpisodios p:first-child{
+  background: white;
+  color: red;
+  margin-right: 10px;
+  }
+  .UtilEpisodios p:first-child svg{
+    fill: red;
+    font-size: 20px;
+    }
+
 
 ::-webkit-scrollbar {
     width: 1px;

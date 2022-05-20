@@ -7,6 +7,8 @@ import VideoPlayer from '../../components/layoult/VideoPlayer/VideoPlayer';
 import { AiOutlineFileSearch } from 'react-icons/ai';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiRightArrowAlt } from "react-icons/bi";
+import { BsFlag } from "react-icons/bs";
+import { FiClock } from "react-icons/fi";
 function PageEpisode() {
 
 
@@ -129,6 +131,10 @@ function PageEpisode() {
                 <div className={styles.baixoEpisodios}>
                   <p> <GiHamburgerMenu/></p>
                   <p>PRÓXIMO <BiRightArrowAlt/></p>
+                  <div className={styles.UtilEpisodios}>
+                    <p><BsFlag/> REPORTAR</p>
+                    <p><FiClock/></p>
+                  </div>
                 </div>
       </div>
     </div>
