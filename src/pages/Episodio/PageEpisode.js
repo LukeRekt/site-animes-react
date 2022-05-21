@@ -7,8 +7,9 @@ import VideoPlayer from '../../components/layoult/VideoPlayer/VideoPlayer';
 import { AiOutlineFileSearch } from 'react-icons/ai';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { BsFlag } from "react-icons/bs";
+import { BsFlag, BsFillChatDotsFill } from "react-icons/bs";
 import { AiOutlineClockCircle } from "react-icons/ai";
+import { IoSend } from "react-icons/io5";
 function PageEpisode() {
 
 
@@ -137,6 +138,48 @@ function PageEpisode() {
                   </div>
                 </div>
       </div>
+      <div className={styles.CometariosContainer}>
+                    <div id={styles.botaoComentarios}>
+                    <p><BsFillChatDotsFill/>Comentários</p>
+                    </div>
+        
+        <div className={styles.secaoComentarios}>
+          <div className={styles.InputComentario}>
+            
+          <img src="http://localhost:3232/static/imagens/avatars/LukeRekt.jpg" alt="" />
+          <p>LukeRekt</p>
+          <div className={styles.InputComentarioIn}>
+            <textarea name="a" id="" cols="110" rows="4"></textarea></div>
+            <p><IoSend/>Enviar</p>
+          </div>
+
+          <div className={styles.comentario}>
+            <div className={styles.comentarioHeader}>
+            <img src="http://localhost:3232/static/imagens/avatars/LukeRekt.jpg" alt="" />
+            <p>LukeRekt <small>• 1 dia atrás</small></p>
+            </div>
+                <div className={styles.comentarioTexto}>
+                  <p>Simplesmente o anime mais bosta de todos. Simplesmente o anime mais bosta de todos. Simplesmente o anime mais bosta de todos. Simplesmente o anime mais bosta de todos. Simplesmente o anime mais bosta de todos.Simplesmente o anime mais bosta de todos.</p>
+                  
+                </div>
+          </div>
+
+
+                
+          <div className={styles.comentario}>
+            <div className={styles.comentarioHeader}>
+            <img src="https://cdn.discordapp.com/avatars/464489936037609483/16559533db64541cc6963f12bd328398.png?size=1024" alt="" />
+            <p>Pec <small>• 1 Hora atrás</small></p>
+            </div>
+                <div className={styles.comentarioTexto}>
+                  <p>fofo</p>
+                  
+                </div>
+          </div>
+
+        </div>
+        
+        </div>
     </div>
 
   )

@@ -134,6 +134,118 @@ font-size: 15px;
         fill: rgb(255, 145, 0);
       }
 
+      .CometariosContainer{
+        width: 55%;
+        margin-left: 15%;
+        display: flex;
+        flex-direction: column;
+      }
+      #botaoComentarios{
+        display: flex;
+
+      }
+      #botaoComentarios p{
+        display: flex;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 500;
+        text-align: center;
+        justify-content: center;
+        background: #181829;
+       padding: 10px 15px 10px 15px;
+       border-radius: 7px; 
+      }
+      .secaoComentarios{
+        background: #181829;
+        border-radius: 4px;
+      }
+      .InputComentario{
+
+        display: flex;
+        align-items: center;
+        background-color: #1f1f30;
+        width: 100%;
+      }
+  
+      .InputComentario p{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 500;
+      margin-right: 10px;
+
+      }
+
+      .InputComentario img{
+        width: 60px;
+        margin-right: 5px;
+        border-radius: 50px;
+        border: goldenrod 1px solid;
+        margin: 8px;
+      }
+      .InputComentarioIn textarea{
+        height: 45px;
+        width: 95%;
+        border-radius: 10px;
+        background-color: #181818;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        border: 1px rgba(128, 128, 128, 0.13) solid;
+      }
+      .InputComentario p:nth-child(4){ 
+        color: rgb(255, 123, 0);
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #181818;
+        padding: 10px 15px 10px 15px;
+        border-radius: 4px;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+      .InputComentario p svg{ 
+        fill: rgb(255, 123, 0);;
+        margin-right: 4px;
+        transition: 0.3s;
+      }
+      .InputComentario p:nth-child(4):hover{ 
+        color: rgb(255, 255, 255);;
+        background-color: #f78c00;
+  
+      }
+      .InputComentario p:nth-child(4):hover > svg{ 
+        fill: rgb(255, 255, 255);;
+  
+      }
+
+      .comentario{
+        padding: 8px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 500;
+      }
+      .comentarioHeader{
+        display: flex;
+        align-items: center;
+        background: #181818;
+        width: 97%;
+        margin: auto;
+        padding: 8px;
+      }
+      .comentarioHeader img{
+        width: 60px;
+        margin-right: 5px;
+        border-radius: 50px;
+        border: goldenrod 1px solid;
+      }
+      .comentarioTexto{
+        background-color: #181818;
+        width: 99%;
+        margin: auto;
+        
+      }
+      .comentarioTexto p {
+        padding: 8px;
+        margin: 0;
+      }
 
 ::-webkit-scrollbar {
     width: 1px;
