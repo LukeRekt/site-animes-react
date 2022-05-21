@@ -1,6 +1,7 @@
 ToDo com ordem de prioridade:
 -Ver mais tarde nos episódios
 -comentários
+    -Fazer o back-end
 -implementar um sistema de chat para testes
 -corrigir alguns problema de alinhamento
 TOOLING:
