@@ -62,8 +62,6 @@ class InstantSearch extends Component {
     })
   }
 
-
-
   render() {
     return (
       <div className={styles.searchModule}>

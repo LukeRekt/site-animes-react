@@ -98,14 +98,11 @@ function UserProfileSearch() {
             <div onClick={() => toggleTab(2)} className={toggleState === 2 ? `${styles.assistidos} ${styles.ativo} ${styles.tab_color}`: `${styles.assistidos} ${styles.tab_color}`}><p><FaEye /> Assistidos</p></div>
             <div onClick={() => toggleTab(3)} className={toggleState === 3 ? `${styles.maistarde} ${styles.ativo} ${styles.tab_color}`: `${styles.maistarde} ${styles.tab_color}`}><p><FaClock /> Ver mais Tarde</p></div>
             <div onClick={() => toggleTab(5)} className={toggleState === 5 ? `${styles.editarPerfil} ${styles.ativo} ${styles.tab_color}` : `${styles.editarPerfil} ${styles.tab_color}`}><p><RiEqualizerLine /> Editar Perfil</p></div>
-            {/* <div onClick={handleLogout} className={`${styles.algumacoisa} ${styles.tab_color}`}><p><AiOutlineLogout /> Logout</p></div> */}
 
         </div>
         <div className={styles.content_tabs}>
             <div className={toggleState === 1 ? `${styles.content}  ${styles.active_content}` : `${styles.content}`}>
                 <div className={styles.tab_Favoritos}>
-                   {/* {favoritos.length == 0 ? (<></>) : (posts.map((post, index) => 
-                    favoritos[index] ? (<Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />) : (<></>)))}  */}
                         
                         {pageCarregando ? (<>Carregando</>) : (<FavoritosHandle user={usuario.username}/>)}
                     
@@ -155,17 +152,6 @@ function UserProfileSearch() {
 
                         
                     </div>
-                    {/* <div className={styles.perfilInfos}>
-                        <p><FaQuoteLeft /> Avatar</p>
-                        <input
-                            type="file"
-                            className={styles.inputFile}
-                            name="screenshot"
-                            onChange={(e) => {
-                                setFile(e.target.files[0]);
-                            }} />
-                        <button className="" onClick={(e) => upload(e)}>Mudar</button>
-                    </div> */}
                 </div>
                 <div className={styles.EditGeral}>
                     <h2>Dados Pessoais</h2>

@@ -19,10 +19,6 @@ function EpisodiosHome(props) {
                             <p>FHD</p>
                             
                         </div>
-
-                        {/* {user ? (<div className={styles.progressoAnime}>
-                        <VideoProgress user={user} idanime={props.id} temporada={props.temporada} episodio={props.numero}/>
-                        </div>) : (<></>)} */}
                         
                         <div className={styles.textosAnime}>
                             <p>Episódio: {props.numero}</p>

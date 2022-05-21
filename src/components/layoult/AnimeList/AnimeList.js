@@ -35,12 +35,6 @@ function AnimeList(props) {
 
 
         </div>
-        // /* {testeNome(props.id, props.iddois, props.nome)}
-        // {console.log("id " + props.id)}
-        // {console.log("iddois " + props.iddois)}
-        // {console.log("nome " + props.nome)}
-        // {testeNome(props.nome, props.id, props.iddois)} */
-
 
     )
 }

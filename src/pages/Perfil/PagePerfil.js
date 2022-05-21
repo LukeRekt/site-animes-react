@@ -175,17 +175,6 @@ function PagePefil() {
 
                             <button onClick={() => toggleEditBtn(2)}>Alterar</button>
                         </div>
-                        {/* <div className={styles.perfilInfos}>
-                            <p><FaQuoteLeft /> Avatar</p>
-                            <input
-                                type="file"
-                                className={styles.inputFile}
-                                name="screenshot"
-                                onChange={(e) => {
-                                    setFile(e.target.files[0]);
-                                }} />
-                            <button className="" onClick={(e) => upload(e)}>Mudar</button>
-                        </div> */}
                     </div>
                     <div className={styles.EditGeral}>
                         <h2>Dados Pessoais</h2>

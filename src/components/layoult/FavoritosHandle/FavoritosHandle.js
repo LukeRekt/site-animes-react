@@ -36,18 +36,11 @@ function FavoritosHandle (props){
                     </div>
                     <img src={teste.imagemAnime} alt="" />
                     </Link>
-                    </div>
-                
-                {/* {console.log(teste.idAnime, teste.nomeAnime, teste.nomeUsuario, teste.imagemAnime)} */}
-                 
-               
-               
+                    </div>           
         })))} 
         </div>
        <BotaoVerMais onClick={() => setVermais(verMais + 5)}/>
        </div>
-        
-        
     )
 }
 

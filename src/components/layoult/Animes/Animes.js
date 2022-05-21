@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import styles from './Animes.module.css'
 import { AiFillPlayCircle } from "react-icons/ai";
 function Animes(props) {
-    //Futuramente essa funcao deve ser substituida por um sistema mais funcional, que nao remova o nome, e sim, esconda.
     function diminuirTamanho(nome) {
         let novoNome = nome.substr(0, 22)
         return novoNome + "...";

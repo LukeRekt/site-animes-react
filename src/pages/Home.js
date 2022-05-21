@@ -44,7 +44,6 @@ function Home() {
         <div>
             <div className={styles.container}>
                 
-                {/* <h1>Ola {user && <span>{user}</span>} {" "}</h1> */}
                 <div className={styles.botoesTeste}>
                     <p>Lança Hoje!</p>
                     <p>Completos</p>
@@ -55,9 +54,6 @@ function Home() {
                     <Carousel pagination={false} breakPoints={breakPoints}>
                         {posts.length !== 0 ? (posts.map((post) =>
                             <Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios}/>)) : (<>Carregando</>)}
-                        {/* {posts.map((post) =>
-                            <Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
-                        )} */}
 
 
                     </Carousel>
@@ -75,23 +71,12 @@ function Home() {
 
                 <div className={styles.carousel_animes}>
                     <BotaoInfo mensagem='Últimos Episódios em Lançamento' />
-                    {/* <Carousel pagination={false} breakPoints={breakPoints}>
 
-                        {posts.map(post =>
-                            <Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios} />
-                        )}
-
-
-                    </Carousel> */}
                     <div className={styles.novosEpisodios}>
                     {console.log(posts.length)}
                     {postsep.length !== 0 ? (postsep.map((post, index) =>
                             <EpisodiosHome key={index} nome={post.nome} temporada={post.temporada} id={post.id} anime={post.nomeAnime} imagem={post.animeImagem} numero={post.numero} />)) : (<>Carregando</>)}
 
-  {/* {postsep.map((post, index) =>
-                             <EpisodiosHome key={index} nome={post.nome} temporada={post.temporada} id={post.id} anime={post.nomeAnime} imagem={post.animeImagem} numero={post.numero} />
-                             )} */}
-                   
                      </div>
                   
                   <BotaoVerMais onClick={() => setEpisodiosQuantidade(episodios + 5)}/>

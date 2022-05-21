@@ -50,26 +50,12 @@ function PageLogin() {
     return (
         <div className={styles.container}>
 
-
-            {/* <div className={styles.formGroup}>
-                <TextField size="medium"
-                    variant="outlined"
-                    className="form-Group"
-                    label="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)} />
-            </div> */}
-
-
             <div className={styles.leftform}>
                 <div className={styles.animationCanvas}>
                     
                     <img src="http://localhost:3232/static/imagens/assets/nezuko-running.gif" alt="" />
                 </div>
             </div>
-
-
-
 
             <form className={styles.login}>
                 <h1>LOGIN DO USUÁRIO</h1>
@@ -97,32 +83,6 @@ function PageLogin() {
                 </IconButton>
             </form>
 
-
-
-
-            {/*                 
-                <FormControl variant="outlined"
-                    size="medium"
-                    className="formGroup">
-                    <InputLabel>Senha</InputLabel>
-                    <OutlinedInput
-                        label="Senha"
-                        type={showPassword ? "text" : "password"}
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        endAdornment={
-                            <InputAdornment>
-                                <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
-                                    {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
-                                </IconButton>
-                            </InputAdornment>
-                        } />
-                </FormControl> */}
-
-            {/* <div className="textCenter">
-                <Button variant="contained" disabled={!email || !password}
-                    onClick={handleLogin}>Enviar</Button>
-            </div> */}
         </div>
     )
 }

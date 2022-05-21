@@ -74,8 +74,6 @@ function PageRegister() {
                 <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 {showPassword ? ( <div><input type="text" autoComplete="true" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} /></div>) : (<div><input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} /></div>)}
                 {showPassword ? ( <div><input type="text" autoComplete="true" placeholder="Confirmar Senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /></div>) : (<div><input type="password" placeholder="Confirmar Senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /></div>)}
-                {/* <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
-                <input type="password" placeholder="Confirmar Senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /> */}
 
 <ReCAPTCHA
         sitekey="6Ldy4acfAAAAACb4ewQbknKrJSQjQjQ0rZVTbz-_"
@@ -150,81 +148,6 @@ function PageRegister() {
                 {password && confirmPassword && (password === confirmPassword ? <span>As senhas conferem</span> : <span>As senhas nao conferem</span>)}
             </form>
 
-
-
-
-
-            {/* <div className={styles.formGroup}>
-
-                <TextField size="small"
-                    variant="outlined"
-                    className="form-Group"
-                    label="Usuario"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)} />
-            </div>
-
-            <div className={styles.formGroup}>
-
-                <TextField size="small"
-                    variant="outlined"
-                    className="form-Group"
-                    label="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)} />
-            </div>
-            <div className={styles.formGroup}>
-                <FormControl variant="outlined"
-                    size="small"
-                    className="formGroup">
-                    <InputLabel>Senha</InputLabel>
-                    <OutlinedInput
-                        label="Senha"
-                        type={showPassword ? "text" : "password"}
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        endAdornment={
-                            <InputAdornment>
-                                <IconButton edge="end" onClick={() => setShowPassword(!showPassword)}>
-                                    {showPassword ? (<VisibilityIcon />) : (<VisibilityOffIcon />)}
-                                </IconButton>
-                            </InputAdornment>
-                        } />
-                </FormControl>
-               
-            </div>
-            <div className={styles.formGroup}>
-
-                <TextField size="small"
-                    type="password"
-                    variant="outlined"
-                    className="form-Group"
-                    label="Confirmar Senha"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)} />
-                {password && confirmPassword && (<FormHelperText>
-                    {password === confirmPassword ? <span>As senhas conferem</span> : <span>As senhas nao conferem</span>}
-
-
-                </FormHelperText>)}
-            </div>
-            <div className="textCenter">
-                <Button variant="contained" disabled={
-                    !username ||
-                    !email ||
-                    !password ||
-                    !confirmPassword ||
-                    password != confirmPassword ||
-                    !hasSixChar ||
-                    !hasLowerChar ||
-                    !hasUpperChar ||
-                    !hasNumber ||
-                    !hasSpecialChar
-                }
-                    onClick={handleRegister}
-                >
-                    Enviar</Button>
-            </div> */}
         </div>
     )
 }
