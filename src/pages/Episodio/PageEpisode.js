@@ -8,7 +8,7 @@ import { AiOutlineFileSearch } from 'react-icons/ai';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { BsFlag } from "react-icons/bs";
-import { FiClock } from "react-icons/fi";
+import { AiOutlineClockCircle } from "react-icons/ai";
 function PageEpisode() {
 
 
@@ -133,7 +133,7 @@ function PageEpisode() {
                   <p>PRÓXIMO <BiRightArrowAlt/></p>
                   <div className={styles.UtilEpisodios}>
                     <p><BsFlag/> REPORTAR</p>
-                    <p><FiClock/></p>
+                    <p><AiOutlineClockCircle/></p>
                   </div>
                 </div>
       </div>

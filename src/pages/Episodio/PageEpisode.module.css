@@ -86,7 +86,8 @@ font-size: 14px;
   border-top-left-radius: 3px;
 }
 .baixoEpisodios p:nth-child(2) {
-
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
   margin-right: 10px;
@@ -105,16 +106,33 @@ font-size: 15px;
 }
 .UtilEpisodios p{
   border-radius: 3px;
+  
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }
 .UtilEpisodios p:first-child{
   background: white;
   color: red;
   margin-right: 10px;
   }
+  .UtilEpisodios p:first-child:hover{
+    background: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    fill: white;
+    }
+
   .UtilEpisodios p:first-child svg{
     fill: red;
     font-size: 20px;
+    transition: 0.1s;
     }
+    .UtilEpisodios p:first-child:hover > svg{
+
+      fill: white;
+      }
+      .UtilEpisodios p:nth-child(2) svg{
+        fill: rgb(255, 145, 0);
+      }
 
 
 ::-webkit-scrollbar {
