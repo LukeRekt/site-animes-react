@@ -1,4 +1,4 @@
-import { useParams, } from 'react-router-dom'
+import { Link, useParams, } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './PageEpisode.module.css'
@@ -12,6 +12,7 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import { IoSend } from "react-icons/io5";
 function PageEpisode() {
 
+  
 
   function ListEp(parametros, postsa) {
     for (var i = 0; i < postsa.length; i++) {
@@ -130,11 +131,18 @@ function PageEpisode() {
       </div>
       <div className={styles.BaixoContainer}>
                 <div className={styles.baixoEpisodios}>
-                  <p> <GiHamburgerMenu/></p>
-                  <p>PRÓXIMO <BiRightArrowAlt/></p>
+                  <div className={styles.ListarEps}>
+                  <Link to={`/anime/${id}`}><p> <GiHamburgerMenu/></p></Link>
+                  <Link to={`/anime/${id}/${temporada}/${parseInt(ep) + 1}`}><p>PRÓXIMO <BiRightArrowAlt/></p>
+                  </Link>
+                  </div>
+                  
+                  
                   <div className={styles.UtilEpisodios}>
+                  <Link to="">
                     <p><BsFlag/> REPORTAR</p>
                     <p><AiOutlineClockCircle/></p>
+                    </Link>
                   </div>
                 </div>
       </div>

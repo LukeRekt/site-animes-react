@@ -71,6 +71,10 @@ font-size: 14px;
 .baixoEpisodios {
   display: flex;
 }
+.ListarEps{
+  display: flex;
+  margin-right: 10px;
+}
 .baixoEpisodios p {
   margin: 0;
   padding: 5px 10px 5px 10px;
@@ -100,7 +104,7 @@ font-size: 14px;
   background: #242433;
 
 }
-.UtilEpisodios{
+.UtilEpisodios a{
 display: flex;
 font-size: 15px;
 }
