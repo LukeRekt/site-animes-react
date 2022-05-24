@@ -18,7 +18,7 @@
     margin-right: 0%;
     margin-left: 10px; /** era 1px **/
     border-radius: 4px;
-    height:60.6vh;
+    height:595px;
     overflow: hidden;
     
 }
@@ -46,7 +46,7 @@
 
 }
 .listaEps{
-    height: 57.2vh;
+    height: 100%;
     overflow: scroll;
 }
 .listaEps p{
@@ -288,6 +288,10 @@ font-size: 15px;
   .BaixoContainer{
     margin: auto;
     width: 89%;
+  }
+  .CometariosContainer{
+    width: 97%;
+    margin-left: 1%;
   }
  
 }

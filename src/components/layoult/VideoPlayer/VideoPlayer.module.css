@@ -1,7 +1,8 @@
 .container {
     display: block;
     float: left;
-    width: 78%;
+    /* width: 78%; */
+    width: 1050px;
   }
   video::-webkit-media-controls {
     display:none !important;
