@@ -4,17 +4,30 @@
 .listTemporadas{
     display: flex;
     flex-direction: column;
+
     
 }
-.barraTemporada{
+
+.listTemporadas a{
+    background-color: aqua;
+    width: 60%;
+    margin: auto;
+    margin-top: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.4s;
+    
+}
+
+/* .barraTemporada{
     background-color: aqua;
     width: 60%;
     margin: auto;
     margin-top: 5px;
     cursor: pointer;
     transition: 0.4s;
-}
-.barraTemporada:hover{
+} */
+.listTemporadas a:hover{
     background-color: rgb(12, 15, 204);
 
 }

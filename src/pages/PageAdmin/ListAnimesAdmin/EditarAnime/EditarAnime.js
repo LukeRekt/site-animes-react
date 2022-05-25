@@ -77,7 +77,7 @@ function EditarAnime(){
                 
             </div>
             <div className={styles.temporadas}>
-                    <TemporadasEditar temporadas={temporadas}/>
+                    <TemporadasEditar temporadas={temporadas} id={id}/>
                 </div>
             {console.log(nome)}
             {console.log(temas)}

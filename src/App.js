@@ -35,6 +35,7 @@ import AuthLoginOverlay from './components/layoult/AuthOverlay/Login/AuthLoginOv
 
 import RegisterVisibilityProvider from './context/RegisterVisibility';
 import AuthRegisterOverlay from './components/layoult/AuthOverlay/Registro/AuthRegisterOverlay';
+import TemporadasEditar from './pages/PageAdmin/ListAnimesAdmin/EditarAnime/layoult/TemporadasEditar';
 
 
 function App() {
@@ -100,6 +101,7 @@ function App() {
           <Route path='*' element={<PaginaNaoEncontrada />}></Route>
           <Route exact path="/admin" element={<PageAdmin />}></Route>
           <Route exact path="/admin/editar/:id" element={<EditarAnime />}></Route>
+          <Route exact path="/admin/editar/:id/:temporada" element={<TemporadasEditar />}></Route>
           <Route exact path="/testes" element={<Testes />}></Route>
           {/* <Route path="/projects" element={}></Route> */}
 

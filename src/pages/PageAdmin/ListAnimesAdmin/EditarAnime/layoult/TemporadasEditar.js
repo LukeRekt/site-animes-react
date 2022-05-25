@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./TemporadasEditar.module.css"
 function TemporadasEditar(props){
 
@@ -16,10 +17,13 @@ function TemporadasEditar(props){
         <div className={styles.listTemporadas}>
 
         {Teste(props.temporadas).map((post, index) => {
-            return <div className={styles.barraTemporada}>
+            return <Link to={`/admin/editar/${props.id}/${index + 1}`}>
+            <div className={styles.barraTemporada}>
             <p>Temporada: {index + 1}</p>
             </div>
+            </Link>
         })}
+         
 
 
             

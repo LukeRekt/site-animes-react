@@ -35,4 +35,5 @@ height: 500px;
     padding: 10px;
     background-color: green;
     width: 39.3%;
+    overflow: scroll;
 }
