@@ -23,12 +23,6 @@ function TemporadasEditar(props){
             </div>
             </Link>
         })}
-         
-
-
-            
-            
-        
         </div>
     </div>)
 }

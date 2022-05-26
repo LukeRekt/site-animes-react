@@ -19,14 +19,6 @@
     
 }
 
-/* .barraTemporada{
-    background-color: aqua;
-    width: 60%;
-    margin: auto;
-    margin-top: 5px;
-    cursor: pointer;
-    transition: 0.4s;
-} */
 .listTemporadas a:hover{
     background-color: rgb(12, 15, 204);
 
