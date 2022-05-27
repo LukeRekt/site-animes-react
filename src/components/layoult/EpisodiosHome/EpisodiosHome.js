@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 import VideoProgress from "../VideoProgress/VideoProgress";
 
 import styles from "./EpisodiosHome.module.css"
-import { UserContext } from '../../../UserContext'
-import { useContext } from "react";
 
 function EpisodiosHome(props) {
-    // const { user } = useContext(UserContext);
     return (
         <div className={styles.container}>
             <Link to={`anime/${props.id}/${props.temporada}/${props.numero}`}>
@@ -19,14 +16,12 @@ function EpisodiosHome(props) {
                             <p>FHD</p>
                             
                         </div>
-                        
                         <div className={styles.textosAnime}>
                             <p>Episódio: {props.numero}</p>
                             <p>{props.nome}
                             </p>
                             <p>{props.anime}</p>
                         </div>
-                        
                         <AiFillPlayCircle />
                     </div>
                     <img src={props.imagem} alt="" />

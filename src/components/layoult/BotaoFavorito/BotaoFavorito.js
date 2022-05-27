@@ -17,7 +17,6 @@ function BotaoFavorito (props){
         if (Favorited) {
         axios.post('http://localhost:3232/remfavorito', variables, { withCredentials: true }, {
             headers: {
-            //   'Authorization': `${cookies.get('jwt')}`,
             'Content-Type': 'application/json'
             }
           })
@@ -30,7 +29,6 @@ function BotaoFavorito (props){
         }else{
             axios.post('http://localhost:3232/favoritar', variables, { withCredentials: true }, {
                 headers: {
-                //   'Authorization': `${cookies.get('jwt')}`,
                 'Content-Type': 'application/json'
                 }
               })

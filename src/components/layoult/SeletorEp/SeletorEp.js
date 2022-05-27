@@ -39,7 +39,6 @@ function SeletorEP(props) {
     }
     return (
         <div>{testeNome(props.id, props.iddois, props.temporada, props.nome, props.episodio)}</div>
-        //<div className={styles.Eps}><p>{props.nome}</p></div>
 
     )
 }
