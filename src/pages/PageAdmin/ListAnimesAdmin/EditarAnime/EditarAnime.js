@@ -18,12 +18,14 @@ function EditarAnime(){
     const [especiais, setEspeciais] = useState([])
     const [filmes, setFilmes] = useState([])
     const [autor, setAutor] = useState([])
+    const [lancamento, setLancamento] = useState(false);
     const [diretor, setDiretor] = useState([])
     const [estudio, setEstudio] = useState([])
     const [ano, setAno] = useState([])
     const [imagem, setImagem] = useState([])
     const [temporadas, setTemporadas] = useState([])
     const [temas, setTemas] = useState([])
+    const [imgData, setImgData] = useState([])
 
     useEffect(() => {
         axios.get(`http://localhost:3232/getanim/${id}`)
@@ -35,6 +37,7 @@ function EditarAnime(){
                 setNota(res.data.animes.nota)
                 setEpisodios(res.data.animes.episodios)
                 setDiaLancamento(res.data.animes.diaLancamento)
+                
                 setEspeciais(res.data.animes.especiais)
                 setFilmes(res.data.animes.filmes)
                 setAutor(res.data.animes.autor)
@@ -49,6 +52,54 @@ function EditarAnime(){
             })
 
     }, [])
+    const variables = {
+        id: id + 1,
+        nome: nome,
+        descricao: descricao,
+        nota: nota,
+        temporadas: temporadas,
+        episodios: episodios,
+        lancamento: lancamento,
+        diaLancamento: diaLancamento,
+        especiais: especiais,
+        filmes: filmes,
+        autor: autor,
+        diretor: diretor,
+        estudio: estudio,
+        ano: ano,
+        temas: temas.split(','),
+
+        
+    }
+    const formData = new FormData();
+  
+
+    formData.append('data', JSON.stringify(variables));
+    formData.append('screenshot', imagem)
+
+    const onChangePicture = (e) => {
+        if (e.target.files[0]) {
+          setImagem(e.target.files[0]);
+          const reader = new FileReader();
+          reader.addEventListener("load", () => {
+            setImgData(reader.result);
+          });
+          reader.readAsDataURL(e.target.files[0]);
+        }
+      };
+    const handleRegister = async (e) => {
+        //http://localhost:3232/addanimes
+            axios.post('http://localhost:3232/Testes', formData, { withCredentials: true }, {
+                headers: {
+                //   'Authorization': `${cookies.get('jwt')}`,
+                'Content-Type': 'application/json'
+                }
+              })
+              .catch((error) => {
+                console.error(error)
+              })
+        
+}
 
     return (
         <div className={styles.container}>
