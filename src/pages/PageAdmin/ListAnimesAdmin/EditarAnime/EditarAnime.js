@@ -53,7 +53,7 @@ function EditarAnime(){
 
     }, [lancamento])
     const variables = {
-        id: id + 1,
+        id: id,
         nome: nome,
         descricao: descricao,
         nota: nota,
@@ -67,7 +67,7 @@ function EditarAnime(){
         diretor: diretor,
         estudio: estudio,
         ano: ano,
-        temas: temas,
+        temas: temas.toString().split(','),
 
         
     }
@@ -88,7 +88,7 @@ function EditarAnime(){
         }
       };
     const handleRegister = async (e) => {
-        setTemas(temas.split(','));
+        // setTemas(temas.split(','));
         //http://localhost:3232/addanimes
             axios.post('http://localhost:3232/Testes', formData, { withCredentials: true }, {
                 headers: {
@@ -101,7 +101,22 @@ function EditarAnime(){
               })
         
 }
-
+function Testando(){
+    console.log(nome)
+    console.log(descricao)
+    console.log(nota)
+    console.log(episodios)
+    console.log(lancamento)
+    console.log(diaLancamento)
+    console.log(especiais)
+    console.log(filmes)
+    console.log(autor)
+    console.log(diretor)
+    console.log(estudio)
+    console.log(ano)
+    console.log(temporadas)
+    console.log(temas)
+}
     return (
         <div className={styles.container}>
             <div className={styles.imagem}>
@@ -124,7 +139,7 @@ function EditarAnime(){
                     <input type="file" name="screenshot" onChange={onChangePicture} />
                     <input type="text" value={temporadas} placeholder='Temporadas' onChange={(e) => setTemporadas(e.target.value)}/>
                     <input type="text" value={temas} placeholder='Temas' onChange={(e) => setTemas(e.target.value)}/>
-                    <button>Alterar</button>
+                    <button onClick={handleRegister}>Alterar</button>
                 </form>
                 
             </div>
