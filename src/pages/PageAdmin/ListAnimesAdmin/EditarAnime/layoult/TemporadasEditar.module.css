@@ -1,5 +1,5 @@
 .container{
-    background-color: #363636
+    background-color: #181818;
 }
 .listTemporadas{
     display: flex;
@@ -9,7 +9,7 @@
 }
 
 .listTemporadas a{
-    background-color: aqua;
+    background-color: #0c0c0c;
     width: 60%;
     margin: auto;
     margin-top: 5px;
@@ -20,6 +20,6 @@
 }
 
 .listTemporadas a:hover{
-    background-color: rgb(12, 15, 204);
+    background-color: #ffbe63;
 
 }
