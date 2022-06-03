@@ -99,11 +99,19 @@ exports.getAllEpisodes = async (req, res) => {
 exports.setTeste = async (req, res) => {
     const dados = JSON.parse(req.body.data)
     // const { nome } = req.user;
-     const filename = req.files.screenshot.name;
-     const file = req.files.screenshot;
-     let uploadPath = __dirname + "../../public/imagens/assets/capasanimes/" + filename;
-     file.mv(uploadPath);;
-
+    let filename = "capapadrao.png";
+    let file = null;
+    if(req.files){
+        filename = req.files.screenshot.name;
+        file = req.files.screenshot;
+        let uploadPath = __dirname + "../../public/imagens/assets/capasanimes/" + filename;
+        file.mv(uploadPath);;
+    }
+    //  const filename = req.files.screenshot.name;
+    //  const file = req.files.screenshot;
+     
+     
+     
      const filter = {nome: dados.nome}
      const update = {
         id: dados.id,
