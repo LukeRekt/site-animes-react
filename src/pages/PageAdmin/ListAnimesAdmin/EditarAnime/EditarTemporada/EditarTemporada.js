@@ -3,7 +3,9 @@ import styles from './EditarTemporada.module.css'
 
 function EditarTemporada(){
     return (
-        <div>EditarAnime</div>
+        <div className={styles.container}>
+            
+        </div>
     )
                 
             
