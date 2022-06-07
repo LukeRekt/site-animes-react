@@ -3,7 +3,6 @@ import { useState } from 'react';
 import styles from './AddAnime.module.css'
 
 function AddAnime(props){
-
     const [nome, setNome] = useState("");
     const [descricao, setDescricao] = useState("");
     const [nota, setNota] = useState("");
@@ -36,13 +35,7 @@ function AddAnime(props){
         estudio: estudio,
         ano: ano,
         temas: temas.split(','),
-
-        
     }
-
-
-
-
     const formData = new FormData();
   
 

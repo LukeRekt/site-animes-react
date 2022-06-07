@@ -59,7 +59,20 @@ exports.getEpisodes = async (req, res) => {
     //buscar usuario baseado no email
     const temporada = req.params.temporada
     const id = req.params.id
-    await Episodios.find({ temporada, id }).exec((err, episodios) => {
+    await Episodios.find({ temporada, id }).limit().exec((err, episodios) => {
+
+        //retornar resposta para o usuario
+
+        return res.json({
+            episodios,
+        });
+    });
+};
+exports.getSeasonEpisodes = async (req, res) => {
+    //buscar usuario baseado no email
+    const temporada = req.params.temporada
+    const id = req.params.id
+    await Episodios.find({id, temporada }).exec((err, episodios) => {
 
         //retornar resposta para o usuario
 
