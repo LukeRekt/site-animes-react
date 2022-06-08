@@ -17,9 +17,15 @@ function EditarEpLayout() {
     }, [])
     return (
         <div className={styles.container}>
+            {console.log(posts)}
              {posts.map(map =>
                 {
-                   return <div className={styles.Episodios}>a</div>
+                   return <div key={map.id} className={styles.Episodios}>
+                       <p>Nome EP: {map.nome}</p>
+                       <p>EP: {map.numero}</p>
+                       
+                   <img src={map.animeImagem} alt="" />
+                   </div>
                 })} 
            {console.log(posts)}
             

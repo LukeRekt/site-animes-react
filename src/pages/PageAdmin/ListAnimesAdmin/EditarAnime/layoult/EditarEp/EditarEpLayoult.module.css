@@ -2,3 +2,27 @@
     background-color: blue;
     display: flex;
 }
+.Episodios{
+    background-color: grey;
+    position: relative;
+    width: 200px;
+    margin-right: 10px;
+}
+.Episodios img{
+    height: 100%;
+    width: 100%;
+}
+.Episodios p{
+    bottom: 1px;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: white 1px 1px 1px;
+    color: #181818;
+    background-color: #99999970;
+    font-family: 'Open Sans', sans-serif;
+}
+.Episodios p:nth-child(1){
+    bottom: 30px;
+    position: absolute;
+}
