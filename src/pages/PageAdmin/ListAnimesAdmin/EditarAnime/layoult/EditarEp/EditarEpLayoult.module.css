@@ -7,6 +7,7 @@
     position: relative;
     width: 200px;
     margin-right: 10px;
+    cursor: pointer;
 }
 .Episodios img{
     height: 100%;
@@ -25,4 +26,18 @@
 .Episodios p:nth-child(1){
     bottom: 30px;
     position: absolute;
+}
+.icones{
+    position: absolute;
+    right: 0%;
+}
+.icones svg{
+    font-size: 30px;
+    margin-right: 15px;
+    fill: #181818;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.icones svg:hover{
+    fill: #ffbe63;
 }
