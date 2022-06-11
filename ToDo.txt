@@ -6,8 +6,8 @@ ToDo com ordem de prioridade:
 -corrigir alguns problema de alinhamento
 TOOLING:
   -Painel de adm
-  - Remover Animes e episodios
-  -Editar Episodios
+  -Remover Animes e episodios
+  -Editar Episodios (WIP)
 
 Informacoes do usuário:
  Perfil:
