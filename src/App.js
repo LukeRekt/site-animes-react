@@ -36,6 +36,7 @@ import AuthLoginOverlay from './components/layoult/AuthOverlay/Login/AuthLoginOv
 import RegisterVisibilityProvider from './context/RegisterVisibility';
 import AuthRegisterOverlay from './components/layoult/AuthOverlay/Registro/AuthRegisterOverlay';
 import EditarTemporada from './pages/PageAdmin/ListAnimesAdmin/EditarAnime/EditarTemporada/EditarTemporada';
+import EditarEpPage from './pages/PageAdmin/ListAnimesAdmin/EditarAnime/EditarEp/EditarEpPage';
 
 
 
@@ -103,6 +104,7 @@ function App() {
           <Route exact path="/admin" element={<PageAdmin />}></Route>
           <Route exact path="/admin/editar/:id" element={<EditarAnime />}></Route>
           <Route exact path="/admin/editar/:id/:temporada" element={<EditarTemporada/>}></Route>
+          <Route exact path="/admin/editar/:id/:temporada/:ep" element={<EditarEpPage/>}></Route>
           <Route exact path="/testes" element={<Testes />}></Route>
           {/* <Route path="/projects" element={}></Route> */}
         </Routes>
