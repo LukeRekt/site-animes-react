@@ -3,7 +3,11 @@ import styles from './EditarEpPage.module.css'
 function EditarEpPage(){
     return (
         <div className={styles.container}>
-            a
+            <input type="text" />
+            <input type="text" />
+            <input type="text" />
+            <input type="text" />
+            <button>Enviar</button>
         </div>
 
     )

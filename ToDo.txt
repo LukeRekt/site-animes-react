@@ -3,7 +3,6 @@ ToDo com ordem de prioridade:
 -comentários
     -Fazer o back-end
 -implementar um sistema de chat para testes
--corrigir alguns problema de alinhamento
 TOOLING:
   -Painel de adm
   -Remover Animes e episodios
