@@ -61,7 +61,7 @@ exports.getEpisode = async (req, res) => {
     const temporada = req.params.temporada
     const id = req.params.id
     const numero = req.params.numero;
-    await Episodios.find({ temporada, id, numero }).limit().exec((err, episodios) => {
+    await Episodios.findOne({ temporada, id, numero }).limit().exec((err, episodios) => {
 
         //retornar resposta para o usuario
 
