@@ -55,6 +55,23 @@ exports.AddEpisode = async (req, res) => {
         message: "Cadastrado com sucesso!",
     });
 };
+
+exports.getEpisode = async (req, res) => {
+    //buscar usuario baseado no email
+    const temporada = req.params.temporada
+    const id = req.params.id
+    const numero = req.params.numero;
+    await Episodios.find({ temporada, id, numero }).limit().exec((err, episodios) => {
+
+        //retornar resposta para o usuario
+
+        return res.json({
+            episodios,
+        });
+    });
+};
+
+
 exports.getEpisodes = async (req, res) => {
     //buscar usuario baseado no email
     const temporada = req.params.temporada
