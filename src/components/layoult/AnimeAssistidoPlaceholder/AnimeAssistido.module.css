@@ -8,7 +8,7 @@
     flex-wrap: wrap;
 }
 .container a{
-    width: 220px;
+    width: 215px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,6 +16,7 @@
     overflow: hidden;
     cursor: pointer;
     margin-right: 5px;
+    margin-bottom: 10px;
 
     
 }
