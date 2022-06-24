@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import styles from './EditarEpPage.module.css'
 
 
@@ -12,9 +13,10 @@ const axios = require('axios');
 function EditarEpPage(){
 
     const [posts, setPosts] = useState([]);
-
+    const {temporada, id, ep } = useParams();
     useEffect(() => {
-        axios.get(`http://localhost:3232/getanim/episodios/1/1/1`)
+      
+        axios.get(`http://localhost:3232/getanim/episodios/${id}/${temporada}/${ep}`)
           .then(res => {
             setPosts(res.data.episodios)
             // console.log(posts.nome)
