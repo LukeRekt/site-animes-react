@@ -177,3 +177,39 @@ exports.setTeste = async (req, res) => {
     console.log(req.body.data)
 
 }
+
+exports.setUpdateEpisode = async (req, res) => {
+    const dados = JSON.parse(req.body.data)
+
+    console.log(req.body.data)
+     const filter = {
+        nome: dados.nome,
+        id: dados.id,
+        numero: dados.numero,
+        temporada:dados.temporada,
+        }
+     const update = {
+        id: dados.id,
+        nome: dados.nome,
+        video: dados.video,
+        videoDublado: dados.videoDublado,
+        thumbnail: dados.thumbnail,
+        inicioAbertura: dados.inicioAbertura,
+        fimAbertura: dados.fimAbertura,
+};
+        
+    
+     const doc = await Episodios.findOneAndUpdate(filter, update, {
+        returnOriginal: false,
+        new: true, 
+        upsert: true
+     });
+    
+     res.status(200).json({ imagem: doc.imagem })
+
+    // console.log(req.body);
+    // if(req.files == null){
+    //     return res.status(200);    
+    // }
+
+}

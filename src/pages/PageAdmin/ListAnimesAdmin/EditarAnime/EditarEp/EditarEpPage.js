@@ -42,6 +42,8 @@ function EditarEpPage(){
       const variables = {
         id: id,
         nome: nome,
+        numero: ep,
+        temporada: temporada,
         video: video,
         videoDublado: videoDublado,
         thumbnail: animeImagem,
@@ -56,7 +58,7 @@ function EditarEpPage(){
 
     formData.append('data', JSON.stringify(variables));
     const handleRegister = async (e) => {
-            axios.post('http://localhost:3232/Testes', formData, { withCredentials: true }, {
+            axios.post('http://localhost:3232/episodios/admin/editep', formData, { withCredentials: true }, {
                 headers: {
                 //   'Authorization': `${cookies.get('jwt')}`,
                 'Content-Type': 'application/json'
@@ -77,7 +79,7 @@ function EditarEpPage(){
             <input type="text" placeholder='Thumbnail' value={animeImagem} onChange={(e) => setAnimeImagem(e.target.value)}/>
             <input type="text" placeholder='Inicio Abertura' value={inicioAbertura} onChange={(e) => setInicioAbertura(e.target.value)}/>
             <input type="text" placeholder='Fim Abertura' value={fimAbertura} onChange={(e) => setFimAbertura(e.target.value)}/>
-            <button>Enviar</button>
+            <button onClick={handleRegister}>Alterar</button>
             </form>
             
         </div>
