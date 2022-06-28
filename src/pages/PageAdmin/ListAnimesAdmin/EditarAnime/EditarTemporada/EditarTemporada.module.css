@@ -2,4 +2,32 @@
     background-color: red;
     width: 70%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+.adicionarEp
+{
+margin-top: 20px;
+}
+.adicionarEp svg{
+    
+    background-color: rgba(58, 58, 58, 0.658);
+    color: #181818;
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+    padding: 5px 8px 5px 8px;  
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+.adicionarEp svg:hover{
+    
+    background-color: #181818;
+    fill: #f17500;
+
+
+}
+
