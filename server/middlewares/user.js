@@ -41,3 +41,17 @@ exports.userById = async (req, res, next) => {
         next();
     });
 };
+
+exports.getUserPermission = (req, res, next) => {
+
+     console.log(req.user.isAdmin);
+
+    if(req.user.isAdmin === false){
+        return res.status(403).json({
+            error: "Voce nao tem permissao para acessar este conteudo!",
+        });
+    }
+    next();
+
+    
+}

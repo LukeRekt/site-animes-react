@@ -8,7 +8,7 @@ const { addAnime, listar, getanime, getEpisode, getEpisodes, getAllEpisodes, get
 const { getFavorito, getAllFavoritos, addFavorito, remFavorito } = require("../controllers/favoritos")
 const { getProgresso, addProgresso, remProgresso, updateProgresso, getAllProgresso } = require("../controllers/progresso")
 //importar middlewares
-const { userRegisterValidator, userById } = require('../middlewares/user')
+const { userRegisterValidator, userById, getUserPermission } = require('../middlewares/user')
 const { verifyToken } = require("../middlewares/auth")
 
 //api routes
@@ -18,6 +18,8 @@ router.post("/login", login);
 router.get("/logout", logout)
 
 router.get("/user", verifyToken, userById, getLoggedInUser);
+
+router.get("/adminzada", verifyToken, userById, getUserPermission);
 
 
 //animes
@@ -57,7 +59,7 @@ router.get("/getanim/episodios/:temporada/:id", getEpisodes)
 
 router.get("/getanim/episodios/admin/:id/:temporada", getSeasonEpisodes)
 
-router.post("/episodios/admin/editep", verifyToken, userById, setUpdateEpisode)
+router.post("/episodios/admin/editep", verifyToken, userById, getUserPermission, setUpdateEpisode)
 
 //editar infos
 
