@@ -16,7 +16,7 @@ function Footer() {
         </div>
         <div className={styles.footer_parceiros}>
         <h3>Parceiros</h3>
-        <a href="https://discord.gg/6a4JT3fvrz">Cafézino Animes</a>
+        <a href="https://discord.gg/6a4JT3fvrz">Cafézinho Animes</a>
         </div>
             <div className={styles.footer_redes}>
                 <h3>Redes Sociais</h3>

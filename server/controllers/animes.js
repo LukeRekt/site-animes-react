@@ -213,3 +213,11 @@ exports.setUpdateEpisode = async (req, res) => {
     // }
 
 }
+
+exports.remEpisodio = async (req, res) => {
+    Episodios.findOneAndDelete({id: req.body.id, numero: req.body.numero, temporada: req.body.temporada})
+    .exec((err, doc) => {
+        if (err) return res.status(400).json({ success: false, err });
+        res.status(200).json({ success: true, doc })
+    })
+};
