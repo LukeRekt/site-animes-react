@@ -2,7 +2,7 @@ import styles from './EditarEpLayoult.module.css'
 import React, { useState, useEffect} from 'react'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom';
-import { AiFillCloseSquare } from "react-icons/ai";
+
 import { BsFillPencilFill } from "react-icons/bs";
 import BotaoRemoverEp from '../BotaoRemoverEp/BotaoRemoverEp';
 
@@ -27,7 +27,7 @@ function EditarEpLayout() {
                        <p>Nome EP: {map.nome}</p>
                        <p>EP: {map.numero}</p>
                        <div className={styles.icones}>
-                       <AiFillCloseSquare/>
+                       
                        <BsFillPencilFill/>
                        
                        </div>

@@ -1,6 +1,6 @@
 import styles from "./BotaoRemoverEp.module.css"
 import axios from 'axios';
-
+import { AiFillCloseSquare } from "react-icons/ai";
 
 function BotaoRemoverEp (props){
     const variables = {
@@ -13,6 +13,7 @@ function BotaoRemoverEp (props){
 
     formData.append('data', JSON.stringify(variables));
     const handleRegister = async (e) => {
+     
             axios.post('http://localhost:3232/episodios/admin/remep', formData, { withCredentials: true }, {
                 headers: {
                 'Content-Type': 'application/json'
@@ -21,11 +22,14 @@ function BotaoRemoverEp (props){
               .catch((error) => {
                 console.error(error)
               })
+              document.location.reload(true);
         
 }
 
     return (
-        <div className={styles.DivFoda} onClick={handleRegister}>asdadasdasd</div>
+        <div className={styles.DivFoda} onClick={handleRegister}>
+          <AiFillCloseSquare/>
+        </div>
         
         )
 

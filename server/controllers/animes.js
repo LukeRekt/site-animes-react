@@ -215,12 +215,12 @@ exports.setUpdateEpisode = async (req, res) => {
 }
 
 exports.remEpisodio = async (req, res) => {
+    const dados = JSON.parse(req.body.data)
+    console.log(dados);
 
-    console.log(req.body.data);
-
-    // Episodios.findOneAndDelete({id: req.body.id, numero: req.body.numero, temporada: req.body.temporada})
-    // .exec((err, doc) => {
-    //     if (err) return res.status(400).json({ success: false, err });
-    //     res.status(200).json({ success: true, doc })
-    // })
+     Episodios.findOneAndDelete({id: dados.id, numero: dados.numero, temporada: dados.temporada})
+     .exec((err, doc) => {
+         if (err) return res.status(400).json({ success: false, err });
+         res.status(200).json({ success: true, doc })
+     })
 };
