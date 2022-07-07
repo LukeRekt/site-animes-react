@@ -18,8 +18,11 @@ function Animes(props) {
                     <img src={props.imagem} alt="" />
                     <div className={styles.anime_over}>
                         <div className={styles.anime_infos}>
-                            {/* <p>{props.nome}</p> */}
-                            <p>{diminuirTamanho(props.nome)}</p>
+                            <div className={styles.ductape}>
+                            <p>{props.nome}</p>
+                            </div>
+                            
+                            {/* <p>{diminuirTamanho(props.nome)}</p> */}
 
                             <div className={styles.anime_botao}>ANIME</div>
                             {props.episodeos == 1 ? (<p>{props.episodeos} EPISÓDIO</p>) : (<p>{props.episodeos} EPISÓDIOS</p>)}

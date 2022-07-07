@@ -43,6 +43,7 @@
     margin-bottom: 1px;
     
 }
+
 .anime_botao{
     margin-top: 0px;
     padding: 5px;
@@ -64,6 +65,20 @@
     transition: 0.3s;
     text-overflow: ellipsis;
     width: 92%;
+    
+}
+.ductape{
+    /* background-color: red; */
+    height: 39px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    transition: 0.4s;
+}
+.anime_box:hover .ductape {
+    height: 55px;
+    margin-bottom: 1px;
+    
 }
 .anime_infos p:first-child{
 color: rgb(255, 255, 255);
