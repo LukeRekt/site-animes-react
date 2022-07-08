@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import styles from './EditarEp.module.css'
+import styles from './AdicionarEp.module.css'
 
-function EditarEp(){
+function AdicionarEp(){
     return (
         <div>EditarAnime</div>
     )
@@ -9,4 +9,4 @@ function EditarEp(){
             
 
 }
-export default EditarEp
+export default AdicionarEp
