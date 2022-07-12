@@ -3,7 +3,19 @@ import styles from './AdicionarEp.module.css'
 
 function AdicionarEp(){
     return (
-        <div>EditarAnime</div>
+        <div>
+            <form>
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+
+            </form>
+
+        </div>
     )
                 
             
