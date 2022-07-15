@@ -3,7 +3,7 @@ import styles from './AdicionarEp.module.css'
 
 function AdicionarEp(){
     return (
-        <div>
+        <div className={styles.container}>
             <form>
         <input type="text"  placeholder='Nome'/>
         <input type="text" placeholder='Video'/>
