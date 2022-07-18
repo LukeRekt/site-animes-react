@@ -45,10 +45,10 @@ exports.getanime = async (req, res) => {
 
 exports.AddEpisode = async (req, res) => {
     //testar se o user ja existe
-
+    console.log(req.body)
 
     //se novo user, criar novo user
-    const episode = new Episodios(req.body);
+    const episode = new Episodios(JSON.parse(req.body.data));
     await episode.save();
 
     res.status(201).json({

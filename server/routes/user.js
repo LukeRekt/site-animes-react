@@ -4,7 +4,9 @@ const multer = require('multer');
 const upload = multer();
 //importar controllers
 const { register, login, logout, getLoggedInUser, buscarUser, trocarAvatar,  } = require("../controllers/user")
-const { addAnime, listar, getanime, getEpisode, getEpisodes, getAllEpisodes, getEpisodespage, getSeasonEpisodes, AddEpisode, setTeste, setUpdateEpisode, remEpisodio} = require("../controllers/animes")
+const { addAnime, listar, getanime, getEpisode, getEpisodes, getAllEpisodes,
+     getEpisodespage, getSeasonEpisodes, AddEpisode,
+      setTeste, setUpdateEpisode, remEpisodio} = require("../controllers/animes")
 const { getFavorito, getAllFavoritos, addFavorito, remFavorito } = require("../controllers/favoritos")
 const { getProgresso, addProgresso, remProgresso, updateProgresso, getAllProgresso } = require("../controllers/progresso")
 //importar middlewares
@@ -45,7 +47,7 @@ router.post("/getallprogresso", getAllProgresso)
 
 //Episodios
 
-router.post("/getanim/addep/", AddEpisode)
+// router.post("/getanim/addep/", AddEpisode)
 
 router.get("/getanim/episodios/todos/:id", getAllEpisodes)
 
@@ -57,12 +59,15 @@ router.get("/getanim/episodios/:temporada/:id", getEpisodes)
 
 
 
+
+
 router.get("/getanim/episodios/admin/:id/:temporada", getSeasonEpisodes)
 
 router.post("/episodios/admin/editep", verifyToken, userById, getUserPermission, setUpdateEpisode)
 
 router.post("/episodios/admin/remep", verifyToken, userById, getUserPermission, remEpisodio)
 
+router.post("/episodios/admin/addep", AddEpisode)
 //editar infos
 
 // router.post("/edit", verifyToken, userById, Teste)
