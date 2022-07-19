@@ -1,7 +1,8 @@
 .container{
     width: 70%;
     margin: auto;
-    background-color: aqua;
+    background-color: #181818;
+    padding: 10px;
 }
 .container form
 {
@@ -9,6 +10,7 @@
     width: 30%;
     display: flex;
     flex-direction: column;
+    margin: auto;
 }
 .container form input{
     padding: 10px;
@@ -16,4 +18,5 @@
 }
 .container form button{
     padding: 10px;
+    color: black;
 }
