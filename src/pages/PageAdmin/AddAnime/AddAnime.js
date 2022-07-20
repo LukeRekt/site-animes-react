@@ -88,15 +88,22 @@ function AddAnime(props){
 
 
             <form className={styles.login}>
+              <div id={styles.formLeft}>
                 <input type="text" placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)} />
                 {/* <input type="text" placeholder="Descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} /> */}
-                <textarea cols="52" rows="10" placeholder="Descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} ></textarea>
+                <textarea cols="52" rows="8" placeholder="Descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} ></textarea>
                 <input type="number" placeholder="Nota" value={nota} onChange={(e) => setNota(e.target.value)} />
                 <input type="number" placeholder="Episodios" value={episodios} onChange={(e) => setEpisodios(e.target.value)} />
-                <span>Em Lancamento?</span>
+               
+                <div id={styles.checkForm}>
+                <p>Em Lancamento?</p>
                 <input type="checkbox" placeholder="Lancamento" value={lancamento} onChange={(e) => setLancamento(!lancamento)} />
+                </div>
                 <input type="text" placeholder="Dia Lancamento" value={diaLancamento} onChange={(e) => setDiaLancamento(e.target.value)} />
                 <input type="text" placeholder="Especiais" value={especiais} onChange={(e) => setEspeciais(e.target.value)} />
+                </div>
+                <div id={styles.formRight}>
+                
                 <input type="text" placeholder="Filmes" value={filmes} onChange={(e) => setFilmes(e.target.value)} />
                 <input type="text" placeholder="Autor" value={autor} onChange={(e) => setAutor(e.target.value)} />
                 <input type="text" placeholder="Diretor" value={diretor} onChange={(e) => setDiretor(e.target.value)} />
@@ -106,6 +113,9 @@ function AddAnime(props){
                 <input type="file" name="screenshot" onChange={onChangePicture} />
                 <input type="text" placeholder="Temporadas" value={temporadas} onChange={(e) => setTemporadas(e.target.value)} />
                 <input type="text" placeholder="Temas" value={temas} onChange={(e) => setTemas(e.target.value)} />
+                <button onClick={handleRegister} className={styles.botao}>Registrar</button>
+                           <p>TotalAnimes: {props.totalIds}</p>
+                </div>
                
                 {/* disabled={
                     !username ||
@@ -121,8 +131,7 @@ function AddAnime(props){
                     
                     */}
 
-                <button onClick={handleRegister} className={styles.botao}>Registrar</button>
-                           <p>TotalAnimes: {props.totalIds}</p>
+                
             </form>
 
             <div className={styles.testeImagem}><img src={imgData} onError={(e) =>  {e.target.src = 'http://localhost:3232/static/imagens/assets/capasanimes/capapadrao.png'}} alt="" /></div>

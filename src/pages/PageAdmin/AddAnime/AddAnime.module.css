@@ -18,10 +18,15 @@
     background-color: #2c2c3b;
     padding: 40px 30px 30px 30px;
     border-radius: 10px;
-    width: 400px;
-    height: 910px;
+   
     box-shadow: #00000060 2px 2px 2px;
     margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+#formLeft
+{
+margin-right: 25px;
 }
 .login input {
     color: #bebebe;
@@ -34,7 +39,16 @@
     padding: 10px 10px;
     margin: 10px -10px;
   }
+  #checkForm{
+    display: flex;
+  align-items: center;
   
+  }
+  #checkForm p{
+  margin-left: 0;
+  margin-bottom: 6px;
+  padding: 0;
+  }
   .botao {
    
     width: 100%;
