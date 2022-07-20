@@ -15,10 +15,6 @@ const VideoPlayer = (props) => {
   const [tempoPimba, setPimba] = useState(0);
   const { user } = useContext(UserContext);
 
-
-
-
-
   const videoContainer = document.getElementById('video-container');
   function toggleFullScreena(pimba) {
     if (document.fullscreenElement) {

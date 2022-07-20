@@ -4,11 +4,16 @@ import styles from './VideoProgress.module.css'
 
 function VideoProgress(props) {
 
-
     const [tempoSalvo, setTempoSalvo] = useState();
 
     function calculoPorcentagem(){
         let calcA = (props.tempoAtual * 100) / props.tempoTotal;
+        if(isNaN(Math.floor(calcA))){
+            return setTempoSalvo(0);
+        }
+        if(!isFinite(Math.floor(calcA))){
+            return setTempoSalvo(0);
+        }
         console.log(Math.floor(calcA))
          return setTempoSalvo((Math.floor(calcA)));
     }
