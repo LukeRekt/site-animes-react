@@ -33,7 +33,7 @@ function PagePefil() {
         let formData = new FormData();
         formData.append("screenshot", arquivo);
 
-        Axios.post("http://localhost:3232/trocaravatar", formData,  {withCredentials: true}, {
+        Axios.post(`${process.env.REACT_APP_API_URL}/trocaravatar`, formData,  {withCredentials: true}, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },
@@ -47,7 +47,7 @@ function PagePefil() {
       }
     useEffect(() =>  {
        
-        Axios.post('http://localhost:3232/getallprogresso',  variables)
+        Axios.post(`${process.env.REACT_APP_API_URL}/getallprogresso`,  variables)
      .then(res => {
          setTotalAssistido(res.data.progresso)
          setTotalAssistidoTempo(res.data.progresso.length * 24 / 60)
@@ -55,7 +55,7 @@ function PagePefil() {
      })
    }, [user])
     useEffect(() => {
-        Axios.get('http://localhost:3232/getanim')
+        Axios.get(`${process.env.REACT_APP_API_URL}/getanim`)
             .then(res => {
                 setPosts(res.data.animes)
                 

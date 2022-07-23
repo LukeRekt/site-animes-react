@@ -39,7 +39,7 @@ class InstantSearch extends Component {
     }
     this.isReqToken = axios.CancelToken.source()
     await axios
-      .get('http://localhost:3232/getanim', {
+      .get(`${process.env.REACT_APP_API_URL}/getanim`, {
         isReqToken: this.isReqToken.token,
       })
       .then((res) => {

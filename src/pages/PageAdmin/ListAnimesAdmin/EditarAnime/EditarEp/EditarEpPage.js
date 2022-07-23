@@ -26,7 +26,7 @@ function EditarEpPage(){
 
     useEffect(() => {
       
-        axios.get(`http://localhost:3232/getanim/episodios/${id}/${temporada}/${ep}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim/episodios/${id}/${temporada}/${ep}`)
           .then(res => {
             setNome(res.data.episodios.nome)
             setVideo(res.data.episodios.video)
@@ -58,7 +58,7 @@ function EditarEpPage(){
 
     formData.append('data', JSON.stringify(variables));
     const handleRegister = async (e) => {
-            axios.post('http://localhost:3232/episodios/admin/editep', formData, { withCredentials: true }, {
+            axios.post(`${process.env.REACT_APP_API_URL}/episodios/admin/editep`, formData, { withCredentials: true }, {
                 headers: {
                 //   'Authorization': `${cookies.get('jwt')}`,
                 'Content-Type': 'application/json'

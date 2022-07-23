@@ -13,7 +13,7 @@ function Calendario() {
 
     const [posts, setPosts] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:3232/getanim')
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim`)
             .then(res => {
                 setPosts(res.data.animes)
             })

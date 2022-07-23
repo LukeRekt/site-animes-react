@@ -15,7 +15,7 @@ function FavoritosHandle (props){
     }
 
     useEffect(() => {
-        axios.post('http://localhost:3232/getallfavoritos', variables)
+        axios.post(`${process.env.REACT_APP_API_URL}/getallfavoritos`, variables)
             .then(res => {
                 setFavorited(res.data.favoritos)
                 setCarregandoFavoritos(false)

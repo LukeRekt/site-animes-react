@@ -14,7 +14,7 @@ function BotaoRemoverEp (props){
     formData.append('data', JSON.stringify(variables));
     const handleRegister = async (e) => {
      
-            axios.post('http://localhost:3232/episodios/admin/remep', formData, { withCredentials: true }, {
+            axios.post(`${process.env.REACT_APP_API_URL}/episodios/admin/remep`, formData, { withCredentials: true }, {
                 headers: {
                 'Content-Type': 'application/json'
                 }

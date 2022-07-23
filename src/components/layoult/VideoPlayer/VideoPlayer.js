@@ -81,7 +81,7 @@ const VideoPlayer = (props) => {
     
     }
     if(user){
-      axios.post('http://localhost:3232/getprogresso',  variables, { withCredentials: true })
+      axios.post(`${process.env.REACT_APP_API_URL}/getprogresso`,  variables, { withCredentials: true })
       .then(res => {
            setTempoSalvo(res.data.tempoAtual)
           // setCarregandoFavoritos(false)
@@ -104,7 +104,7 @@ const VideoPlayer = (props) => {
     console.log(state, tempo)
     if (state == true){
     
-    axios.post('http://localhost:3232/updateprogresso',  variablesUpdate, { withCredentials: true })
+    axios.post(`${process.env.REACT_APP_API_URL}/updateprogresso`,  variablesUpdate, { withCredentials: true })
     .then(res => {
         // setCarregandoFavoritos(false)
     })

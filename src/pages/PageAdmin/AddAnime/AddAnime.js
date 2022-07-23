@@ -55,7 +55,7 @@ function AddAnime(props){
 
     const handleRegister = async (e) => {
         //http://localhost:3232/addanimes
-            axios.post('http://localhost:3232/Testes', formData, { withCredentials: true }, {
+            axios.post(`${process.env.REACT_APP_API_URL}/Testes`, formData, { withCredentials: true }, {
                 headers: {
                 //   'Authorization': `${cookies.get('jwt')}`,
                 'Content-Type': 'application/json'

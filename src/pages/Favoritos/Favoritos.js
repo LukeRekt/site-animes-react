@@ -6,7 +6,7 @@ function Favoritos (){
             
             
             <div id={styles.imagem}>
-            <img src="http://localhost:3232/static/imagens/assets/emConstrucao.png" alt="" srcset="" />
+            <img src={`${process.env.REACT_APP_API_URL}/static/imagens/assets/emConstrucao.png`}  alt="" srcset="" />
             
             </div>
         </div>//essa página deve ser apenas possível de se visualizar caso esteja logado.

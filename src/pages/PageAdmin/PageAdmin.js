@@ -16,7 +16,7 @@ function PageAdmin () {
     const [animesQntt, setAnimesQntt] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3232/getanim')
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim`)
             .then(res => {
                 setAnimesQntt(res.data.animes.length)
                 
@@ -29,8 +29,9 @@ function PageAdmin () {
         
     
     return (
-
+        
         <div className={styles.PerfilContainer}>
+            {console.log()}
             <div className={styles.rightUser}>
                 <div onClick={() => toggleTab(1)} className={toggleState === 1 ? `${styles.favoritos} ${styles.ativo} ${styles.tab_color}`: `${styles.favoritos} ${styles.tab_color}`} ><p><FaHeart /> AddAnimes</p></div>
                 <div onClick={() => toggleTab(2)} className={toggleState === 2 ? `${styles.assistidos} ${styles.ativo} ${styles.tab_color}`: `${styles.assistidos} ${styles.tab_color}`}><p><FaEye /> Animes</p></div>

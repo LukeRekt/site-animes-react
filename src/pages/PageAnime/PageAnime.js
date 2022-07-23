@@ -23,7 +23,7 @@ function PageAnime() {
     
     let navigate = useNavigate();
     useEffect(() => {
-        axios.get(`http://localhost:3232/getanim/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim/${id}`)
             .then(res => {
                 setPosts(res.data.animes)
                 setTemas(res.data.animes.temas)

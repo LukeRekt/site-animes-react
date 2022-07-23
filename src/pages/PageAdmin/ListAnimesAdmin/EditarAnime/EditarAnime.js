@@ -28,7 +28,7 @@ function EditarAnime(){
     const [imgData, setImgData] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:3232/getanim/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim/${id}`)
             .then(res => {
                 // setPosts(res.data.animes)
                 setNome(res.data.animes.nome)
@@ -90,7 +90,7 @@ function EditarAnime(){
     const handleRegister = async (e) => {
         // setTemas(temas.split(','));
         //http://localhost:3232/addanimes
-            axios.post('http://localhost:3232/Testes', formData, { withCredentials: true }, {
+            axios.post(`${process.env.REACT_APP_API_URL}/Testes`, formData, { withCredentials: true }, {
                 headers: {
                 //   'Authorization': `${cookies.get('jwt')}`,
                 'Content-Type': 'application/json'

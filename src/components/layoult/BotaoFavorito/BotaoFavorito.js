@@ -15,7 +15,7 @@ function BotaoFavorito (props){
 
     const onClickFavorite = () => {
         if (Favorited) {
-        axios.post('http://localhost:3232/remfavorito', variables, { withCredentials: true }, {
+        axios.post(`${process.env.REACT_APP_API_URL}/remfavorito`, variables, { withCredentials: true }, {
             headers: {
             'Content-Type': 'application/json'
             }
@@ -27,7 +27,7 @@ function BotaoFavorito (props){
             console.error(error)
           })
         }else{
-            axios.post('http://localhost:3232/favoritar', variables, { withCredentials: true }, {
+            axios.post(`${process.env.REACT_APP_API_URL}/favoritar`, variables, { withCredentials: true }, {
                 headers: {
                 'Content-Type': 'application/json'
                 }
@@ -41,7 +41,7 @@ function BotaoFavorito (props){
         }
 }
 useEffect(() => {
-    axios.post('http://localhost:3232/getfavorito', variables, { withCredentials: true })
+    axios.post(`${process.env.REACT_APP_API_URL}/getfavorito`, variables, { withCredentials: true })
     .then(response => {
         if (response.data.success) {
             setFavorited(response.data.subcribed)

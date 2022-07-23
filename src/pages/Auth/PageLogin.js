@@ -53,7 +53,7 @@ function PageLogin() {
             <div className={styles.leftform}>
                 <div className={styles.animationCanvas}>
                     
-                    <img src="http://localhost:3232/static/imagens/assets/nezuko-running.gif" alt="" />
+                    <img src={`${process.env.REACT_APP_API_URL}/static/imagens/assets/nezuko-running.gif`} alt="" />
                 </div>
             </div>
 

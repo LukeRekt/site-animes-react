@@ -18,7 +18,7 @@ function AdicionarEp(){
     useEffect(() => {
 
         
-        axios.get(`http://localhost:3232/getanim/episodios/${temporada}/${id}/`)
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim/episodios/${temporada}/${id}/`)
             .then(res => {
                 setPosts(res.data.episodios)
                 // console.log(posts)
@@ -43,7 +43,7 @@ function AdicionarEp(){
     formData.append('data', JSON.stringify(variables));
     const handleRegister = async (e) => {
      
-            axios.post('http://localhost:3232/episodios/admin/addep', formData, { withCredentials: true }, {
+            axios.post(`${process.env.REACT_APP_API_URL}/episodios/admin/addep`, formData, { withCredentials: true }, {
                 headers: {
                 'Content-Type': 'application/json'
                 }

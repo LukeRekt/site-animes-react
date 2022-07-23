@@ -26,7 +26,7 @@ function Home() {
     const [postsep, setPostsep] = useState([])
     const [episodios, setEpisodiosQuantidade] = useState(5);
     useEffect(() => {
-        axios.get('http://localhost:3232/getanim')
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim`)
             .then(res => {
                 setPosts(res.data.animes)
             })
@@ -34,7 +34,7 @@ function Home() {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:3232/getanim/episodios/todos/${episodios}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim/episodios/todos/${episodios}`)
             .then(res => {
                 setPostsep(res.data.episodios)
             })

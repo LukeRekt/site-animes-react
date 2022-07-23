@@ -9,7 +9,7 @@ function ListAnimesAdmin (props){
 
 
     useEffect(() => {
-        axios.get('http://localhost:3232/getanim')
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim`)
             .then(res => {
                 setAnimesAdmin(res.data.animes)
                 setCarregandoFavoritos(false)

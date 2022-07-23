@@ -45,7 +45,7 @@ function PageRegister() {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            const userAvatar = `http://localhost:3232/static/imagens/avatars/${username}.png`;
+            const userAvatar = `${process.env.REACT_APP_API_URL}/static/imagens/avatars/${username}.png`;
             const res = await register({ username, email, password, userAvatar, userBanner });
             if (res.error) toast.warning(res.error);
             else {
@@ -64,7 +64,7 @@ function PageRegister() {
 <div className={styles.leftform}>
                 <div className={styles.animationCanvas}>
                     
-                    <img src="http://localhost:3232/static/imagens/assets/nezuko-running.gif" alt="" />
+                    <img src={`${process.env.REACT_APP_API_URL}/static/imagens/assets/nezuko-running.gif`} alt="" />
                 </div>
             </div>
 

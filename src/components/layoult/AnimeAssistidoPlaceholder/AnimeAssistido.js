@@ -15,7 +15,7 @@ function AnimeAssistido (props){
       }
     useEffect(() =>  {
        
-        axios.post('http://localhost:3232/getallprogresso',  variables)
+        axios.post(`${process.env.REACT_APP_API_URL}/getallprogresso`,  variables)
      .then(res => {
          setPorcentagem(res.data.progresso)
          console.log(porcentagem)

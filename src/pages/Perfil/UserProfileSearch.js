@@ -26,7 +26,7 @@ function UserProfileSearch() {
     const [totalAssistidoTempo, setTotalAssistidoTempo] = useState();
 
     useEffect(() => {
-        axios.post('http://localhost:3232/buscar', {
+        axios.post(`${process.env.REACT_APP_API_URL}/buscar`, {
             username: id,
           })
           .then(function (response) {
@@ -45,7 +45,7 @@ function UserProfileSearch() {
       }
     useEffect(() =>  {
        
-        axios.post('http://localhost:3232/getallprogresso',  variables)
+        axios.post(`${process.env.REACT_APP_API_URL}/getallprogresso`,  variables)
      .then(res => {
          setTotalAssistido(res.data.progresso)
          setTotalAssistidoTempo(res.data.progresso.length * 24 / 60)
