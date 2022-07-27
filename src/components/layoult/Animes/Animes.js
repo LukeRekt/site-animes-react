@@ -15,7 +15,7 @@ function Animes(props) {
                         NOVO 
                     </div>
                     <AiFillPlayCircle />
-                    <img src={props.imagem} alt="" />
+                    <img src={`${process.env.REACT_APP_API_URL}/${props.imagem}`} alt="" />
                     <div className={styles.anime_over}>
                         <div className={styles.anime_infos}>
                             <div className={styles.ductape}>

@@ -137,10 +137,10 @@ const VideoPlayer = (props) => {
     
     <div className={styles.container}>
          <div className={styles.SeletorLinguagem}>     
-   <div className={styles.Legendado} onClick={() => {setLinkVideo(props.videoLink)}}>
+   <div className={styles.Legendado} onClick={() => {setLinkVideo(`${process.env.REACT_APP_API_URL}/${props.videoLink}`)}}>
             <p>Legendado</p>
           </div>
-          <div className={styles.Dublado} onClick={() => {setLinkVideo(props.videoDub)}}>
+          <div className={styles.Dublado} onClick={() => {setLinkVideo(`${process.env.REACT_APP_API_URL}/${props.videoDub}`)}}>
             <p>Dublado</p>
           </div>
         </div>

@@ -53,7 +53,7 @@ function PageAnime() {
             </div>
 
             <div className={styles.fotoAnime}>
-                <img src={posts.imagem} alt="" />
+                <img src={`${process.env.REACT_APP_API_URL}/${posts.imagem}`} alt="" />
                 {posts.lancamento == false ? (<div className={` ${styles.sobreAnime} ${styles.animeCompleto}`}>
                 <FaCheck/>
                     <div className={styles.sobreAnimeTexto}>

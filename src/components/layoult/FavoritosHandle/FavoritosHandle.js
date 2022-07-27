@@ -34,7 +34,7 @@ function FavoritosHandle (props){
                     <p>{teste.nomeAnime} </p>
                     </small>
                     </div>
-                    <img src={teste.imagemAnime} alt="" />
+                    <img src={`${process.env.REACT_APP_API_URL}/${teste.imagemAnime}`} alt="" />
                     </Link>
                     </div>           
         })))} 

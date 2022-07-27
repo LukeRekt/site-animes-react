@@ -84,7 +84,7 @@ function Tabsa(props) {
              <div className={styles.AnimeListContainer}>
                {posts.map(post =>
                
-                 post.temporada == index + 1 ? (<AnimeList nome={post.nome} id={post.id} iddois={props.id} episodio={post.numero} temporada={index + 1} imagem={post.animeImagem} />) : (<></>))}
+                 post.temporada == index + 1 ? (<AnimeList nome={post.nome} id={post.id} iddois={props.id} episodio={post.numero} temporada={index + 1} imagem={`${process.env.REACT_APP_API_URL}/${post.animeImagem}`} />) : (<></>))}
    
    
                {/* <AnimeList nome={props.nome}/> */}

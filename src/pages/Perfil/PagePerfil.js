@@ -93,11 +93,11 @@ function PagePefil() {
                 <div className={styles.userAvatar}>
                     <div className={styles.metadeAvatar}>
                         <div id={styles.alterarBanner}><AiFillCamera/></div>
-                        <img  src={banner} alt="" />
+                        <img  src={`${process.env.REACT_APP_API_URL}/${banner}`} alt="" />
                     </div>
                     <div id={styles.overAvatar}> <input type="file" name="screenshot" onChange={(e) => upload(e, e.target.files[0])}
                       style={{opacity: 0.0, position: "absolute", top: 0, left: 0, bottom: 0, right: 0, width: "100%", height:"100%"}} /><AiFillCamera/></div>
-                    <img id={styles.avatar} src={avatar} alt="" />
+                    <img id={styles.avatar} src={`${process.env.REACT_APP_API_URL}/${avatar}`} alt="" />
                     <p>{user}</p>
                     <p>@{user}</p>
                     <div className={styles.userSeguidores}>

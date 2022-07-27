@@ -28,7 +28,7 @@ function ListAnimesAdmin (props){
                     <p>{teste.nome} </p>
                     </small>
                     </div>
-                    <img src={teste.imagem} alt="" />
+                    <img src={`${process.env.REACT_APP_API_URL}/${teste.imagem}`} alt="" />
                     </Link>
                     </div>
                 

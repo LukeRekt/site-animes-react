@@ -24,7 +24,7 @@ function EpisodiosHome(props) {
                         </div>
                         <AiFillPlayCircle />
                     </div>
-                    <img src={props.imagem} alt="" />
+                    <img src={`${process.env.REACT_APP_API_URL}/${props.imagem}`} alt="" />
 
                 </div>
             </Link>

@@ -31,7 +31,7 @@ function AnimeAssistido (props){
                     return <Link key={index} to={`/anime/${post.idAnime}/${post.temporadaAnime}/${post.episodioAnime}`}> 
                     <div  className={styles.AnimeContainer}>
                         
-                          <img src={post.animeImagem} alt="" />
+                          <img src={`${process.env.REACT_APP_API_URL}/${post.animeImagem}`} alt="" />
                           <div className={styles.AnimeOver}>
                               <p>{post.nomeAnime}</p>
                               <p>Temporada: {post.temporadaAnime}</p>
