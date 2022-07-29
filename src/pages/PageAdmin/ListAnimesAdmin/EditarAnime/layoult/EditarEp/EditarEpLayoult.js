@@ -11,7 +11,7 @@ function EditarEpLayout() {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/getanim/episodios/${id}/${temporada}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim/episodios/${temporada}/${id}`)
             .then(res => {
                 setPosts(res.data.episodios)
             })
@@ -31,7 +31,7 @@ function EditarEpLayout() {
                        <BsFillPencilFill/>
                        
                        </div>
-                   <img src={map.animeImagem} alt="" />
+                   <img src={`${process.env.REACT_APP_API_URL}/${map.animeImagem}`} alt="" />
                    </Link>
                    </div>
                 })} 

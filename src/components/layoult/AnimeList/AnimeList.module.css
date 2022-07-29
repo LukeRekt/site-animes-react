@@ -13,7 +13,7 @@
     border-radius: 1px;
     overflow: hidden
 }
-.AnimeThumb p {
+.textos p {
     font-size: 14px;
     position:absolute;
     top: 65%;
@@ -22,13 +22,22 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
     
+    
 }
-.AnimeThumb p:nth-child(2){
+.textos p:nth-child(1){
     border-top: 3px solid #29294e;
+    
 }
-.AnimeThumb p:nth-child(3){
+.textos p:nth-child(1){
     top: 78%;
     color: grey;
+    
+}
+.textos p:nth-child(2){
+    overflow: hidden;
+    font-size: 13px;
+    white-space: nowrap;
+    
 }
 .AnimeQualidade{
     position: absolute;

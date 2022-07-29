@@ -15,8 +15,11 @@ function AnimeList(props) {
                         <div className={styles.AnimeQualidade}><p>FHD</p></div>
                        
                         <div className={styles.pimba}><img src={imagem} alt="" /></div>
+                        <div className={styles.textos}>
                         <p>Episódio: {episodio}</p>
                         <p>{nome}</p>
+                        </div>
+              
                         <div className={styles.AnimeLingua}><div id={styles.AnimeDublado}><p>Dublado</p></div></div>
                     </div>
                    

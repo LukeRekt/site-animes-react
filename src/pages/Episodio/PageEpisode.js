@@ -176,7 +176,7 @@ function PageEpisode() {
                 
           <div className={styles.comentario}>
             <div className={styles.comentarioHeader}>
-            <img src="https://cdn.discordapp.com/avatars/464489936037609483/16559533db64541cc6963f12bd328398.png?size=1024" alt="" />
+            <img src="https://cdn.discordapp.com/avatars/464489936037609483/0cdbcb9f780eabb784353f4afa691221.png?size=512" alt="" />
             <p>Pec <small>• 1 Hora atrás</small></p>
             </div>
                 <div className={styles.comentarioTexto}>

@@ -1,12 +1,9 @@
 ToDo com ordem de prioridade:
 -Ver mais tarde nos episódios
--comentários
-    -Fazer o back-end
+-Sistema de Comentários
 -implementar um sistema de chat para testes
 TOOLING:
-  -Painel de adm
-  -Remover Animes e episodios
-  -Editar Episodios (WIP)
+  -Finalizar ferramentas do Painel de adm.
 
 Informacoes do usuário:
  Perfil:

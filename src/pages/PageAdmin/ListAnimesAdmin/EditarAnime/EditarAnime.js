@@ -43,7 +43,7 @@ function EditarAnime(){
                 setDiretor(res.data.animes.diretor)
                 setEstudio(res.data.animes.estudio)
                 setAno(res.data.animes.ano)
-                setImagem(res.data.animes.imagem)
+                setImagem(`${process.env.REACT_APP_API_URL}/${res.data.animes.imagem}`)
                 setTemporadas(res.data.animes.temporadas)
                 setTemas(res.data.animes.temas)
                 console.log(res.data.animes.lancamento)

@@ -183,7 +183,6 @@ exports.setUpdateEpisode = async (req, res) => {
 
     console.log(req.body.data)
      const filter = {
-        nome: dados.nome,
         id: dados.id,
         numero: dados.numero,
         temporada:dados.temporada,

@@ -26,7 +26,7 @@ function EditarEpPage(){
 
     useEffect(() => {
       
-        axios.get(`${process.env.REACT_APP_API_URL}/getanim/episodios/${id}/${temporada}/${ep}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim/episodios/${temporada}/${id}/${ep}`)
           .then(res => {
             setNome(res.data.episodios.nome)
             setVideo(res.data.episodios.video)
@@ -72,6 +72,7 @@ function EditarEpPage(){
 
     return (
         <div className={styles.container}>
+          
             <form>
             <input type="text" placeholder='Titulo EP' value={nome} onChange={(e) => setNome(e.target.value)}/>
             <input type="text" placeholder='Link Legendado' value={video} onChange={(e) => setVideo(e.target.value)}/>
