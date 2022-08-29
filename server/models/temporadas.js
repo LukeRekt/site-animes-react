@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const temporadaSchema = new mongoose.Schema(
+const temporadasSchema = new mongoose.Schema(
 	{
 		idAnime: {
 			type: Number,
@@ -21,4 +21,4 @@ const temporadaSchema = new mongoose.Schema(
 );
 
 
-module.exports = mongoose.model("Temporada", temporadaSchema);
+module.exports = mongoose.model("Temporadas", temporadasSchema);

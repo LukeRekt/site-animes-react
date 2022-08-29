@@ -11,7 +11,8 @@ const { getFavorito, getAllFavoritos, addFavorito, remFavorito } = require("../c
 const { getProgresso, addProgresso, remProgresso, updateProgresso, getAllProgresso } = require("../controllers/progresso")
 //importar middlewares
 const { userRegisterValidator, userById, getUserPermission } = require('../middlewares/user')
-const { verifyToken } = require("../middlewares/auth")
+const { verifyToken } = require("../middlewares/auth");
+const { addTemporada, listarTemporada, getTemporada } = require('../controllers/temporadas');
 
 //api routes
 
@@ -83,5 +84,14 @@ router.post("/testes", setTeste)
 
 router.post("/trocaravatar", verifyToken, userById, trocarAvatar)
 // router.post("/trocaravatar", verifyToken, userById, trocarBanner)
+
+
+
+
+//Temporadas
+router.post("/addtemporada", verifyToken, userById, addTemporada)
+router.get("/listartemporada", listarTemporada)
+router.post("/gettemporada/:id", getTemporada)
+
 
 module.exports = router;
