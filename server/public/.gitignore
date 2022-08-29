@@ -3,3 +3,5 @@
 # misc
 *.mp4
 *.mkv
+/animes/*
+/imagens/*
