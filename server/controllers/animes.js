@@ -158,7 +158,7 @@ exports.setTeste = async (req, res) => {
         diretor: dados.diretor,
         estudio: dados.estudio,
         ano: dados.ano,
-        imagem: `http://localhost:3232/static/imagens/assets/capasanimes/${filename}`,
+        imagem: `static/imagens/assets/capasanimes/${filename}`,
         temas: dados.temas};
         
     

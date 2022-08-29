@@ -161,7 +161,7 @@ exports.trocarAvatar = async (req, res) => {
     let uploadPath = __dirname + "../../public/imagens/avatars/" + filename;
     file.mv(uploadPath);
     const filter = {username: username}
-    const update = { userAvatar: `http://localhost:3232/static/imagens/avatars/${filename}`};
+    const update = { userAvatar: `static/imagens/avatars/${filename}`};
     
     const doc = await User.findOneAndUpdate(filter, update, {
     //   returnOriginal: false,
@@ -186,7 +186,7 @@ exports.setTeste = async (req, res) => {
     file.mv(uploadPath);
 
     const filter = {username: username}
-    const update = { userAvatar: `http://localhost:3232/static/imagens/avatars/${filename}`};
+    const update = { userAvatar: `static/imagens/avatars/${filename}`};
     
     const doc = await A.findOneAndUpdate(filter, update, {
        returnOriginal: false,
