@@ -15,7 +15,6 @@ function AddAnime(props){
     const [diretor, setDiretor] = useState("");
     const [estudio, setEstudio] = useState("");
     const [ano, setAno] = useState("");
-    const [temporadas, setTemporadas] = useState("");
     const [imagem, setImagem] = useState([])
     const [imgData, setImgData] = useState([])
     const [temas, setTemas] = useState("")
@@ -24,7 +23,6 @@ function AddAnime(props){
         nome: nome,
         descricao: descricao,
         nota: nota,
-        temporadas: temporadas,
         episodios: episodios,
         lancamento: lancamento,
         diaLancamento: diaLancamento,
@@ -111,7 +109,7 @@ function AddAnime(props){
                 <input type="text" placeholder="Ano" value={ano} onChange={(e) => setAno(e.target.value)} />
                 {/* <input type="text" placeholder="Imagem" value={imagem} onChange={(e) => setImagem(e.target.value)} /> */}
                 <input type="file" name="screenshot" onChange={onChangePicture} />
-                <input type="text" placeholder="Temporadas" value={temporadas} onChange={(e) => setTemporadas(e.target.value)} />
+                {/* <input type="text" placeholder="Temporadas" value={temporadas} onChange={(e) => setTemporadas(e.target.value)} /> */}
                 <input type="text" placeholder="Temas" value={temas} onChange={(e) => setTemas(e.target.value)} />
                 <button onClick={handleRegister} className={styles.botao}>Registrar</button>
                            <p>TotalAnimes: {props.totalIds}</p>

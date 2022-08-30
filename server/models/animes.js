@@ -25,11 +25,6 @@ const animesSchema = new mongoose.Schema(
 			required: true,
 			trim: true,
 		},
-		temporadas: {
-			type: Number,
-			required: true,
-			trim: true,
-		},
 		episodios: {
 			type: String,
 			required: true,
