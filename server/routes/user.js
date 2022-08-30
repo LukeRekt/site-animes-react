@@ -91,7 +91,7 @@ router.post("/trocaravatar", verifyToken, userById, trocarAvatar)
 //Temporadas
 router.post("/addtemporada", verifyToken, userById, addTemporada)
 router.get("/listartemporada", listarTemporada)
-router.post("/gettemporada/:id", getTemporada)
+router.get("/gettemporada/:idAnime", getTemporada)
 
 
 module.exports = router;

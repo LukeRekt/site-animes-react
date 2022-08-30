@@ -31,7 +31,7 @@ exports.listarTemporada = async (req, res) => {
 exports.getTemporada = async (req, res) => {
     //buscar usuario baseado no email
     const idAnime = req.params.idAnime
-    await Temporadas.findOne({ idAnime }).limit(20).exec((err, animes) => {
+    await Temporadas.find({ idAnime }).limit(20).exec((err, temporadas) => {
 
         //retornar resposta para o usuario
 

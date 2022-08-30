@@ -19,7 +19,7 @@ function PageAnime() {
     const [posts, setPosts] = useState([])
     const [temas, setTemas] = useState([])
 
-
+    const [temporadas, setTemporadas] = useState([])
     
     let navigate = useNavigate();
     useEffect(() => {
@@ -29,6 +29,17 @@ function PageAnime() {
                 setTemas(res.data.animes.temas)
             }).catch((err) => {
                 return navigate("/");
+            })
+
+    }, [])
+
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_API_URL}/gettemporada/${id}`)
+            .then(res => {
+                setTemporadas(res.data.temporadas)
+                
+            }).catch((err) => {
+                // return navigate("/");
             })
 
     }, [])
@@ -106,7 +117,7 @@ function PageAnime() {
 
             </div>
             <div className={styles.episodeosAnime}>
-                <Tabs id={id} temporadas={posts.temporadas}/>
+                <Tabs id={id} temporadas={temporadas.length}/>
                 {/* eps aqui listados vindo direto de um novo server json buscando de acordo com o id do ep */}
 
             </div>
