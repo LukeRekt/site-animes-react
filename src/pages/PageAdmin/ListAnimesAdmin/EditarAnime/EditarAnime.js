@@ -26,6 +26,7 @@ function EditarAnime(){
     const [temporadas, setTemporadas] = useState([])
     const [temas, setTemas] = useState("")
     const [imgData, setImgData] = useState([])
+    
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/getanim/${id}`)
@@ -44,14 +45,25 @@ function EditarAnime(){
                 setEstudio(res.data.animes.estudio)
                 setAno(res.data.animes.ano)
                 setImagem(`${process.env.REACT_APP_API_URL}/${res.data.animes.imagem}`)
-                setTemporadas(res.data.animes.temporadas)
+                
                 setTemas(res.data.animes.temas)
                 console.log(res.data.animes.lancamento)
             }).catch((err) => {
                 
             })
-
     }, [lancamento])
+
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_API_URL}/gettemporada/${id}`)
+            .then(res => {
+                // setPosts(res.data.animes)
+                setTemporadas(res.data.temporadas)
+
+            }).catch((err) => {
+                
+            })
+    }, [lancamento])
+    
     const variables = {
         id: id,
         nome: nome,
@@ -137,7 +149,7 @@ function Testando(){
                     <input type="text" value={estudio} placeholder='Estudio' onChange={(e) => setEstudio(e.target.value)}/>
                     <input type="text" value={ano} placeholder='Ano' onChange={(e) => setAno(e.target.value)}/>
                     <input type="file" name="screenshot" onChange={onChangePicture} />
-                    <input type="text" value={temporadas} placeholder='Temporadas' onChange={(e) => setTemporadas(e.target.value)}/>
+                    {/* <input type="text" value={temporadas} placeholder='Temporadas' onChange={(e) => setTemporadas(e.target.value)}/> */}
                     <input type="text" value={temas} placeholder='Temas' onChange={(e) => setTemas(e.target.value)}/>
                     <button onClick={handleRegister}>Alterar</button>
                 </form>
