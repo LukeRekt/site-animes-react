@@ -46,3 +46,17 @@
 
 
 }
+.barraTemporada{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.editarTemporada{
+    padding: 10px;
+}
+.editarTemporada svg{
+    font-size: 20px;
+    color: #181818;  
+    border-radius: 5px;
+    
+}
