@@ -7,7 +7,7 @@ exports.addTemporada = async (req, res, next) => {
 
 
     //se novo user, criar novo user
-    const temporada = new Temporadas(req.body);
+    const temporada = new Temporadas(JSON.parse(req.body.data));
     await temporada.save();
 
     res.status(201).json({

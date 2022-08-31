@@ -38,6 +38,7 @@ import AuthRegisterOverlay from './components/layoult/AuthOverlay/Registro/AuthR
 import EditarTemporada from './pages/PageAdmin/ListAnimesAdmin/EditarAnime/EditarTemporada/EditarTemporada';
 import EditarEpPage from './pages/PageAdmin/ListAnimesAdmin/EditarAnime/EditarEp/EditarEpPage';
 import AdicionarEp from './pages/PageAdmin/ListAnimesAdmin/EditarAnime/EditarTemporada/AdicionarEp/AdicionarEp';
+import AdicionarTemporada from './pages/PageAdmin/ListAnimesAdmin/EditarAnime/AdicionarTemporada/AdicionarTemporada';
 
 
 
@@ -106,6 +107,7 @@ function App() {
           <Route exact path="/admin/editar/:id/:temporada" element={<EditarTemporada/>}></Route>
           <Route exact path="/admin/editar/:id/:temporada/:ep" element={<EditarEpPage/>}></Route>
           <Route exact path="/admin/adicionar/:id/:temporada" element={<AdicionarEp/>}></Route>
+          <Route exact path="/admin/adicionartemp/:id" element={<AdicionarTemporada/>}></Route>
           <Route exact path="/testes" element={<Testes />}></Route>
           {/* <Route path="/projects" element={}></Route> */}
         </Routes>
