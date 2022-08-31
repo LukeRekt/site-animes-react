@@ -1,6 +1,7 @@
 .container{
     background-color: #181818;
     display: flex;
+    flex-wrap: wrap;
 }
 .Episodios{
     background-color: grey;
