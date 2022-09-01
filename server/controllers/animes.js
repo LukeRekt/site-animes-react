@@ -152,6 +152,7 @@ exports.setTeste = async (req, res) => {
         episodios: dados.episodios,
         lancamento: dados.lancamento,
         diaLancamento: dados.diaLancamento,
+        nomeIngles: dados.nomeIngles,
         especiais: dados.especiais,
         filmes: dados.filmes,
         autor: dados.autor,

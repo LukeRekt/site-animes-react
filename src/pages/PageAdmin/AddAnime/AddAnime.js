@@ -12,6 +12,7 @@ function AddAnime(props){
     const [especiais, setEspeciais] = useState("");
     const [filmes, setFilmes] = useState("");
     const [autor, setAutor] = useState("");
+    const [nomeIngles, setNomeIngles] = useState("");
     const [diretor, setDiretor] = useState("");
     const [estudio, setEstudio] = useState("");
     const [ano, setAno] = useState("");
@@ -25,6 +26,7 @@ function AddAnime(props){
         nota: nota,
         episodios: episodios,
         lancamento: lancamento,
+        nomeIngles: nomeIngles,
         diaLancamento: diaLancamento,
         especiais: especiais,
         filmes: filmes,
@@ -88,6 +90,7 @@ function AddAnime(props){
             <form className={styles.login}>
               <div id={styles.formLeft}>
                 <input type="text" placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)} />
+                <input type="text" value={nomeIngles} placeholder='Nome Ingles' onChange={(e) => setNomeIngles(e.target.value)}/>
                 {/* <input type="text" placeholder="Descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} /> */}
                 <textarea cols="52" rows="8" placeholder="Descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} ></textarea>
                 <input type="number" placeholder="Nota" value={nota} onChange={(e) => setNota(e.target.value)} />

@@ -19,6 +19,7 @@ function EditarAnime(){
     const [filmes, setFilmes] = useState([])
     const [autor, setAutor] = useState([])
     const [lancamento, setLancamento] = useState(false);
+    const [nomeIngles, setNomeIngles] = useState("");
     const [diretor, setDiretor] = useState([])
     const [estudio, setEstudio] = useState([])
     const [ano, setAno] = useState([])
@@ -45,7 +46,7 @@ function EditarAnime(){
                 setEstudio(res.data.animes.estudio)
                 setAno(res.data.animes.ano)
                 setImagem(`${process.env.REACT_APP_API_URL}/${res.data.animes.imagem}`)
-                
+                setNomeIngles(res.data.animes.nomeIngles)
                 setTemas(res.data.animes.temas)
                 console.log(res.data.animes.lancamento)
             }).catch((err) => {
@@ -73,6 +74,7 @@ function EditarAnime(){
         episodios: episodios,
         lancamento: lancamento,
         diaLancamento: diaLancamento,
+        nomeIngles: nomeIngles,
         especiais: especiais,
         filmes: filmes,
         autor: autor,
@@ -137,6 +139,7 @@ function Testando(){
             <div className={styles.formulario}>
                 <form>
                     <input type="text" value={nome} placeholder='Nome' onChange={(e) => setNome(e.target.value)}/>
+                    <input type="text" value={nomeIngles} placeholder='Nome Ingles' onChange={(e) => setNomeIngles(e.target.value)}/>
                     <textarea cols="52" rows="9" placeholder="Descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)}></textarea>
                     <input type="text" value={nota} placeholder='Nota' onChange={(e) => setNota(e.target.value)}/>
                     <input type="text" value={episodios} placeholder='Episodios' onChange={(e) => setEpisodios(e.target.value)}/>
