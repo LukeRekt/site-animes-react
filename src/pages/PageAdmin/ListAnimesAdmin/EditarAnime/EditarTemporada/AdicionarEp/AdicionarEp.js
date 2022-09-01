@@ -8,7 +8,7 @@ function AdicionarEp(){
     const { id, temporada } = useParams();
     const [posts, setPosts] = useState([])
 
-    const [nome, setNome] = useState([])
+    const [nome, setNome] = useState()
     const [nomeAnime, setNomeAnime] = useState([])
     const [video, setVideo] = useState([])
     const [imagem, setImagem] = useState([])
@@ -21,7 +21,7 @@ function AdicionarEp(){
         axios.get(`${process.env.REACT_APP_API_URL}/getanim/episodios/${temporada}/${id}/`)
             .then(res => {
                 setPosts(res.data.episodios)
-                // console.log(posts)
+                 setNomeAnime(res.data.episodios[0].nomeAnime);
             })
     }, [])
     const variables = {
@@ -41,6 +41,21 @@ function AdicionarEp(){
   
 
     formData.append('data', JSON.stringify(variables));
+    formData.append('video', video)
+    formData.append('videoDublado', videoDublado)
+
+    const onChangeVideo = (e) => {
+        if (e.target.files[0]) {
+            console.log(e.target.files[0])
+          setVideo(e.target.files[0]);
+        }
+      };
+      const onChangeVideoDublado = (e) => {
+        if (e.target.files[0]) {
+            console.log(e.target.files[0])
+          setVideoDublado(e.target.files[0]);
+        }
+      };
     const handleRegister = async (e) => {
      
             axios.post(`${process.env.REACT_APP_API_URL}/episodios/admin/addep`, formData, { withCredentials: true }, {
@@ -60,14 +75,18 @@ function AdicionarEp(){
             <form>
         <input type="text" value={nome} placeholder='Nome' onChange={(e) => setNome(e.target.value)}/>
         <input type="text" value={nomeAnime} placeholder='Nome Anime' onChange={(e) => setNomeAnime(e.target.value)}/>
-        <input type="text" value={video} placeholder='Video' onChange={(e) => setVideo(e.target.value)}/>
+        {/* <input type="text" value={video} placeholder='Video' onChange={(e) => setVideo(e.target.value)}/> */}
+        <p>Video</p>
+        <input type="file" name="video" onChange={onChangeVideo}/>
+        <p>VideoDublado</p>
+        <input type="file" name="videoDublado" onChange={onChangeVideoDublado}/>
         <input type="text" value={imagem} placeholder='Anime Imagem' onChange={(e) => setImagem(e.target.value)}/>
-        <input type="text" value={videoDublado} placeholder='Video Dublado' onChange={(e) => setVideoDublado(e.target.value)}/>
+        {/* <input type="text" value={videoDublado} placeholder='Video Dublado' onChange={(e) => setVideoDublado(e.target.value)}/> */}
         <input type="text" value={inicioAbertura} placeholder='Inicio Abertura' onChange={(e) => setInicioAbertura(e.target.value)}/>
         <input type="text" value={fimAbertura} placeholder='Fim Abertura' onChange={(e) => setFimAbertura(e.target.value)}/>
         <button onClick={handleRegister}>Enviar</button>
             </form>
-
+            <button onClick={handleRegister}>Enviar</button>
         </div>
     )
                 

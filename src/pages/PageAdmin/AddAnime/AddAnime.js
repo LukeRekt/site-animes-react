@@ -110,7 +110,7 @@ function AddAnime(props){
                 <input type="text" placeholder="Diretor" value={diretor} onChange={(e) => setDiretor(e.target.value)} />
                 <input type="text" placeholder="Estudio" value={estudio} onChange={(e) => setEstudio(e.target.value)} />
                 <input type="text" placeholder="Ano" value={ano} onChange={(e) => setAno(e.target.value)} />
-                {/* <input type="text" placeholder="Imagem" value={imagem} onChange={(e) => setImagem(e.target.value)} /> */}
+                {/* <input type="text" placeholder="Imagem" value={imagem} onChange={(e) => setImagem(e.target.value)}  /> */}
                 <input type="file" name="screenshot" onChange={onChangePicture} />
                 {/* <input type="text" placeholder="Temporadas" value={temporadas} onChange={(e) => setTemporadas(e.target.value)} /> */}
                 <input type="text" placeholder="Temas" value={temas} onChange={(e) => setTemas(e.target.value)} />

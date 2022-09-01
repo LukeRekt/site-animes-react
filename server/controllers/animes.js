@@ -45,11 +45,31 @@ exports.getanime = async (req, res) => {
 
 exports.AddEpisode = async (req, res) => {
     //testar se o user ja existe
-    console.log(req.body)
+
+        const dados = JSON.parse(req.body.data)
+    // const { nome } = req.user;
+    let video = "default.mp4";
+    let videoDublado = "default.mp4";
+
+    let testando = dados.nomeAnime.split(' ').join('-');
+    let file = null;
+    if(req.files){
+        videoNome = req.files.video.name;
+        video = req.files.video;
+
+        videoDubladoNome = "Dub" + req.files.videoDublado.name;
+        video = req.files.videoDublado;
+
+        let uploadPath = __dirname + `../../public/animes/${testando}/` + videoNome;
+        let uploadPathDub = __dirname + `../../public/animes/${testando}/` + videoDubladoNome;
+        
+        video.mv(uploadPath);;
+        video.mv(uploadPathDub);;
+    }
 
     //se novo user, criar novo user
-    const episode = new Episodios(JSON.parse(req.body.data));
-    await episode.save();
+    //  const episode = new Episodios(JSON.parse(req.body.data));
+    //  await episode.save();
 
     res.status(201).json({
         message: "Cadastrado com sucesso!",
