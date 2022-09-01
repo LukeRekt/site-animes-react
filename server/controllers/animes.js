@@ -130,12 +130,18 @@ exports.setTeste = async (req, res) => {
     const dados = JSON.parse(req.body.data)
     // const { nome } = req.user;
     let filename = "capapadrao.png";
+    let testando = dados.nome.split(' ').join('-');
     let file = null;
     if(req.files){
         filename = req.files.screenshot.name;
         file = req.files.screenshot;
-        let uploadPath = __dirname + "../../public/imagens/assets/capasanimes/" + filename;
+
+        let createFolder = __dirname + `../../public/animes/${testando}/`;
+        let uploadPath = __dirname + `../../public/animes/${testando}/` + filename;
+        
+        fs.mkdirSync(createFolder);
         file.mv(uploadPath);;
+        
     }
     //  const filename = req.files.screenshot.name;
     //  const file = req.files.screenshot;
@@ -159,7 +165,7 @@ exports.setTeste = async (req, res) => {
         diretor: dados.diretor,
         estudio: dados.estudio,
         ano: dados.ano,
-        imagem: `static/imagens/assets/capasanimes/${filename}`,
+        imagem: `static/animes/${testando}/${filename}`,
         temas: dados.temas};
         
     
