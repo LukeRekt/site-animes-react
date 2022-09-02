@@ -102,7 +102,7 @@ function AdicionarEp(){
         {/* <input type="text" value={videoDublado} placeholder='Video Dublado' onChange={(e) => setVideoDublado(e.target.value)}/> */}
         <input type="text" value={inicioAbertura} placeholder='Inicio Abertura' onChange={(e) => setInicioAbertura(e.target.value)}/>
         <input type="text" value={fimAbertura} placeholder='Fim Abertura' onChange={(e) => setFimAbertura(e.target.value)}/>
-        <button onClick={handleRegister}>Enviar</button>
+        {/* <button onClick={handleRegister}>Enviar</button> */}
             </form>
             <button onClick={handleRegister}>Enviar</button>
         </div>

@@ -6,24 +6,25 @@ require("dotenv").config();
 exports.addTemporada = async (req, res, next) => {
     //testar se o user ja existe
     teste = JSON.parse(req.body.data)
-    const update = {
-        id: teste.idAnime,
-    }
-     await Anime.findOne({ update }).limit(20).exec((err, animes) => {
-        let testando = animes.nome.split(' ').join('-');
-        let createFolder = __dirname + `../../public/animes/${testando}/t${teste.temporadaAnime}`;
-        fs.mkdirSync(createFolder);
+    const id = parseInt(teste.idAnime)
+        
+    
+     await Anime.findOne({ id }).limit(20).exec((err, animes) => {
+         console.log(animes)
+         let testando = animes.nome.split(' ').join('-');
+         let createFolder = __dirname + `../../public/animes/${testando}/t${teste.temporadaAnime}`;
+         fs.mkdirSync(createFolder);
 
          //retornar resposta para o usuario
-         console.log(animes)
+          console.log(animes)
 
      });
 
 
 
     //se novo user, criar novo user
-    const temporada = new Temporadas(JSON.parse(req.body.data));
-    await temporada.save();
+     const temporada = new Temporadas(JSON.parse(req.body.data));
+     await temporada.save();
 
     res.status(201).json({
         message: "Temporada cadastrada com sucesso!",
