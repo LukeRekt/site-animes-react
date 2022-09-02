@@ -50,6 +50,7 @@ exports.AddEpisode = async (req, res) => {
     // const { nome } = req.user;
     let video = "default.mp4";
     let videoDublado = "default.mp4";
+    let filename = "capapadrao.png";
 
     let testando = dados.nomeAnime.split(' ').join('-');
     let file = null;
@@ -58,23 +59,57 @@ exports.AddEpisode = async (req, res) => {
         video = req.files.video;
 
         videoDubladoNome = "Dub" + req.files.videoDublado.name;
-        video = req.files.videoDublado;
+        videoDub = req.files.videoDublado;
 
-        let uploadPath = __dirname + `../../public/animes/${testando}/` + videoNome;
-        let uploadPathDub = __dirname + `../../public/animes/${testando}/` + videoDubladoNome;
-        
+        filename = req.files.screenshot.name;
+        file = req.files.screenshot;
+
+        let uploadPath = __dirname + `../../public/animes/${testando}/t${dados.temporada}/` + videoNome;
+        let uploadPathDub = __dirname + `../../public/animes/${testando}/t${dados.temporada}/` + videoDubladoNome;
+        let uploadPathImg = __dirname + `../../public/animes/${testando}/t${dados.temporada}/` + filename;
+
         video.mv(uploadPath);;
-        video.mv(uploadPathDub);;
+        videoDub.mv(uploadPathDub);;
+        file.mv(uploadPathImg);;
     }
+
+    const filter = {id: dados.id, nome: dados.nome, temporada: dados.temporada, numero: dados.numero}
+    const update = {
+       id: dados.id,
+       nome: dados.nome,
+       nomeAnime: dados.nomeAnime,
+       numero: dados.numero,
+       temporada: dados.temporada,
+       video: `static/animes/${testando}/t${dados.temporada}/${videoNome}`,
+       videoDublado: `static/animes/${testando}/t${dados.temporada}/${videoDubladoNome}`,
+       animeImagem:  `static/animes/${testando}/t${dados.temporada}/${filename}`,
+       inicioAbertura: dados.inicioAbertura,
+       fimAbertura: dados.fimAbertura};
+   
+    const doc = await Episodios.findOneAndUpdate(filter, update, {
+       returnOriginal: false,
+       new: true, 
+       upsert: true
+    });
+   
+    res.status(200).json({ imagem: doc.imagem })
+
+   // console.log(req.body);
+   // if(req.files == null){
+   //     return res.status(200);    
+   // }
+   console.log(req.body.data)
 
     //se novo user, criar novo user
     //  const episode = new Episodios(JSON.parse(req.body.data));
     //  await episode.save();
 
-    res.status(201).json({
-        message: "Cadastrado com sucesso!",
-    });
-};
+//     res.status(201).json({
+//         message: "Cadastrado com sucesso!",
+//     });
+// };
+
+}
 
 exports.getEpisode = async (req, res) => {
     //buscar usuario baseado no email

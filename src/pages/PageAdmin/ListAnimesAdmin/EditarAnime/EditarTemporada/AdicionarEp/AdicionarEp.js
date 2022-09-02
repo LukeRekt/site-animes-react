@@ -12,9 +12,12 @@ function AdicionarEp(){
     const [nomeAnime, setNomeAnime] = useState([])
     const [video, setVideo] = useState([])
     const [imagem, setImagem] = useState([])
+    const [imgData, setImgData] = useState([])
     const [videoDublado, setVideoDublado] = useState([])
     const [inicioAbertura, setInicioAbertura] = useState([])
     const [fimAbertura, setFimAbertura] = useState([])
+
+
     useEffect(() => {
 
         
@@ -43,6 +46,18 @@ function AdicionarEp(){
     formData.append('data', JSON.stringify(variables));
     formData.append('video', video)
     formData.append('videoDublado', videoDublado)
+    formData.append('screenshot', imagem)
+
+    const onChangePicture = (e) => {
+      if (e.target.files[0]) {
+        setImagem(e.target.files[0]);
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+          setImgData(reader.result);
+        });
+        reader.readAsDataURL(e.target.files[0]);
+      }
+    };
 
     const onChangeVideo = (e) => {
         if (e.target.files[0]) {
@@ -66,7 +81,7 @@ function AdicionarEp(){
               .catch((error) => {
                 console.error(error)
               })
-              //document.location.reload(true);
+              // document.location.reload(true);
         
 }
     return (
@@ -80,7 +95,10 @@ function AdicionarEp(){
         <input type="file" name="video" onChange={onChangeVideo}/>
         <p>VideoDublado</p>
         <input type="file" name="videoDublado" onChange={onChangeVideoDublado}/>
-        <input type="text" value={imagem} placeholder='Anime Imagem' onChange={(e) => setImagem(e.target.value)}/>
+        {/* <input type="text" value={imagem} placeholder='Anime Imagem' onChange={(e) => setImagem(e.target.value)}/> */}
+        <p>Thumbnail</p>
+        <input type="file" name="screenshot" accept="image/*" onChange={onChangePicture} />
+        <img src={imgData} onError={(e) =>  {e.target.src = 'http://localhost:3232/static/animes/dropkick/t1/4.png'}} alt="" />
         {/* <input type="text" value={videoDublado} placeholder='Video Dublado' onChange={(e) => setVideoDublado(e.target.value)}/> */}
         <input type="text" value={inicioAbertura} placeholder='Inicio Abertura' onChange={(e) => setInicioAbertura(e.target.value)}/>
         <input type="text" value={fimAbertura} placeholder='Fim Abertura' onChange={(e) => setFimAbertura(e.target.value)}/>
