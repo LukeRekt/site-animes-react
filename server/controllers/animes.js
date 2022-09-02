@@ -29,6 +29,19 @@ exports.listar = async (req, res) => {
     });
 };
 
+exports.listarNovos = async (req, res) => {
+    //buscar usuario baseado no email
+
+    await Anime.find({}).sort({ _id: -1 }).exec((err, animes) => {
+
+        //retornar resposta para o usuario
+
+        return res.json({
+            animes,
+        });
+    });
+};
+
 exports.getanime = async (req, res) => {
     //buscar usuario baseado no email
     const id = req.params.id
