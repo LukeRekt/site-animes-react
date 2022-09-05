@@ -193,6 +193,21 @@ exports.getAllEpisodes = async (req, res) => {
         });
     });
 };
+exports.getAllEpisodesNovos = async (req, res) => {
+    const id = req.params.id
+    //buscar usuario baseado no email
+
+    if (isNaN(id)) return res.json({
+        Mensagem: "Número de eps inválido"
+    });
+    await Episodios.find({}).sort({ _id: -1 }).limit(id).exec((err, episodios) => {
+
+        //retornar resposta para o usuario
+        return res.json({
+            episodios,
+        });
+    });
+};
 
 exports.setTeste = async (req, res) => {
     const dados = JSON.parse(req.body.data)

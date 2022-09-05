@@ -34,7 +34,7 @@ function Home() {
 
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/getanim/episodios/todos/${episodios}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim/episodios/todosnovos/${episodios}`)
             .then(res => {
                 setPostsep(res.data.episodios)
             })
