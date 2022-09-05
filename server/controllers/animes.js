@@ -54,6 +54,18 @@ exports.getanime = async (req, res) => {
         });
     });
 };
+exports.getanimeTemas = async (req, res) => {
+    //buscar usuario baseado no email
+    const temas = req.params.temas
+    await Anime.find({ temas: temas }).limit(20).exec((err, animes) => {
+
+        //retornar resposta para o usuario
+
+        return res.json({
+            animes,
+        });
+    });
+};
 
 
 exports.AddEpisode = async (req, res) => {
@@ -153,6 +165,7 @@ exports.getEpisodes = async (req, res) => {
         });
     });
 };
+
 exports.getSeasonEpisodes = async (req, res) => {
     //buscar usuario baseado no email
     const temporada = req.params.temporada
