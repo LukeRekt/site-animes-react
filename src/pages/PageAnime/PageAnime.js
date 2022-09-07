@@ -27,22 +27,27 @@ function PageAnime() {
             .then(res => {
                 setPosts(res.data.animes)
                 setTemas(res.data.animes.temas)
+                teste(res.data.animes.id)
             }).catch((err) => {
                 return navigate("/");
             })
 
     }, [])
 
-    useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/gettemporada/${id}`)
-            .then(res => {
-                setTemporadas(res.data.temporadas)
-                
-            }).catch((err) => {
-                // return navigate("/");
-            })
 
-    }, [])
+    function teste(id){
+        axios.get(`${process.env.REACT_APP_API_URL}/gettemporada/${id}`)
+        .then(res => {
+            setTemporadas(res.data.temporadas)
+            console.log("teste" + id)
+        }).catch((err) => {
+            // return navigate("/");
+        })
+    }
+    // useEffect(() => {
+        
+
+    // }, [posts.id])
 
     function lancamento() {
         if (posts.lancamento === true) {
@@ -54,7 +59,8 @@ function PageAnime() {
     const lanc = lancamento();
 
     return (
-        <div className={styles.container}>
+        posts.id ? (<div className={styles.container}>
+            
             <Helmet>
             <title>{posts.nome}</title>
 
@@ -117,12 +123,14 @@ function PageAnime() {
 
             </div>
             <div className={styles.episodeosAnime}>
-                <Tabs id={id} temporadas={temporadas.length}/>
+                
+                <Tabs id={posts.id} temporadas={temporadas.length}/>
                 {/* eps aqui listados vindo direto de um novo server json buscando de acordo com o id do ep */}
 
             </div>
 
-        </div>
+        </div>) : (<></>)
+        
 
     )
 }

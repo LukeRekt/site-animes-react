@@ -47,8 +47,9 @@ function Tabsa(props) {
       .then(res => {
         setPosts(res.data.episodios)
         console.log(res.data.episodios)
+        console.log(props.id)
       })
-  }, [])
+  }, [props.id])
 
   const handleTabs = (e, val) => {
     console.warn(val);

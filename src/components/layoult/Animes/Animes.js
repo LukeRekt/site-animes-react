@@ -9,7 +9,7 @@ function Animes(props) {
 
     return (
         <div className={styles.animes}>
-            <Link to={`/anime/${props.id}`}>
+            <Link to={`/anime/${props.slug}`}>
                 <div className={styles.anime_box}>
                     <div className={styles.qualidade_anime}>
                         NOVO 

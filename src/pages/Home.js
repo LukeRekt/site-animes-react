@@ -53,7 +53,7 @@ function Home() {
                     <BotaoInfo mensagem='Lançamentos' />
                     <Carousel pagination={false} breakPoints={breakPoints}>
                         {posts.length !== 0 ? (posts.map((post) =>
-                            <Animes key={post.id} nome={post.nome} id={post.id} imagem={post.imagem} episodeos={post.episodios}/>)) : (<>Carregando</>)}
+                            <Animes key={post.id} nome={post.nome} slug={post.slug} id={post.id} imagem={post.imagem} episodeos={post.episodios}/>)) : (<>Carregando</>)}
 
 
                     </Carousel>
