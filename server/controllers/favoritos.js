@@ -18,6 +18,7 @@ exports.getFavorito = async (req, res) => {
 
 exports.addFavorito = async (req, res) => {
     const favorite = new Favoritos(req.body);
+    console.log(req.body)
     favorite.save((err, doc) => {
         if (err) return res.json({ success: false, err })
         return res.status(200).json({ success: true })

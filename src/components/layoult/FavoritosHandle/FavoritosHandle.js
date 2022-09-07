@@ -28,7 +28,7 @@ function FavoritosHandle (props){
            <div className={styles.FavoritosContainer}> 
           {CarregandoFavoritos ? (<>Carregando</>) : ( Favorited.length == 0 ? (<div id={styles.nenhumFav}><p> Você não tem nenhum favorito <HiEmojiSad/></p></div>) : (Favorited.map((teste, index) => {
                     return <div key={index} className={styles.animeCapa}>
-                    <Link to={`/anime/${teste.idAnime}`}>
+                    <Link to={`/anime/${teste.slug}`}>
                     <div className={styles.animeOver}>
                     <small>
                     <p>{teste.nomeAnime} </p>

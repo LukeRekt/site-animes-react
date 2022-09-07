@@ -10,7 +10,8 @@ function BotaoFavorito (props){
         nomeUsuario: props.user,
         nomeAnime: props.nome,
         idAnime: props.id,
-        imagemAnime: props.imagem
+        imagemAnime: props.imagem,
+        slug: props.slug
     }
 
     const onClickFavorite = () => {
