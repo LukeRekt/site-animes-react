@@ -19,9 +19,12 @@ function AddAnime(props){
     const [imagem, setImagem] = useState([])
     const [imgData, setImgData] = useState([])
     const [temas, setTemas] = useState("")
+    const [slugLink, setSlugLink] = useState("teste")
+
     const variables = {
         id: props.totalIds + 1,
         nome: nome,
+        slug: ConverterParaSlug(nome),
         descricao: descricao,
         nota: nota,
         episodios: episodios,
@@ -35,6 +38,7 @@ function AddAnime(props){
         estudio: estudio,
         ano: ano,
         temas: temas.split(','),
+        
     }
     const formData = new FormData();
   
@@ -66,6 +70,24 @@ function AddAnime(props){
               })
         
 }
+function ConverterParaSlug (str) {
+  str = str.replace(/^\s+|\s+$/g, '');
+  str = str.toLowerCase();
+
+ 
+  var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
+  var to   = "aaaaeeeeiiiioooouuuunc------";
+  for (var i=0, l=from.length ; i<l ; i++) {
+      str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+  }
+
+  str = str.replace(/[^a-z0-9 -]/g, '') 
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+
+      console.log(slugLink)
+  return str;
+}
 
 
     // const handleRegister = async (e) => {
@@ -95,7 +117,7 @@ function AddAnime(props){
                 <textarea cols="52" rows="8" placeholder="Descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} ></textarea>
                 <input type="number" placeholder="Nota" value={nota} onChange={(e) => setNota(e.target.value)} />
                 <input type="number" placeholder="Episodios" value={episodios} onChange={(e) => setEpisodios(e.target.value)} />
-               
+                {/* <input type="text" placeholder="Link" value={slugLink} onChange={(e) => setSlugLink(ConverterParaSlug(e.target.value))} /> */}
                 <div id={styles.checkForm}>
                 <p>Em Lancamento?</p>
                 <input type="checkbox" placeholder="Lancamento" value={lancamento} onChange={(e) => setLancamento(!lancamento)} />
@@ -134,9 +156,11 @@ function AddAnime(props){
 
                 
             </form>
-
+            
             <div className={styles.testeImagem}><img src={imgData} onError={(e) =>  {e.target.src = 'http://localhost:3232/static/imagens/assets/capasanimes/capapadrao.png'}} alt="" /></div>
             {/* <button onClick={()=> console.log(temas.split(','))} className={styles.botao}>Registrar</button> */}
+            {/* <button onClick={() => CoverterParaSlug("")} className={styles.botao}>Registrar</button> */}
+            
         </div>
     )
                 

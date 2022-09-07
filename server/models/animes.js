@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+// slug = require('mongoose-slug-generator');
+// mongoose.plugin(slug);
 
 const animesSchema = new mongoose.Schema(
 	{
@@ -89,12 +91,20 @@ const animesSchema = new mongoose.Schema(
 			trim: true,
 			lowercase: false,
 		},
+		slug: {
+
+				type: String,
+				required: true,
+				trim: true,
+				lowercase: true,
+		},
 		imagem: {
 			type: String,
 			required: true,
 			trim: true,
 			lowercase: false,
-		}
+		},
+
     }
 );
 

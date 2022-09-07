@@ -8,7 +8,7 @@ exports.addAnime = async (req, res, next) => {
 
 
     //se novo user, criar novo user
-    const anime = new Anime(req.body);
+    const anime = new Anime(JSON.parse(req.body));
     await anime.save();
 
     res.status(201).json({
@@ -250,7 +250,7 @@ exports.setTeste = async (req, res) => {
         nome: dados.nome,
         descricao: dados.descricao,
         nota: dados.nota,
-        temporadas: dados.temporadas,
+        // temporadas: dados.temporadas,
         episodios: dados.episodios,
         lancamento: dados.lancamento,
         diaLancamento: dados.diaLancamento,
@@ -262,7 +262,9 @@ exports.setTeste = async (req, res) => {
         estudio: dados.estudio,
         ano: dados.ano,
         imagem: `static/animes/${testando}/${filename}`,
-        temas: dados.temas};
+        temas: dados.temas,
+        slug: dados.slug};
+        
         
     
      const doc = await Anime.findOneAndUpdate(filter, update, {
