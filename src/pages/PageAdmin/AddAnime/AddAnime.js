@@ -8,6 +8,7 @@ function AddAnime(props){
     const [nota, setNota] = useState("");
     const [episodios, setEpisodios] = useState("");
     const [lancamento, setLancamento] = useState(false);
+    const [dublado, setDublado] = useState(false);
     const [diaLancamento, setDiaLancamento] = useState("");
     const [especiais, setEspeciais] = useState("");
     const [filmes, setFilmes] = useState("");
@@ -29,6 +30,7 @@ function AddAnime(props){
         nota: nota,
         episodios: episodios,
         lancamento: lancamento,
+        dublado: dublado,
         nomeIngles: nomeIngles,
         diaLancamento: diaLancamento,
         especiais: especiais,
@@ -121,6 +123,8 @@ function ConverterParaSlug (str) {
                 <div id={styles.checkForm}>
                 <p>Em Lancamento?</p>
                 <input type="checkbox" placeholder="Lancamento" value={lancamento} onChange={(e) => setLancamento(!lancamento)} />
+                <p>Dublado?</p>
+                <input type="checkbox" placeholder="Dublado" value={dublado} onChange={(e) => setDublado(!dublado)} />
                 </div>
                 <input type="text" placeholder="Dia Lancamento" value={diaLancamento} onChange={(e) => setDiaLancamento(e.target.value)} />
                 <input type="text" placeholder="Especiais" value={especiais} onChange={(e) => setEspeciais(e.target.value)} />

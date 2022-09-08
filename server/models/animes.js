@@ -43,6 +43,11 @@ const animesSchema = new mongoose.Schema(
 			required: true,
 			trim: true,
 		},
+		dublado: {
+			type: Boolean,
+			required: true,
+			trim: true,
+		},
 		nomeIngles: {
 			type: String,
 			required: true,

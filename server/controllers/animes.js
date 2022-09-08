@@ -259,6 +259,7 @@ exports.setTeste = async (req, res) => {
         filmes: dados.filmes,
         autor: dados.autor,
         diretor: dados.diretor,
+        dublado: dados.dublado,
         estudio: dados.estudio,
         ano: dados.ano,
         imagem: `static/animes/${testando}/${filename}`,
