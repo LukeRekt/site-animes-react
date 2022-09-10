@@ -13,7 +13,7 @@ function AdicionarEp(){
     const [video, setVideo] = useState([])
     const [imagem, setImagem] = useState([])
     const [imgData, setImgData] = useState([])
-    const [videoDublado, setVideoDublado] = useState([])
+    const [videoDublado, setVideoDublado] = useState("nao")
     const [inicioAbertura, setInicioAbertura] = useState([])
     const [fimAbertura, setFimAbertura] = useState([])
 

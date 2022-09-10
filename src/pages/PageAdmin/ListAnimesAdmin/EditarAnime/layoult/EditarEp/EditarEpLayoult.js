@@ -19,7 +19,7 @@ function EditarEpLayout() {
     return (
         <div className={styles.container}>
             {console.log(posts)}
-             {posts.map(map =>
+            {!posts ? (<p>Nada</p>) : (posts.map(map =>
                 {
                    return <div key={map.id} className={styles.Episodios}>
                     <BotaoRemoverEp id={id} temporada={temporada} numero={map.numero}/>
@@ -34,7 +34,8 @@ function EditarEpLayout() {
                    <img src={`${process.env.REACT_APP_API_URL}/${map.animeImagem}`} alt="" />
                    </Link>
                    </div>
-                })} 
+                }))}
+              
            {console.log(posts)}
             
             </div>

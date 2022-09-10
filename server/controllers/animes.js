@@ -54,6 +54,18 @@ exports.getanime = async (req, res) => {
         });
     });
 };
+exports.getAnimeAdmin = async (req, res) => {
+    //buscar usuario baseado no email
+    const id = req.params.id
+    await Anime.findOne({ id }).limit(20).exec((err, animes) => {
+
+        //retornar resposta para o usuario
+
+        return res.json({
+            animes,
+        });
+    });
+};
 exports.getanimeTemas = async (req, res) => {
     //buscar usuario baseado no email
     const temas = req.params.temas
@@ -74,27 +86,37 @@ exports.AddEpisode = async (req, res) => {
         const dados = JSON.parse(req.body.data)
     // const { nome } = req.user;
     let video = "default.mp4";
-    let videoDublado = "default.mp4";
+    let videoDub = "nao";
     let filename = "capapadrao.png";
+    var caminhoDublado;
 
     let testando = dados.nomeAnime.split(' ').join('-');
     let file = null;
+
+    if(!req.files.videoDublado){
+        caminhoDublado = "nao";
+    }else{
+        let videoDubladoNome = "Dub" + req.files.videoDublado.name;
+        videoDub = req.files.videoDublado;
+        let uploadPathDub = __dirname + `../../public/animes/${testando}/t${dados.temporada}/` + videoDubladoNome;
+        videoDub.mv(uploadPathDub);;
+        caminhoDublado = `static/animes/${testando}/t${dados.temporada}/${videoDubladoNome}`
+    }
     if(req.files){
         videoNome = req.files.video.name;
         video = req.files.video;
 
-        videoDubladoNome = "Dub" + req.files.videoDublado.name;
-        videoDub = req.files.videoDublado;
+
 
         filename = req.files.screenshot.name;
         file = req.files.screenshot;
 
         let uploadPath = __dirname + `../../public/animes/${testando}/t${dados.temporada}/` + videoNome;
-        let uploadPathDub = __dirname + `../../public/animes/${testando}/t${dados.temporada}/` + videoDubladoNome;
+       
         let uploadPathImg = __dirname + `../../public/animes/${testando}/t${dados.temporada}/` + filename;
 
         video.mv(uploadPath);;
-        videoDub.mv(uploadPathDub);;
+       
         file.mv(uploadPathImg);;
     }
 
@@ -106,7 +128,7 @@ exports.AddEpisode = async (req, res) => {
        numero: dados.numero,
        temporada: dados.temporada,
        video: `static/animes/${testando}/t${dados.temporada}/${videoNome}`,
-       videoDublado: `static/animes/${testando}/t${dados.temporada}/${videoDubladoNome}`,
+       videoDublado: `${caminhoDublado}`,
        animeImagem:  `static/animes/${testando}/t${dados.temporada}/${filename}`,
        inicioAbertura: dados.inicioAbertura,
        fimAbertura: dados.fimAbertura};
@@ -165,6 +187,21 @@ exports.getEpisodes = async (req, res) => {
         });
     });
 };
+
+exports.getEpisodesAdmin = async (req, res) => {
+    //buscar usuario baseado no email
+    const temporada = req.params.temporada
+    const id = req.params.id
+    await Episodios.find({ temporada, id }).limit().exec((err, episodios) => {
+
+        //retornar resposta para o usuario
+
+        return res.json({
+            episodios,
+        });
+    });
+};
+
 
 exports.getSeasonEpisodes = async (req, res) => {
     //buscar usuario baseado no email

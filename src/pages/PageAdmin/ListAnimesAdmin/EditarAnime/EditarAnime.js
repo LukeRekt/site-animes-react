@@ -11,6 +11,7 @@ function EditarAnime(){
     //valores do form
     
     const [nome, setNome] = useState([])
+    const [idAnime, setIdAnime] = useState([])
     const [descricao, setDescricao] = useState([])
     const [nota, setNota] = useState([])
     const [episodios, setEpisodios] = useState([])
@@ -30,10 +31,11 @@ function EditarAnime(){
     
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/getanim/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim/admin/${id}`)
             .then(res => {
                 // setPosts(res.data.animes)
                 setNome(res.data.animes.nome)
+                setIdAnime(res.data.animes.id)
                 setDescricao(res.data.animes.descricao)
                 setNota(res.data.animes.nota)
                 setEpisodios(res.data.animes.episodios)
@@ -63,10 +65,10 @@ function EditarAnime(){
             }).catch((err) => {
                 
             })
-    }, [lancamento])
+    }, [lancamento, idAnime])
     
     const variables = {
-        id: id,
+        id: idAnime,
         nome: nome,
         descricao: descricao,
         nota: nota,
@@ -159,7 +161,7 @@ function Testando(){
                 
             </div>
             <div className={styles.temporadas}>
-                    <TemporadasEditar temporadas={temporadas} id={id}/>
+                    {!temporadas ? (<p>Erro ao buscar temporadas</p>) : (<TemporadasEditar temporadas={temporadas} id={idAnime}/>)}
                 </div>
             {console.log(nome)}
             {console.log(temas)}

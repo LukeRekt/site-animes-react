@@ -67,6 +67,7 @@ function PageAnime() {
             </Helmet>
             <div className={styles.nomeAnime}>
                 {posts.nome}
+                {console.log(`${process.env.REACT_APP_API_URL}/${posts.imagem}`)}
             </div>
 
             <div className={styles.fotoAnime}>

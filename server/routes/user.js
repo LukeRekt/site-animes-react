@@ -6,7 +6,7 @@ const upload = multer();
 const { register, login, logout, getLoggedInUser, buscarUser, trocarAvatar,  } = require("../controllers/user")
 const { addAnime, listar, getanime, getEpisode, getEpisodes, getAllEpisodes,
      getEpisodespage, getSeasonEpisodes, AddEpisode,
-      setTeste, setUpdateEpisode, remEpisodio, listarNovos, getAllEpisodesNovos, getanimeTemas} = require("../controllers/animes")
+      setTeste, setUpdateEpisode, remEpisodio, listarNovos, getAllEpisodesNovos, getanimeTemas, getEpisodesAdmin, getAnimeAdmin} = require("../controllers/animes")
 const { getFavorito, getAllFavoritos, addFavorito, remFavorito } = require("../controllers/favoritos")
 const { getProgresso, addProgresso, remProgresso, updateProgresso, getAllProgresso } = require("../controllers/progresso")
 //importar middlewares
@@ -34,6 +34,7 @@ router.get("/getanim", listar)
 router.get("/getnovosanim", listarNovos)
 
 router.get("/getanim/:id", getanime)
+router.get("/getanim/admin/:id", getAnimeAdmin)
 
 router.get("/getanimtemas/:temas", getanimeTemas)
 
