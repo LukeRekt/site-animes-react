@@ -263,7 +263,8 @@ exports.setTeste = async (req, res) => {
     const dados = JSON.parse(req.body.data)
     // const { nome } = req.user;
     let filename = "capapadrao.png";
-    let testando = dados.nome.split(' ').join('-');
+    let testando = dados.slug;
+    //.split(' ').join('-');
     let file = null;
     if(req.files){
         filename = req.files.screenshot.name;
