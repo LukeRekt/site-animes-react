@@ -12,7 +12,7 @@ exports.addTemporada = async (req, res, next) => {
      await Anime.findOne({ id }).limit(20).exec((err, animes) => {
          console.log(animes)
          let testando = animes.nome.split(' ').join('-');
-         let createFolder = __dirname + `../../public/animes/${testando}/t${teste.temporadaAnime}`;
+         let createFolder = __dirname + `../../public/animes/${animes.slug}/t${teste.temporadaAnime}`;
          fs.mkdirSync(createFolder);
 
          //retornar resposta para o usuario

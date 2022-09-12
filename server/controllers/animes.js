@@ -266,14 +266,16 @@ exports.setTeste = async (req, res) => {
     let testando = dados.slug;
     //.split(' ').join('-');
     let file = null;
+    let createFolder = __dirname + `../../public/animes/${testando}/`;
+    fs.mkdirSync(createFolder);
     if(req.files){
         filename = req.files.screenshot.name;
         file = req.files.screenshot;
 
-        let createFolder = __dirname + `../../public/animes/${testando}/`;
+        
         let uploadPath = __dirname + `../../public/animes/${testando}/` + filename;
         
-        fs.mkdirSync(createFolder);
+       
         file.mv(uploadPath);;
         
     }

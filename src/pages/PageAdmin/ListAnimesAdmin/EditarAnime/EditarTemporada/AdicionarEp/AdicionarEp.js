@@ -7,6 +7,7 @@ import styles from './AdicionarEp.module.css'
 function AdicionarEp(){
     const { id, temporada } = useParams();
     const [posts, setPosts] = useState([])
+    const [animePosts, setAnimePosts] = useState([])
 
     const [nome, setNome] = useState()
     const [nomeAnime, setNomeAnime] = useState([])
@@ -21,17 +22,30 @@ function AdicionarEp(){
     useEffect(() => {
 
         
-        axios.get(`${process.env.REACT_APP_API_URL}/getanim/episodios/${temporada}/${id}/`)
+        axios.get(`${process.env.REACT_APP_API_URL}/getanim/admin/${id}/`)
             .then(res => {
-                setPosts(res.data.episodios)
-                 setNomeAnime(res.data.episodios[0].nomeAnime);
+              setAnimePosts(res.data.animes)
+              console.log(res.data.animes)
+              setNomeAnime(res.data.animes.nome);
             })
     }, [])
+
+    useEffect(() => {
+
+        
+      axios.get(`${process.env.REACT_APP_API_URL}/getanim/episodios/${temporada}/${id}/`)
+          .then(res => {
+              setPosts(res.data.episodios)
+               
+          })
+  }, [])
+
+
     const variables = {
         id: id,
         numero: posts.length + 1,
         nome: nome,
-        nomeAnime: nomeAnime,
+        nomeAnime: animePosts.nome,
         video: video,
         animeImagem: imagem,
         // nomeAnime:
