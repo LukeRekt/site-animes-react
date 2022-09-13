@@ -131,6 +131,7 @@ exports.AddEpisode = async (req, res) => {
        videoDublado: `${caminhoDublado}`,
        animeImagem:  `static/animes/${testando}/t${dados.temporada}/${filename}`,
        inicioAbertura: dados.inicioAbertura,
+       sinopseEp: dados.sinopseEp,
        fimAbertura: dados.fimAbertura};
    
     const doc = await Episodios.findOneAndUpdate(filter, update, {

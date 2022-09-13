@@ -29,6 +29,12 @@ const episodeosSchema = new mongoose.Schema(
 			trim: true,
 			lowercase: false,
 		},
+		sinopseEp: {
+			type: String,
+			required: true,
+			trim: true,
+			lowercase: false,
+		},
 		animeImagem: {
 			type: String,
 			required: true,

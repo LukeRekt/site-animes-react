@@ -15,6 +15,7 @@ function AdicionarEp(){
     const [imagem, setImagem] = useState([])
     const [imgData, setImgData] = useState([])
     const [videoDublado, setVideoDublado] = useState("nao")
+    const [sinopseEp, setSinopseEp] = useState("")
     const [inicioAbertura, setInicioAbertura] = useState([])
     const [fimAbertura, setFimAbertura] = useState([])
 
@@ -51,6 +52,7 @@ function AdicionarEp(){
         // nomeAnime:
         videoDublado: videoDublado,
         temporada: temporada, 
+        sinopseEp: sinopseEp, 
         inicioAbertura: inicioAbertura,
         fimAbertura: fimAbertura
     }
@@ -112,10 +114,12 @@ function AdicionarEp(){
         {/* <input type="text" value={imagem} placeholder='Anime Imagem' onChange={(e) => setImagem(e.target.value)}/> */}
         <p>Thumbnail</p>
         <input type="file" name="screenshot" accept="image/*" onChange={onChangePicture} />
-        <img src={imgData} onError={(e) =>  {e.target.src = 'http://localhost:3232/static/animes/dropkick/t1/4.png'}} alt="" />
+        <img src={imgData} onError={(e) =>  {e.target.src = `${process.env.REACT_APP_API_URL}/static/animes/dropkick/t1/4.png`}} alt="" />
         {/* <input type="text" value={videoDublado} placeholder='Video Dublado' onChange={(e) => setVideoDublado(e.target.value)}/> */}
+        <textarea cols="52" rows="8" placeholder="sinopseEp" value={sinopseEp} onChange={(e) => setSinopseEp(e.target.value)} ></textarea>
         <input type="text" value={inicioAbertura} placeholder='Inicio Abertura' onChange={(e) => setInicioAbertura(e.target.value)}/>
         <input type="text" value={fimAbertura} placeholder='Fim Abertura' onChange={(e) => setFimAbertura(e.target.value)}/>
+        
         {/* <button onClick={handleRegister}>Enviar</button> */}
             </form>
             <button onClick={handleRegister}>Enviar</button>
