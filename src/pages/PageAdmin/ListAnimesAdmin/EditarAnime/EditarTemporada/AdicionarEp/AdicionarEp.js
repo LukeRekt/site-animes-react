@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import styles from './AdicionarEp.module.css'
 
 function AdicionarEp(){
@@ -16,9 +16,11 @@ function AdicionarEp(){
     const [imgData, setImgData] = useState([])
     const [videoDublado, setVideoDublado] = useState("nao")
     const [sinopseEp, setSinopseEp] = useState("")
-    const [inicioAbertura, setInicioAbertura] = useState([])
-    const [fimAbertura, setFimAbertura] = useState([])
+    const [inicioAbertura, setInicioAbertura] = useState(0)
+    const [fimAbertura, setFimAbertura] = useState(0)
+    const [fimAberturaTotal, setFimAberturaTotal] = useState(0)
 
+    let navigate = useNavigate();
 
     useEffect(() => {
 
@@ -54,7 +56,8 @@ function AdicionarEp(){
         temporada: temporada, 
         sinopseEp: sinopseEp, 
         inicioAbertura: inicioAbertura,
-        fimAbertura: fimAbertura
+        fimAbertura: fimAbertura,
+        slug: animePosts.slug,
     }
     const formData = new FormData();
   
@@ -93,7 +96,14 @@ function AdicionarEp(){
                 headers: {
                 'Content-Type': 'application/json'
                 }
+              }).then(function (response) {
+                console.log("response :", response.status);
+                if(response.status === 200){
+                  console.log("Ok");
+                  navigate(`/admin/editar/${id}`);
+                }
               })
+
               .catch((error) => {
                 console.error(error)
               })
@@ -117,12 +127,20 @@ function AdicionarEp(){
         <img src={imgData} onError={(e) =>  {e.target.src = `${process.env.REACT_APP_API_URL}/static/animes/dropkick/t1/4.png`}} alt="" />
         {/* <input type="text" value={videoDublado} placeholder='Video Dublado' onChange={(e) => setVideoDublado(e.target.value)}/> */}
         <textarea cols="52" rows="8" placeholder="sinopseEp" value={sinopseEp} onChange={(e) => setSinopseEp(e.target.value)} ></textarea>
-        <input type="text" value={inicioAbertura} placeholder='Inicio Abertura' onChange={(e) => setInicioAbertura(e.target.value)}/>
-        <input type="text" value={fimAbertura} placeholder='Fim Abertura' onChange={(e) => setFimAbertura(e.target.value)}/>
+        <div>
+          <input type="text" placeholder='Inicio Abertura Minutos' onChange={(e) => setInicioAbertura(e.target.value * 60)}/>
+          <input type="text" placeholder='Inicio Abertura Segundos' onChange={(e) => setInicioAbertura(parseInt(inicioAbertura) + parseInt(e.target.value))}/>
+        </div>
+        <div>
+          <input type="text" placeholder='Fim Abertura Minutos' onChange={(e) => setFimAbertura(e.target.value * 60)}/>
+          <input type="text" placeholder='Fim Abertura Segundos' onChange={(e) => setFimAbertura(parseInt(fimAbertura) + parseInt(e.target.value))}/></div>
+        
         
         {/* <button onClick={handleRegister}>Enviar</button> */}
             </form>
-            <button onClick={handleRegister}>Enviar</button>
+            {/* <button onClick={() => console.log(inicioAbertura)}>Enviar</button>
+            <button onClick={() => console.log(fimAbertura)}>Enviar</button> */}
+             <button onClick={handleRegister}>Enviar</button>
         </div>
     )
                 

@@ -90,25 +90,25 @@ exports.AddEpisode = async (req, res) => {
     let filename = "capapadrao.png";
     var caminhoDublado;
 
-    let testando = dados.nomeAnime.split(' ').join('-');
+    let testando = dados.slug;
     let file = null;
 
     if(!req.files.videoDublado){
         caminhoDublado = "nao";
     }else{
-        let videoDubladoNome = "Dub" + req.files.videoDublado.name;
+        let videoDubladoNome = `Ep${dados.numero}_` + "Dub_" + req.files.videoDublado.name;
         videoDub = req.files.videoDublado;
         let uploadPathDub = __dirname + `../../public/animes/${testando}/t${dados.temporada}/` + videoDubladoNome;
         videoDub.mv(uploadPathDub);;
         caminhoDublado = `static/animes/${testando}/t${dados.temporada}/${videoDubladoNome}`
     }
     if(req.files){
-        videoNome = req.files.video.name;
+        videoNome = `Ep${dados.numero}_` + req.files.video.name;
         video = req.files.video;
 
 
 
-        filename = req.files.screenshot.name;
+        filename = `Ep${dados.numero}_` + req.files.screenshot.name;
         file = req.files.screenshot;
 
         let uploadPath = __dirname + `../../public/animes/${testando}/t${dados.temporada}/` + videoNome;
