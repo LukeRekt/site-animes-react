@@ -76,7 +76,8 @@ exports.login = async (req, res) => {
             userBanner,
             isAdmin,
             email,
-            animesFavoritos
+            animesFavoritos,
+            token
         });
     });
 };
