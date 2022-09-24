@@ -7,6 +7,7 @@ require("dotenv").config();
 
 exports.register = async (req, res) => {
     //testar se o user ja existe
+	
     const usernameExists = await User.findOne({
         username: req.body.username,
     });
@@ -31,7 +32,7 @@ exports.register = async (req, res) => {
     fs.copyFile('./public/imagens/avatars/default.png', `./public/imagens/avatars/${req.body.username}.png`, (err) => {
         if (err) throw err;
       });
-
+      console.log("Usuário " + req.body.username + " Cadastrado com sucesso!")
     res.status(201).json({
         message: "Cadastrado com sucesso!",
     });
@@ -63,12 +64,14 @@ exports.login = async (req, res) => {
         res.cookie("jwt", token, { expire: new Date() + 9999, httpOnly: true });
 
         //retornar resposta para o usuario
+        
         const { username } = user;
         const { userAvatar } = user;
         const { userBanner } = user;
         const { isAdmin } = user;
         const { email } = user;
         const { animesFavoritos } = user;
+        console.log("Usuário " + username + " Logado com sucesso!")
         return res.json({
             message: "Logado com sucesso!",
             username,
