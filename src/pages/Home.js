@@ -8,6 +8,7 @@ import EpisodiosHome from '../components/layoult/EpisodiosHome/EpisodiosHome'
 import AnimeAssistido from '../components/layoult/AnimeAssistidoPlaceholder/AnimeAssistido'
 import { UserContext } from '../UserContext'
 import BotaoVerMais from '../components/layoult/BotaoVerMais/VerMais'
+import CarouselV2 from '../components/layoult/Carousel/Carousel'
 
 //tudo relacionado a login e seus dependentes nao devem ter prioridade no desenvolvimento.
 //prezar pelo funcionamento básico do site
@@ -48,6 +49,9 @@ function Home() {
                     <p>Lança Hoje!</p>
                     <p>Completos</p>
                     <p>Populares</p>
+                </div>
+                <div className={styles.carousel_animes}>
+                  <CarouselV2/>
                 </div>
                 <div className={styles.carousel_animes}>
                     <BotaoInfo mensagem='Lançamentos' />

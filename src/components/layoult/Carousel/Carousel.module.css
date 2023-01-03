@@ -1,0 +1,21 @@
+.container{
+    background-color: red;
+    margin-top: 10px;
+    clip: rect(200px,60px,200px,0px);
+    overflow: hidden;
+    position: inherit;
+}
+.rotationControler{
+    display: flex;
+    margin-left: 0px;
+    transition: 0.8s;
+}
+.episodio{
+background: blue;
+margin-left: 20px;
+
+}
+.imagem{
+width: 201px;
+height: 290px;
+}
