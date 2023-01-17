@@ -16,7 +16,7 @@ import CarouselV2 from '../components/layoult/Carousel/Carousel'
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 2 },
-    { width: 768, itemsToShow: 3 },
+    { width: 768, itemsToShow: 5 },
     { width: 1200, itemsToShow: 5 },
 ];
 
@@ -51,7 +51,7 @@ function Home() {
                     <p>Populares</p>
                 </div>
                 <div className={styles.carousel_animes}>
-                  <CarouselV2/>
+                  
                 </div>
                 <div className={styles.carousel_animes}>
                     <BotaoInfo mensagem='Lançamentos' />
