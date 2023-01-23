@@ -10,4 +10,4 @@ Informacoes do usuário:
 Edicao de dados pessoais
 Front-End:
   -Alterar a página de Perfil
-  
+  -Nova página home
