@@ -4,8 +4,8 @@ function SeletorEP(props) {
     //terminar a estilizacao da lista de episódios
     function testeNome(idUm, idDois, temporada, nome, episodio) {
         if (idUm == idDois && episodio != props.atual && episodio >= props.atual) {
-            return (<div>
-
+            return (<div >
+                {console.log(episodio)}
                 <Link to={`/anime/${idUm}/${temporada}/${episodio}`}>
                     <div className={styles.Eps}>
                         <div className={styles.epNum}><p >00{episodio}</p></div>
@@ -24,7 +24,7 @@ function SeletorEP(props) {
         }
         if (idUm == idDois && episodio == props.atual) {
             return (
-                <div className={styles.Eps} style={{ background: "#FFBE63" }}>
+                <div key={episodio} className={styles.Eps} style={{ background: "#FFBE63" }}>
                     <div className={styles.epNum}><p id={styles.atual}>00{episodio}</p></div>
                     <div className={styles.displayTitulos}>
                     <p className={styles.titulo}>Episódio</p>
@@ -35,7 +35,7 @@ function SeletorEP(props) {
                     
                 </div>
             )
-        }
+       }
     }
     return (
         <div>{testeNome(props.id, props.iddois, props.temporada, props.nome, props.episodio)}</div>

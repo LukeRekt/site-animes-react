@@ -123,8 +123,10 @@ function PageEpisode() {
           </div>
           <div className={styles.listaEps}>
             <div className={styles.Eps}>
-              {posts.map(post =>
-                <SeletorEP nome={post.nome} id={post.id} iddois={id} temporada={post.temporada} episodio={post.numero} atual={ep} />)}
+              {posts
+              .sort((a, b) => a.numero > b.numero ? 1 : -1)
+              .map(post =>
+               <SeletorEP nome={post.nome} id={post.id} iddois={id} temporada={post.temporada} episodio={post.numero} atual={ep} />)}
             </div>
           </div>
         </div>
@@ -176,7 +178,7 @@ function PageEpisode() {
                 
           <div className={styles.comentario}>
             <div className={styles.comentarioHeader}>
-            <img src="https://cdn.discordapp.com/avatars/464489936037609483/0cdbcb9f780eabb784353f4afa691221.png?size=512" alt="" />
+            <img src="http://localhost:3232/static/imagens/avatars/LukeRekt.jpg" alt="" />
             <p>Pec <small>• 1 Hora atrás</small></p>
             </div>
                 <div className={styles.comentarioTexto}>
