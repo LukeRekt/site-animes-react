@@ -92,6 +92,7 @@ exports.AddEpisode = async (req, res) => {
 
     let testando = dados.slug;
     let file = null;
+    try {
 
     if(!req.files.videoDublado){
         caminhoDublado = "nao";
@@ -118,9 +119,8 @@ exports.AddEpisode = async (req, res) => {
         video.mv(uploadPath);;
        
         file.mv(uploadPathImg);;
-    }
-
-    const filter = {id: dados.id, nome: dados.nome, temporada: dados.temporada, numero: dados.numero}
+    
+        const filter = {id: dados.id, nome: dados.nome, temporada: dados.temporada, numero: dados.numero}
     const update = {
        id: dados.id,
        nome: dados.nome,
@@ -141,12 +141,21 @@ exports.AddEpisode = async (req, res) => {
     });
    
     res.status(200).json({ imagem: doc.imagem })
+    console.log(req.body.data)
+    }
+} catch(e) {
+    console.log(e);
+    console.log("Funcionou");
+    res.status(500).json({ mensagem: "ocorreu um erro ao adicionar episódio" })
+}
+
+    
 
    // console.log(req.body);
    // if(req.files == null){
    //     return res.status(200);    
    // }
-   console.log(req.body.data)
+   
 
     //se novo user, criar novo user
     //  const episode = new Episodios(JSON.parse(req.body.data));

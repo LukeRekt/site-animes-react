@@ -74,7 +74,7 @@ class InstantSearch extends Component {
         />
         <ul>
           {this.state.Posts.map((res) => {
-            return <Link to={`/anime/${res.id}`} key={res.id}><li key={res.id}>
+            return <Link to={`/anime/${res.slug}`} key={res.id}><li key={res.id}>
               <div className={styles.searchAnime}>
                 <img src={`${process.env.REACT_APP_API_URL}/${res.imagem}`} alt="" />
                 <div className={styles.infosAnime}>
