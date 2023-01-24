@@ -169,6 +169,7 @@ const VideoPlayer = (props) => {
             
           </div>
           <p>{formatTime(playerState.actualTime)}</p>
+          <progress id="progress-bar" value="0" min="0"></progress>
           <input
             type="range"
             min="0"
