@@ -1,0 +1,199 @@
+.container {
+    display: block;
+    float: left;
+    /* width: 78%; */
+    width: 1050px;
+  }
+  video::-webkit-media-controls {
+    display:none !important;
+    
+  }
+
+  .video_wrapper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #181829;
+    background-image: url("http://179.35.13.1:3232/static/imagens/assets/tanjiro-video.jpg");
+    background-size: cover;
+    border: 3px solid #1f1f33;
+    
+  }
+  
+  .controls_wrap:hover .controls {
+    transform: translateY(45%);
+  }
+  .controls_wrap{
+    position: absolute;
+    bottom: 00px;
+    width: 100%;
+    height: 13%;
+    
+  }
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 30px;
+    padding: 14px;
+    width: 100%;
+    z-index: 3;
+    flex-wrap: wrap;
+    background: #181829b0;
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transform: translateY(150%);
+    transition: all 0.3s ease-in-out;
+  }
+  .pularAbertura{
+    position: absolute;
+    top: 71%;
+    right:3%;
+ 
+  }
+
+  .pularAbertura p {
+    border-radius: 30px;
+    cursor: pointer;
+    background: rgba(66, 55, 55, 0.603);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    padding: 10px 5px 10px 5px;
+    transition: 0.4s;
+  }
+  .pularAbertura p:hover{
+    background: rgb(31, 29, 29);
+    color: #ffbe63;;
+    
+  }
+
+  .continuarAnime{
+    position: absolute;
+    top: 60%;
+    right:3%;
+ 
+  }
+
+  .continuarAnime p {
+    border-radius: 30px;
+    cursor: pointer;
+    background: rgba(66, 55, 55, 0.603);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    padding: 10px 5px 10px 5px;
+    transition: 0.4s;
+  }
+  .continuarAnime p:hover{
+    background: rgb(31, 29, 29);
+    color: #ffbe63;;
+    
+  }
+  
+  .actions button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .actions button i {
+    background-color: none;
+    color: white;
+    font-size: 30px;
+    
+  }
+  
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 50%;
+      background-color: #dddddd;
+      border-radius: 8px;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 15px;
+      color: #0C0C1D;
+      margin-top: -1px;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 5px;
+
+      height: 10px;
+
+      background-color: #000000;
+         }
+
+
+}
+  
+  .velocity {
+    appearance: none;
+    background: none;
+    color: white;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .mute_btn {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .mute_btn i {
+    background-color: none;
+    color: white;
+    font-size: 20px;
+  }
+
+  .SeletorLinguagem{
+    display: flex;
+    margin-bottom: 1%;
+    text-align: center;
+    font-size: 16px;
+  }
+  .Legendado{
+    width: 49.5%;
+    margin-right: 1%;
+    background-color: #181829;;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .Dublado
+  {
+    width: 49.5%;
+    background-color: #181829;;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .Legendado:hover{
+    background-color: #1f1f30;;
+  }
+  .Dublado:hover
+  {
+    background-color: #1f1f30;;
+  }
+  @media (max-width: 600px)
+{
+  .controls{
+    width: 91.6%;
+  }
+  .container{
+    width: 95%;
+  }
+ 
+}
