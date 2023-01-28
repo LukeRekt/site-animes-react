@@ -228,12 +228,15 @@ font-size: 15px;
         font-weight: 500;
       }
       .comentarioHeader{
-        display: flex;
-        align-items: center;
+
         background: #181818;
         width: 97%;
         margin: auto;
         padding: 8px;
+      }
+      .comentarioHeader a {
+        display: flex;
+        align-items: center;
       }
       .comentarioHeader img{
         width: 60px;

@@ -165,8 +165,10 @@ function PageEpisode() {
 
           <div className={styles.comentario}>
             <div className={styles.comentarioHeader}>
+            <Link to="/user/Luke">
             <img src="http://localhost:3232/static/imagens/avatars/LukeRekt.jpg" alt="" />
             <p>LukeRekt <small>• 1 dia atrás</small></p>
+            </Link>
             </div>
                 <div className={styles.comentarioTexto}>
                   <p>Simplesmente o anime mais bosta de todos. Simplesmente o anime mais bosta de todos. Simplesmente o anime mais bosta de todos. Simplesmente o anime mais bosta de todos. Simplesmente o anime mais bosta de todos.Simplesmente o anime mais bosta de todos.</p>
@@ -178,8 +180,10 @@ function PageEpisode() {
                 
           <div className={styles.comentario}>
             <div className={styles.comentarioHeader}>
+            <Link to="/user/Pec">
             <img src="http://localhost:3232/static/imagens/avatars/LukeRekt.jpg" alt="" />
             <p>Pec <small>• 1 Hora atrás</small></p>
+            </Link>
             </div>
                 <div className={styles.comentarioTexto}>
                   <p>fofo</p>

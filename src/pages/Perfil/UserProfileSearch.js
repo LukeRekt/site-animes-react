@@ -73,7 +73,7 @@ function UserProfileSearch() {
         <div className={styles.leftUser}>
             <div className={styles.userAvatar}>
                 <div className={styles.metadeAvatar}>
-                    <img  src={usuario.userBanner} alt="" />
+                    <img  src={`${process.env.REACT_APP_API_URL}/${usuario.userBanner}`} alt="" />
                 </div>
                 <img id={styles.avatar} src={`${process.env.REACT_APP_API_URL}/${usuario.userAvatar}`} alt="" />
                 <p>{usuario.username}</p>
