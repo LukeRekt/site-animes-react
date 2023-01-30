@@ -169,15 +169,11 @@ const VideoPlayer = (props) => {
             
           </div>
           <p>{formatTime(playerState.actualTime)}</p>
-          <progress id="progress-bar" value="0" min="0"></progress>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={playerState.progress}
-            onChange={(e) => {handleVideoProgress(e); setPimba(playerState.actualTime)}}
-          />
+          <progress id={styles.progress_bar} value={Math.round(playerState.actualTime)} min="0" max={Math.round(playerState.totalTime)} ></progress>
+          <input class={styles.seek} id={styles.seek} value={Math.round(playerState.actualTime)} min="0" type="range" step="1" max={Math.round(playerState.totalTime)} />
+          <div class={styles.seek_tooltip} id={styles.seek_tooltip}>{formatTime(playerState.actualTime)}</div>
           <p>{formatTime(playerState.totalTime)}</p>
+          {console.log(Math.round(playerState.actualTime))}
           <select
             className={styles.velocity}
             value={playerState.speed}
