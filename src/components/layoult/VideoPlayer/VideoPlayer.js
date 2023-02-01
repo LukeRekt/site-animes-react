@@ -133,6 +133,16 @@ const VideoPlayer = (props) => {
   
     return () => clearInterval(interval);
   }, [playerState.isPlaying, playerState.actualTime, tempoPimba, user, props.nomeAnime]);
+
+
+  function updateSeekTooltip(event) {
+    const skipTo = Math.round((event.offsetX / event.target.clientWidth) * parseInt(event.target.getAttribute('max'), 10));
+    //seek.setAttribute('data-seek', skipTo)
+    const t = formatTime(skipTo);
+    //seekTooltip.textContent = `${t.minutes}:${t.seconds}`;
+    //const rect = video.getBoundingClientRect();
+    //seekTooltip.style.left = `${event.pageX - rect.left}px`;
+  }
   return (
     
     <div className={styles.container}>
@@ -169,8 +179,8 @@ const VideoPlayer = (props) => {
             
           </div>
           <p>{formatTime(playerState.actualTime)}</p>
-          <progress id={styles.progress_bar} value={Math.round(playerState.actualTime)} min="0" max={Math.round(playerState.totalTime)} ></progress>
-          <input class={styles.seek} id={styles.seek} value={Math.round(playerState.actualTime)} min="0" type="range" step="1" max={Math.round(playerState.totalTime)} />
+          <progress id={styles.progress_bar} value={Math.round(playerState.actualTime)} min="0" max={Math.round(playerState.totalTime)} onChange={console.log("mudou")} ></progress>
+          <input class={styles.seek} id={styles.seek} value={Math.round(playerState.actualTime)} min="0" type="range" step="1" max={Math.round(playerState.totalTime)} onMouseOver={(e) => updateSeekTooltip(e)} onChange={(e) => {handleVideoProgress(e); setPimba(playerState.actualTime)}} />
           <div class={styles.seek_tooltip} id={styles.seek_tooltip}>{formatTime(playerState.actualTime)}</div>
           <p>{formatTime(playerState.totalTime)}</p>
           {console.log(Math.round(playerState.actualTime))}

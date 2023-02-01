@@ -56,7 +56,13 @@ const continuarHandler = (tempoFim) =>{
 
   const handleVideoProgress = (event) => {
     const manualChange = Number(event.target.value);
-    videoElement.current.currentTime = (videoElement.current.duration / 100) * manualChange;
+    console.log("teste" + event.target.value);
+    //videoElement.current.currentTime = (videoElement.current.duration / 100) * manualChange;
+    videoElement.current.currentTime = manualChange;
+    console.log("current: " + videoElement.current.currentTime)
+    console.log("duration: " + videoElement.current.duration)
+    console.log("manualChange: " + manualChange)
+    console.log("calculo: " + (videoElement.current.duration / 100) * manualChange)
     setPlayerState({
       ...playerState,
       progress: manualChange,
